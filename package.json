@@ -1,0 +1,12 @@
+{
+  "name": "edecoration",
+  "version": "1.0.0",
+  "description": "A modern, elegant website for Edecoration S.A., a luxury curtains and blinds company in Panama. Built with HTML, CSS, and JavaScript, featuring a beautiful design with wine red accents and sophisticated typography.",
+  "main": "redirect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

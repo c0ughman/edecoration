@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             unstickyTriggered = false;
             if (heroContent) {
                 heroContent.classList.remove('unsticky');
-                heroContent.style.top = '';c
+                heroContent.style.top = '';
                 heroContent.style.right = '';
             }
         }
@@ -539,12 +539,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     let cursorElement = null;
 
+    // Define text for each tag
+    const tagTexts = {
+        'sala': 'CORTINAS<br>PARA<br>SALAS<br>→',
+        'cuarto': 'CORTINAS<br>PARA<br>CUARTOS<br>→',
+        'oficina': 'CORTINAS<br>PARA<br>OFICINAS<br>→'
+    };
+
+    // Define product pages for each tag
+    const tagPages = {
+        'sala': 'productos/cortinas-para-sala.html',
+        'cuarto': 'productos/cortinas-para-cuartos.html',
+        'oficina': 'productos/cortinas-para-oficina.html'
+    };
+
     // Create cursor element
     function createCursor() {
         if (!cursorElement) {
             cursorElement = document.createElement('div');
             cursorElement.className = 'gallery-cursor';
-            cursorElement.innerHTML = 'VER<br>ROLLERS';
+            cursorElement.innerHTML = 'VER<br>CORTINAS';
             document.body.appendChild(cursorElement);
         }
     }
@@ -554,6 +568,10 @@ document.addEventListener('DOMContentLoaded', function() {
     galleryItems.forEach(item => {
         item.addEventListener('mouseenter', function() {
             if (cursorElement) {
+                const tag = item.getAttribute('data-tag');
+                if (tag && tagTexts[tag]) {
+                    cursorElement.innerHTML = tagTexts[tag];
+                }
                 cursorElement.style.opacity = '1';
             }
         });
@@ -570,67 +588,156 @@ document.addEventListener('DOMContentLoaded', function() {
                 cursorElement.style.opacity = '0';
             }
         });
+
+        item.addEventListener('click', function() {
+            const tag = item.getAttribute('data-tag');
+            if (tag && tagPages[tag]) {
+                window.location.href = tagPages[tag];
+            }
+        });
     });
 
-    // Bento cursor image functionality
+    // Bento cursor image/video functionality
     const bentoItems = document.querySelectorAll('.bento-item');
-    let bentoCursorImage = null;
-    const bentoImages = [
-        'landing-media/sala-amplia-ventanal.jpeg',
-        'landing-media/recamara-master.jpeg',
-        'landing-media/sala-playera.jpeg',
-        'landing-media/silla-y-ventana.jpeg',
-        'landing-media/sala-pequeña.jpeg',
-        'landing-media/lobby-con-cortinas.jpg',
-        'landing-media/comedor-moderno.jpeg',
-        'landing-media/sala-con-pintura.jpeg',
-        'landing-media/comedor.jpeg',
-        'landing-media/comedor-moderno-closeup.jpeg',
-        'landing-media/sala-roller.jpg'
-    ];
+    let bentoCursorElement = null;
+    
+    // Define content for each bento item
+    const bentoContent = {
+        'cortinas-main': {
+            images: [
+                'media/duo/sala-amplia-ventanal.jpeg',
+                'media/duo/recamara-master.jpeg',
+                'media/duo/sala-roller.jpg',
+                'media/duo/comedor.jpeg',
+                'media/duo/sala-y-fotografo.jpg',
+                'media/screen/sala-pequeña.jpeg',
+                'media/screen/sala-con-pintura.jpeg',
+                'media/screen/comedor-moderno.jpeg',
+                'media/screen/comedor-moderno-closeup.jpeg',
+                'media/blackout/IMG_0319.jpg',
+                'media/blackout/IMG_4787.jpg'
+            ],
+            videos: [
+                'media/duo/duo.mp4',
+                'media/screen/screen.mp4',
+                'media/screen/screen8.mp4',
+                'media/screen/screen9.mp4'
+            ]
+        },
+        'papel-block': {
+            images: [],
+            videos: []
+        },
+        'toldos-block': {
+            images: [
+                'media/toldo/IMG_4028.jpg',
+                'media/toldo/IMG_4029.jpg',
+                'media/toldo/IMG_4030.jpg',
+                'media/toldo/IMG_4031.jpg',
+                'media/toldo/IMG_6168.jpg'
+            ],
+            videos: []
+        },
+        'shutters-block': {
+            images: [],
+            videos: [
+                'media/rolling-shutters/rolling-shutters.mp4',
+                'media/rolling-shutters/rolling-shutters1.mp4',
+                'media/rolling-shutters/rolling-shuttersA.MP4'
+            ]
+        },
+        'papel-inteligente-block': {
+            images: [],
+            videos: [
+                'media/papel-int/papel-int.mp4',
+                'media/papel-int/papel-int1.mp4',
+                'media/papel-int/papel-int2.mp4',
+                'media/papel-int/papel-intA.MP4',
+                'media/papel-int/papel-intB.MP4',
+                'media/papel-int/papel-intC.MP4',
+                'media/papel-int/papel-intD.MP4',
+                'media/papel-int/papel-intE.MP4'
+            ]
+        }
+    };
 
-    function createBentoCursorImage() {
-        if (bentoCursorImage) return;
+    function createBentoCursorElement() {
+        if (bentoCursorElement) return;
         
-        bentoCursorImage = document.createElement('img');
-        bentoCursorImage.className = 'bento-cursor-image';
-        document.body.appendChild(bentoCursorImage);
+        bentoCursorElement = document.createElement('div');
+        bentoCursorElement.className = 'bento-cursor-element';
+        document.body.appendChild(bentoCursorElement);
     }
 
-    function getRandomBentoImage() {
-        const randomIndex = Math.floor(Math.random() * bentoImages.length);
-        return bentoImages[randomIndex];
+    function getRandomContent(itemClass) {
+        const content = bentoContent[itemClass];
+        if (!content) return null;
+        
+        const allContent = [...content.images, ...content.videos];
+        if (allContent.length === 0) return null;
+        
+        const randomIndex = Math.floor(Math.random() * allContent.length);
+        return allContent[randomIndex];
     }
 
-    createBentoCursorImage();
+    function isVideoFile(filename) {
+        return filename.toLowerCase().endsWith('.mp4') || filename.toLowerCase().endsWith('.MP4');
+    }
+
+    createBentoCursorElement();
 
     let targetX = 0;
     let targetY = 0;
     let currentX = 0;
     let currentY = 0;
 
-    function animateBentoImage() {
-        if (bentoCursorImage && bentoCursorImage.classList.contains('visible')) {
+    function animateBentoElement() {
+        if (bentoCursorElement && bentoCursorElement.classList.contains('visible')) {
             currentX += (targetX - currentX) * 0.1;
             currentY += (targetY - currentY) * 0.1;
             
-            bentoCursorImage.style.left = currentX + 'px';
-            bentoCursorImage.style.top = currentY + 'px';
+            bentoCursorElement.style.left = currentX + 'px';
+            bentoCursorElement.style.top = currentY + 'px';
         }
-        requestAnimationFrame(animateBentoImage);
+        requestAnimationFrame(animateBentoElement);
     }
 
-    animateBentoImage();
+    animateBentoElement();
 
     bentoItems.forEach(item => {
         item.addEventListener('mouseenter', function() {
-            if (!bentoCursorImage) {
-                createBentoCursorImage();
+            if (!bentoCursorElement) {
+                createBentoCursorElement();
             }
-            if (bentoCursorImage) {
-                bentoCursorImage.src = getRandomBentoImage();
-                bentoCursorImage.classList.add('visible');
+            
+            const itemClass = Array.from(item.classList).find(cls => bentoContent[cls]);
+            if (!itemClass) return;
+            
+            const contentPath = getRandomContent(itemClass);
+            if (!contentPath) return;
+            
+            // Clear previous content
+            bentoCursorElement.innerHTML = '';
+            
+            if (isVideoFile(contentPath)) {
+                // Create video element
+                const video = document.createElement('video');
+                video.src = contentPath;
+                video.autoplay = true;
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.className = 'bento-cursor-video';
+                bentoCursorElement.appendChild(video);
+            } else {
+                // Create image element
+                const img = document.createElement('img');
+                img.src = contentPath;
+                img.className = 'bento-cursor-image';
+                bentoCursorElement.appendChild(img);
             }
+            
+            bentoCursorElement.classList.add('visible');
         });
 
         item.addEventListener('mousemove', function(e) {
@@ -639,23 +746,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         item.addEventListener('mouseleave', function() {
-            if (bentoCursorImage) {
-                bentoCursorImage.classList.remove('visible');
+            if (bentoCursorElement) {
+                bentoCursorElement.classList.remove('visible');
             }
         });
     });
 
-    // Hide image when leaving the entire bento section
+    // Hide element when leaving the entire bento section
     const bentoSection = document.querySelector('.bento-grid');
     if (bentoSection) {
         bentoSection.addEventListener('mouseleave', function() {
-            if (bentoCursorImage) {
-                bentoCursorImage.classList.remove('visible');
+            if (bentoCursorElement) {
+                bentoCursorElement.classList.remove('visible');
                 // Remove element after transition completes
                 setTimeout(() => {
-                    if (bentoCursorImage && !bentoCursorImage.classList.contains('visible')) {
-                        bentoCursorImage.remove();
-                        bentoCursorImage = null;
+                    if (bentoCursorElement && !bentoCursorElement.classList.contains('visible')) {
+                        bentoCursorElement.remove();
+                        bentoCursorElement = null;
                     }
                 }, 300);
             }

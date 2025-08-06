@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="redirect.js"></script>
 </head>
 <body>
 
@@ -48,7 +49,9 @@
                 </div>
             </div>
             <div class="hero-video">
-                <!-- Video removed for repository size optimization -->
+                <video autoplay muted loop playsinline>
+                    <source src="media/hero.mp4" type="video/mp4">
+                </video>
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -187,44 +190,94 @@
             <p class="section-subtitle">Cada proyecto cuenta una historia única de transformación y elegancia</p>
             <div class="gallery-grid">
                 <div class="gallery-row">
-                    <div class="gallery-item">
-                        <img src="landing-media/sala-amplia-ventanal.jpeg" alt="Proyecto 1" />
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/sala-pequeña.jpeg" alt="Sala pequeña" />
                     </div>
-                    <div class="gallery-item">
-                        <img src="landing-media/recamara-master.jpeg" alt="Proyecto 2" />
+                    <div class="gallery-item" data-tag="cuarto">
+                        <video autoplay muted loop playsinline>
+                            <source src="landing-media/cuarto-motorizado-tambien-new.mp4" type="video/mp4">
+                        </video>
                     </div>
-                <div class="gallery-item">
-                        <img src="landing-media/sala-playera.jpeg" alt="Proyecto 3" />
-                    </div>
-                </div>
-                <div class="gallery-row">
-                    <div class="gallery-item">
-                        <img src="landing-media/silla-y-ventana.jpeg" alt="Proyecto 4" />
-                    </div>
-                    <div class="gallery-item">
-                        <img src="landing-media/sala-pequeña.jpeg" alt="Proyecto 5" />
-                </div>
-                <div class="gallery-item">
-                        <img src="landing-media/lobby-con-cortinas.jpg" alt="Proyecto 6" />
+                    <div class="gallery-item" data-tag="oficina">
+                        <img src="landing-media/salon-de-conferencias-new.jpeg" alt="Salón de conferencias nuevo" />
                     </div>
                 </div>
                 <div class="gallery-row">
-                    <div class="gallery-item">
-                        <img src="landing-media/comedor-moderno.jpeg" alt="Proyecto 7" />
+                    <div class="gallery-item" data-tag="oficina">
+                        <video autoplay muted loop playsinline>
+                            <source src="landing-media/oficina-moderna-new.mp4" type="video/mp4">
+                        </video>
                     </div>
-                    <div class="gallery-item">
-                        <img src="landing-media/sala-con-pintura.jpeg" alt="Proyecto 8" />
-                </div>
-                <div class="gallery-item">
-                        <img src="landing-media/comedor.jpeg" alt="Proyecto 9" />
+                    <div class="gallery-item" data-tag="sala">
+                        <video autoplay muted loop playsinline>
+                            <source src="landing-media/IMG_7052.MOV" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/sala-con-pintura.jpeg" alt="Sala con pintura" />
                     </div>
                 </div>
                 <div class="gallery-row">
-                    <div class="gallery-item">
-                        <img src="landing-media/comedor-moderno-closeup.jpeg" alt="Proyecto 10" />
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/silla-y-ventana.jpeg" alt="Silla y ventana" />
+                    </div>
+                    <div class="gallery-item" data-tag="oficina">
+                        <img src="landing-media/lobby-con-cortinas.jpg" alt="Lobby con cortinas" />
+                    </div>
+                    <div class="gallery-item" data-tag="sala">
+                        <video autoplay muted loop playsinline>
+                            <source src="landing-media/sala-motorizada-new.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                        <img src="landing-media/sala-roller.jpg" alt="Proyecto 11" />
+                <div class="gallery-row">
+                    <div class="gallery-item" data-tag="cuarto">
+                        <img src="landing-media/recamara-master.jpeg" alt="Recámara master" />
+                    </div>
+                    <div class="gallery-item" data-tag="cuarto">
+                        <video autoplay muted loop playsinline>
+                            <source src="landing-media/sala-vista-al-mar-new.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="gallery-item" data-tag="oficina">
+                        <img src="landing-media/sala-roller.jpg" alt="Sala roller" />
+                    </div>
+                </div>
+                <div class="gallery-row">
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/comedor.jpeg" alt="Comedor" />
+                    </div>
+                    <div class="gallery-item" data-tag="oficina">
+                        <img src="landing-media/oficina-consultorio-new.JPG" alt="Oficina consultorio nuevo" />
+                    </div>
+                    <div class="gallery-item" data-tag="oficina">
+                        <video autoplay muted loop playsinline>
+                            <source src="landing-media/oficina-laboral-new.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="gallery-row">
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/sala-amplia-ventanal.jpeg" alt="Sala amplia con ventanal" />
+                    </div>
+                    <div class="gallery-item" data-tag="sala">
+                        <video autoplay muted loop playsinline>
+                            <source src="landing-media/IMG_5310.MOV" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/comedor-moderno.jpeg" alt="Comedor moderno" />
+                    </div>
+                </div>
+                <div class="gallery-row">
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/sala-playera.jpeg" alt="Sala playera" />
+                    </div>
+                    <div class="gallery-item" data-tag="oficina">
+                        <img src="landing-media/salon-de-conferencias.jpg" alt="Salón de conferencias" />
+                    </div>
+                    <div class="gallery-item" data-tag="sala">
+                        <img src="landing-media/sala-moderna-new.HEIC" alt="Sala moderna nueva" />
                     </div>
                 </div>
             </div>
@@ -302,7 +355,7 @@
                             </div>
                         </div>
                         <div class="product-cta">
-                            <a href="#contact">Ver Cortinas ></a>
+                            <a href="productos/cortinas-roller.html">Ver Cortinas ></a>
                         </div>
                     </div>
                 </div>
@@ -324,7 +377,7 @@
                         <h3>Toldos</h3>
                         <p>Protección solar exterior con diseño elegante que combina estética y durabilidad para espacios exteriores.</p>
                         <div class="product-cta">
-                            <a href="#contact">Ver Toldos ></a>
+                            <a href="productos/toldos-para-terrazas.html">Ver Toldos ></a>
                         </div>
                     </div>
                 </div>
@@ -332,10 +385,10 @@
                 <!-- Rolling Shutters Block -->
                 <div class="bento-item shutters-block">
                     <div class="bento-content">
-                        <h3>Rolling Shutters</h3>
+                        <h3>Cortinas Metálicas para Seguridad</h3>
                         <p>Máxima seguridad con diseño sofisticado. Protección integral sin comprometer la estética de tu espacio.</p>
                         <div class="product-cta">
-                            <a href="#contact">Ver Shutters ></a>
+                            <a href="productos/cortinas-metalicas-enrrollables.html">Ver Shutters ></a>
                         </div>
                     </div>
                 </div>
@@ -343,10 +396,10 @@
                 <!-- Papel Inteligente Block -->
                 <div class="bento-item papel-inteligente-block">
                     <div class="bento-content">
-                        <h3>Papel Inteligente</h3>
-                        <p>Papel inteligente que se adapta automáticamente a las condiciones de luz para control solar inteligente.</p>
+                        <h3>Vidrio Inteligente</h3>
+                        <p>Vidrio inteligente que se adapta automáticamente a las condiciones de luz para control solar inteligente.</p>
                         <div class="product-cta">
-                            <a href="#contact">Ver Inteligente ></a>
+                            <a href="productos/vidrio-inteligente.html">Ver Inteligente ></a>
                         </div>
                     </div>
                 </div>
