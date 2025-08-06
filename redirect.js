@@ -8,7 +8,7 @@
     
     function getCurrentPage() {
         const path = window.location.pathname;
-        if (path.includes('index-responsive.html')) {
+        if (path.includes('responsive.html')) {
             return 'responsive';
         } else if (path.includes('index.html') || path.endsWith('/')) {
             return 'desktop';
@@ -33,14 +33,14 @@
             // Redirect to responsive version
             const currentUrl = new URL(window.location);
             if (currentUrl.pathname.endsWith('/')) {
-                window.location.href = currentUrl.origin + currentUrl.pathname + 'index-responsive.html' + currentUrl.search + currentUrl.hash;
+                window.location.href = currentUrl.origin + currentUrl.pathname + 'responsive.html' + currentUrl.search + currentUrl.hash;
             } else {
-                window.location.href = currentUrl.href.replace('index.html', 'index-responsive.html');
+                window.location.href = currentUrl.href.replace('index.html', 'responsive.html');
             }
         } else if (!shouldUseResponsive && currentPage === 'responsive') {
             // Redirect to desktop version
             const currentUrl = new URL(window.location);
-            window.location.href = currentUrl.href.replace('index-responsive.html', 'index.html');
+            window.location.href = currentUrl.href.replace('responsive.html', 'index.html');
         }
     }
     
