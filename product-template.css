@@ -65,13 +65,13 @@
 /* Article Header - Redesigned with Wine Red Background */
 .article-header {
     position: relative;
-    min-height: 140vh;
+    min-height: 80vh;
     height: auto;
     display: flex;
     align-items: center;
     overflow: hidden;
     background: var(--wine-red);
-    padding: 2rem 0;
+    padding: 4rem 0 6rem 0;
 }
 
 .hero-video-background {
@@ -319,6 +319,22 @@
     60% {
         transform: translateX(-50%) translateY(-5px);
     }
+}
+
+/* Article Hero Layout */
+.article-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: var(--primary-white);
+}
+
+.article-hero-content {
+    text-align: left;
 }
 
 /* Hero Image Badge */
@@ -1723,7 +1739,29 @@
         overflow: hidden;
     }
     
-    /* Mobile hero styling similar to main hero */
+    .article-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    
+    .article-hero-content {
+        text-align: center;
+        order: 1;
+    }
+    
+    .hero-meta {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .meta-item {
+        min-width: 150px;
+        justify-content: center;
+    }
+    
     .hero-content-overlay {
         position: relative;
         z-index: 10;
