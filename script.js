@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Handle unsticky behavior at 12% scroll
-        if (scrollPercent > 11 && !unstickyTriggered) {
+        if (scrollPercent > 9 && !unstickyTriggered) {
             unstickyTriggered = true;
             if (heroContent) {
                 // Calculate the exact position to prevent shift
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 heroContent.style.top = (absoluteTop - 0) + 'px';
                 heroContent.style.right = '100px';
             }
-        } else if (scrollPercent <= 11 && unstickyTriggered) {
+        } else if (scrollPercent <= 9 && unstickyTriggered) {
             unstickyTriggered = false;
             if (heroContent) {
                 heroContent.classList.remove('unsticky');
@@ -39,11 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        if (scrollPercent > 7 && !fadeOutTriggered) {
+        if (scrollPercent > 6 && !fadeOutTriggered) {
             fadeOutTriggered = true;
             if (heroSubtitle) heroSubtitle.classList.add('fade-out');
             if (heroCta) heroCta.classList.add('fade-out');
-        } else if (scrollPercent <= 7 && fadeOutTriggered) {
+        } else if (scrollPercent <= 6 && fadeOutTriggered) {
             fadeOutTriggered = false;
             if (heroSubtitle) heroSubtitle.classList.remove('fade-out');
             if (heroCta) heroCta.classList.remove('fade-out');
@@ -605,27 +605,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const bentoContent = {
         'cortinas-main': {
             images: [
-                'media/duo/sala-amplia-ventanal.jpeg',
-                'media/duo/recamara-master.jpeg',
-                'media/duo/sala-roller.jpg',
-                'media/duo/comedor.jpeg',
-                'media/duo/sala-y-fotografo.jpg',
+                'media/roller/comedor.jpeg',
+                'media/roller/recamara-master.jpeg',
+                'media/roller/sala-roller.jpg',
+                'media/roller/IMG_0837.jpg',
+                'media/roller/IMG_0841.jpg',
+                'media/roller/IMG_1868.jpg',
+                'landing-media/sala-y-fotografo.jpg',
                 'media/screen/sala-pequeña.jpeg',
                 'media/screen/sala-con-pintura.jpeg',
                 'media/screen/comedor-moderno.jpeg',
-                'media/screen/comedor-moderno-closeup.jpeg',
-                'media/blackout/IMG_0319.jpg',
-                'media/blackout/IMG_4787.jpg'
+                'media/screen/comedor-moderno-closeup.jpeg'
             ],
             videos: [
-                'media/duo/duo.mp4',
+                'media/roller/duo.mp4',
                 'media/screen/screen.mp4',
                 'media/screen/screen8.mp4',
                 'media/screen/screen9.mp4'
             ]
         },
         'papel-block': {
-            images: [],
+            images: [
+                'media/papel/ahumado.png',
+                'media/papel/esmerilado.JPG'
+            ],
             videos: []
         },
         'toldos-block': {
@@ -643,7 +646,13 @@ document.addEventListener('DOMContentLoaded', function() {
             videos: [
                 'media/rolling-shutters/rolling-shutters.mp4',
                 'media/rolling-shutters/rolling-shutters1.mp4',
-                'media/rolling-shutters/rolling-shuttersA.MP4'
+                'media/rolling-shutters/rolling-shuttersA.MP4',
+                'media/rolling-shutters/006d7662-6915-4776-aaf3-156308c6d520.MP4',
+                'media/rolling-shutters/3eee0c2e-f762-447d-a9f7-d35d43677117.MP4',
+                'media/rolling-shutters/90a9a8ea-45bf-441e-8adb-22a63eec86e0.MP4',
+                'media/rolling-shutters/938bf035-469d-4916-8e94-08b2ae095d03.MP4',
+                'media/rolling-shutters/e04edb7c-65a6-4968-ad26-4a790c762b93.MP4',
+                'media/rolling-shutters/e78c0944-fe6e-4ed0-954f-cfc073d29d22.MP4'
             ]
         },
         'papel-inteligente-block': {
@@ -713,12 +722,31 @@ document.addEventListener('DOMContentLoaded', function() {
             const itemClass = Array.from(item.classList).find(cls => bentoContent[cls]);
             if (!itemClass) return;
             
-            const contentPath = getRandomContent(itemClass);
+            let contentPath = getRandomContent(itemClass);
             if (!contentPath) return;
-            
+
             // Clear previous content
             bentoCursorElement.innerHTML = '';
-            
+
+            // Helper to try a different asset on error
+            function attachFallback(el) {
+                let attempts = 0;
+                const maxAttempts = 5;
+                el.addEventListener('error', () => {
+                    attempts += 1;
+                    if (attempts > maxAttempts) return;
+                    contentPath = getRandomContent(itemClass);
+                    if (!contentPath) return;
+                    if (isVideoFile(contentPath)) {
+                        el.src = contentPath;
+                        el.load && el.load();
+                        el.play && el.play().catch(() => {});
+                    } else {
+                        el.src = contentPath;
+                    }
+                });
+            }
+
             if (isVideoFile(contentPath)) {
                 // Create video element
                 const video = document.createElement('video');
@@ -728,12 +756,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 video.loop = true;
                 video.playsInline = true;
                 video.className = 'bento-cursor-video';
+                attachFallback(video);
                 bentoCursorElement.appendChild(video);
             } else {
                 // Create image element
                 const img = document.createElement('img');
                 img.src = contentPath;
                 img.className = 'bento-cursor-image';
+                attachFallback(img);
                 bentoCursorElement.appendChild(img);
             }
             
@@ -768,3 +798,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } 
+
+// Video lazy loading implementation
+function initVideoLazyLoading() {
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const video = entry.target;
+                const sources = video.querySelectorAll('source');
+                
+                sources.forEach(source => {
+                    if (source.dataset.src && !source.src) {
+                        source.src = source.dataset.src;
+                    }
+                });
+                
+                video.load();
+                videoObserver.unobserve(video);
+            }
+        });
+    }, {
+        rootMargin: '100px' // Start loading 100px before video comes into view
+    });
+
+    // Observe all videos with data-lazy attribute
+    document.querySelectorAll('video[data-lazy]').forEach(video => {
+        videoObserver.observe(video);
+    });
+}
+
+// Initialize video lazy loading when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initVideoLazyLoading();
+}); 

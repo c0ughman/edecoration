@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons Preview | Edecoration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-template.css">
+    <link rel="stylesheet" href="productos/product-template.css">
+    <link rel="stylesheet" href="blog-post.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="contact-funnel.css">
+    <link rel="stylesheet" href="styles-responsive.css">
+    <style>
+      body { padding: 2rem 0; }
+      .section { padding: 2rem 0; border-top: 1px solid rgba(0,0,0,0.06); }
+      .section h2 { font-size: 1.25rem; margin-bottom: 1rem; font-family: var(--font-body); font-weight: 600; }
+      .row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+      .demo-card { background: var(--primary-white); border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; min-width: 260px; }
+      .label { font-size: 0.8rem; color: var(--medium-gray); font-family: var(--font-body); }
+      .on-dark { background: linear-gradient(135deg, #8B1A3A 0%, #5A0F25 100%); padding: 1.5rem; border-radius: 12px; }
+      .stack { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="margin-bottom: 1rem; font-family: var(--font-display); font-weight: 300;">Buttons Preview</h1>
+      <p style="color: var(--medium-gray); margin-bottom: 2rem;">Hover and interact with each button to visualize all animations and states across the site.</p>
+
+      <div class="section">
+        <h2>General CTAs</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.cta-primary</div>
+            <div class="stack">
+              <button class="cta-primary">CTA Primaria</button>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.cta-secondary</div>
+            <div class="stack">
+              <button class="cta-secondary">CTA Secundaria</button>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.btn-secondary</div>
+            <div class="stack">
+              <a href="#" class="btn-secondary">Botón Secundario</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Hero CTAs</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.hero-cta-primary</div>
+            <div class="stack">
+              <a href="#" class="hero-cta-primary">Hero CTA Primaria</a>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.hero-cta-secondary</div>
+            <div class="stack">
+              <a href="#" class="hero-cta-secondary">Hero CTA Secundaria</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>CTA Section Context (Overrides on dark background)</h2>
+        <div class="row">
+          <div class="demo-card on-dark" style="min-width: 360px;">
+            <div class="label" style="color: #fff;">.cta-section .cta-primary / .cta-section .cta-secondary</div>
+            <div class="stack">
+              <button class="cta-primary">CTA Primaria (Sección)</button>
+              <button class="cta-secondary">CTA Secundaria (Sección)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Product CTA Link</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.product-cta a</div>
+            <div class="product-cta">
+              <a href="#">Ver Producto ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Sticky / Sidebar / Testimonial</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.sticky-cta-primary</div>
+            <a class="sticky-cta-primary" href="#"><i class="fas fa-calendar-check"></i><span>Sticky CTA</span></a>
+          </div>
+          <div class="demo-card">
+            <div class="label">.sticky-cta-whatsapp</div>
+            <a class="sticky-cta-whatsapp" href="#"><i class="fab fa-whatsapp"></i><span>Sticky WhatsApp</span></a>
+          </div>
+          <div class="demo-card">
+            <div class="label">.sidebar-cta-btn</div>
+            <a class="sidebar-cta-btn" href="#">Sidebar CTA</a>
+          </div>
+          <div class="demo-card">
+            <div class="label">.testimonials-cta-btn</div>
+            <a class="testimonials-cta-btn" href="#">Testimonial CTA</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Final CTA Section (Overrides)</h2>
+        <div class="row">
+          <div class="demo-card on-dark" style="min-width: 360px;">
+            <div class="label" style="color: #fff;">.final-cta-section .final-cta-primary / .final-cta-section .final-cta-secondary</div>
+            <div class="final-cta-section" style="background: transparent; box-shadow: none; padding: 1rem;">
+              <div class="final-cta-buttons" style="justify-content: flex-start;">
+                <a class="final-cta-primary" href="#"><span>Final CTA Primaria</span></a>
+                <a class="final-cta-secondary" href="#"><span>Final CTA Secundaria</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Generic CTA Button (blog/product templates)</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.cta-button</div>
+            <div class="stack">
+              <a class="cta-button" href="#">CTA Button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Blog / Navigation</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.nav-cta-btn</div>
+            <div class="stack">
+              <a class="nav-cta-btn" href="#">Solicita tu Consulta Inicial</a>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.search-btn</div>
+            <div class="stack">
+              <button class="search-btn"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.read-more-btn</div>
+            <div class="stack">
+              <a class="read-more-btn" href="#">Leer más <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.load-more-btn</div>
+            <div class="stack">
+              <button class="load-more-btn"><i class="fas fa-plus"></i> Ver más</button>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.newsletter-btn</div>
+            <div class="stack">
+              <button class="newsletter-btn"><i class="fas fa-envelope"></i> Suscribirme</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Share / Post Actions</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.share-buttons .share-btn</div>
+            <div class="share-buttons stack">
+              <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+              <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+              <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.like-btn / .reply-btn</div>
+            <div class="stack">
+              <button class="like-btn"><i class="far fa-heart"></i> Me gusta</button>
+              <button class="reply-btn">Responder</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Contact Funnel Buttons</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.cta-primary-btn</div>
+            <div class="stack">
+              <button class="cta-primary-btn" type="button"><i class="fas fa-calendar-check"></i> Agenda tu Asesoría</button>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.cta-secondary-btn</div>
+            <div class="stack">
+              <button class="cta-secondary-btn" type="button"><i class="fas fa-phone"></i> Llámanos</button>
+            </div>
+          </div>
+          <div class="demo-card">
+            <div class="label">.submit-btn</div>
+            <div class="stack">
+              <button class="submit-btn" type="submit">Enviar formulario</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Contact Funnel Final Buttons</h2>
+        <div class="row">
+          <div class="demo-card">
+            <div class="label">.final-btn.primary / .final-btn.secondary</div>
+            <div class="stack">
+              <a href="#" class="final-btn primary"><i class="fas fa-phone"></i> Llamar</a>
+              <a href="#" class="final-btn secondary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
+
+

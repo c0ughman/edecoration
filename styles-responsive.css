@@ -223,7 +223,7 @@ body {
 }
 
 .mobile-nav-content a {
-    color: var(--primary-white);
+    color: var(--text-black);
     text-decoration: none;
     font-size: var(--text-2xl);
     font-weight: 300;
@@ -234,7 +234,7 @@ body {
 }
 
 .mobile-nav-content a:hover {
-    color: var(--accent-yellow);
+    color: var(--wine-red);
     transform: translateY(-2px);
 }
 
@@ -456,18 +456,18 @@ body {
 .more-logos-circle {
     width: 50px;
     height: 50px;
-    border: 2px solid var(--wine-red);
+    border: 2px solid var(--medium-gray);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--wine-red);
+    background: transparent;
 }
 
 .more-logos-circle span {
     font-size: 18px;
     font-weight: 600;
-    color: var(--primary-white);
+    color: var(--medium-gray);
     line-height: 1;
 }
 
@@ -752,10 +752,12 @@ body {
 .bento-item {
     background: var(--primary-white);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: var(--border-radius);
-    padding: var(--space-lg);
+    border-radius: 20px;
+    padding: 0 0 var(--space-md) 0; /* no side padding */
     transition: var(--transition);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-left: var(--space-md); /* more side margin */
+    margin-right: var(--space-md);
 }
 
 .bento-item:hover {
@@ -767,22 +769,22 @@ body {
     font-family: var(--font-display);
     font-size: var(--text-xl);
     font-weight: 400;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0.35rem;
     color: var(--text-black);
 }
 
 .bento-content p {
     font-size: var(--text-base);
     color: var(--medium-gray);
-    line-height: 1.6;
-    margin-bottom: var(--space-md);
+    line-height: 1.5;
+    margin-bottom: var(--space-sm);
 }
 
 .product-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.5rem;
-    margin-bottom: var(--space-md);
+    gap: 0.4rem;
+    margin-bottom: var(--space-sm);
 }
 
 .product-item {
@@ -809,6 +811,57 @@ body {
 .product-cta a:hover {
     color: #4A0C1F;
 }
+
+.bento-item .bento-content,
+.bento-item .bento-content * {
+    margin-top: 0;
+}
+
+.bento-item .bento-content {
+    margin-left: var(--space-md); /* space text from sides */
+    margin-right: var(--space-md);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Remove top padding from products bento section container as well */
+.products-bento .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.products-bento {
+    padding-top: 0 !important;
+}
+
+/* Compact product imagery inside bento items */
+.bento-image {
+    width: 100%;
+    height: 100px;
+    border-radius: 0;
+    overflow: hidden;
+    margin: 0 !important;
+    margin-bottom: 30px !important;
+    background: transparent;
+}
+.bento-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+.bento-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Remove potential gap from line-height on single-line content following media */
+.bento-content h3 { line-height: 1.2; }
 
 /* ========================================
    ABOUT SECTION

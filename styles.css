@@ -113,17 +113,11 @@ h4 {
     color: var(--wine-red);
     text-shadow: 0px 0px 12px rgba(93, 15, 37, 0.15);
     -webkit-text-stroke: none;
-    text-stroke: none;
+    /* text-stroke is deprecated */
 }
 
 .accent-text {
     color: var(--wine-red);
-    background: linear-gradient(135deg, var(--wine-red) 0%, #7A142F 50%, var(--accent-yellow) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
@@ -141,7 +135,7 @@ h4 {
     top: 0;
     left: 0;
     right: 0;
-    z-index: -10;
+    z-index: 0;
     padding: 1.5rem 3rem 1.5rem;
     display: flex;
     align-items: flex-start;
@@ -246,7 +240,7 @@ h4 {
     position: fixed;
     top: 100px;
     right: 100px;
-    z-index: 10;
+    z-index: 50;
     padding: 4rem 3rem 2rem;
     max-width: 600px;
     width: 50%;
@@ -432,6 +426,7 @@ h4 {
     transition: var(--transition-slow);
     aspect-ratio: 16/9;
     bottom: 0;
+    z-index: 0;
 }
 
 .hero-video:hover {
@@ -455,6 +450,8 @@ h4 {
     bottom: 0;
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* Section Titles */
@@ -750,7 +747,8 @@ h4 {
 }
 
 .gallery-item:hover {
-    /* Shadow removed */
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 .gallery-item img,
@@ -906,10 +904,10 @@ h4 {
     justify-content: center;
     padding: 1rem;
     transition: filter 0.6s ease, opacity 0.6s ease;
-    opacity: 0.8;
+    opacity: 1;
     min-height: 80px;
     min-width: 120px;
-    filter: grayscale(100%);
+    filter: none;
 }
 
 .logo-item.colored {
@@ -1035,9 +1033,41 @@ h4 {
 
 .cta-subtitle {
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     opacity: 0.8;
     text-align: left;
+}
+
+.cta-value-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 1.5rem;
+    text-align: left;
+}
+
+.cta-value-points li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary-white);
+    opacity: 0.9;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.cta-value-points li:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.cta-value-points i {
+    color: var(--primary-white);
+    font-size: 1.2rem;
+    width: 1.5rem;
+    text-align: center;
+    opacity: 0.9;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cta-benefits {
@@ -1296,6 +1326,10 @@ h4 {
     object-fit: cover;
     border-radius: 8px;
 }
+
+/* Ensure the preview never shows as transparent */
+.bento-cursor-element .bento-cursor-image { background: #f2f2f2; }
+.bento-cursor-element .bento-cursor-video { background: #000; }
 
 /* Main Cortinas Block */
 .cortinas-main {
@@ -2078,6 +2112,52 @@ h4 {
     transform: translateY(-2px);
 }
 
+/* Accessibility: ensure text contrasts on wine-red backgrounds */
+*[style*="background: var(--wine-red)"],
+*[style*="background:var(--wine-red)"],
+*[class*="wine"]:where([style*="background"]) {
+    color: var(--primary-white) !important;
+}
+
+/* Buttons/links and spans when placed over wine-red backgrounds */
+.final-cta-secondary,
+.share-buttons a,
+.social-link,
+.cta-secondary,
+.sticky-cta-primary,
+.sticky-cta-whatsapp {
+    color: currentColor;
+}
+
+/* If any of those elements are inside a wine-red background container, force white text */
+[style*="background: var(--wine-red)"] .final-cta-secondary,
+[style*="background:var(--wine-red)"] .final-cta-secondary,
+[style*="background: var(--wine-red)"] .share-buttons a,
+[style*="background:var(--wine-red)"] .share-buttons a,
+[style*="background: var(--wine-red)"] .social-link span,
+[style*="background:var(--wine-red)"] .social-link span,
+[style*="background: var(--wine-red)"] .cta-secondary,
+[style*="background:var(--wine-red)"] .cta-secondary {
+    color: var(--primary-white) !important;
+}
+
+/* Final CTA specific safeguard */
+.final-cta-section .final-cta-secondary,
+.final-cta-section .final-cta-secondary span,
+.final-cta-section .final-cta-secondary i {
+    color: var(--primary-white) !important;
+}
+
+/* Footer social icons: keep dark text on white circle */
+.footer .social-link,
+.footer .social-link i {
+    color: #2A0712 !important;
+}
+.footer .social-link:hover {
+    background: var(--accent-yellow);
+    color: #2A0712 !important;
+}
+
 .footer-sections {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2630,3 +2710,62 @@ h4 {
         font-size: 2rem;
     }
 } 
+
+/* Responsive Video Styles */
+.responsive-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Video loading states */
+.video-loading {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Video optimization for mobile */
+@media (max-width: 768px) {
+    .video-container {
+        padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
+    }
+    
+    .responsive-video {
+        object-fit: cover;
+    }
+}
+
+/* Video preload optimization */
+video[preload="none"] {
+    background: #000;
+}
+
+video[preload="metadata"] {
+    background: #000;
+}

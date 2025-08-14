@@ -7,7 +7,7 @@
     <!-- Primary Meta Tags -->
     <title>Cortinas para Oficina Profesionales | Control de Luz y Privacidad - Edecoration S.A.</title>
     <meta name="title" content="Cortinas para Oficina Profesionales | Control de Luz y Privacidad - Edecoration S.A.">
-    <meta name="description" content="Cortinas para oficina en Panamá: control de luz, privacidad y elegancia profesional. Instalación en empresas, salas de juntas y espacios corporativos. Garantía de 5 años.">
+    <meta name="description" content="Cortinas para oficina en Panamá: control de luz, privacidad y elegancia profesional. Instalación en empresas, salas de juntas y espacios corporativos. Garantía de 12 meses.">
     <meta name="keywords" content="cortinas para oficina, cortinas oficina panamá, cortinas sala juntas, cortinas corporativas, cortinas empresa, cortinas oficina precio, cortinas oficina instalación, cortinas oficina automáticas, cortinas oficina profesionales">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Edecoration S.A.">
@@ -55,8 +55,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="blog.css">
-    <link rel="stylesheet" href="product-template.css">
+     <link rel="stylesheet" href="inner.css">
+     <style>
+        .hero-video-container {
+            max-width: 480px !important;
+            border-radius: 35px !important;
+            overflow: hidden;
+            aspect-ratio: 1/1 !important;
+        }
+        .hero-video-small {
+            border-radius: 32px !important;
+            object-fit: none !important;
+            object-position: center bottom !important;
+            height: 200% !important;
+            top: -50% !important;
+            position: relative !important;
+        }
+     </style>
     
     <!-- Optimized JSON-LD Structured Data for Maximum SEO -->
     <script type="application/ld+json">
@@ -171,7 +186,7 @@
                 "makesOffer": [
                     {
                         "@type": "Offer",
-                        "name": "Consulta Gratuita",
+                        "name": "Solicita tu Consulta Inicial",
                         "description": "Evaluación sin costo de tu proyecto de cortinas y persianas",
                         "price": "0",
                         "priceCurrency": "USD",
@@ -312,7 +327,7 @@
                 },
                 "name": "Cortinas para Oficina Profesionales",
                 "alternateName": "Cortinas Oficina Panamá",
-                "description": "Cortinas para oficina en Panamá: control de luz, privacidad y elegancia profesional. Instalación en empresas, salas de juntas y espacios corporativos. Garantía de 5 años.",
+                "description": "Cortinas para oficina en Panamá: control de luz, privacidad y elegancia profesional. Instalación en empresas, salas de juntas y espacios corporativos. Garantía de 12 meses.",
                 "image": [
                     {
                         "@type": "ImageObject",
@@ -357,7 +372,7 @@
                         "@type": "Organization",
                         "@id": "https://edecoration.pa/#organization"
                     },
-                    "description": "Consulta gratuita para cortinas blackout personalizadas"
+                    "description": "Solicita tu Consulta Inicial para cortinas blackout personalizadas"
                 },
                 "keywords": [
                     "cortinas para oficina",
@@ -443,19 +458,6 @@
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "¿Cuánto cuestan las cortinas inteligentes?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Las cortinas inteligentes varían entre $800-2,500 por ventana, dependiendo del tamaño, material y nivel de automatización. La inversión se recupera con ahorros de energía y el aumento del valor de la propiedad.",
-                            "inLanguage": "es-PA",
-                            "dateCreated": "2024-01-15T10:00:00-05:00"
-                        },
-                        "answerCount": 1,
-                        "upvoteCount": 45,
-                        "dateCreated": "2024-01-15T10:00:00-05:00"
-                    },
-                    {
-                        "@type": "Question",
                         "name": "¿Qué materiales sostenibles recomiendan?",
                         "acceptedAnswer": {
                             "@type": "Answer",
@@ -485,7 +487,7 @@
                         "name": "¿Ofrecen garantía en sus productos?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Sí, ofrecemos 5 años de garantía en materiales y 2 años en sistemas de automatización. Incluye mantenimiento preventivo gratuito durante el primer año.",
+                            "text": "Sí, ofrecemos 1 año de garantía en la gran mayoría de nuestros productos.",
                             "inLanguage": "es-PA",
                             "dateCreated": "2024-01-15T10:00:00-05:00"
                         },
@@ -576,17 +578,6 @@
     </script>
 </head>
 <body>
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" aria-label="Navegación de migas de pan">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../index.html#servicios">Productos</a></li>
-                <li aria-current="page">Cortinas para Oficina</li>
-            </ol>
-        </div>
-    </nav>
-
     <!-- Navigation -->
     <nav class="blog-nav">
         <div class="nav-container">
@@ -597,15 +588,14 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../index.html#servicios">Servicios</a></li>
+                <li><a href="../index.html#inicio">Inicio</a></li>
+                <li><a href="../index.html#productos" class="active">Productos</a></li>
                 <li><a href="../index.html#galeria">Galería</a></li>
                 <li><a href="../index.html#nosotros">Nosotros</a></li>
-                <li><a href="../index.html#contacto">Contacto</a></li>
-                <li><a href="../index.html#servicios" class="active">Productos</a></li>
+                <li><a href="../funnels/contacto.html">Contacto</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="../contact-funnel.html" class="nav-cta-btn">Consulta Gratuita</a>
+                <a href="../funnels/contacto.html" class="nav-cta-btn">Solicita tu Consulta Inicial</a>
             </div>
         </div>
     </nav>
@@ -619,17 +609,15 @@
                         <i class="fas fa-trophy"></i>
                         <span>20 años liderando en Panamá</span>
                     </div>
-                    <h1 class="hero-main-title">
-                        <span class="wine-text">Cortinas para Oficina</span> Profesionales y Elegantes
-                    </h1>
+                    <h1 class="hero-main-title">Cortinas para <span class="wine-text">Oficina</span>, Control de luz, privacidad y estética corporativa</h1>
                     <p class="hero-subtitle">
-                        Soluciones profesionales de cortinas para oficinas en Panamá. Control de luz, privacidad 
-                        corporativa y elegancia empresarial. Instalación en empresas, salas de juntas y espacios corporativos.
+                        Soluciones para <strong>productividad</strong> y <strong>imagen profesional</strong>: control de luz para pantallas, privacidad en salas de juntas y estética corporativa. 
+                        Manuales o motorizadas, instalación <strong>< 1 día</strong> y garantía <strong>1 año</strong> en todo Panamá.
                     </p>
                     
-                    <div class="hero-cta-section">
-                        <a href="../contact-funnel.html" class="hero-cta-primary">
-                            <span>Consulta Gratuita</span>
+                    <div class="hero-cta-buttons">
+                        <a href="../funnels/contacto.html" class="hero-cta-primary">
+                            <span>Solicita tu Consulta Inicial</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="#caracteristicas" class="hero-cta-secondary">
@@ -654,16 +642,27 @@
                     </div>
                 </div>
                 
-                <div class="article-hero-image">
-                    <img src="../media/oficina/IMG_2931.jpg" alt="Cortinas para oficina profesionales - control de luz y privacidad corporativa por Edecoration S.A." />
-                    <div class="hero-image-badge">
-                        <i class="fas fa-award"></i>
-                        <span>Solución empresarial</span>
-                    </div>
+                <div class="hero-video-container">
+                    <video autoplay muted loop playsinline class="hero-video-small">
+                        <source src="../media/optimized/screen12-optimized.webm" type="video/webm">
+                        <source src="../media/optimized/screen12-optimized.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Breadcrumb Navigation (moved under header) -->
+    <nav class="breadcrumb-nav" aria-label="Navegación de migas de pan">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#servicios">Productos</a></li>
+                <li aria-current="page">Cortinas para Oficina</li>
+            </ol>
+        </div>
+    </nav>
 
     <!-- Article Content -->
     <main class="article-content" id="caracteristicas">
@@ -673,18 +672,15 @@
                 <article class="main-content">
                     <div class="content-section">
                         <p class="lead-paragraph">
-                            Las cortinas para oficina son esenciales para crear un ambiente profesional y productivo. 
-                            Como responsable de la gestión de espacios corporativos, entiendes la importancia del control 
-                            de luz, privacidad y elegancia en el entorno laboral. Nuestras soluciones están diseñadas 
-                            específicamente para satisfacer las necesidades empresariales.
+                            La oficina exige <strong>control de luz</strong> para pantallas, <strong>privacidad</strong> en salas de juntas y una <strong>estética corporativa</strong> consistente. 
+                            Diseñamos soluciones por área: open office con <a href="../productos/cortinas-roller.html">roller</a> screen para reducir deslumbramientos, salas de reuniones con capas 
+                            traslúcidas + <a href="../productos/cortinas-black-out.html">black out</a> para presentaciones, y recepciones con textiles que refuercen identidad visual.
                         </p>
                         
                         <h2>¿Por qué elegir Cortinas para Oficina?</h2>
                         <p>
-                            Las cortinas para oficina son fundamentales para mantener la productividad, privacidad 
-                            y profesionalismo en espacios corporativos. Perfectas para salas de juntas, oficinas 
-                            ejecutivas, áreas de trabajo y espacios de presentación donde el control de luz y 
-                            la imagen empresarial son prioritarios.
+                            Seleccionamos <strong>telas técnicas</strong> de bajo mantenimiento, estabilidad de color y protección UV, definiendo <strong>factor de apertura</strong> según orientación y altura. 
+                            Recomendamos caídas contenidas en estaciones de trabajo y ondas/cortinajes en áreas de representación. Manuales o <strong>motorizadas</strong> con control remoto para salas y lobbies.
                         </p>
                         
                         <div class="image-with-caption">
@@ -692,14 +688,7 @@
                             <p class="image-caption">Cortinas para oficina profesionales: ambiente corporativo con control de luz.</p>
                         </div>
                         
-                        <div class="blog-image-gallery">
-                            <div class="blog-gallery-item">
-                                <img src="../media/oficina/salon-de-conferencias.jpg" alt="Cortinas para sala de juntas - presentaciones profesionales" />
-                            </div>
-                            <div class="blog-gallery-item">
-                                <img src="../media/oficina/lobby-con-cortinas.jpg" alt="Cortinas para lobby corporativo - elegancia empresarial" />
-                            </div>
-                        </div>
+                        
                         
                         <h2>Videos de Nuestras Soluciones</h2>
                         <p>
@@ -710,7 +699,8 @@
                         <div class="video-showcase">
                             <div class="video-item">
                                 <video controls muted class="showcase-video">
-                                    <source src="../media/oficina/screen2.mp4" type="video/mp4">
+                                    <source src="../media/optimized/screen11-optimized.webm" type="video/webm">
+                                    <source src="../media/optimized/screen11-optimized.mp4" type="video/mp4">
                                     Tu navegador no soporta el elemento de video.
                                 </video>
                                 <h4>Cortinas Automatizadas para Sala de Juntas</h4>
@@ -719,7 +709,8 @@
                             
                             <div class="video-item">
                                 <video controls muted class="showcase-video">
-                                    <source src="../media/oficina/screen3.mp4" type="video/mp4">
+                                    <source src="../media/optimized/screen12-optimized.webm" type="video/webm">
+                                    <source src="../media/optimized/screen12-optimized.mp4" type="video/mp4">
                                     Tu navegador no soporta el elemento de video.
                                 </video>
                                 <h4>Sistema de Control Remoto</h4>
@@ -825,7 +816,7 @@
             </div>
             
             <div class="testimonials-cta">
-                <a href="../contact-funnel.html" class="testimonials-cta-btn">
+                <a href="../funnels/contacto.html" class="testimonials-cta-btn">
                     <span>Solicita tu consulta personalizada</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -874,27 +865,7 @@
                         
                         <div class="inspiration-gallery">
                             <div class="gallery-grid">
-                                <div class="gallery-card large">
-                                    <img src="../media/oficina/IMG_2931.jpg" alt="Cortinas para oficina profesionales - control de luz y privacidad corporativa" />
-                                    <div class="gallery-overlay">
-                                        <h4>Oficina Ejecutiva</h4>
-                                        <p>Control de luz y privacidad corporativa</p>
-                                    </div>
-                                </div>
-                                <div class="gallery-card">
-                                    <img src="../media/oficina/salon-de-conferencias.jpg" alt="Cortinas para sala de juntas - presentaciones profesionales" />
-                                    <div class="gallery-overlay">
-                                        <h4>Sala de Juntas</h4>
-                                        <p>Presentaciones profesionales y videoconferencias</p>
-                                    </div>
-                                </div>
-                                <div class="gallery-card">
-                                    <img src="../media/oficina/IMG_9645.jpg" alt="Cortinas para oficina modernas - elegancia corporativa" />
-                                    <div class="gallery-overlay">
-                                        <h4>Oficina Moderna</h4>
-                                        <p>Elegancia corporativa y funcionalidad</p>
-                                    </div>
-                                </div>
+
                                 <div class="gallery-card wide">
                                     <img src="../media/oficina/lobby-con-cortinas.jpg" alt="Cortinas para lobby corporativo - elegancia empresarial" />
                                     <div class="gallery-overlay">
@@ -925,29 +896,22 @@
                                 </div>
                                 <div class="gallery-card video-card">
                                     <video autoplay muted loop playsinline class="gallery-video">
-                                        <source src="../media/oficina/screen6.mp4" type="video/mp4">
+                                        <source src="../media/optimized/screen11-optimized.webm" type="video/webm">
+                                        <source src="../media/optimized/screen11-optimized.mp4" type="video/mp4">
                                     </video>
                                     <div class="gallery-overlay">
-                                        <h4>Automatización Corporativa</h4>
+                                        <h4>Cortinas Motorizadas</h4>
                                         <p>Sistemas inteligentes para empresas</p>
                                     </div>
                                 </div>
                                 <div class="gallery-card video-card">
                                     <video autoplay muted loop playsinline class="gallery-video">
-                                        <source src="../media/oficina/oficina-moderna-new copy.mp4" type="video/mp4">
+                                        <source src="../media/optimized/oficina-moderna-new copy-optimized.webm" type="video/webm">
+                                        <source src="../media/optimized/oficina-moderna-new copy-optimized.mp4" type="video/mp4">
                                     </video>
                                     <div class="gallery-overlay">
                                         <h4>Oficina Moderna Automatizada</h4>
                                         <p>Tecnología avanzada para oficinas</p>
-                                    </div>
-                                </div>
-                                <div class="gallery-card video-card">
-                                    <video autoplay muted loop playsinline class="gallery-video">
-                                        <source src="../media/oficina/screen7.mp4" type="video/mp4">
-                                    </video>
-                                    <div class="gallery-overlay">
-                                        <h4>Sistema de Control</h4>
-                                        <p>Control inteligente de cortinas</p>
                                     </div>
                                 </div>
                             </div>
@@ -982,7 +946,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="contact-funnel.html" class="sidebar-cta-btn">Leer Más</a>
+                        <a href="../funnels/contacto.html" class="sidebar-cta-btn">Leer Más</a>
                     </div>
                 </aside>
             </div>
@@ -994,12 +958,16 @@
         <div class="container">
             <h3 class="trust-title">Empresas que confían en nosotros</h3>
             <div class="trust-logos">
-                <img src="logos/telemetro.png" alt="Telemetro" />
-                <img src="logos/heineken.png" alt="Heineken" />
-                <img src="logos/banistmo.webp" alt="Banistmo" />
-                <img src="logos/davivienda.png" alt="Davivienda" />
-                <img src="logos/huawei.png" alt="Huawei" />
-                <img src="logos/adidas.jpg" alt="Adidas" />
+                <img src="../logos/medcom.png" alt="Medcom" />
+                <img src="../logos/adidas.jpg" alt="Adidas" />
+                <img src="../logos/geely.png" alt="Geely" />
+                <img src="../logos/tigo.png" alt="Tigo" />
+                <img src="../logos/banesco.png" alt="Banesco" />
+                <img src="../logos/heineken.png" alt="Heineken" />
+                <img src="../logos/davivienda.png" alt="Davivienda" />
+                <img src="../logos/Digicel_logo.svg.png" alt="Digicel" />
+                <img src="../logos/banistmo.webp" alt="Banistmo" />
+                <img src="../logos/huawei.png" alt="Huawei" />
             </div>
         </div>
     </section>
@@ -1042,69 +1010,125 @@
                             </div>
                         </div>
                         
-                        <h2>Preguntas Frecuentes sobre Cortinas para Oficina</h2>
-                        <p>
-                            Resolvemos las dudas más comunes sobre nuestras cortinas para oficina para ayudarte 
-                            a tomar la mejor decisión para tu empresa.
-                        </p>
-                        
+                        <h2>Preguntas frecuentes sobre cortinas para oficina</h2>
+                        <p>Guía rápida para elegir soluciones corporativas que mejoren productividad, privacidad y estética.</p>
                         <div class="faq-section">
-                            <div class="faq-item">
-                                <div class="faq-question" onclick="toggleFAQ(this)">
-                                    <h4>¿Cuánto cuestan las cortinas para oficina?</h4>
-                                    <i class="fas fa-chevron-down faq-icon"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    <p>Las cortinas para oficina varían entre $800-2,500 por ventana, dependiendo del tamaño, material y nivel de automatización. Incluye instalación profesional y garantía de 5 años.</p>
-                                </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Qué cortinas son mejores para oficinas con muchas pantallas?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
                             </div>
-                            
-                            <div class="faq-item">
-                                <div class="faq-question" onclick="toggleFAQ(this)">
-                                    <h4>¿Cómo mejoran la productividad las cortinas para oficina?</h4>
-                                    <i class="fas fa-chevron-down faq-icon"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    <p>Nuestras cortinas para oficina optimizan la iluminación para presentaciones, videoconferencias y trabajo en equipo. Control preciso de luz que reduce la fatiga visual y mejora la concentración.</p>
-                                </div>
+                            <div class="faq-answer">
+                              <p>Las <strong>roller screen</strong> con factor de apertura entre 3% y 5% reducen deslumbramientos y reflejos manteniendo luz natural y visión exterior. 
+                              Ajustamos el tejido según orientación y altura para optimizar legibilidad y confort visual en monitores.</p>
+                              <p>En salas de presentación, combina screen con capa <strong>black out</strong> para bloquear luz cuando sea necesario. La consistencia cromática con la marca refuerza la identidad corporativa.</p>
                             </div>
-                            
-                            <div class="faq-item">
-                                <div class="faq-question" onclick="toggleFAQ(this)">
-                                    <h4>¿Cuánto tiempo toma la instalación en empresas?</h4>
-                                    <i class="fas fa-chevron-down faq-icon"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    <p>La instalación en empresas toma 3-5 horas por sala, dependiendo del tamaño y complejidad. Trabajamos fuera del horario laboral para minimizar interrupciones.</p>
-                                </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Cómo garantizar privacidad en salas de juntas?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
                             </div>
-                            
-                            <div class="faq-item">
-                                <div class="faq-question" onclick="toggleFAQ(this)">
-                                    <h4>¿Ofrecen mantenimiento corporativo?</h4>
-                                    <i class="fas fa-chevron-down faq-icon"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    <p>Sí, ofrecemos planes de mantenimiento corporativo que incluyen limpieza, ajustes y reparaciones. Disponibles en horarios flexibles para no interrumpir operaciones.</p>
-                                </div>
+                            <div class="faq-answer">
+                              <p>Usa una solución en <strong>capas</strong>: tela traslúcida densa para reuniones diurnas y <strong>black out</strong> total para sesiones sensibles o proyección. 
+                              El accionamiento <strong>motorizado</strong> con control remoto agiliza cambios entre modos sin interrumpir la sesión.</p>
+                              <p>En fachadas a calle, considera screen de menor apertura para vistas controladas. Coordina con recepción y open office para una estética uniforme.</p>
                             </div>
-                            
-                            <div class="faq-item">
-                                <div class="faq-question" onclick="toggleFAQ(this)">
-                                    <h4>¿Las cortinas son compatibles con sistemas de automatización?</h4>
-                                    <i class="fas fa-chevron-down faq-icon"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    <p>Absolutamente. Nuestras cortinas para oficina se integran con sistemas de automatización existentes, control remoto y programación automática para máxima eficiencia.</p>
-                                </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Manual o motorizado en ambientes corporativos?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
                             </div>
+                            <div class="faq-answer">
+                              <p>En <strong>salas de juntas</strong>, lobbies y oficinas ejecutivas, la <strong>motorización</strong> suma eficiencia, orden visual y menor desgaste de componentes. 
+                              En estaciones de trabajo, el sistema <strong>manual</strong> funciona bien con mecanismos de calidad y guías discretas.</p>
+                              <p>El control remoto permite escenas predefinidas (presentación, recepción, limpieza) y mejora la experiencia del usuario sin alterar la estética.</p>
+                            </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Qué colores y telas proyectan una imagen profesional?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                              <p>Los <strong>neutros</strong> (grises, beiges, blancos rotos) crean un fondo elegante que no distrae y combina con mobiliario corporativo. 
+                              Telas técnicas con <strong>estabilidad de color</strong> y protección UV se mantienen impecables con el uso diario.</p>
+                              <p>En áreas de marca, incorpora tonos institucionales en detalles textiles o herrajes. Mantén la paleta sobria para conservar un lenguaje ejecutivo.</p>
+                            </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Cómo se limpian y mantienen?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                              <p>Implementa un plan de <strong>mantenimiento preventivo</strong>: aspirado suave mensual, limpieza puntual con <strong>jabón neutro</strong> y paño húmedo, y revisión semestral de mecanismos. 
+                              Evita químicos agresivos y frotado intenso para preservar recubrimientos y color.</p>
+                              <p>En <a href="../productos/cortinas-roller.html">roller</a> motorizadas, realiza ciclos de prueba trimestrales para validar límites y suavidad. Este cuidado prolonga la vida útil y mantiene la imagen profesional.</p>
+                            </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Cómo coordinar las cortinas entre recepción, open office y salas?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                              <p>Define una <strong>paleta base</strong> y varía el tipo de tejido según la función: screen uniforme en open office para coherencia visual, 
+                              capas traslúcida + black out en salas de juntas y un textil con mayor presencia en recepción para dar carácter.</p>
+                              <p>Si tu oficina incluye showroom o áreas residenciales, coordina con <a href="../productos/cortinas-para-sala.html">cortinas para sala</a> o <a href="../productos/cortinas-para-cuartos.html">cortinas para cuartos</a> para mantener un hilo estético común.</p>
+                            </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Cómo se llaman las cortinas de oficina que bloquean la luz?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                              <p>Son las <strong>cortinas opacas</strong> o <strong>black out</strong>. Bloquean el paso de luz, ideales para salas de reuniones, auditorios o oficinas con sol directo. 
+                              Eliminan reflejos en pantallas, mejoran la concentración y garantizan privacidad para sesiones confidenciales.</p>
+                              <p>Frecuentemente se combinan con una capa <strong>traslúcida</strong> para uso diurno, logrando flexibilidad total con un solo sistema en capas.</p>
+                            </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Qué color de cortina es mejor para la oficina?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                              <p>Si tu oficina recibe mucha luz natural, elige cortinas <strong>transparentes o de colores claros</strong> para mantener un ambiente luminoso y aireado. 
+                              Los tonos claros amplían visualmente y favorecen una atmósfera fresca y profesional.</p>
+                              <p>En espacios de mucha proyección o luz directa, combina tonos claros en la capa traslúcida con una capa <strong>black out</strong> neutra. Así mantienes luz y amplitud durante el día y control total cuando lo necesites.</p>
+                            </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Cómo elegir el factor de apertura correcto en roller screen?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                              <p>Para puestos con monitores, usa aperturas entre <strong>3%–5%</strong> para reducir reflejos manteniendo luz difusa. En fachadas muy soleadas, considera aperturas <strong>menores</strong> o telas más densas para mayor control solar.</p>
+                              <p>En zonas de circulación y recepciones, una apertura mayor preserva vistas y sensación de amplitud. Ajustamos por orientación (este/oeste) y altura del ventanal.</p>
+                            </div>
+                          </div>
+                          <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                              <h4>¿Qué mantenimiento corporativo recomiendan?</h4>
+                              <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                              <p>Establece rutinas trimestrales de <strong>limpieza suave</strong> y revisión de mecanismos, y una inspección semestral para calibraciones, topes y fijaciones. 
+                              Evita productos agresivos y prioriza <strong>jabón neutro</strong> en limpiezas puntuales.</p>
+                              <p>En motorizadas, un <strong>ciclo de prueba</strong> periódico asegura límites y suavidad de movimiento. Este plan preserva imagen corporativa y alarga la vida útil del sistema.</p>
+                            </div>
+                          </div>
                         </div>
                         
                         <h2>Conclusión</h2>
                         <p>
                             Las cortinas para oficina son esenciales para crear un ambiente profesional y productivo. 
                             Con más de 20 años de experiencia en Panamá, <strong>Edecoration S.A.</strong> 
-                            te ofrece las mejores soluciones corporativas con instalación profesional y garantía de 5 años. 
+                            te ofrece las mejores soluciones corporativas con instalación profesional y Garantía de 12 meses. 
                             Optimiza tu espacio de trabajo con elegancia y funcionalidad. Explora nuestros <a href="../index.html#servicios">servicios profesionales</a> 
                             y descubre cómo podemos hacer realidad tu proyecto de <em>cortinas para oficina</em>.
                         </p>
@@ -1114,13 +1138,13 @@
                                 <h3>¿Listo para optimizar tu oficina?</h3>
                                 <p>Nuestros expertos están listos para asesorarte y crear una propuesta personalizada para tu empresa.</p>
                                 <div class="final-cta-buttons">
-                                    <a href="../contact-funnel.html" class="final-cta-primary">
-                                        <span>Consulta Gratuita</span>
+                                    <a href="../funnels/contacto.html" class="final-cta-primary">
+                                        <span>Solicita tu Consulta Inicial</span>
                                         <i class="fas fa-arrow-right"></i>
                                     </a>
-                                    <a href="../index.html#galeria" class="final-cta-secondary">
-                                        <span>Ver Proyectos</span>
-                                        <i class="fas fa-images"></i>
+                                    <a href="https://wa.me/5073900869?text=Hola%2C%20me%20gustar%C3%ADa%20asesor%C3%ADa%20para%20mi%20proyecto" class="final-cta-secondary" target="_blank" rel="noopener">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>WhatsApp 390-0869</span>
                                     </a>
                                 </div>
                                 <div class="final-cta-guarantee">
@@ -1143,7 +1167,7 @@
                         <div class="sticky-cta-benefits">
                             <div class="sticky-benefit">
                                 <i class="fas fa-gift"></i>
-                                <span>Consulta gratuita</span>
+                                <span>Solicita tu Consulta Inicial</span>
                             </div>
                             <div class="sticky-benefit">
                                 <i class="fas fa-home"></i>
@@ -1156,11 +1180,11 @@
                         </div>
                         
                         <div class="sticky-cta-buttons">
-                            <a href="../contact-funnel.html" class="sticky-cta-primary">
+                            <a href="../funnels/contacto.html" class="sticky-cta-primary">
                                 <i class="fas fa-calendar-check"></i>
-                                <span>Agenda tu Consulta</span>
+                                <span>Solicita tu Consulta Inicial</span>
                             </a>
-                            <a href="https://wa.me/50761234567" class="sticky-cta-whatsapp" target="_blank">
+                            <a href="https://wa.me/5073900869?text=Hola%2C%20me%20gustar%C3%ADa%20asesor%C3%ADa%20para%20mi%20proyecto" class="sticky-cta-whatsapp" target="_blank" rel="noopener">
                                 <i class="fab fa-whatsapp"></i>
                                 <span>WhatsApp</span>
                             </a>
@@ -1175,7 +1199,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span>4.8/5 • 2,000+ clientes</span>
+                                <span>4.8/5 • 1,000+ clientes</span>
                             </div>
                         </div>
                     </div>
@@ -1248,11 +1272,6 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p>&copy; 2024 Edecoration S.A. Todos los derechos reservados.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Política de Privacidad</a>
-                        <a href="#">Términos de Servicio</a>
-                        <a href="#">Política de Cookies</a>
-                    </div>
                 </div>
             </div>
         </div>

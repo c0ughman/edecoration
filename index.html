@@ -26,10 +26,10 @@
                 <nav class="hero-nav">
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#productos">Productos</a></li>
                         <li><a href="#galeria">Galería</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="funnels/contacto.html">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,20 +37,21 @@
                 <h1 class="hero-title">
                     Transformamos espacios con 
                     <span class="wine-text">elegancia</span> y <br>
-                    <span class="accent-text">distinción.</span>
+                    <span class="accent-text">estilo.</span>
                 </h1>
                 <p class="hero-subtitle">
                     Más que cortinas y persianas, creamos experiencias únicas. Con 20 años de trayectoria, 
                     somos líderes en Panamá ofreciendo un servicio exclusivo y personalizado que va más allá de la venta.
                 </p>
                 <div class="hero-cta">
-                    <button class="cta-primary">Consulta Gratuita</button>
-                    <button class="cta-secondary">Ver Galería</button>
+                    <button class="cta-primary" onclick="window.location.href='funnels/contacto.html'">Solicita tu Consulta Inicial</button>
+                    <button class="cta-secondary" onclick="window.location.href='#galeria'">Ver Galería</button>
                 </div>
             </div>
             <div class="hero-video">
-                <video autoplay muted loop playsinline>
-                    <source src="media/hero.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline preload="none" data-lazy>
+                    <source data-src="media/optimized/hero-optimized.webm" type="video/webm">
+                    <source data-src="media/optimized/hero-optimized.mp4" type="video/mp4">
                 </video>
                 <div class="hero-overlay"></div>
             </div>
@@ -194,8 +195,8 @@
                         <img src="landing-media/sala-pequeña.jpeg" alt="Sala pequeña" />
                     </div>
                     <div class="gallery-item" data-tag="cuarto">
-                        <video autoplay muted loop playsinline>
-                            <source src="landing-media/cuarto-motorizado-tambien-new.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="none" data-lazy>
+                            <source data-src="landing-media/cuarto-motorizado-tambien-new.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="gallery-item" data-tag="oficina">
@@ -204,13 +205,13 @@
                 </div>
                 <div class="gallery-row">
                     <div class="gallery-item" data-tag="oficina">
-                        <video autoplay muted loop playsinline>
-                            <source src="landing-media/oficina-moderna-new.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="none" data-lazy>
+                            <source data-src="landing-media/oficina-moderna-new.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="gallery-item" data-tag="sala">
-                        <video autoplay muted loop playsinline>
-                            <source src="landing-media/IMG_7052.MOV" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="none" data-lazy>
+                            <source data-src="landing-media/IMG_7052.MOV" type="video/mp4">
                         </video>
                     </div>
                     <div class="gallery-item" data-tag="sala">
@@ -225,8 +226,9 @@
                         <img src="landing-media/lobby-con-cortinas.jpg" alt="Lobby con cortinas" />
                     </div>
                     <div class="gallery-item" data-tag="sala">
-                        <video autoplay muted loop playsinline>
-                            <source src="landing-media/sala-motorizada-new.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="none" data-lazy>
+                            <source data-src="landing-media/optimized/sala-motorizada-new-optimized.webm" type="video/webm">
+                            <source data-src="landing-media/optimized/sala-motorizada-new-optimized.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -235,8 +237,8 @@
                         <img src="landing-media/recamara-master.jpeg" alt="Recámara master" />
                     </div>
                     <div class="gallery-item" data-tag="cuarto">
-                        <video autoplay muted loop playsinline>
-                            <source src="landing-media/sala-vista-al-mar-new.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="none" data-lazy>
+                            <source data-src="landing-media/sala-vista-al-mar-new.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="gallery-item" data-tag="oficina">
@@ -251,8 +253,8 @@
                         <img src="landing-media/oficina-consultorio-new.JPG" alt="Oficina consultorio nuevo" />
                     </div>
                     <div class="gallery-item" data-tag="oficina">
-                        <video autoplay muted loop playsinline>
-                            <source src="landing-media/oficina-laboral-new.mp4" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="none" data-lazy>
+                            <source data-src="landing-media/oficina-laboral-new.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -261,8 +263,9 @@
                         <img src="landing-media/sala-amplia-ventanal.jpeg" alt="Sala amplia con ventanal" />
                     </div>
                     <div class="gallery-item" data-tag="sala">
-                        <video autoplay muted loop playsinline>
-                            <source src="landing-media/IMG_5310.MOV" type="video/mp4">
+                        <video autoplay muted loop playsinline preload="none" data-lazy>
+                            <source data-src="landing-media/optimized/IMG_5310-optimized.webm" type="video/webm">
+                            <source data-src="landing-media/optimized/IMG_5310-optimized.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="gallery-item" data-tag="sala">
@@ -288,38 +291,36 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>¿Listo para transformar tu espacio?</h2>
-                <p class="cta-subtitle">Déjanos crear una propuesta personalizada para ti. La consulta inicial es completamente gratuita.</p>
+                <h2>Descubre el Arte de la Elegancia</h2>
+                <p class="cta-subtitle">En Edecoration, transformamos tus espacios con un toque de distinción y sofisticación. Nuestros expertos te guiarán en cada paso del proceso, desde la selección hasta la instalación, para crear el ambiente perfecto que has soñado. La consulta inicial es completamente gratuita.</p>
                 
                 <div class="cta-benefits">
                     <div class="benefit-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Consulta gratuita y sin compromiso</span>
+                        <span>Solicita tu Consulta Inicial y sin compromiso</span>
                     </div>
                     <div class="benefit-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Medición profesional incluida</span>
+                        <span>Medición profesional</span>
                     </div>
                     <div class="benefit-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Instalación garantizada</span>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Financiamiento disponible</span>
+                        <span>Instalación incluida</span>
                     </div>
                 </div>
                 
                 <div class="cta-actions">
-                    <button class="cta-primary">Consulta Gratuita</button>
-                    <button class="cta-secondary">Ver Galería</button>
+                    <button class="cta-primary" onclick="window.location.href='funnels/contacto.html'">Solicita tu Consulta Inicial</button>
+                    <button class="cta-secondary" onclick="window.location.href='https://wa.me/5073900869?text=Hola%2C%20me%20gustar%C3%ADa%20asesor%C3%ADa%20para%20mi%20proyecto'">
+                        <i class="fab fa-whatsapp"></i> WhatsApp 390-0869
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Bento Section -->
-    <section class="products-bento">
+    <section id="productos" class="products-bento">
         <div class="container">
             <h2 class="bento-title">Nuestros Productos</h2>
             <div class="bento-grid">
@@ -366,7 +367,7 @@
                         <h3>Papel Ahumado y Esmerilado</h3>
                         <p>Soluciones profesionales para privacidad y control solar con múltiples opacidades disponibles.</p>
                         <div class="product-cta">
-                            <a href="#contact">Ver Papel ></a>
+                            <a href="productos/papel-ahumado.html">Ver Papel ></a>
                         </div>
                     </div>
                 </div>
@@ -416,7 +417,7 @@
                 <div class="about-text">
                     <h2>Más que una empresa, somos <span class="wine-text">tu socio de confianza</span></h2>
                     <p>
-                        Desde 2004, Edecoration S.A. ha transformado miles de espacios en toda Panamá. 
+                        Desde 2004, Edecoration S.A. ha transformado múltiples espacios en toda Panamá. 
                         Nuestra filosofía va más allá de la simple venta e instalación: creamos relaciones 
                         duraderas basadas en la confianza, la excelencia y el compromiso genuino con cada cliente.
                     </p>
@@ -427,7 +428,7 @@
                     </p>
                     <div class="stats">
                         <div class="stat">
-                            <h3>2,000+</h3>
+                            <h3>1,000+</h3>
                             <p>Proyectos Completados</p>
                         </div>
                         <div class="stat">
@@ -452,30 +453,35 @@
         <div class="container">
             <div class="cta-content">
                 <h2>¿Listo para transformar tu espacio?</h2>
-                <p class="cta-subtitle">Déjanos crear una propuesta personalizada para ti. La consulta inicial es completamente gratuita y sin compromiso. Nuestro equipo de expertos te acompañará en cada paso del proceso.</p>
+                <p class="cta-subtitle">Déjanos crear una propuesta personalizada para ti. Con más de 1,000 proyectos exitosos y dos décadas de experiencia, entendemos que cada espacio es único y merece atención especial. La consulta inicial es completamente gratuita y sin compromiso. Descubre por qué nuestros clientes nos recomiendan:</p>
+                <ul class="cta-value-points">
+                    <li><i class="fas fa-gem"></i> Soluciones premium con las mejores marcas del mercado</li>
+                    <li><i class="fas fa-shield-alt"></i> Garantía en todos nuestros productos</li>
+                    <li><i class="fas fa-tools"></i> Servicio técnico especializado post-venta</li>
+                    <li><i class="fas fa-clock"></i> Respuesta rápida en minutos</li>
+                </ul>
                 
                 <div class="cta-benefits">
                     <div class="benefit-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Consulta gratuita y sin compromiso</span>
+                        <span>Solicita tu Consulta Inicial y sin compromiso</span>
                     </div>
                     <div class="benefit-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Medición profesional incluida</span>
+                        <span>Medición profesional</span>
                     </div>
                     <div class="benefit-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Instalación garantizada</span>
+                        <span>Instalación incluida</span>
                     </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Financiamiento disponible</span>
-                    </div>
+
                 </div>
                 
                 <div class="cta-actions">
-                    <button class="cta-primary">Consulta Gratuita</button>
-                    <button class="cta-secondary">Ver Galería</button>
+                    <button class="cta-primary" onclick="window.location.href='funnels/contacto.html'">Solicita tu Consulta Inicial</button>
+                    <button class="cta-secondary" onclick="window.location.href='https://wa.me/5073900869?text=Hola%2C%20me%20gustar%C3%ADa%20asesor%C3%ADa%20para%20mi%20proyecto'">
+                        <i class="fab fa-whatsapp"></i> WhatsApp 390-0869
+                    </button>
                 </div>
             </div>
         </div>
@@ -501,41 +507,46 @@
                 
                 <div class="footer-sections">
                     <div class="footer-section">
-                    <h4>Servicios</h4>
-                    <ul>
-                            <li><a href="#servicios">Cortinas de Lujo</a></li>
-                            <li><a href="#servicios">Persianas Inteligentes</a></li>
-                            <li><a href="#servicios">Consultoría Integral</a></li>
-                            <li><a href="#servicios">Mantenimiento</a></li>
-                            <li><a href="#servicios">Instalación Profesional</a></li>
+                        <h4>Productos</h4>
+                        <ul>
+                            <li><a href="productos/cortinas-roller.html">Cortinas Roller</a></li>
+                            <li><a href="productos/cortinas-black-out.html">Cortinas Black Out</a></li>
+                            <li><a href="productos/cortinas-para-sala.html">Cortinas para Sala</a></li>
+                            <li><a href="productos/cortinas-para-oficina.html">Cortinas para Oficina</a></li>
+                            <li><a href="productos/cortinas-para-cuartos.html">Cortinas para Cuartos</a></li>
+                            <li><a href="productos/cortinas-para-cocina.html">Cortinas para Cocina</a></li>
+                            <li><a href="productos/toldos-para-terrazas.html">Toldos para Terrazas</a></li>
+                            <li><a href="productos/cortinas-metalicas-enrrollables.html">Cortinas Metálicas</a></li>
+                            <li><a href="productos/vidrio-inteligente.html">Vidrio Inteligente</a></li>
+                            <li><a href="productos/papel-ahumado.html">Papel Ahumado</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-section">
-                        <h4>Empresa</h4>
+                        <h4>Navegación</h4>
                         <ul>
-                            <li><a href="#nosotros">Sobre Nosotros</a></li>
-                            <li><a href="#galeria">Nuestros Proyectos</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
-                            
-                            <li><a href="#testimonios">Testimonios</a></li>
-                    </ul>
-                </div>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#productos">Productos</a></li>
+                            <li><a href="#galeria">Galería</a></li>
+                            <li><a href="#nosotros">Nosotros</a></li>
+                            <li><a href="funnels/contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
                     
                     <div class="footer-section">
                     <h4>Contacto</h4>
                         <div class="contact-info">
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
-                                <span>+507 123-4567</span>
+                                <span>+507 6672-9051</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-whatsapp"></i>
-                                <span>+507 6123-4567</span>
+                                <span>+507 390-0869</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <span>info@edecoration.pa</span>
+                                <span>edecoracion@yahoo.com</span>
                             </div>
 
                         </div>
@@ -548,11 +559,6 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                 <p>&copy; 2024 Edecoration S.A. Todos los derechos reservados.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Política de Privacidad</a>
-                        <a href="#">Términos de Servicio</a>
-                        <a href="#">Política de Cookies</a>
-                    </div>
                 </div>
             </div>
         </div>
