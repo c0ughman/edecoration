@@ -903,11 +903,11 @@ h4 {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    transition: filter 0.6s ease, opacity 0.6s ease;
-    opacity: 1;
+    transition: filter 0.6s ease, opacity 0.6s ease, transform 0.3s ease;
+    opacity: 0.7;
     min-height: 80px;
     min-width: 120px;
-    filter: none;
+    filter: grayscale(100%);
 }
 
 .logo-item.colored {
@@ -918,6 +918,7 @@ h4 {
 .logo-item:hover {
     opacity: 1;
     transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
 .logo-item img {

@@ -165,22 +165,41 @@ function handleLogosColorReveal() {
     const windowHeight = window.innerHeight;
     const scrollProgress = (windowHeight - sectionRect.top) / windowHeight;
     
-    // Start revealing at 40% scroll, complete by 60% scroll
-    const startReveal = 0.40;
-    const endReveal = 0.60;
+    // Start revealing at 30% scroll, complete by 70% scroll
+    const startReveal = 0.30;
+    const endReveal = 0.70;
+    const revealDuration = 0.04; // Duration for each logo's reveal
     
     if (scrollProgress >= startReveal) {
-        const revealProgress = (scrollProgress - startReveal) / (endReveal - startReveal);
+        const overallProgress = (scrollProgress - startReveal) / (endReveal - startReveal);
         
         // Reveal each logo at different intervals in order
         logoItems.forEach((logo, index) => {
-            const individualStart = startReveal + (index * 0.02); // Each logo starts 2% later
+            const individualStart = index * revealDuration;
+            const individualProgress = (overallProgress - individualStart) / revealDuration;
             
-            if (scrollProgress >= individualStart) {
-                logo.classList.add('colored');
+            if (individualProgress > 0) {
+                const opacity = Math.min(1, individualProgress);
+                const grayscale = Math.max(0, 1 - individualProgress);
+                
+                logo.style.opacity = 0.7 + (0.3 * opacity);
+                logo.style.filter = `grayscale(${grayscale * 100}%)`;
+                
+                if (individualProgress >= 1) {
+                    logo.classList.add('colored');
+                }
             } else {
+                logo.style.opacity = '0.7';
+                logo.style.filter = 'grayscale(100%)';
                 logo.classList.remove('colored');
             }
+        });
+    } else {
+        // Reset all logos when scrolling back up
+        logoItems.forEach(logo => {
+            logo.style.opacity = '0.7';
+            logo.style.filter = 'grayscale(100%)';
+            logo.classList.remove('colored');
         });
     }
 }
