@@ -1,5 +1,32 @@
 /* outer.css: bundle of root blog.css + product-template.css */
 
+/* Critical mobile viewport fixes */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Prevent any element from causing horizontal scroll */
+.container,
+.nav-container,
+.hero-content-overlay,
+.article-header,
+.footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 /* Content links styling */
 a {
     color: var(--wine-red);
@@ -23,6 +50,9 @@ a:hover {
     z-index: 1000;
     padding: 1rem 0;
     transition: var(--transition);
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .nav-container {
@@ -32,6 +62,9 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .nav-brand {
@@ -713,6 +746,45 @@ a:hover {
     
     .form-group {
         flex-direction: column;
+    }
+    
+    /* Additional mobile layout fixes */
+    .container {
+        padding: 0 1rem;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Fix long text overflow */
+    .hero-main-title,
+    .article-title,
+    .section-title {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Better button spacing on mobile */
+    .hero-cta-buttons,
+    .final-cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .hero-cta-primary,
+    .hero-cta-secondary,
+    .final-cta-primary,
+    .final-cta-secondary {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+        padding: 1rem 1.5rem;
     }
 }
 
@@ -3133,6 +3205,8 @@ a:hover {
 .article-hero-image {
 	height: 400px;
 	position: relative;
+	max-width: 100%;
+	overflow: hidden;
 }
 
 .article-hero-image img {
@@ -3140,6 +3214,7 @@ a:hover {
 	height: 100% !important; /* override fixed heights */
 	object-fit: cover;
 	display: block; /* remove baseline gap that can look like a border */
+	max-width: 100%;
 }
 
 .hero-video-container video,
@@ -3149,6 +3224,7 @@ a:hover {
 	object-fit: cover;
 	background: transparent !important; /* avoid black preload background */
 	display: block;
+	max-width: 100%;
 }
 
 /* Also remove inline-image gaps in common gallery/figure contexts */
@@ -3157,15 +3233,107 @@ a:hover {
 .featured-image img,
 .card-image img {
 	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Fix all images to be responsive */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Specific gallery image fixes */
+.blog-image-gallery {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	margin: 2rem 0;
+}
+
+.blog-gallery-item img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px;
+	max-width: 100%;
 }
 
 @media (max-width: 768px) {
-	.article-hero-image { height: 320px; }
+	.article-hero-image { 
+		height: 280px;
+		margin: 0 auto;
+	}
+	
+	.blog-image-gallery {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	
+	.blog-gallery-item img {
+		height: 250px;
+	}
+	
+	/* Ensure all images are properly constrained on mobile */
+	.article-hero-image img,
+	.image-with-caption img,
+	.featured-image img,
+	.card-image img,
+	.gallery-card img {
+		max-width: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+@media (max-width: 480px) {
+	.article-hero-image { 
+		height: 220px;
+	}
+	
+	.blog-gallery-item img {
+		height: 200px;
+	}
 }
 
 /* Replaced hero-cta with final-cta variants (renamed) */
 
+/* Footer mobile fixes */
 @media (max-width: 768px) {
+	.footer-main {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		text-align: center;
+	}
+	
+	.footer-sections {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		text-align: center;
+	}
+	
+	.footer-section {
+		text-align: center;
+	}
+	
+	.footer-bottom-content {
+		flex-direction: column;
+		gap: 1rem;
+		text-align: center;
+	}
+	
+	.footer-bottom-links {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	
+	.contact-info {
+		align-items: center;
+	}
+	
+	.footer-social {
+		justify-content: center;
+	}
 
 	.hero-cta-primary,
 	.hero-cta-secondary {
@@ -3174,6 +3342,37 @@ a:hover {
 		width: 100%;
 		max-width: 280px;
 		align-self: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer {
+		padding: 1.5rem 0 1rem;
+	}
+	
+	.footer-main {
+		gap: 1rem;
+	}
+	
+	.footer-sections {
+		gap: 1.5rem;
+	}
+	
+	.footer-section h4 {
+		font-size: 0.9rem;
+		margin-bottom: 0.75rem;
+	}
+	
+	.footer-section a {
+		font-size: 0.8rem;
+	}
+	
+	.footer-bottom-content {
+		font-size: 0.8rem;
+	}
+	
+	.contact-item {
+		font-size: 0.8rem;
 	}
 }
 
