@@ -315,21 +315,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // RESPONSIVE UTILITIES
     // ========================================
     
-    // Update CSS custom properties based on viewport
+    // Update CSS custom properties based on viewport (optimized to prevent forced reflows)
+    let viewportHeight = window.innerHeight;
+    
     function updateViewportProperties() {
-        const vh = window.innerHeight * 0.01;
+        const vh = viewportHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
     
-    updateViewportProperties();
-    window.addEventListener('resize', updateViewportProperties);
+    function cacheViewportHeight() {
+        viewportHeight = window.innerHeight;
+        updateViewportProperties();
+    }
+    
+    // Use cached height and throttle updates
+    let resizeTimeout;
+    function throttledResize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(cacheViewportHeight, 100);
+    }
+    
+    cacheViewportHeight();
+    window.addEventListener('resize', throttledResize);
     
     // Detect orientation changes
     window.addEventListener('orientationchange', function() {
-        setTimeout(updateViewportProperties, 100);
+        setTimeout(cacheViewportHeight, 100);
         
         // Close mobile menu on orientation change
-        if (mobileNav.classList.contains('active')) {
+        if (mobileNav && mobileNav.classList.contains('active')) {
             closeMobileMenu();
         }
     });

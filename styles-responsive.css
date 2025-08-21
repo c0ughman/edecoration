@@ -561,12 +561,34 @@ body {
     width: auto;
     height: auto;
     object-fit: contain;
-    opacity: 1;
-    filter: none;
+    opacity: 1 !important;
+    filter: none !important;
 }
 
 .logos-grid-mobile .more-logos {
     background: var(--light-gray);
+}
+
+/* Ensure all client logo images are 100% visible */
+.client-logos img,
+.logos-grid-mobile img,
+.logo-item img {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+}
+
+/* Override any lazy loading opacity states */
+.client-logos .lazy-loading,
+.logos-grid-mobile .lazy-loading,
+.logo-item .lazy-loading {
+    opacity: 1 !important;
+}
+
+.client-logos .lazy-loaded,
+.logos-grid-mobile .lazy-loaded,
+.logo-item .lazy-loaded {
+    opacity: 1 !important;
 }
 
 .logos-grid-mobile .more-logos-circle {
@@ -791,6 +813,55 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Override any lazy loading opacity states for gallery images */
+.gallery-item .lazy-loading,
+.gallery-item .lazy-loaded,
+.gallery img.lazy-loading,
+.gallery img.lazy-loaded,
+.gallery-item img[data-src],
+.gallery img[data-src],
+.gallery-item img[src],
+.gallery img[src] {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+    brightness: 1 !important;
+    contrast: 1 !important;
+}
+
+/* Ensure all gallery section images are fully visible */
+.gallery *,
+.gallery-item *,
+.gallery img,
+.gallery-item img,
+section[class*="gallery"] img {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Override any inherited opacity from parent elements */
+.gallery,
+.gallery-item,
+section[class*="gallery"] {
+    opacity: 1 !important;
+}
+
+/* Force image visibility - override any JavaScript-applied styles */
+img[style*="opacity"],
+.gallery img[style*="opacity"],
+.gallery-item img[style*="opacity"] {
+    opacity: 1 !important;
+}
+
+/* Remove any shimmer or loading backgrounds */
+.gallery img,
+.gallery-item img {
+    background: none !important;
+    animation: none !important;
 }
 
 

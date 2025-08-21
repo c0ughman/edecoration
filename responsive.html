@@ -17,6 +17,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="media/optimized/logo-small.webp" as="image" type="image/webp">
+    <link rel="preload" href="media/optimized/hero-optimized.webm" as="video" type="video/webm">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://edecorationsa.com/">
@@ -24,9 +28,45 @@
     <meta property="og:description" content="Transformamos espacios con elegancia desde 2004. Más que cortinas y persianas, creamos experiencias únicas con servicio personalizado.">
     <meta property="og:image" content="media/logo.png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" href="styles-responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles-responsive.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="styles-responsive.css">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+    :root{--primary-white:#ffffff;--text-black:#000000;--wine-red:#5D0F25;--accent-yellow:#F4E4BC;--light-gray:#fdfaf5;--medium-gray:#6c757d;--dark-gray:#2a2a2a;--font-display:'Playfair Display',serif;--font-body:'Inter',sans-serif;--text-xs:clamp(0.75rem,2vw,0.875rem);--text-sm:clamp(0.875rem,2.5vw,1rem);--text-base:clamp(1rem,3vw,1.125rem);--text-lg:clamp(1.125rem,3.5vw,1.25rem);--text-xl:clamp(1.25rem,4vw,1.5rem);--text-2xl:clamp(1.5rem,5vw,2rem);--text-3xl:clamp(2rem,6vw,2.5rem);--text-4xl:clamp(2.5rem,7vw,3.5rem);--text-5xl:clamp(3rem,8vw,4.5rem);--space-xs:clamp(0.5rem,2vw,1rem);--space-sm:clamp(1rem,3vw,1.5rem);--space-md:clamp(1.5rem,4vw,2rem);--space-lg:clamp(2rem,5vw,3rem);--space-xl:clamp(3rem,6vw,4rem);--space-2xl:clamp(4rem,8vw,6rem);--container-padding:clamp(1rem,4vw,2rem);--border-radius:8px;--transition:all 0.3s ease}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;color:var(--text-black);background:var(--primary-white)}
+    video{background-color:#e5e5e5}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--container-padding)}
+    .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden}
+    .hero-header{position:fixed;top:0;left:0;right:0;z-index:10;padding:var(--space-sm) 0;background:rgba(255,255,255,0.95);backdrop-filter:blur(7px)}
+    .header-container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 var(--container-padding)}
+    .hero-logo{display:flex;align-items:center;gap:0.75rem}
+    .logo-image{width:32px;height:32px;object-fit:contain;background:transparent!important}
+    .hero-logo .brand-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:300;color:var(--text-black);letter-spacing:-0.01em}
+    .desktop-nav{display:none}
+    .mobile-menu-toggle{display:flex;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
+    .mobile-menu-toggle span{width:24px;height:2px;background:var(--text-black);transition:var(--transition)}
+    .hero-content{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--space-lg) + 60px) var(--container-padding) var(--space-lg);position:relative;z-index:5}
+    .hero-text{max-width:600px}
+    .hero-title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:400;line-height:1.2;margin-bottom:var(--space-md);color:var(--text-black)}
+    .wine-text{color:var(--wine-red)}
+    .accent-text{color:var(--wine-red)}
+    .hero-subtitle{font-size:var(--text-base);line-height:1.6;margin-bottom:var(--space-lg);color:var(--medium-gray)}
+    .hero-cta{display:flex;flex-direction:column;gap:var(--space-sm);align-items:center}
+    .cta-primary,.cta-secondary{padding:1.2rem 1.5rem;border-radius:100px;font-weight:400;text-decoration:none;transition:var(--transition);cursor:pointer;font-size:var(--text-base);width:100%;max-width:300px}
+    .cta-primary{background:var(--wine-red);color:var(--primary-white);border:none}
+    .cta-secondary{background:transparent;color:var(--text-black);border:2px solid var(--text-black)}
+    .hero-background{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+    .hero-video{width:100%;height:100%;object-fit:cover;background-color:#e5e5e5}
+    .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(45deg,rgba(255,255,255,0.3) 0%,rgba(93,15,37,0.1) 100%)}
+    @media (min-width:768px){.desktop-nav{display:block}.mobile-menu-toggle{display:none}.desktop-nav ul{display:flex;list-style:none;gap:var(--space-md);margin:0;padding:0}.desktop-nav a{text-decoration:none;color:var(--text-black);font-weight:400;font-size:var(--text-sm);transition:var(--transition);padding:var(--space-xs) var(--space-sm);border-radius:var(--border-radius)}.desktop-nav a:hover{color:var(--wine-red);background:rgba(93,15,37,0.1)}.hero-cta{flex-direction:row;justify-content:center}.cta-primary,.cta-secondary{width:auto;min-width:200px}}
+    </style>
+    
     <script src="redirect.js" defer></script>
 </head>
 <body>
@@ -36,7 +76,7 @@
         <header class="hero-header">
             <div class="header-container">
                 <div class="hero-logo">
-                    <img data-src="media/optimized/logo-medium.webp" alt="Edecoration S.A. - Logo de empresa líder en cortinas y persianas de lujo en Panamá" class="logo-image no-lazy" />
+                    <img data-src="media/optimized/logo-small.webp" alt="Edecoration S.A. - Logo de empresa líder en cortinas y persianas de lujo en Panamá" class="logo-image no-lazy" width="32" height="32" />
                     <div class="brand-name">Edecoration S.A.</div>
                 </div>
                 
@@ -135,13 +175,25 @@
             <div class="logos-grid-mobile">
                 <!-- Row 1 -->
                 <div class="logo-item">
-                    <img data-src="logos/telemetro.png" alt="Telemetro - Canal de televisión panameño cliente de Edecoration cortinas" width="120" height="60" />
+                    <img data-src="logos/optimized/telemetro-small.webp" 
+                         data-srcset="logos/optimized/telemetro-small.webp 80w, logos/optimized/telemetro-medium.webp 120w"
+                         sizes="80px"
+                         alt="Telemetro - Canal de televisión panameño cliente de Edecoration cortinas" 
+                         width="80" height="40" />
                 </div>
                 <div class="logo-item">
-                    <img data-src="logos/davivienda.png" alt="Davivienda - Banco cliente de Edecoration persianas corporativas" width="120" height="60" />
+                    <img data-src="logos/optimized/davivienda-small.webp"
+                         data-srcset="logos/optimized/davivienda-small.webp 80w, logos/optimized/davivienda-medium.webp 120w"
+                         sizes="80px"
+                         alt="Davivienda - Banco cliente de Edecoration persianas corporativas" 
+                         width="80" height="40" />
                 </div>
                 <div class="logo-item">
-                    <img data-src="logos/heineken.png" alt="Heineken - Cliente corporativo Edecoration soluciones comerciales" width="120" height="60" />
+                    <img data-src="logos/optimized/heineken-small.webp"
+                         data-srcset="logos/optimized/heineken-small.webp 80w, logos/optimized/heineken-medium.webp 120w"
+                         sizes="80px"
+                         alt="Heineken - Cliente corporativo Edecoration soluciones comerciales" 
+                         width="80" height="40" />
                 </div>
                 <!-- Row 2 -->
                 <div class="logo-item">
@@ -584,7 +636,13 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img data-src="media/optimized/logo-small.webp" alt="Edecoration S.A. - Empresa líder en cortinas y persianas Panamá" class="footer-logo-img" loading="lazy" />
+                        <img data-src="media/optimized/logo-small.webp" 
+                             data-srcset="media/optimized/logo-small.webp 40w, media/optimized/logo-medium.webp 80w"
+                             sizes="40px"
+                             alt="Edecoration S.A. - Empresa líder en cortinas y persianas Panamá" 
+                             class="footer-logo-img" 
+                             width="40" height="20" 
+                             loading="lazy" />
                         <h3>Edecoration S.A.</h3>
                     </div>
                     <p class="footer-description">Transformando espacios con elegancia desde 2004. Más que cortinas y persianas, creamos experiencias únicas que elevan tu ambiente.</p>
