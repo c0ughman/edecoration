@@ -48,13 +48,6 @@ video {
     background-color: #e5e5e5;
 }
 
-/* Global logo visibility fix */
-.logo-item,
-.logo-item img {
-    opacity: 1 !important;
-    filter: none !important;
-}
-
 /* ========================================
    RESET & BASE STYLES
    ======================================== */
@@ -436,6 +429,42 @@ body {
     background: var(--primary-white);
 }
 
+/* Ensure logos display with full opacity and color */
+.client-logos .logo-item,
+.client-logos .logo-item img {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Additional logo styling to ensure proper display */
+.logos-grid .logo-item {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.logos-grid .logo-item img {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+}
+
+/* Override any potential inherited styles */
+.client-logos img,
+.logos-grid img {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+}
+
+/* Ensure logos maintain full opacity in all states */
+.client-logos .logo-item:hover,
+.client-logos .logo-item:hover img,
+.logos-grid .logo-item:hover,
+.logos-grid .logo-item:hover img {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
 .client-title {
     font-family: var(--font-display);
     font-size: var(--text-2xl);
@@ -458,30 +487,14 @@ body {
     justify-content: center;
     padding: 1rem;
     border-radius: var(--border-radius);
-    filter: grayscale(0%);
-    opacity: 1;
 }
 
 .logo-item img {
     max-width: 100px;
     max-height: 50px;
     object-fit: contain;
-    filter: none !important;
-    opacity: 1 !important;
-}
-
-.logo-item:hover img {
-    filter: none !important;
-    opacity: 1 !important;
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
-.logo-item:hover {
-    opacity: 1 !important;
-    filter: grayscale(0%) !important;
-    transform: scale(1.02);
-    transition: all 0.3s ease;
+    opacity: 1;
+    filter: none;
 }
 
 .more-logos {
@@ -1252,19 +1265,9 @@ body {
         gap: 3px;
     }
     
-    /* Logos - better spacing and ensure full visibility */
+    /* Logos - better spacing */
     .logos-grid {
         grid-template-columns: repeat(6, 1fr);
-    }
-    
-    .logo-item {
-        opacity: 1 !important;
-        filter: grayscale(0%) !important;
-    }
-    
-    .logo-item img {
-        filter: none !important;
-        opacity: 1 !important;
     }
     
     /* Hero content max width */
