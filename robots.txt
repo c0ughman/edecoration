@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://edecorationsa.com/sitemap.xml
+
+# Disallow temporary or admin areas if any exist
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /.git/
+
+# Allow all crawlers to access media and assets
+Allow: /media/
+Allow: /landing-media/
+Allow: /video/
+Allow: /logos/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.webp
+Allow: *.svg
+Allow: *.mp4
+Allow: *.webm
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1

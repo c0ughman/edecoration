@@ -65,14 +65,15 @@ class ImageOptimizer {
         const isLogo = img.closest('.logo-item') || 
                       img.classList.contains('logo-image') || 
                       img.classList.contains('footer-logo-img') ||
-                      img.classList.contains('no-lazy');
+                      img.classList.contains('no-lazy') ||
+                      img.closest('.hero-logo');
         
         // Create placeholder only for gallery/content images, not logos
         if (!isLogo && !img.style.backgroundColor) {
-            img.style.backgroundColor = '#f0f0f0';
+            img.style.backgroundColor = '#e5e5e5';
             img.style.backgroundImage = `
-                linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%),
-                linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%)
+                linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%),
+                linear-gradient(90deg, #e5e5e5 0%, #d0d0d0 50%, #e5e5e5 100%)
             `;
             img.style.backgroundSize = '200% 100%, 100% 100%';
             img.style.animation = 'shimmer 1.5s infinite';
@@ -267,7 +268,9 @@ class ImageOptimizer {
                 
                 /* Logo-specific styles */
                 .logo-item img,
-                .footer-logo-img {
+                .footer-logo-img,
+                .hero-logo img,
+                .logo-image {
                     background: transparent !important;
                 }
                 

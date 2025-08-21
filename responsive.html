@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edecoration S.A. - Cortinas y Persianas de Lujo en Panamá (Responsive)</title>
+    <title>Edecoration S.A. - Cortinas y Persianas de Lujo en Panamá</title>
+    
+    <!-- SEO and Performance Meta Tags -->
+    <link rel="canonical" href="https://edecorationsa.com/">
+    <meta name="description" content="Edecoration S.A. - Líderes en cortinas y persianas de lujo en Panamá. 20 años transformando espacios con elegancia.">
+    <meta name="keywords" content="cortinas, persianas, Panama, decoracion, blackout, roller, toldos, vidrio inteligente, papel ahumado">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Edecoration S.A.">
+    
+    <!-- Preconnect for external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://edecorationsa.com/">
+    <meta property="og:title" content="Edecoration S.A. - Cortinas y Persianas de Lujo en Panamá">
+    <meta property="og:description" content="Transformamos espacios con elegancia desde 2004. Más que cortinas y persianas, creamos experiencias únicas con servicio personalizado.">
+    <meta property="og:image" content="media/logo.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="styles-responsive.css">
-    <script src="redirect.js"></script>
+    <script src="redirect.js" defer></script>
 </head>
 <body>
     <!-- Mobile-First Hero Section -->
@@ -16,8 +36,8 @@
         <header class="hero-header">
             <div class="header-container">
                 <div class="hero-logo">
-                    <img src="media/logo.png" alt="Edecoration Logo" class="logo-image" />
-                    <h1>Edecoration S.A.</h1>
+                    <img data-src="media/optimized/logo-medium.webp" alt="Edecoration S.A. - Logo de empresa líder en cortinas y persianas de lujo en Panamá" class="logo-image no-lazy" />
+                    <div class="brand-name">Edecoration S.A.</div>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -76,9 +96,10 @@
         
         <!-- Hero Background - Responsive -->
         <div class="hero-background">
-            <video autoplay muted loop playsinline class="hero-video">
+            <video autoplay muted loop playsinline preload="metadata" class="hero-video">
                 <source src="media/optimized/hero-optimized.webm" type="video/webm">
                 <source src="media/optimized/hero-optimized.mp4" type="video/mp4">
+                <source src="media/hero.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
         </div>
@@ -559,15 +580,15 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="media/logo.png" alt="Edecoration Logo" class="footer-logo-img" />
+                        <img data-src="media/optimized/logo-small.webp" alt="Edecoration S.A. - Empresa líder en cortinas y persianas Panamá" class="footer-logo-img" loading="lazy" />
                         <h3>Edecoration S.A.</h3>
                     </div>
                     <p class="footer-description">Transformando espacios con elegancia desde 2004. Más que cortinas y persianas, creamos experiencias únicas que elevan tu ambiente.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/edecorationsa/" class="social-link" target="_blank" rel="noopener" aria-label="Síguenos en Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/edecorationsa/" class="social-link" target="_blank" rel="noopener" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+me+gustaría+asesoría+para+mi+proyecto&type=phone_number&app_absent=0" class="social-link" target="_blank" rel="noopener" aria-label="Contáctanos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/emanuel-carrasquilla-0b1b5243/?originalSubdomain=pa" class="social-link" target="_blank" rel="noopener" aria-label="Conecta con nosotros en LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 
@@ -647,6 +668,9 @@
         });
     })();
     </script>
-    <script src="script-responsive.js"></script>
+    <script src="image-optimizer.js" defer></script>
+    <script src="performance-monitor.js" defer></script>
+    <script src="core-web-vitals.js" defer></script>
+    <script src="script-responsive.js" defer></script>
 </body>
 </html>

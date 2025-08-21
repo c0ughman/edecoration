@@ -43,6 +43,18 @@
     --transition: all 0.3s ease;
 }
 
+/* Global video placeholder styling */
+video {
+    background-color: #e5e5e5;
+}
+
+/* Global logo visibility fix */
+.logo-item,
+.logo-item img {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
 /* ========================================
    RESET & BASE STYLES
    ======================================== */
@@ -121,9 +133,16 @@ body {
     width: 32px;
     height: 32px;
     object-fit: contain;
+    background: transparent !important;
 }
 
-.hero-logo h1 {
+/* Logo transparency styles */
+.hero-logo img,
+.footer-logo-img {
+    background: transparent !important;
+}
+
+.hero-logo .brand-name {
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: 300;
@@ -336,6 +355,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-color: #e5e5e5;
 }
 
 .hero-overlay {
@@ -439,12 +459,29 @@ body {
     padding: 1rem;
     border-radius: var(--border-radius);
     filter: grayscale(0%);
+    opacity: 1;
 }
 
 .logo-item img {
     max-width: 100px;
     max-height: 50px;
     object-fit: contain;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+.logo-item:hover img {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+    opacity: 1 !important;
+    filter: grayscale(0%) !important;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
 }
 
 .more-logos {
@@ -1215,9 +1252,19 @@ body {
         gap: 3px;
     }
     
-    /* Logos - better spacing */
+    /* Logos - better spacing and ensure full visibility */
     .logos-grid {
         grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .logo-item {
+        opacity: 1 !important;
+        filter: grayscale(0%) !important;
+    }
+    
+    .logo-item img {
+        filter: none !important;
+        opacity: 1 !important;
     }
     
     /* Hero content max width */
