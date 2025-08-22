@@ -129,7 +129,17 @@ map $http_accept $webp_suffix {
 
 ### 1. Google PageSpeed Insights Integration
 ```html
-<!-- Add to <head> -->
+<!-- Add to <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-828174308"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-828174308');
+</script> -->
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>
