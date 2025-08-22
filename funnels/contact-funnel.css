@@ -392,6 +392,18 @@ body {
     text-align: center;
 }
 
+.trust-section .section-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--medium-gray);
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+}
+
+.trust-section .section-title::after {
+    display: none;
+}
+
 .trust-title {
     font-family: var(--font-display);
     font-size: 2.2rem;
@@ -645,35 +657,240 @@ body {
 
 /* Final CTA Section */
 .final-cta {
-    padding: 4rem 0 8rem;
-    background: var(--primary-white);
+    padding: 5rem 0 3rem;
+    background: linear-gradient(135deg, var(--primary-white) 0%, var(--light-gray) 100%);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23f0f0f0" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 .cta-content h2 {
     font-family: var(--font-display);
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 300;
     color: var(--wine-red);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    letter-spacing: -0.02em;
+}
+
+.cta-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-yellow), var(--wine-red));
+    border-radius: 1px;
 }
 
 .cta-subtitle {
-    font-size: 1.05rem;
-    color: var(--medium-gray);
-    margin-bottom: 1.5rem;
-    max-width: 700px;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 2.5rem;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 400;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.cta-subtitle br {
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+/* Enhanced bullet points */
+.cta-subtitle {
+    position: relative;
+}
+
+.cta-subtitle br + ○ {
+    position: relative;
+    display: block;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: var(--wine-red);
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.cta-subtitle br + ○::before {
+    content: '◆';
+    color: var(--accent-yellow);
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    font-size: 0.9em;
+    text-shadow: 0 1px 3px rgba(93, 15, 37, 0.3);
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% {
+        text-shadow: 0 1px 3px rgba(93, 15, 37, 0.3);
+        transform: scale(1);
+    }
+    100% {
+        text-shadow: 0 1px 8px rgba(244, 228, 188, 0.6);
+        transform: scale(1.1);
+    }
+}
+
+/* Product List Styling (replicated from main page) */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 2rem auto 2.5rem;
+    max-width: 500px;
+    margin-bottom: 0.5rem;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--medium-gray);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.product-item:hover {
+    transform: translateX(6px);
+}
+
+.product-item i {
+    color: var(--wine-red);
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 16px;
+    text-align: center;
+}
+
+.product-item:hover i {
+    opacity: 1;
+    transform: scale(1.2);
+    color: var(--wine-red);
 }
 
 .main-cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+/* Hero Rating */
+.hero-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.hero-rating .rating-badge {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-rating .rating-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-rating .rating-badge:hover::before {
+    left: 100%;
+}
+
+.hero-rating .rating-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-rating .stars {
+    color: var(--accent-yellow);
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.8px;
+}
+
+.hero-rating .separator {
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.hero-rating .rating-text {
+    color: var(--primary-white);
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.9;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* CTA section rating badge styling */
+.final-cta .hero-rating .rating-badge {
+    background: var(--primary-white);
+    border: 1px solid rgba(93, 15, 37, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.final-cta .hero-rating .stars {
+    color: var(--accent-yellow);
+    text-shadow: none;
+}
+
+.final-cta .hero-rating .separator {
+    color: var(--medium-gray);
+}
+
+.final-cta .hero-rating .rating-text {
+    color: var(--medium-gray);
+    text-shadow: none;
+    opacity: 1;
 }
 
 /* Enhanced button styles */
@@ -759,15 +976,15 @@ body {
     align-items: center;
     gap: 0.4rem;
     color: var(--wine-red);
-    font-size: 0.82rem;
-    padding: 0.45rem 0.7rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
     background: rgba(93, 15, 37, 0.06);
     border-radius: 999px;
     border: 1px solid rgba(93, 15, 37, 0.15);
     font-weight: 500;
 }
 
-.pill-badge i { color: var(--wine-red); font-size: 0.9rem; }
+.pill-badge i { color: var(--wine-red); font-size: 0.8rem; }
 
 /* Improve hero contrast for elements over wine background */
 .hero-funnel .cta-secondary-btn {
@@ -1133,7 +1350,6 @@ body {
     .footer-bottom-content {
         flex-direction: column;
         gap: 1rem;
-        text-align: center;
     }
     
     .footer-bottom-links {
@@ -1535,5 +1751,379 @@ body {
     
     .contact-item {
         font-size: 0.8rem;
+    }
+} 
+
+/* ========================================
+   GALLERY SECTION STYLES
+   ======================================== */
+
+.gallery {
+    padding: 0;
+    background: var(--primary-white);
+    margin: 0;
+}
+
+.gallery .section-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-black);
+}
+
+.gallery .section-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+.gallery-row {
+    display: flex;
+    gap: 0;
+    height: 400px;
+}
+
+.row-60-40 .gallery-item:first-child {
+    flex: 0 0 60%;
+}
+.row-60-40 .gallery-item:last-child {
+    flex: 0 0 40%;
+}
+
+.row-40-30-30 .gallery-item:first-child {
+    flex: 0 0 40%;
+}
+.row-40-30-30 .gallery-item:nth-child(2) {
+    flex: 0 0 30%;
+}
+.row-40-30-30 .gallery-item:last-child {
+    flex: 0 0 30%;
+}
+
+.row-30-40-30 .gallery-item:first-child {
+    flex: 0 0 30%;
+}
+.row-30-40-30 .gallery-item:nth-child(2) {
+    flex: 0 0 40%;
+}
+.row-30-40-30 .gallery-item:last-child {
+    flex: 0 0 30%;
+}
+
+.row-30-50-20 .gallery-item:first-child {
+    flex: 0 0 30%;
+}
+.row-30-50-20 .gallery-item:nth-child(2) {
+    flex: 0 0 50%;
+}
+.row-30-50-20 .gallery-item:last-child {
+    flex: 0 0 20%;
+}
+
+.row-50-50 .gallery-item {
+    flex: 0 0 50%;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 2;
+    color: var(--primary-white);
+}
+
+.gallery-item-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.gallery-item-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Position the office video (first item) lower */
+.row-60-40 .gallery-item:first-child video {
+    object-position: center 60%;
+}
+
+/* Zoom in the lobby image (third item) by 30% */
+.row-30-50-20 .gallery-item:last-child img {
+    transform: scale(1.3);
+}
+
+/* New CTA Section Styling */
+.new-cta {
+    padding: 4rem 0;
+    background: var(--light-gray);
+    text-align: center;
+}
+
+.new-cta .cta-content h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-black);
+    margin-bottom: 1.5rem;
+}
+
+.new-cta .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.new-cta .main-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.new-cta .cta-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Link-style button for center CTA */
+.cta-link-btn {
+    display: inline-block;
+    color: var(--wine-red);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.875rem 1.75rem;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: transparent;
+    box-shadow: none;
+    position: relative;
+    letter-spacing: 0.01em;
+}
+
+
+
+.cta-link-btn:hover {
+    background: var(--wine-red);
+    color: var(--primary-white);
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(232, 165, 165, 0.2);
+}
+
+.cta-link-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(93, 15, 37, 0.1);
+}
+
+/* Bottom WhatsApp CTA Section */
+.bottom-whatsapp-cta {
+    padding: 3rem 0;
+    background: var(--wine-red);
+    color: var(--primary-white);
+}
+
+.bottom-whatsapp-cta .cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.bottom-whatsapp-cta .cta-text {
+    flex: 1;
+    text-align: left;
+}
+
+.bottom-whatsapp-cta .cta-content h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.bottom-whatsapp-cta .cta-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+    max-width: 500px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.bottom-whatsapp-cta .main-cta-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+/* WhatsApp CTA Button */
+.cta-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--wine-red);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.875rem 1.75rem;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: var(--primary-white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.01em;
+}
+
+.cta-whatsapp-btn:hover {
+    background: var(--light-gray);
+    color: var(--wine-red);
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-whatsapp-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for gallery */
+@media (max-width: 768px) {
+    .gallery-row {
+        height: 150px;
+    }
+    
+    .gallery .section-title {
+        font-size: 2rem;
+    }
+    
+    .gallery .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .gallery-item-title {
+        font-size: 1rem;
+    }
+    
+    .gallery-item-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    /* Hide text content on mobile */
+    .gallery-item-content {
+        display: none;
+    }
+    
+    /* Mobile bottom CTA adjustments */
+    .bottom-whatsapp-cta .cta-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .bottom-whatsapp-cta .cta-text {
+        text-align: center;
+    }
+    
+    .bottom-whatsapp-cta .main-cta-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-row {
+        height: 120px;
+    }
+    
+    .gallery .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-item-content {
+        display: none;
+    }
+    
+    /* Mobile CTA enhancements */
+    .cta-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .cta-subtitle br + ○ {
+        margin-left: 1rem;
+        padding-left: 1.2rem;
+    }
+    
+    .cta-link-btn {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
     }
 } 
