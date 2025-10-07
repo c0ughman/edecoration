@@ -45,8 +45,7 @@ body {
     background: var(--primary-white);
     padding: 1rem 0;
     box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 100;
 }
 
@@ -2124,6 +2123,309 @@ body {
     
     .cta-link-btn {
         padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   LEAD QUALIFICATION FORM STYLES
+   ======================================== */
+
+/* Blur effect when modal is active */
+body.modal-active {
+    overflow: hidden;
+}
+
+body.modal-active > *:not(#leadModal) {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* Modal overlay */
+.lead-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.lead-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal content container */
+.lead-modal-content {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F2 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(93, 15, 37, 0.3);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Shake animation for invalid submission */
+@keyframes shake {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px) rotate(-1deg); }
+    20%, 40%, 60%, 80% { transform: translateX(8px) rotate(1deg); }
+}
+
+.lead-modal-content.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* Close button */
+.lead-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.8rem;
+    color: var(--medium-gray);
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.lead-modal-close:hover {
+    background: rgba(93, 15, 37, 0.1);
+    color: var(--wine-red);
+    transform: rotate(90deg);
+}
+
+/* Modal header */
+.lead-modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.lead-modal-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--wine-red);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.lead-modal-header p {
+    font-size: 0.95rem;
+    color: var(--medium-gray);
+    font-weight: 400;
+}
+
+/* Form questions */
+.lead-form-question {
+    margin-bottom: 2rem;
+}
+
+.lead-form-question:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.lead-question-label {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-black);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Option buttons grid */
+.lead-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+}
+
+/* Individual option button */
+.lead-option-btn {
+    background: var(--primary-white);
+    border: 2px dashed rgba(93, 15, 37, 0.25);
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-black);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    font-family: var(--font-body);
+    position: relative;
+    overflow: hidden;
+}
+
+.lead-option-btn:hover {
+    border-color: var(--wine-red);
+    border-style: solid;
+    background: rgba(93, 15, 37, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(93, 15, 37, 0.1);
+}
+
+.lead-option-btn.selected {
+    background: var(--wine-red);
+    color: var(--primary-white);
+    border: 2px solid var(--wine-red);
+    border-style: solid;
+    box-shadow: 0 4px 15px rgba(93, 15, 37, 0.3);
+    transform: translateY(-2px);
+}
+
+.lead-option-btn.selected::before {
+    content: '✓';
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Submit button */
+.lead-submit-btn {
+    width: 100%;
+    background: var(--wine-red);
+    color: var(--primary-white);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(93, 15, 37, 0.3);
+}
+
+.lead-submit-btn:hover {
+    background: #7A142F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(93, 15, 37, 0.4);
+}
+
+.lead-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Error message */
+.lead-error-message {
+    display: none;
+    background: #FEE;
+    border: 2px solid #D00;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #D00;
+    font-weight: 500;
+    font-size: 0.9rem;
+    animation: errorPulse 0.5s ease-out;
+}
+
+.lead-error-message.show {
+    display: block;
+}
+
+@keyframes errorPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lead-modal-content {
+        padding: 2rem 1.5rem;
+        max-width: 95%;
+    }
+    
+    .lead-modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .lead-question-label {
+        font-size: 1rem;
+    }
+    
+    .lead-options-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.6rem;
+    }
+    
+    .lead-option-btn {
+        padding: 0.8rem 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lead-modal-content {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .lead-modal-header h2 {
+        font-size: 1.35rem;
+    }
+    
+    .lead-modal-header p {
+        font-size: 0.9rem;
+    }
+    
+    .lead-question-label {
+        font-size: 0.95rem;
+    }
+    
+    .lead-options-grid {
+        gap: 0.5rem;
+    }
+    
+    .lead-option-btn {
+        padding: 0.75rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .lead-submit-btn {
+        padding: 0.9rem 1.5rem;
         font-size: 1rem;
     }
 } 

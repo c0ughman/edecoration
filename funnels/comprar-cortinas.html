@@ -70,11 +70,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <p class="lead-text">Con <b><u>25 años de experiencia,</u></b> te ofrecemos cortinas elegantes, de alta calidad y con un servicio que realmente responde cuando lo necesitas. No dejes que tus cortinas se conviertan en un problema.</p>
                 </div>
                 <div class="main-cta-buttons" style="justify-content:center;">
-                    <a class="cta-primary-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="gtag_report_conversion()">
+                    <a class="cta-primary-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
                         WhatsApp 390-0869
                     </a>
-                    <a class="cta-secondary-btn" href="tel:+50766729051" onclick="gtag_report_conversion()">
+                    <a class="cta-secondary-btn" href="tel:+50766729051">
                         <i class="fas fa-phone"></i>
                         Llamar al 6672-9051
                     </a>
@@ -187,7 +187,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <h2>No esperes más, Asesoría y Cotización hoy mismo</h2>
                 <p class="cta-subtitle" style="text-align: center;">Tenemos cupos para instalaciones esta semana. Escríbenos hoy mismo para seguir adelante con la medición. Cotizamos el mismo día. </p>
                 <div class="main-cta-buttons" style="justify-content: center;">
-                    <a class="cta-primary-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="gtag_report_conversion()">
+                    <a class="cta-primary-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
                         WhatsApp 390-0869
                     </a>
@@ -286,7 +286,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     </div>
                 </div>
                 <div class="main-cta-buttons" style="justify-content: center;">
-                    <a class="cta-link-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+dar+m%C3%A1s+informaci%C3%B3n+sobre+sus+servicios%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="gtag_report_conversion()">
+                    <a class="cta-link-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+dar+m%C3%A1s+informaci%C3%B3n+sobre+sus+servicios%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener">
                         Más información >
                     </a>
                 </div>
@@ -303,7 +303,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <p class="cta-subtitle">Habla con un experto hoy mismo y recibe tu cotización personalizada</p>
                 </div>
                 <div class="main-cta-buttons">
-                    <a class="cta-whatsapp-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="gtag_report_conversion()">
+                    <a class="cta-whatsapp-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
                         WhatsApp 390-0869
                     </a>
@@ -330,5 +330,191 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </div>
         </div>
     </footer>
+
+    <!-- Lead Qualification Modal -->
+    <div id="leadModal" class="lead-modal">
+        <div class="lead-modal-content">
+            <button class="lead-modal-close" onclick="closeLeadModal()">&times;</button>
+            
+            <div class="lead-modal-header">
+                <h2>Mensaje por WhatsApp</h2>
+                <p>Para poder atenderle mejor, por favor responda estas breves preguntas:</p>
+            </div>
+
+            <form id="leadForm" onsubmit="return false;">
+                <!-- Question 1: Business or Personal -->
+                <div class="lead-form-question">
+                    <label class="lead-question-label">¿Es para uso empresarial o personal?</label>
+                    <div class="lead-options-grid">
+                        <button type="button" class="lead-option-btn" data-question="uso" data-value="empresarial">Empresarial</button>
+                        <button type="button" class="lead-option-btn" data-question="uso" data-value="personal">Personal</button>
+                        <button type="button" class="lead-option-btn" data-question="uso" data-value="ambos">Ambos</button>
+                    </div>
+                </div>
+
+                <!-- Question 2: Number of windows/spaces -->
+                <div class="lead-form-question">
+                    <label class="lead-question-label">¿Cuántas ventanas/espacios necesitas cubrir?</label>
+                    <div class="lead-options-grid">
+                        <button type="button" class="lead-option-btn" data-question="espacios" data-value="1-3">1-3 ventanas</button>
+                        <button type="button" class="lead-option-btn" data-question="espacios" data-value="4-7">4-7 ventanas</button>
+                        <button type="button" class="lead-option-btn" data-question="espacios" data-value="8-12">8-12 ventanas</button>
+                        <button type="button" class="lead-option-btn" data-question="espacios" data-value="12+">Más de 12</button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="button" class="lead-submit-btn" onclick="submitLeadForm()">
+                    <i class="fab fa-whatsapp"></i>
+                    Continuar a WhatsApp
+                </button>
+
+                <!-- Error Message -->
+                <div id="leadErrorMessage" class="lead-error-message">
+                    Por favor, responda todas las preguntas antes de continuar
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lead Form JavaScript -->
+    <script>
+        // Store form state
+        let leadFormData = {
+            uso: null,
+            espacios: null
+        };
+
+        // Track if form has been completed
+        let formCompleted = false;
+
+        // Add click handlers to all option buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle option button clicks
+            document.querySelectorAll('.lead-option-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const question = this.getAttribute('data-question');
+                    const value = this.getAttribute('data-value');
+                    
+                    // Remove selected class from siblings
+                    document.querySelectorAll(`.lead-option-btn[data-question="${question}"]`).forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked button
+                    this.classList.add('selected');
+                    
+                    // Store the value
+                    leadFormData[question] = value;
+                    
+                    // Hide error message if visible
+                    document.getElementById('leadErrorMessage').classList.remove('show');
+                });
+            });
+
+            // Intercept all WhatsApp links
+            document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // If form not completed, show modal
+                    if (!formCompleted) {
+                        openLeadModal();
+                        // Store the original WhatsApp URL
+                        document.getElementById('leadModal').setAttribute('data-whatsapp-url', this.href);
+                    } else {
+                        // Form already completed, go directly to WhatsApp with answers
+                        redirectToWhatsApp(this.href);
+                    }
+                });
+            });
+        });
+
+        function openLeadModal() {
+            const modal = document.getElementById('leadModal');
+            modal.classList.add('show');
+            document.body.classList.add('modal-active');
+        }
+
+        function closeLeadModal() {
+            const modal = document.getElementById('leadModal');
+            modal.classList.remove('show');
+            document.body.classList.remove('modal-active');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('leadModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeLeadModal();
+                }
+            });
+        });
+
+        function submitLeadForm() {
+            const modalContent = document.querySelector('.lead-modal-content');
+            const errorMessage = document.getElementById('leadErrorMessage');
+            
+            // Validate all questions are answered
+            if (!leadFormData.uso || !leadFormData.espacios) {
+                // Show shake animation
+                modalContent.classList.add('shake');
+                setTimeout(() => {
+                    modalContent.classList.remove('shake');
+                }, 500);
+                
+                // Show error message
+                errorMessage.classList.add('show');
+                
+                return false;
+            }
+            
+            // Mark form as completed
+            formCompleted = true;
+            
+            // Get the stored WhatsApp URL
+            const whatsappUrl = document.getElementById('leadModal').getAttribute('data-whatsapp-url');
+            
+            // Redirect to WhatsApp with form data
+            redirectToWhatsApp(whatsappUrl);
+            
+            // Close modal
+            closeLeadModal();
+            
+            // Track conversion
+            if (typeof gtag_report_conversion === 'function') {
+                gtag_report_conversion();
+            }
+        }
+
+        function redirectToWhatsApp(originalUrl) {
+            // Parse the original URL to get phone number
+            const urlParams = new URLSearchParams(originalUrl.split('?')[1]);
+            const phone = urlParams.get('phone');
+            
+            // Map values to readable text
+            const usoText = {
+                'empresarial': 'uso empresarial',
+                'personal': 'uso personal',
+                'ambos': 'uso empresarial y personal'
+            };
+            
+            const espaciosText = {
+                '1-3': '1-3 ventanas',
+                '4-7': '4-7 ventanas',
+                '8-12': '8-12 ventanas',
+                '12+': 'más de 12 ventanas'
+            };
+            
+            // Build conversational message
+            const message = `Hola, estoy interesado en cortinas para ${usoText[leadFormData.uso]}. Necesito cubrir ${espaciosText[leadFormData.espacios]}. ¿Me podría asesorar por favor?`;
+            
+            // Create new WhatsApp URL with custom message
+            const newWhatsappUrl = `https://api.whatsapp.com/send/?phone=${phone}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
+            
+            // Redirect to WhatsApp
+            window.open(newWhatsappUrl, '_blank');
+        }
+    </script>
 </body>
 </html>
