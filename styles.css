@@ -428,7 +428,6 @@ h4 {
     right: 0;
     width: 100%;
     overflow: hidden;
-    transition: var(--transition-slow);
     bottom: 0;
     z-index: 0;
 }

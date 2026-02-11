@@ -4,8 +4,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroSubtitle = document.querySelector('.hero-subtitle');
     const heroCta = document.querySelector('.hero-cta');
     const heroContent = document.querySelector('.hero-content');
+    const heroVideo = document.querySelector('.hero-video');
+    const heroContainer = document.querySelector('.hero-container');
     let fadeOutTriggered = false;
     let unstickyTriggered = false;
+
+    // Dynamically position hero video flush against bottom of hero content
+    function positionHeroVideo() {
+        if (!heroContent || !heroVideo || !heroContainer) return;
+        if (heroContent.classList.contains('unsticky') || heroContent.classList.contains('hidden')) return;
+
+        const contentRect = heroContent.getBoundingClientRect();
+        const containerRect = heroContainer.getBoundingClientRect();
+        heroVideo.style.top = (contentRect.bottom - containerRect.top) + 'px';
+    }
+
+    positionHeroVideo();
+    window.addEventListener('resize', positionHeroVideo);
+    window.addEventListener('load', positionHeroVideo);
+    if (document.fonts) {
+        document.fonts.ready.then(positionHeroVideo);
+    }
 
     function handleScrollFadeOut() {
         const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
