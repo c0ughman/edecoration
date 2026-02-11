@@ -241,23 +241,6 @@ h4 {
     flex-direction: column;
 }
 
-/* White overlay that covers the content area and fades into the video */
-.hero-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom,
-        var(--primary-white) 0%,
-        var(--primary-white) 35%,
-        transparent 52%
-    );
-    z-index: 1;
-    pointer-events: none;
-}
-
 .hero-content {
     position: fixed;
     top: 100px;
@@ -440,12 +423,14 @@ h4 {
 
 .hero-video {
     position: absolute;
-    top: 0;
+    top: calc(30vh + 100px);
     left: 0;
     right: 0;
-    bottom: 0;
     width: 100%;
     overflow: hidden;
+    transition: var(--transition-slow);
+    aspect-ratio: 16/9;
+    bottom: 0;
     z-index: 0;
 }
 
@@ -454,7 +439,6 @@ h4 {
 }
 
 .hero-video video {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
