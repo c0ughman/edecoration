@@ -181,6 +181,7 @@
   function addLine() {
     if (!current) return;
     lines.push({ ...current });
+    lineMarginInp.value = "0";
     renderQuote();
     toast("Paño agregado a la cotización");
   }
