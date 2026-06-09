@@ -93,6 +93,7 @@ body{
 .field.check input{width:17px;height:17px;accent-color:var(--wine)}
 
 .unit-field{grid-column:span 2}
+.line-margin-field{grid-column:span 2}
 .unit-field span{display:block;margin-bottom:7px}
 .seg{display:inline-flex;background:var(--off);border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px}
 .seg button{font:inherit;font-size:13px;font-weight:600;border:none;background:transparent;color:var(--muted);padding:8px 18px;border-radius:8px;cursor:pointer;transition:.16s}

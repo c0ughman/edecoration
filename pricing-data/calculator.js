@@ -11,6 +11,7 @@
   const familySel = $("familySel"), fabricSel = $("fabricSel");
   const widthInp = $("widthInp"), heightInp = $("heightInp"), qtyInp = $("qtyInp");
   const mountSel = $("mountSel"), installChk = $("installChk");
+  const lineMarginInp = $("lineMargin");
   const lpValue = $("lpValue"), lpMeta = $("lpMeta"), reqBadges = $("reqBadges");
   const addBtn = $("addBtn");
   const cfg = { tax: $("cfgTax"), clutch: $("cfgClutch"), motor: $("cfgMotor"),
@@ -78,7 +79,8 @@
   // remove native-select change listeners — custom dropdowns handle changes above
 
   let unit = "in";
-  let marginMode = "pct";      // "pct" or "fixed"
+  let marginMode = "pct";      // universal margin: "pct" or "fixed"
+  let lineMarginMode = "pct";  // per-paño margin: "pct" or "fixed"
   let current = null;          // current computed line preview
   const lines = [];            // quote line items
 
@@ -157,10 +159,12 @@
       reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
       mount: mountSel.value, install: installChk.checked,
+      lineMargin: num(lineMarginInp.value), lineMarginMode,
     };
 
-    lpValue.textContent = money(unitPrice);
-    lpMeta.textContent = `Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}" · ${qty} ud · ${money(unitPrice * qty)} subtotal`;
+    const finalUnit = lineUnit(current);
+    lpValue.textContent = money(finalUnit);
+    lpMeta.textContent = `Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}" · ${qty} ud · ${money(finalUnit * qty)} subtotal`;
 
     if (req === "clutch_large")
       addBadge("clutch", "Requiere clutch Large");
@@ -207,12 +211,14 @@
     computeTotals();
   }
 
-  // unit price incl. per-paño add-ons (hardware + install)
+  // unit price incl. per-paño add-ons (hardware + install + per-paño margin)
   function lineUnit(l) {
     let p = l.unitPrice;
     if (l.req === "clutch_large") p += num(cfg.clutch.value);
     if (l.req === "motorization") p += num(cfg.motor.value);
     if (l.install) p += num(cfg.install.value);
+    if (l.lineMargin > 0)
+      p += l.lineMarginMode === "fixed" ? l.lineMargin : p * l.lineMargin / 100;
     return p;
   }
   const num = v => parseFloat(v) || 0;
@@ -333,7 +339,7 @@
   }
 
   // ---------- events ----------
-  [widthInp, heightInp, qtyInp, mountSel, installChk].forEach(el =>
+  [widthInp, heightInp, qtyInp, mountSel, installChk, lineMarginInp].forEach(el =>
     el.addEventListener("input", compute));
   Object.values(cfg).forEach(el => el.addEventListener("input", () => { computeTotals(); }));
   $("unitSeg").addEventListener("click", e => {
@@ -348,6 +354,12 @@
     marginMode = b.dataset.mode;
     [...$("marginModeSeg").children].forEach(x => x.classList.toggle("active", x === b));
     computeTotals();
+  });
+  $("lineMarginSeg").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    lineMarginMode = b.dataset.mode;
+    [...$("lineMarginSeg").children].forEach(x => x.classList.toggle("active", x === b));
+    compute();
   });
   addBtn.addEventListener("click", addLine);
   $("qdItems").addEventListener("click", e => {

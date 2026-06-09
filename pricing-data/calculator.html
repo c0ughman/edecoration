@@ -37,7 +37,7 @@
     <label>Instalación por paño (US$)
       <input type="number" id="cfgInstall" value="0" min="0" step="1">
     </label>
-    <label>Margen / markup
+    <label>Margen universal (todo el presupuesto)
       <div class="margin-field">
         <input type="number" id="cfgMargin" value="0" min="0" step="1">
         <div class="seg seg-sm" id="marginModeSeg">
@@ -123,6 +123,17 @@
         <input type="checkbox" id="installChk">
         <span>Incluir instalación</span>
       </label>
+
+      <div class="field line-margin-field">
+        <span>Margen de este paño</span>
+        <div class="margin-field">
+          <input type="number" id="lineMargin" value="0" min="0" step="1" placeholder="0">
+          <div class="seg seg-sm" id="lineMarginSeg">
+            <button data-mode="pct" class="active" type="button">%</button>
+            <button data-mode="fixed" type="button">US$</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="live-price" id="livePrice">
