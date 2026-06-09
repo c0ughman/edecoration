@@ -1,0 +1,83 @@
+{
+  "category": "Window Film",
+  "tables": [
+    {
+      "type": "item_list",
+      "name": "Window Film - Lamina Solar",
+      "page": 62,
+      "currency": "USD",
+      "section_headers": [
+        "Window Film",
+        "HOMEY",
+        "STANZA",
+        "SIGNATURE"
+      ],
+      "items": [
+        {
+          "name": "HOMEY 10 (HM-10) 60 IN X 100 FT",
+          "description": "3.76",
+          "price": 8.86,
+          "extra": "",
+          "context": "HOMEY"
+        },
+        {
+          "name": "HOMEY 30 (HM-30) 60 IN X 100 FT",
+          "description": "3.76",
+          "price": 8.86,
+          "extra": "",
+          "context": "HOMEY"
+        },
+        {
+          "name": "STANZA 10 (ST-10) 60 IN X 100 FT",
+          "description": "5.47",
+          "price": 12.89,
+          "extra": "",
+          "context": "STANZA"
+        },
+        {
+          "name": "STANZA 30 (ST-30) 60 IN X 100 FT",
+          "description": "5.47",
+          "price": 12.89,
+          "extra": "",
+          "context": "STANZA"
+        },
+        {
+          "name": "STANZA 50 (ST-50) 60 IN X 100 FT",
+          "description": "5.47",
+          "price": 12.89,
+          "extra": "",
+          "context": "STANZA"
+        },
+        {
+          "name": "SIGNATURE 20 (SG-20) 60 IN X 100 FT",
+          "description": "7.86",
+          "price": 18.54,
+          "extra": "",
+          "context": "SIGNATURE"
+        },
+        {
+          "name": "SIGNATURE 35 (SG-35) 60 IN X 100 FT",
+          "description": "7.86",
+          "price": 18.54,
+          "extra": "",
+          "context": "SIGNATURE"
+        },
+        {
+          "name": "SIGNATURE 50 (SG-50) 60 IN X 100 FT",
+          "description": "7.86",
+          "price": 18.54,
+          "extra": "",
+          "context": "SIGNATURE"
+        },
+        {
+          "name": "SIGNATURE 70 (SG-70) 60 IN X 100 FT",
+          "description": "7.86",
+          "price": 18.54,
+          "extra": "",
+          "context": "SIGNATURE"
+        }
+      ],
+      "category": "Window Film"
+    }
+  ]
+}

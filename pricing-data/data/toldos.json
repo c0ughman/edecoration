@@ -1,0 +1,1189 @@
+{
+  "category": "Toldos",
+  "tables": [
+    {
+      "type": "fabric_matrix",
+      "name": "Axio - Drop Shade - Sunbrella",
+      "page": 64,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216,
+        228
+      ],
+      "widths_m": [
+        1.2,
+        1.83,
+        2.44,
+        3.05,
+        3.66,
+        4.27,
+        4.88,
+        5.49,
+        5.8
+      ],
+      "heights_in": [
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156
+      ],
+      "prices": [
+        [
+          212.26,
+          272.42,
+          303.6,
+          375.38,
+          515.96,
+          517.84,
+          737.2,
+          739.08,
+          740.02
+        ],
+        [
+          222.2,
+          303.94,
+          323.5,
+          405.22,
+          545.8,
+          547.68,
+          776.98,
+          778.86,
+          779.8
+        ],
+        [
+          232.16,
+          323.82,
+          343.38,
+          435.06,
+          575.64,
+          577.52,
+          816.78,
+          818.66,
+          819.6
+        ],
+        [
+          242.1,
+          343.72,
+          363.28,
+          464.9,
+          605.48,
+          607.36,
+          856.56,
+          858.44,
+          859.38
+        ],
+        [
+          252.04,
+          363.62,
+          383.18,
+          494.74,
+          635.32,
+          637.2,
+          896.34,
+          898.22,
+          899.16
+        ],
+        [
+          262.0,
+          383.5,
+          403.06,
+          524.58,
+          665.16,
+          665.04,
+          936.14,
+          938.02,
+          938.96
+        ],
+        [
+          271.94,
+          403.4,
+          422.96,
+          554.42,
+          695.0,
+          696.88,
+          975.92,
+          977.8,
+          976.74
+        ],
+        [
+          281.88,
+          423.3,
+          443.06,
+          584.26,
+          724.84,
+          726.72,
+          1015.7,
+          1017.58,
+          1018.52
+        ],
+        [
+          291.84,
+          443.18,
+          462.74,
+          614.1,
+          754.68,
+          756.56,
+          1055.5,
+          1057.38,
+          1058.32
+        ],
+        [
+          301.78,
+          463.08,
+          482.64,
+          643.94,
+          784.52,
+          786.4,
+          1095.28,
+          1141.92,
+          1142.86
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [
+        "Axio - Drop Shade - Screen 5%"
+      ],
+      "category": "Toldos"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Axio - Drop Shade - Screen 5%",
+      "page": 64,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216,
+        228
+      ],
+      "widths_m": [
+        1.2,
+        1.83,
+        2.44,
+        3.05,
+        3.66,
+        4.27,
+        4.88,
+        5.49,
+        5.8
+      ],
+      "heights_in": [
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        157
+      ],
+      "prices": [
+        [
+          151.12,
+          167.94,
+          190.15,
+          208.33,
+          339.82,
+          346.58,
+          532.89,
+          540.16,
+          543.79
+        ],
+        [
+          153.7,
+          170.5,
+          193.74,
+          212.18,
+          339.82,
+          353.76,
+          541.73,
+          550.1,
+          554.28
+        ],
+        [
+          156.26,
+          173.08,
+          197.34,
+          216.03,
+          352.14,
+          360.94,
+          550.56,
+          560.03,
+          564.77
+        ],
+        [
+          158.82,
+          175.65,
+          200.93,
+          219.88,
+          355.23,
+          364.55,
+          555.0,
+          565.03,
+          570.36
+        ],
+        [
+          161.39,
+          178.21,
+          204.53,
+          223.74,
+          359.08,
+          366.55,
+          557.45,
+          567.79,
+          573.11
+        ],
+        [
+          163.97,
+          180.79,
+          208.12,
+          227.59,
+          362.94,
+          368.54,
+          559.9,
+          570.56,
+          575.87
+        ],
+        [
+          166.53,
+          183.35,
+          211.71,
+          231.44,
+          365.5,
+          376.54,
+          569.73,
+          581.6,
+          587.54
+        ],
+        [
+          169.09,
+          185.91,
+          215.31,
+          235.3,
+          370.64,
+          381.32,
+          575.63,
+          588.23,
+          594.53
+        ],
+        [
+          171.67,
+          188.49,
+          218.9,
+          239.15,
+          376.8,
+          389.72,
+          585.93,
+          600.01,
+          606.69
+        ],
+        [
+          174.24,
+          191.06,
+          222.5,
+          243.0,
+          386.05,
+          400.52,
+          599.2,
+          614.76,
+          622.53
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [
+        "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
+      ],
+      "category": "Toldos"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Axio - Drop Shade - Clear Vinyl 54”",
+      "page": 65,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        48,
+        72,
+        96,
+        120,
+        144,
+        168,
+        192,
+        216,
+        228
+      ],
+      "widths_m": [
+        1.22,
+        1.83,
+        2.44,
+        3.05,
+        3.66,
+        4.27,
+        4.88,
+        5.49,
+        5.8
+      ],
+      "heights_in": [
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156,
+        168,
+        180,
+        192
+      ],
+      "prices": [
+        [
+          206.25,
+          263.14,
+          277.66,
+          334.54,
+          444.48,
+          518.72,
+          721.44,
+          735.67,
+          757.53
+        ],
+        [
+          213.38,
+          277.42,
+          291.94,
+          355.95,
+          465.9,
+          543.62,
+          872.08,
+          764.72,
+          787.41
+        ],
+        [
+          220.68,
+          291.99,
+          306.5,
+          377.82,
+          487.76,
+          569.04,
+          905.96,
+          794.36,
+          817.9
+        ],
+        [
+          228.04,
+          306.73,
+          321.24,
+          399.92,
+          509.86,
+          594.74,
+          940.22,
+          824.34,
+          848.74
+        ],
+        [
+          235.47,
+          321.57,
+          336.09,
+          422.19,
+          532.13,
+          620.64,
+          974.76,
+          854.56,
+          879.82
+        ],
+        [
+          242.93,
+          336.5,
+          351.02,
+          444.59,
+          554.53,
+          646.68,
+          1009.48,
+          884.94,
+          911.07
+        ],
+        [
+          250.43,
+          351.48,
+          366.0,
+          408.57,
+          577.01,
+          672.82,
+          1044.32,
+          915.43,
+          942.43
+        ],
+        [
+          257.93,
+          366.51,
+          381.03,
+          431.1,
+          599.54,
+          699.02,
+          1079.26,
+          946.0,
+          973.87
+        ],
+        [
+          265.46,
+          381.56,
+          396.08,
+          453.68,
+          622.12,
+          725.28,
+          1114.26,
+          976.62,
+          1005.37
+        ],
+        [
+          273.0,
+          396.63,
+          411.15,
+          476.29,
+          644.72,
+          751.56,
+          1149.32,
+          1007.3,
+          1036.93
+        ],
+        [
+          280.55,
+          411.73,
+          426.25,
+          498.94,
+          667.38,
+          777.9,
+          1184.42,
+          1038.01,
+          1068.52
+        ],
+        [
+          288.1,
+          426.84,
+          441.35,
+          521.59,
+          690.03,
+          804.24,
+          1219.56,
+          1068.76,
+          1100.14
+        ],
+        [
+          295.67,
+          441.95,
+          456.47,
+          544.28,
+          712.72,
+          830.62,
+          1254.72,
+          1099.53,
+          1131.79
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "clutch_large",
+          "clutch_large",
+          "clutch_large"
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [
+        "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
+      ],
+      "category": "Toldos"
+    },
+    {
+      "type": "item_list",
+      "name": "Axio - Drop Shade - Clear Vinyl 54”",
+      "page": 65,
+      "currency": "USD",
+      "section_headers": [
+        "1.20",
+        "1.83 72 275.08",
+        "2.13 84 290.94",
+        "2.44 96 306.80",
+        "2.74 108 322.68",
+        "3.05 120 338.54",
+        "3.35 132 354.40",
+        "3.66 144 370.28",
+        "3.99 157 386.14",
+        "Axio - Balcony"
+      ],
+      "items": [
+        {
+          "name": "+Resortes (pieza)",
+          "description": "",
+          "price": 10.5,
+          "extra": "",
+          "context": "1.83 72 275.08"
+        },
+        {
+          "name": "Re-Lion 45E 20NM Electrico 136.50 /",
+          "description": "",
+          "price": 150.5,
+          "extra": "(50NM)",
+          "context": "2.13 84 290.94"
+        }
+      ],
+      "category": "Toldos"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Axio - Arm 90 grados",
+      "page": 66,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        48,
+        72,
+        96,
+        120,
+        144,
+        168
+      ],
+      "widths_m": [
+        1.22,
+        1.83,
+        2.44,
+        3.05,
+        3.66,
+        4.27
+      ],
+      "heights_in": [
+        33,
+        42,
+        50,
+        58,
+        66
+      ],
+      "prices": [
+        [
+          284.73,
+          345.93,
+          387.07,
+          452.55,
+          531.57,
+          647.91
+        ],
+        [
+          305.51,
+          374.77,
+          415.91,
+          489.46,
+          568.48,
+          702.77
+        ],
+        [
+          317.08,
+          393.5,
+          434.64,
+          515.36,
+          594.38,
+          728.68
+        ],
+        [
+          342.23,
+          425.8,
+          466.95,
+          554.84,
+          633.85,
+          768.15
+        ],
+        [
+          350.67,
+          441.44,
+          482.58,
+          577.63,
+          656.64,
+          790.94
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [
+        "Axio - Arm 180 grados Sunbrella"
+      ],
+      "category": "Toldos"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Axio - Arm 180 grados Sunbrella",
+      "page": 66,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        48,
+        72,
+        96,
+        120,
+        144,
+        168
+      ],
+      "widths_m": [
+        1.22,
+        1.83,
+        2.44,
+        3.05,
+        3.66,
+        4.27
+      ],
+      "heights_in": [
+        66,
+        82,
+        98,
+        114,
+        128
+      ],
+      "prices": [
+        [
+          306.69,
+          389.86,
+          431.0,
+          518.44,
+          597.46,
+          713.8
+        ],
+        [
+          335.54,
+          434.82,
+          475.96,
+          579.54,
+          658.55,
+          792.85
+        ],
+        [
+          354.29,
+          467.89,
+          509.03,
+          626.96,
+          705.97,
+          840.27
+        ],
+        [
+          386.59,
+          514.54,
+          555.68,
+          687.93,
+          766.95,
+          901.25
+        ],
+        [
+          402.2,
+          544.5,
+          585.64,
+          732.22,
+          811.24,
+          945.54
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
+      ],
+      "category": "Toldos"
+    }
+  ]
+}

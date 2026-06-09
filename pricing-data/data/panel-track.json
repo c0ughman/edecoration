@@ -1,0 +1,5743 @@
+{
+  "category": "Panel Track",
+  "tables": [
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Stratos / Paros / Zakros",
+      "page": 69,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          2.77,
+          3.39,
+          4.01,
+          5.2,
+          5.53,
+          5.86
+        ],
+        [
+          2.9,
+          2.24,
+          4.19,
+          5.46,
+          5.8,
+          6.13
+        ],
+        [
+          3.03,
+          2.4,
+          4.38,
+          5.73,
+          6.06,
+          6.39
+        ],
+        [
+          3.16,
+          2.56,
+          4.56,
+          5.99,
+          6.32,
+          6.66
+        ],
+        [
+          3.29,
+          2.73,
+          4.75,
+          6.26,
+          6.59,
+          6.92
+        ],
+        [
+          3.43,
+          2.89,
+          4.93,
+          6.52,
+          6.85,
+          7.19
+        ],
+        [
+          3.56,
+          3.06,
+          5.12,
+          6.78,
+          7.12,
+          7.45
+        ],
+        [
+          3.69,
+          3.22,
+          5.3,
+          7.05,
+          7.38,
+          7.72
+        ],
+        [
+          3.82,
+          3.38,
+          5.49,
+          7.31,
+          7.65,
+          7.98
+        ],
+        [
+          3.96,
+          3.55,
+          5.67,
+          7.58,
+          7.91,
+          8.24
+        ],
+        [
+          4.09,
+          3.71,
+          5.86,
+          7.84,
+          8.18,
+          8.51
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 69,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 69,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer",
+      "page": 70,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          3.6,
+          4.39,
+          5.18,
+          6.87,
+          7.2,
+          7.54
+        ],
+        [
+          3.81,
+          3.37,
+          5.47,
+          7.29,
+          7.62,
+          7.96
+        ],
+        [
+          4.02,
+          3.63,
+          5.76,
+          7.71,
+          8.04,
+          8.38
+        ],
+        [
+          4.23,
+          3.89,
+          6.06,
+          8.13,
+          8.46,
+          8.79
+        ],
+        [
+          4.44,
+          4.15,
+          6.35,
+          8.55,
+          8.88,
+          9.21
+        ],
+        [
+          4.65,
+          4.41,
+          6.64,
+          8.97,
+          9.3,
+          9.63
+        ],
+        [
+          4.86,
+          4.67,
+          6.94,
+          9.38,
+          9.72,
+          10.05
+        ],
+        [
+          5.07,
+          4.93,
+          7.23,
+          9.8,
+          10.14,
+          10.47
+        ],
+        [
+          5.28,
+          5.19,
+          7.52,
+          10.22,
+          10.56,
+          10.89
+        ],
+        [
+          5.49,
+          5.45,
+          7.82,
+          10.64,
+          10.97,
+          11.31
+        ],
+        [
+          5.7,
+          5.71,
+          8.11,
+          11.06,
+          11.39,
+          11.73
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 70,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 70,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Eco Screen 5% / Veria / Corinto / Creta / Delphi",
+      "page": 71,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          4.53,
+          6.46,
+          6.79,
+          7.13,
+          9.06,
+          12.59
+        ],
+        [
+          4.82,
+          5.7,
+          7.24,
+          7.57,
+          9.65,
+          13.47
+        ],
+        [
+          5.12,
+          6.16,
+          7.68,
+          8.01,
+          10.24,
+          14.36
+        ],
+        [
+          5.41,
+          6.62,
+          8.12,
+          8.45,
+          10.83,
+          15.24
+        ],
+        [
+          5.71,
+          7.07,
+          8.56,
+          8.9,
+          11.42,
+          16.13
+        ],
+        [
+          6.0,
+          7.53,
+          9.01,
+          9.34,
+          12.01,
+          17.01
+        ],
+        [
+          6.3,
+          7.99,
+          9.45,
+          9.78,
+          12.6,
+          17.9
+        ],
+        [
+          6.59,
+          8.45,
+          9.89,
+          10.22,
+          13.19,
+          18.78
+        ],
+        [
+          6.89,
+          8.9,
+          10.33,
+          10.67,
+          13.78,
+          19.67
+        ],
+        [
+          7.18,
+          9.36,
+          10.78,
+          11.11,
+          14.37,
+          20.55
+        ],
+        [
+          7.48,
+          9.82,
+          11.22,
+          11.55,
+          14.96,
+          21.44
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 71,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "item_list",
+      "name": "Panel Track - Eco Screen 5% / Veria / Corinto / Creta / Delphi",
+      "page": 71,
+      "currency": "USD",
+      "section_headers": [
+        "2 canales",
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
+      ],
+      "items": [
+        {
+          "name": "pulgadas 80.11 84.37 88.63 92.89 97.15",
+          "description": "",
+          "price": 101.4,
+          "extra": "",
+          "context": ""
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Sheer Pleated / Sheer Reve",
+      "page": 72,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          4.62,
+          5.61,
+          6.6,
+          8.91,
+          9.24,
+          9.57
+        ],
+        [
+          4.92,
+          4.74,
+          7.03,
+          9.51,
+          9.85,
+          10.18
+        ],
+        [
+          5.23,
+          5.12,
+          7.45,
+          10.12,
+          10.45,
+          10.79
+        ],
+        [
+          5.53,
+          5.49,
+          7.87,
+          10.73,
+          11.06,
+          11.39
+        ],
+        [
+          5.83,
+          5.87,
+          8.3,
+          11.33,
+          11.67,
+          12.0
+        ],
+        [
+          6.14,
+          6.25,
+          8.72,
+          11.94,
+          12.27,
+          12.61
+        ],
+        [
+          6.44,
+          6.62,
+          9.15,
+          12.55,
+          12.88,
+          13.21
+        ],
+        [
+          6.74,
+          7.0,
+          9.57,
+          13.15,
+          13.49,
+          13.82
+        ],
+        [
+          7.05,
+          7.38,
+          10.0,
+          13.76,
+          14.09,
+          14.43
+        ],
+        [
+          7.35,
+          7.75,
+          10.42,
+          14.37,
+          14.7,
+          15.03
+        ],
+        [
+          7.65,
+          8.13,
+          10.85,
+          14.97,
+          15.31,
+          15.64
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 72,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 72,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Soleil 5% / Argos BO / Syros BO",
+      "page": 73,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          5.11,
+          7.33,
+          7.86,
+          8.4,
+          10.21,
+          11.09
+        ],
+        [
+          5.46,
+          6.68,
+          8.4,
+          8.96,
+          10.91,
+          11.84
+        ],
+        [
+          5.8,
+          7.22,
+          8.95,
+          9.52,
+          11.61,
+          12.58
+        ],
+        [
+          6.15,
+          7.76,
+          9.49,
+          10.08,
+          12.3,
+          13.33
+        ],
+        [
+          6.5,
+          8.3,
+          10.03,
+          10.64,
+          13.0,
+          14.08
+        ],
+        [
+          6.85,
+          8.84,
+          10.57,
+          11.2,
+          13.7,
+          14.82
+        ],
+        [
+          7.2,
+          9.38,
+          11.11,
+          11.76,
+          14.39,
+          15.57
+        ],
+        [
+          7.55,
+          9.92,
+          11.65,
+          12.32,
+          15.09,
+          16.32
+        ],
+        [
+          7.89,
+          10.46,
+          12.19,
+          12.88,
+          15.79,
+          17.06
+        ],
+        [
+          8.24,
+          11.0,
+          12.73,
+          13.44,
+          16.48,
+          17.81
+        ],
+        [
+          8.59,
+          11.54,
+          13.28,
+          14.0,
+          17.18,
+          18.56
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 73,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 73,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Soleil 16% / Soleil 1%",
+      "page": 74,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          5.65,
+          8.14,
+          8.47,
+          10.96,
+          11.3,
+          15.95
+        ],
+        [
+          6.05,
+          7.59,
+          9.07,
+          9.4,
+          12.09,
+          17.14
+        ],
+        [
+          6.45,
+          8.21,
+          9.67,
+          10.0,
+          12.89,
+          18.34
+        ],
+        [
+          6.84,
+          8.83,
+          10.27,
+          10.6,
+          13.69,
+          19.53
+        ],
+        [
+          7.24,
+          9.45,
+          10.86,
+          11.2,
+          14.48,
+          20.73
+        ],
+        [
+          7.64,
+          10.06,
+          11.46,
+          11.79,
+          15.28,
+          21.92
+        ],
+        [
+          8.04,
+          10.68,
+          12.06,
+          12.39,
+          16.08,
+          23.12
+        ],
+        [
+          8.44,
+          11.3,
+          12.66,
+          12.99,
+          16.87,
+          24.31
+        ],
+        [
+          8.84,
+          11.92,
+          13.25,
+          13.59,
+          17.67,
+          25.51
+        ],
+        [
+          9.23,
+          12.53,
+          13.85,
+          14.18,
+          18.47,
+          26.7
+        ],
+        [
+          9.63,
+          13.15,
+          14.45,
+          14.78,
+          19.26,
+          27.9
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 74,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 74,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Wellington",
+      "page": 75,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          6.04,
+          8.25,
+          10.23,
+          10.57,
+          13.64,
+          13.98
+        ],
+        [
+          7.33,
+          7.72,
+          10.99,
+          14.32,
+          14.66,
+          14.99
+        ],
+        [
+          7.84,
+          8.35,
+          11.75,
+          15.34,
+          15.67,
+          16.0
+        ],
+        [
+          8.34,
+          8.98,
+          12.51,
+          16.35,
+          16.68,
+          17.02
+        ],
+        [
+          8.85,
+          9.61,
+          13.27,
+          17.36,
+          17.7,
+          18.03
+        ],
+        [
+          9.36,
+          10.23,
+          14.03,
+          18.38,
+          18.71,
+          19.04
+        ],
+        [
+          9.86,
+          10.86,
+          14.79,
+          19.39,
+          19.72,
+          20.06
+        ],
+        [
+          10.37,
+          11.49,
+          15.55,
+          20.4,
+          20.74,
+          21.07
+        ],
+        [
+          10.88,
+          12.12,
+          16.31,
+          21.42,
+          21.75,
+          22.08
+        ],
+        [
+          11.38,
+          12.75,
+          17.07,
+          22.43,
+          22.76,
+          23.1
+        ],
+        [
+          11.89,
+          13.38,
+          17.83,
+          23.44,
+          23.78,
+          24.11
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 75,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 75,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Bimini / Esvedra",
+      "page": 76,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          8.51,
+          12.44,
+          12.77,
+          16.69,
+          17.03,
+          24.54
+        ],
+        [
+          9.18,
+          10.08,
+          13.76,
+          18.02,
+          18.35,
+          18.69
+        ],
+        [
+          9.84,
+          10.83,
+          14.76,
+          19.34,
+          19.68,
+          20.01
+        ],
+        [
+          10.5,
+          11.65,
+          15.75,
+          20.67,
+          21.0,
+          21.34
+        ],
+        [
+          11.16,
+          12.47,
+          16.75,
+          22.0,
+          22.33,
+          22.66
+        ],
+        [
+          11.83,
+          13.3,
+          17.74,
+          23.32,
+          23.65,
+          23.99
+        ],
+        [
+          12.49,
+          14.12,
+          18.74,
+          24.65,
+          24.98,
+          25.31
+        ],
+        [
+          13.15,
+          14.94,
+          19.73,
+          25.97,
+          26.31,
+          26.64
+        ],
+        [
+          13.82,
+          15.76,
+          20.72,
+          27.3,
+          27.63,
+          27.96
+        ],
+        [
+          14.48,
+          16.59,
+          21.72,
+          28.62,
+          28.96,
+          29.29
+        ],
+        [
+          15.14,
+          17.41,
+          22.71,
+          29.95,
+          30.28,
+          30.62
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 76,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 76,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter",
+      "page": 77,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          8.72,
+          12.0,
+          14.92,
+          15.25,
+          19.89,
+          20.23
+        ],
+        [
+          10.74,
+          11.94,
+          16.11,
+          21.15,
+          21.48,
+          21.82
+        ],
+        [
+          11.54,
+          12.93,
+          17.3,
+          22.74,
+          23.07,
+          23.41
+        ],
+        [
+          12.33,
+          13.92,
+          18.5,
+          24.33,
+          24.66,
+          25.0
+        ],
+        [
+          13.13,
+          14.9,
+          19.69,
+          25.92,
+          26.25,
+          26.59
+        ],
+        [
+          13.92,
+          15.89,
+          20.88,
+          27.51,
+          27.84,
+          28.18
+        ],
+        [
+          14.72,
+          16.88,
+          22.07,
+          29.1,
+          29.43,
+          29.77
+        ],
+        [
+          15.51,
+          17.86,
+          23.27,
+          30.69,
+          31.02,
+          31.36
+        ],
+        [
+          16.31,
+          18.85,
+          24.46,
+          32.28,
+          32.61,
+          32.95
+        ],
+        [
+          17.1,
+          19.83,
+          25.65,
+          33.87,
+          34.2,
+          34.54
+        ],
+        [
+          17.9,
+          20.82,
+          26.84,
+          35.46,
+          35.79,
+          36.13
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 77,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 77,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Noble / Captiva",
+      "page": 78,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          10.23,
+          14.12,
+          17.56,
+          17.9,
+          23.42,
+          23.75
+        ],
+        [
+          12.67,
+          14.33,
+          19.0,
+          25.0,
+          25.33,
+          25.67
+        ],
+        [
+          13.62,
+          15.51,
+          20.44,
+          26.92,
+          27.25,
+          27.58
+        ],
+        [
+          14.58,
+          16.7,
+          21.87,
+          28.83,
+          29.17,
+          29.5
+        ],
+        [
+          15.54,
+          17.89,
+          23.31,
+          30.75,
+          31.08,
+          31.41
+        ],
+        [
+          16.5,
+          19.08,
+          24.75,
+          32.66,
+          33.0,
+          33.33
+        ],
+        [
+          17.46,
+          20.27,
+          26.18,
+          34.58,
+          34.91,
+          35.25
+        ],
+        [
+          18.41,
+          21.46,
+          27.62,
+          36.49,
+          36.83,
+          37.16
+        ],
+        [
+          19.37,
+          22.65,
+          29.06,
+          38.41,
+          38.74,
+          39.08
+        ],
+        [
+          20.33,
+          23.83,
+          30.49,
+          40.33,
+          40.66,
+          40.99
+        ],
+        [
+          21.29,
+          25.02,
+          31.93,
+          42.24,
+          42.57,
+          42.91
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 78,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 78,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Explore / Mombassa",
+      "page": 79,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          12.09,
+          16.73,
+          20.82,
+          21.16,
+          27.76,
+          28.1
+        ],
+        [
+          15.04,
+          17.26,
+          22.56,
+          29.75,
+          30.08,
+          30.41
+        ],
+        [
+          16.2,
+          18.7,
+          24.3,
+          32.06,
+          32.4,
+          32.73
+        ],
+        [
+          17.36,
+          20.14,
+          26.04,
+          34.38,
+          34.71,
+          35.05
+        ],
+        [
+          18.52,
+          21.58,
+          27.77,
+          36.7,
+          37.03,
+          37.36
+        ],
+        [
+          19.67,
+          23.01,
+          29.51,
+          39.01,
+          39.35,
+          39.68
+        ],
+        [
+          20.83,
+          24.45,
+          31.25,
+          41.33,
+          41.66,
+          42.0
+        ],
+        [
+          21.99,
+          25.89,
+          32.99,
+          43.65,
+          43.98,
+          44.31
+        ],
+        [
+          23.15,
+          27.33,
+          34.72,
+          45.96,
+          46.3,
+          46.63
+        ],
+        [
+          24.31,
+          28.76,
+          36.46,
+          48.28,
+          48.61,
+          48.95
+        ],
+        [
+          25.47,
+          30.2,
+          38.2,
+          50.6,
+          50.93,
+          51.26
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 79,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 79,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Stucco BO / Adagio",
+      "page": 80,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          12.31,
+          14.83,
+          18.46,
+          24.28,
+          24.61,
+          24.94
+        ],
+        [
+          13.32,
+          15.13,
+          19.98,
+          26.3,
+          26.64,
+          26.97
+        ],
+        [
+          14.33,
+          16.39,
+          21.5,
+          28.33,
+          28.66,
+          28.99
+        ],
+        [
+          15.34,
+          17.65,
+          23.02,
+          30.35,
+          30.69,
+          31.02
+        ],
+        [
+          16.36,
+          18.9,
+          24.53,
+          32.38,
+          32.71,
+          33.05
+        ],
+        [
+          17.37,
+          20.16,
+          26.05,
+          34.4,
+          34.74,
+          35.07
+        ],
+        [
+          18.38,
+          21.42,
+          27.57,
+          36.43,
+          36.76,
+          37.1
+        ],
+        [
+          19.39,
+          22.67,
+          29.09,
+          38.46,
+          38.79,
+          39.12
+        ],
+        [
+          20.41,
+          23.93,
+          30.61,
+          40.48,
+          40.81,
+          41.15
+        ],
+        [
+          21.42,
+          25.19,
+          32.13,
+          42.51,
+          42.84,
+          43.17
+        ],
+        [
+          22.43,
+          26.44,
+          33.65,
+          44.53,
+          44.87,
+          45.2
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 80,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 80,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Hampton BO",
+      "page": 81,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          13.77,
+          16.59,
+          20.65,
+          27.2,
+          27.54,
+          27.87
+        ],
+        [
+          14.92,
+          17.11,
+          22.37,
+          29.5,
+          29.83,
+          30.16
+        ],
+        [
+          16.06,
+          18.53,
+          24.09,
+          31.79,
+          32.13,
+          32.46
+        ],
+        [
+          17.21,
+          19.96,
+          25.82,
+          34.09,
+          34.42,
+          34.76
+        ],
+        [
+          18.36,
+          21.38,
+          27.54,
+          36.38,
+          36.72,
+          37.05
+        ],
+        [
+          19.51,
+          22.81,
+          29.26,
+          38.68,
+          39.01,
+          39.35
+        ],
+        [
+          20.65,
+          24.23,
+          30.98,
+          40.98,
+          41.31,
+          41.64
+        ],
+        [
+          21.8,
+          25.65,
+          32.7,
+          43.27,
+          43.6,
+          43.94
+        ],
+        [
+          22.95,
+          27.08,
+          34.42,
+          45.57,
+          45.9,
+          46.23
+        ],
+        [
+          24.1,
+          28.5,
+          36.15,
+          47.86,
+          48.2,
+          48.53
+        ],
+        [
+          25.25,
+          29.93,
+          37.87,
+          50.16,
+          50.49,
+          50.82
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 81,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 81,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Panel Track - Salvador / Parget",
+      "page": 82,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ],
+      "widths_m": [
+        0.41,
+        0.51,
+        0.61,
+        0.71,
+        0.81,
+        0.91
+      ],
+      "heights_in": [
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "prices": [
+        [
+          14.39,
+          17.99,
+          23.76,
+          24.1,
+          35.31,
+          35.64
+        ],
+        [
+          13.22,
+          15.12,
+          19.83,
+          26.11,
+          26.44,
+          26.77
+        ],
+        [
+          14.22,
+          16.26,
+          21.34,
+          28.11,
+          28.45,
+          28.78
+        ],
+        [
+          15.23,
+          17.5,
+          22.84,
+          30.12,
+          30.46,
+          30.79
+        ],
+        [
+          16.23,
+          18.75,
+          24.35,
+          32.13,
+          32.47,
+          32.8
+        ],
+        [
+          17.24,
+          20.0,
+          25.86,
+          34.14,
+          34.47,
+          34.81
+        ],
+        [
+          18.24,
+          21.24,
+          27.36,
+          36.15,
+          36.48,
+          36.82
+        ],
+        [
+          19.25,
+          22.49,
+          28.87,
+          38.16,
+          38.49,
+          38.83
+        ],
+        [
+          20.25,
+          23.73,
+          30.38,
+          40.17,
+          40.5,
+          40.83
+        ],
+        [
+          21.25,
+          24.98,
+          31.88,
+          42.18,
+          42.51,
+          42.84
+        ],
+        [
+          22.26,
+          26.23,
+          33.39,
+          44.19,
+          44.52,
+          44.85
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {
+        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
+        "motorization": "Medida sombreada gris: requiere motorizacion"
+      },
+      "notes": [],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 1 vía",
+      "subheader": "pulgadas",
+      "page": 82,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            43.64,
+            47.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "3 canales",
+          "prices": [
+            51.66,
+            55.97,
+            63.6,
+            68.07,
+            72.49,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            56.71,
+            65.3,
+            76.74,
+            82.13,
+            90.72,
+            102.16,
+            107.55,
+            116.14,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            96.72,
+            104.07,
+            111.38,
+            121.89,
+            129.24,
+            136.55,
+            147.06,
+            154.41,
+            161.72,
+            169.03
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Panel Track a 2 vías",
+      "subheader": "pulgadas",
+      "page": 82,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120,
+        130,
+        140,
+        150,
+        160
+      ],
+      "rows": [
+        {
+          "label": "2 canales",
+          "prices": [
+            80.11,
+            84.37,
+            88.63,
+            92.89,
+            97.15,
+            101.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "4 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            110.13,
+            115.52,
+            120.91,
+            126.3,
+            131.7,
+            137.09,
+            142.48,
+            147.87,
+            153.26
+          ]
+        },
+        {
+          "label": "5 canales",
+          "prices": [
+            null,
+            null,
+            null,
+            143.61,
+            150.92,
+            158.23,
+            165.54,
+            172.85,
+            180.15,
+            187.46,
+            194.77,
+            202.08
+          ]
+        }
+      ],
+      "category": "Panel Track"
+    }
+  ]
+}

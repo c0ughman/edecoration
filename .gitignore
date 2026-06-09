@@ -52,4 +52,9 @@ node_modules/
 
 # Temporary files
 *.tmp
-*.temp 
+*.temp
+
+# Python virtual env (pricing extractor)
+.venv-pricing/
+__pycache__/
+*.pyc 

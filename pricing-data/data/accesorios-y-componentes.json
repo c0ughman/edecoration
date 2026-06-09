@@ -1,0 +1,576 @@
+{
+  "category": "Accesorios y Componentes",
+  "tables": [
+    {
+      "type": "width_priced",
+      "name": "Cenefas - Carcazas",
+      "subheader": "pulgadas",
+      "page": 37,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        42,
+        54,
+        66,
+        78,
+        90,
+        102,
+        114,
+        126,
+        138,
+        150,
+        162,
+        174,
+        186
+      ],
+      "rows": [
+        {
+          "label": "Regular",
+          "prices": [
+            9.8,
+            11.2,
+            12.6,
+            14.0,
+            16.1,
+            18.2,
+            20.3,
+            22.4,
+            24.5,
+            25.9,
+            28.0,
+            30.1,
+            32.2
+          ]
+        },
+        {
+          "label": "Cassette 100",
+          "prices": [
+            32.28,
+            38.52,
+            43.36,
+            49.6,
+            54.44,
+            60.68,
+            65.52,
+            71.76,
+            76.6,
+            82.84,
+            87.68,
+            93.92,
+            98.76
+          ]
+        },
+        {
+          "label": "Cassette 120",
+          "prices": [
+            40.33,
+            48.87,
+            56.01,
+            64.55,
+            71.69,
+            80.23,
+            87.37,
+            95.91,
+            103.05,
+            111.59,
+            118.73,
+            127.27,
+            134.41
+          ]
+        },
+        {
+          "label": "Fascia L (1 R)",
+          "prices": [
+            49.84,
+            57.16,
+            64.48,
+            71.8,
+            79.12,
+            86.44,
+            93.76,
+            101.08,
+            108.4,
+            115.72,
+            123.04,
+            130.36,
+            137.68
+          ]
+        },
+        {
+          "label": "Fascia L (2 R)",
+          "prices": [
+            51.56,
+            58.88,
+            66.2,
+            73.52,
+            80.84,
+            88.16,
+            95.48,
+            102.8,
+            110.12,
+            117.44,
+            124.76,
+            132.08,
+            139.4
+          ]
+        }
+      ],
+      "category": "Accesorios y Componentes"
+    },
+    {
+      "type": "width_priced",
+      "name": "Cassette 130",
+      "subheader": "pulgadas",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        42,
+        54,
+        66,
+        78,
+        90,
+        102,
+        114,
+        126,
+        138,
+        150,
+        162,
+        174,
+        186
+      ],
+      "rows": [
+        {
+          "label": "Side Channel (Par",
+          "prices": [
+            2.0,
+            null,
+            null,
+            7.25,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "category": "Accesorios y Componentes"
+    },
+    {
+      "type": "item_list",
+      "name": "COMPONENTES",
+      "page": 39,
+      "currency": "USD",
+      "section_headers": [
+        "COMPONENTES"
+      ],
+      "items": [
+        {
+          "name": "Control Skyline S",
+          "description": "",
+          "price": 8.0,
+          "extra": "KIT (blanco, bronze)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Control Skyline M",
+          "description": "",
+          "price": 10.0,
+          "extra": "KIT (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Control Skyline L",
+          "description": "",
+          "price": 15.0,
+          "extra": "KIT (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Control Coulisse Medium",
+          "description": "",
+          "price": 10.0,
+          "extra": "KIT (blanco, negro)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Control Coulisse M Geared",
+          "description": "",
+          "price": 15.0,
+          "extra": "KIT (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Control Coulisse L",
+          "description": "",
+          "price": 15.0,
+          "extra": "KIT (blanco, negro)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Control Coulisse L Geared",
+          "description": "",
+          "price": 25.0,
+          "extra": "SET (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Control Coulisse Twin Pull",
+          "description": "",
+          "price": 20.0,
+          "extra": "SET (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Brackets Cassette Sheer",
+          "description": "",
+          "price": 1.5,
+          "extra": "PIEZA",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Bracket Doble Horizontal Skyline",
+          "description": "",
+          "price": 20.0,
+          "extra": "SET (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Bracket Doble Vertical Skyline",
+          "description": "",
+          "price": 12.0,
+          "extra": "SET (zinc)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Bracket Doble Coulisse",
+          "description": "",
+          "price": 20.0,
+          "extra": "SET (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Soporte Central Skyline (roller)",
+          "description": "",
+          "price": 4.5,
+          "extra": "SET (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Soporte Central Coulisse",
+          "description": "",
+          "price": 12.0,
+          "extra": "SET (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Soporte Intermedio Coulisse",
+          "description": "",
+          "price": 20.0,
+          "extra": "SET (blanco)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Tensor Cadena",
+          "description": "",
+          "price": 0.75,
+          "extra": "PIEZA (transparente)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Soporte Intermedio Vertilux",
+          "description": "",
+          "price": 10.0,
+          "extra": "SET (Referencia 0-154-PB-EI5WH)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Polea Colgante (Sheer/Roller)",
+          "description": "",
+          "price": 1.5,
+          "extra": "PIEZA (blanca, gris, ivory, bronze, negra)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Polea (child safety)",
+          "description": "",
+          "price": 2.5,
+          "extra": "PIEZA (transparente y blanca)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Conector - Stop",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (transparente)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Cadena",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIE (blanca, gris, bronze, negra)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Cadena Continua",
+          "description": "",
+          "price": 2.5,
+          "extra": "UNIDAD (4 Pies)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Adaptador de 2” (reducción)",
+          "description": "",
+          "price": 2.5,
+          "extra": "PIEZA (blanca)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Adaptador de 2.5” (reducción)",
+          "description": "",
+          "price": 5.0,
+          "extra": "PIEZA (blanca)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Basta redonda",
+          "description": "",
+          "price": 1.75,
+          "extra": "PIE (blanca)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Tapa de basta redonda",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca, gris, bronze, negra)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Bottomrail Euro Slim",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIE (blanco, gris)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Tapa de bottomrail Euro Slim",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca, gris)",
+          "context": "COMPONENTES"
+        },
+        {
+          "name": "Bottomrail Clásico",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIE (bronze, negro)",
+          "context": "COMPONENTES"
+        }
+      ],
+      "category": "Accesorios y Componentes"
+    },
+    {
+      "type": "item_list",
+      "name": "Tapa de bottomrail clásico 0.50 PIEZA (bronze, negra)",
+      "page": 40,
+      "currency": "USD",
+      "section_headers": [],
+      "items": [
+        {
+          "name": "Tapa de bottomrail clásico",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail Coulisse",
+          "description": "",
+          "price": 1.5,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de bottomrail Coulisse",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca, negra)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail Slim Coulisse",
+          "description": "1.00 PIE (blanca) solo tiene",
+          "price": 3.0,
+          "extra": "mtr",
+          "context": ""
+        },
+        {
+          "name": "Tapa de bottomrail Slim Coulisse",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail de Sheer",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIE (blanca, ivory, gris, bronze, negro)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Bottom Rail de Sheer",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIEZA (transparente)",
+          "context": ""
+        },
+        {
+          "name": "Cassette 100",
+          "description": "",
+          "price": 3.0,
+          "extra": "PIE (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Cassette 100",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIEZA (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Cassette 120",
+          "description": "",
+          "price": 4.5,
+          "extra": "PIE (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Cassette 120",
+          "description": "",
+          "price": 1.5,
+          "extra": "PIEZA (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Bracket cassette 100/120 skyline",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIEZA (metal) Referencia 0-149-10-BRHMI",
+          "context": ""
+        },
+        {
+          "name": "Metal hold cassette 100/120",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIEZA (metal) 0-149-10-BR16I",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail de Manhattan",
+          "description": "",
+          "price": 2.0,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Bottomrail Manhattan",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIEZA (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Spring System 32 mm",
+          "description": "",
+          "price": 16.0,
+          "extra": "SET (no incluye bottomrail EURO SLIM) máxima 55 x 63",
+          "context": ""
+        },
+        {
+          "name": "Spring System 38 mm",
+          "description": "",
+          "price": 24.0,
+          "extra": "SET (no incluye bottomrail EURO SLIM) máxima 63 x 79",
+          "context": ""
+        },
+        {
+          "name": "Control de Romana 1:1",
+          "description": "",
+          "price": 4.5,
+          "extra": "PIEZA (blanco)",
+          "context": ""
+        },
+        {
+          "name": "Control de Romana 1:4",
+          "description": "",
+          "price": 5.5,
+          "extra": "PIEZA (blanco)",
+          "context": ""
+        },
+        {
+          "name": "Control Twin Pull Romana 1:4",
+          "description": "",
+          "price": 17.5,
+          "extra": "PIEZA (blanco)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de metal (romana)",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de fibra de vidrio 3mm",
+          "description": "",
+          "price": 0.2,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de fibra de vidrio 4mm",
+          "description": "",
+          "price": 0.4,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de fibra de vidrio 5mm",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Argolla para varilla de metal (romana)",
+          "description": "",
+          "price": 0.3,
+          "extra": "PIEZA (transparente)",
+          "context": ""
+        },
+        {
+          "name": "Tapa para varilla de metal (romana)",
+          "description": "",
+          "price": 0.25,
+          "extra": "PIEZA (transparente)",
+          "context": ""
+        }
+      ],
+      "category": "Accesorios y Componentes"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edecoration · Cotizador Interno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="../media/logo.png" alt="Edecoration" class="brand-logo">
+    <div class="brand-text">
+      <h1>Edecoration</h1>
+      <span>Cotizador Interno · Lista PRS 2026</span>
+    </div>
+  </div>
+  <button class="ghost-btn" id="settingsToggle" title="Configuración">⚙ Ajustes</button>
+</header>
+
+<!-- collapsible settings -->
+<section class="settings" id="settingsPanel" hidden>
+  <div class="settings-grid">
+    <label>ITBMS (%)
+      <input type="number" id="cfgTax" value="7" min="0" step="0.5">
+    </label>
+    <label>Costo clutch Large (US$)
+      <input type="number" id="cfgClutch" value="35" min="0" step="1">
+    </label>
+    <label>Costo motorización (US$)
+      <input type="number" id="cfgMotor" value="185" min="0" step="1">
+    </label>
+    <label>Instalación por paño (US$)
+      <input type="number" id="cfgInstall" value="0" min="0" step="1">
+    </label>
+    <label>Margen / markup (%)
+      <input type="number" id="cfgMargin" value="0" min="0" step="1">
+    </label>
+  </div>
+  <p class="settings-note">Estos valores son configurables: los precios de la lista PRS son costos. Ajusta margen, instalación e impuestos según tu política.</p>
+</section>
+
+<main class="layout">
+
+  <!-- ===== configuration ===== -->
+  <section class="panel config">
+    <h2 class="panel-title">Configurar paño</h2>
+
+    <div class="field-grid">
+      <div class="field">
+        <span>Familia de producto</span>
+        <div class="custom-select" id="familyDrop">
+          <button class="cs-trigger" type="button">
+            <span class="cs-value">—</span>
+            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="cs-menu" hidden></div>
+        </div>
+        <select id="familySel" hidden></select>
+      </div>
+
+      <div class="field">
+        <span>Tela / Tabla</span>
+        <div class="custom-select" id="fabricDrop">
+          <button class="cs-trigger" type="button">
+            <span class="cs-value">—</span>
+            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="cs-menu" hidden></div>
+        </div>
+        <select id="fabricSel" hidden></select>
+      </div>
+
+      <div class="field unit-field">
+        <span>Unidad</span>
+        <div class="seg" id="unitSeg">
+          <button data-unit="in" class="active">Pulgadas</button>
+          <button data-unit="cm">cm</button>
+        </div>
+      </div>
+
+      <label class="field">Ancho <small id="wUnit">(in)</small>
+        <input type="number" id="widthInp" min="1" step="0.1" placeholder="ej. 60">
+      </label>
+
+      <label class="field">Alto <small id="hUnit">(in)</small>
+        <input type="number" id="heightInp" min="1" step="0.1" placeholder="ej. 72">
+      </label>
+
+      <label class="field">Cantidad
+        <input type="number" id="qtyInp" min="1" step="1" value="1">
+      </label>
+
+      <div class="field">
+        <span>Posición de montaje</span>
+        <div class="custom-select" id="mountDrop">
+          <button class="cs-trigger" type="button">
+            <span class="cs-value">Interior (dentro del vano)</span>
+            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="cs-menu" hidden>
+            <button class="cs-option selected" data-value="Interior">Interior (dentro del vano)</button>
+            <button class="cs-option" data-value="Exterior">Exterior (sobre el vano)</button>
+          </div>
+        </div>
+        <select id="mountSel" hidden>
+          <option value="Interior">Interior (dentro del vano)</option>
+          <option value="Exterior">Exterior (sobre el vano)</option>
+        </select>
+      </div>
+
+      <label class="field check">
+        <input type="checkbox" id="installChk">
+        <span>Incluir instalación</span>
+      </label>
+    </div>
+
+    <div class="live-price" id="livePrice">
+      <span class="lp-label">Precio estimado del paño</span>
+      <span class="lp-value" id="lpValue">—</span>
+      <div class="lp-meta" id="lpMeta"></div>
+    </div>
+
+    <div class="badges" id="reqBadges"></div>
+
+    <button class="primary-btn" id="addBtn" disabled>+ Agregar a la cotización</button>
+  </section>
+
+  <!-- ===== quote ===== -->
+  <section class="panel quote-wrap">
+    <div class="quote-toolbar">
+      <div class="client-fields">
+        <input type="text" id="clientName" placeholder="Nombre del cliente">
+        <input type="text" id="projectName" placeholder="Proyecto / referencia">
+      </div>
+      <div class="export-buttons">
+        <button class="ghost-btn" id="exportPdf">PDF</button>
+        <button class="ghost-btn" id="exportImg">Imagen</button>
+        <button class="ghost-btn" id="exportTxt">Texto</button>
+      </div>
+    </div>
+
+    <!-- the printable quote document -->
+    <article class="quote-doc" id="quoteDoc">
+      <div class="qd-head">
+        <div>
+          <img src="../media/logo.png" alt="Edecoration" class="qd-logo-img">
+          <div class="qd-tag">Cortinas y persianas de lujo · Panamá</div>
+        </div>
+        <div class="qd-meta">
+          <div><strong>COTIZACIÓN</strong></div>
+          <div id="qdNumber">—</div>
+          <div id="qdDate">—</div>
+        </div>
+      </div>
+
+      <div class="qd-client">
+        <div><span>Cliente</span><strong id="qdClient">—</strong></div>
+        <div><span>Proyecto</span><strong id="qdProject">—</strong></div>
+      </div>
+
+      <table class="qd-table">
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Medidas</th>
+            <th class="num">Cant.</th>
+            <th class="num">P. Unit.</th>
+            <th class="num">Total</th>
+            <th class="act"></th>
+          </tr>
+        </thead>
+        <tbody id="qdItems">
+          <tr class="qd-empty"><td colspan="6">Aún no has agregado paños a la cotización.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="qd-totals">
+        <div class="qd-notes" id="qdNotes"></div>
+        <div class="qd-sum">
+          <div class="row"><span>Subtotal</span><span id="qdSubtotal">$0.00</span></div>
+          <div class="row" id="qdMarginRow" hidden><span>Margen</span><span id="qdMargin">$0.00</span></div>
+          <div class="row"><span id="qdTaxLabel">ITBMS (7%)</span><span id="qdTax">$0.00</span></div>
+          <div class="row total"><span>Total</span><span id="qdTotal">$0.00</span></div>
+        </div>
+      </div>
+
+      <div class="qd-foot">
+        <p>+507 6672-9051 &nbsp;·&nbsp; +507 390-0869 &nbsp;·&nbsp; edecoracion@yahoo.com</p>
+        <p class="qd-disclaimer">Cotización referencial. Los costos pueden variar sin previo aviso por cambios en los costos de la materia prima. Válida por 15 días.</p>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="data/catalog.js"></script>
+<script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,1309 @@
+{
+  "category": "Rieles y Motores",
+  "tables": [
+    {
+      "type": "width_priced",
+      "name": "RIEL HD CON BALINERAS",
+      "subheader": "Balinera",
+      "page": 32,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156,
+        168,
+        180,
+        192,
+        204,
+        216,
+        228
+      ],
+      "rows": [
+        {
+          "label": "Riel S/ Master",
+          "prices": [
+            11.0,
+            13.0,
+            15.0,
+            21.0,
+            22.0,
+            24.0,
+            26.0,
+            30.0,
+            32.0,
+            40.0,
+            41.0,
+            43.0,
+            45.0,
+            46.0,
+            48.0,
+            50.0,
+            51.0
+          ]
+        },
+        {
+          "label": "Riel 1-Vía",
+          "prices": [
+            17.0,
+            19.0,
+            21.0,
+            27.0,
+            28.0,
+            30.0,
+            32.0,
+            36.0,
+            38.0,
+            46.0,
+            47.0,
+            49.0,
+            51.0,
+            52.0,
+            54.0,
+            56.0,
+            57.0
+          ]
+        },
+        {
+          "label": "Riel 2-Vías",
+          "prices": [
+            22.0,
+            24.0,
+            26.0,
+            32.0,
+            33.0,
+            35.0,
+            37.0,
+            41.0,
+            43.0,
+            51.0,
+            52.0,
+            54.0,
+            56.0,
+            57.0,
+            59.0,
+            61.0,
+            62.0
+          ]
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "width_priced",
+      "name": "RIEL COULISSE NEGRO",
+      "subheader": "WAVE",
+      "page": 32,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156,
+        168,
+        180,
+        192,
+        204,
+        216,
+        228
+      ],
+      "rows": [
+        {
+          "label": "Riel 1-Vía",
+          "prices": [
+            30.0,
+            35.0,
+            52.0,
+            58.0,
+            63.0,
+            65.0,
+            70.0,
+            83.0,
+            88.0,
+            94.0,
+            96.0,
+            120.0,
+            122.0,
+            127.0,
+            132.0,
+            134.0,
+            139.0
+          ]
+        },
+        {
+          "label": "Riel 2-Vías",
+          "prices": [
+            34.0,
+            40.0,
+            59.0,
+            65.0,
+            70.0,
+            72.0,
+            78.0,
+            93.0,
+            98.0,
+            104.0,
+            106.0,
+            133.0,
+            135.0,
+            141.0,
+            147.0,
+            149.0,
+            155.0
+          ]
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "width_priced",
+      "name": "RIELES MANUALES (precios no incluyen bastones)",
+      "subheader": "CORREDERAS",
+      "page": 32,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156,
+        168,
+        180,
+        192,
+        204,
+        216,
+        228
+      ],
+      "rows": [
+        {
+          "label": "Riel 1-Vía",
+          "prices": [
+            25.0,
+            28.0,
+            44.0,
+            48.0,
+            51.0,
+            52.0,
+            56.0,
+            71.0,
+            75.0,
+            78.0,
+            79.0,
+            83.0,
+            98.0,
+            102.0,
+            106.0,
+            110.0,
+            114.0
+          ]
+        },
+        {
+          "label": "Riel 2-Vías",
+          "prices": [
+            28.0,
+            32.0,
+            49.0,
+            53.0,
+            57.0,
+            58.0,
+            62.0,
+            79.0,
+            83.0,
+            87.0,
+            87.0,
+            91.0,
+            109.0,
+            113.0,
+            117.0,
+            121.0,
+            126.0
+          ]
+        },
+        {
+          "label": "Alquiler de Maquina",
+          "prices": [
+            null,
+            null,
+            null,
+            null,
+            45.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            24.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "Correderas con huesitos (100%) 0.65 6-700-DM-00015 / 04300100344",
+      "page": 33,
+      "currency": "USD",
+      "section_headers": [
+        "RIELES MOTORIZADOS",
+        "VERTILUX",
+        "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
+        "CONTROLES REMOTO",
+        "Canales",
+        "6 Canales"
+      ],
+      "items": [
+        {
+          "name": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 228”",
+          "description": "",
+          "price": 280.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 114”",
+          "description": "",
+          "price": 235.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel Eléctrico 60 KG - Onda",
+          "description": "Motor RF Unidireccional de 60 kg para cortina de tela hasta 228”",
+          "price": 365.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel Eléctrico 60 KG - Onda",
+          "description": "Motor RF Unidireccional de 60 kg para cortina de tela hasta 114”",
+          "price": 275.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+          "description": "",
+          "price": 225.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+          "description": "",
+          "price": 175.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel Eléctrico 40 KG - Onda",
+          "description": "Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+          "price": 310.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel Eléctrico 40 KG - Onda",
+          "description": "Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+          "price": 220.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+          "description": "",
+          "price": 311.5,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+          "description": "",
+          "price": 260.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel de Batería 40 KG - Onda",
+          "description": "Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+          "price": 390.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel de Batería 40 KG - Onda",
+          "description": "Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+          "price": 300.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel con corredera adicional",
+          "description": "Precio por pie",
+          "price": 7.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel con onda adicional",
+          "description": "Precio por pie",
+          "price": 10.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Unión de Riel",
+          "description": "",
+          "price": 10.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Servicio de curvado",
+          "description": "",
+          "price": 150.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Control Remoto 2 Canales",
+          "description": "POINT Celtic Remote 2CH LED Unidirectional",
+          "price": 24.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto 6 Canales",
+          "description": "POINT Celtic Remote 6CH LED Unidirectional",
+          "price": 28.8,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto 16 Canales",
+          "description": "POINT Celtic Remote 16CH Display Unidirectional",
+          "price": 38.4,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto Escalate 6",
+          "description": "Escalate Celtic Remote 6CH Display Bidireccional - con Timer",
+          "price": 48.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto Deco One -",
+          "description": "VTi® RE-LION DECO ONE WALL SWITCH | BIDIRECTIONAL",
+          "price": 52.0,
+          "extra": "",
+          "context": "Canales"
+        },
+        {
+          "name": "VTi Smart Hub",
+          "description": "VTi Re-lion SMARTHUB",
+          "price": 96.0,
+          "extra": "",
+          "context": "6 Canales"
+        },
+        {
+          "name": "VTi Smart Hub Plus",
+          "description": "VTi Re-lion SMARTHUB Plus",
+          "price": 140.0,
+          "extra": "",
+          "context": "6 Canales"
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador) 280.00",
+      "page": 34,
+      "currency": "USD",
+      "section_headers": [
+        "ACCESORIOS RIELES RE-LION",
+        "COULISSE",
+        "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL",
+        "CONTROLES REMOTO",
+        "SOMFY"
+      ],
+      "items": [
+        {
+          "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
+          "description": "",
+          "price": 280.0,
+          "extra": "",
+          "context": ""
+        },
+        {
+          "name": "Master Pinch Pleat 2 vias",
+          "description": "Set master carrier center open pinch pleat 04300100355",
+          "price": 16.5,
+          "extra": "",
+          "context": "ACCESORIOS RIELES RE-LION"
+        },
+        {
+          "name": "Master Pinch Pleat 1 vía",
+          "description": "Master carrier one way 04300100356",
+          "price": 5.75,
+          "extra": "",
+          "context": "ACCESORIOS RIELES RE-LION"
+        },
+        {
+          "name": "Cinta dentada",
+          "description": "Pie Drapery motors interior belt 04300100352",
+          "price": 2.25,
+          "extra": "",
+          "context": "ACCESORIOS RIELES RE-LION"
+        },
+        {
+          "name": "Bracket de Riel",
+          "description": "Drapery motors ceiling clip 04300100357",
+          "price": 4.7,
+          "extra": "",
+          "context": "ACCESORIOS RIELES RE-LION"
+        },
+        {
+          "name": "Gancho de inicio pinch pleat",
+          "description": "Drapery motors plastic clip 04300100358",
+          "price": 0.5,
+          "extra": "",
+          "context": "ACCESORIOS RIELES RE-LION"
+        },
+        {
+          "name": "Master Ripplefold 2 vías",
+          "description": "Set master carrier center open ripplefold 04300100360",
+          "price": 24.0,
+          "extra": "",
+          "context": "ACCESORIOS RIELES RE-LION"
+        },
+        {
+          "name": "Riel Eléctrico 228” - Corredera",
+          "description": "Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 228”",
+          "price": 350.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel Eléctrico 114” - Corredera",
+          "description": "Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 114”",
+          "price": 315.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel Eléctrico 228” - Onda",
+          "description": "Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 228”",
+          "price": 385.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel Eléctrico 114” - Onda",
+          "description": "Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 114”",
+          "price": 350.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel Eléctrico 228” - Wave",
+          "description": "Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 228”",
+          "price": 455.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel Eléctrico 114” - Wave",
+          "description": "Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 114”",
+          "price": 420.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Unión de Riel Coulisse",
+          "description": "",
+          "price": 10.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel de Batería 228” - Corredera Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
+          "description": "",
+          "price": 420.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel de Batería 114” - Corredera",
+          "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
+          "price": 385.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel de Batería 228” - Onda",
+          "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
+          "price": 455.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel de Batería 114” - Onda",
+          "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
+          "price": 420.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel de Batería 228” - Wave",
+          "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
+          "price": 490.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Riel de Batería 114” - Wave",
+          "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
+          "price": 455.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "Unión de Riel Coulisse",
+          "description": "",
+          "price": 10.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "CM-11-BK",
+          "description": "Control Remoto 1 canal color Black",
+          "price": 18.4,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CM-12-BK",
+          "description": "Control Remoto 5 canales color Black",
+          "price": 33.6,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CM-13-BK",
+          "description": "Control Remoto 15 canales color Black",
+          "price": 42.4,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CM-20",
+          "description": "Wifi hub Coulisse motion",
+          "price": 184.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Pull Buttom up",
+          "description": "Pull wand 8mm 40cm matt white",
+          "price": 10.5,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "RIELES ELECTRICOS UNIDIRECCIONALES",
+      "page": 35,
+      "currency": "USD",
+      "section_headers": [
+        "RIELES ELECTRICOS UNIDIRECCIONALES",
+        "CONTROLES REMOTO"
+      ],
+      "items": [
+        {
+          "name": "MOVELITE RTS 60 KG - corredera",
+          "description": "Riel motorizado RTS de 60 kg para cortina de tela hasta 228”",
+          "price": 472.5,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "MOVELITE RTS 60 KG - corredera",
+          "description": "Riel motorizado RTS de 60 kg para cortina de tela hasta 114”",
+          "price": 425.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "MOVELITE RTS 60 KG - onda",
+          "description": "Riel motorizado RTS de 60 kg para cortina de tela hasta 228”",
+          "price": 560.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "MOVELITE RTS 60 KG - onda",
+          "description": "Riel motorizado RTS de 60 kg para cortina de tela hasta 114”",
+          "price": 470.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "MOVELITE RTS 35 KG - corredera",
+          "description": "Riel motorizado RTS de 35 kg para cortina de tela hasta 228”",
+          "price": 395.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "MOVELITE RTS 35 KG - corredera",
+          "description": "Riel motorizado RTS de 35 kg para cortina de tela hasta 114”",
+          "price": 345.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "MOVELITE RTS 35 KG - onda",
+          "description": "Riel motorizado RTS de 35 kg para cortina de tela hasta 228”",
+          "price": 475.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "MOVELITE RTS 35 KG - onda",
+          "description": "Riel motorizado RTS de 35 kg para cortina de tela hasta 114”",
+          "price": 385.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel MOVELITE adicional",
+          "description": "precio por pie - con correderas tradicionales",
+          "price": 7.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Riel MOVELITE adicional",
+          "description": "precio por pie - con correderas de onda",
+          "price": 10.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Servicio de curvado",
+          "description": "",
+          "price": 150.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "SITUO 1C",
+          "description": "Control remoto monocanal",
+          "price": 56.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "SITUO 5C",
+          "description": "Control remoto multicanal",
+          "price": 80.8,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "INTEO",
+          "description": "Estación central para integración con Alexa, Siri y Google",
+          "price": 80.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "GLYDEA RTS 60 KG",
+          "description": "Riel motorizado RTS de 60kg para cortina de tela hasta 228” - corredera u onda",
+          "price": 875.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "GLYDEA RTS 60 KG",
+          "description": "Riel motorizado RTS de 60kg para cortina de tela hasta 114” - corredera u onda",
+          "price": 770.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "GLYDEA RTS 35 KG",
+          "description": "Riel motorizado RTS de 35kg para cortina de tela hasta 228” - corredera u onda",
+          "price": 650.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "GLYDEA RTS 35 KG",
+          "description": "Riel motorizado RTS de 35kg para cortina de tela hasta 114” - corredera u onda",
+          "price": 600.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "GLYDEA Mecánico 60 KG",
+          "description": "Riel motorizado 4 hilos 60kg para cortina de tela hasta 228” - corredera u onda",
+          "price": 840.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Riel GLYDEA adicional",
+          "description": "precio por pie - corredera u onda",
+          "price": 16.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "TELIS 6",
+          "description": "Control remoto 6 canales con opción de programar horarios",
+          "price": 224.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "TELIS 16",
+          "description": "Control remoto 16 canales",
+          "price": 300.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "SMOOVE PURE 1C",
+          "description": "Botonera wireless monocanal",
+          "price": 80.8,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "SMOOVE PURE 4C",
+          "description": "Botonera wireless multicanal",
+          "price": 128.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "INTERTEC MONOCANAL",
+          "description": "Transmisor de contacto seco 127 VAC",
+          "price": 168.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "INTERTEC 16",
+          "description": "Transmisor de contacto seco 127 VAC - 16 canales",
+          "price": 544.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CONVERTIDOR DE DATOS",
+          "description": "RS232/ RS485",
+          "price": 160.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "MOTORES",
+      "page": 41,
+      "currency": "USD",
+      "section_headers": [
+        "MOTORES",
+        "VERTILUX",
+        "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
+        "CONTROLES REMOTO",
+        "Canales",
+        "6 Canales",
+        "ACCESORIOS"
+      ],
+      "items": [
+        {
+          "name": "Re-Lion 35E 1L",
+          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+          "price": 105.0,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 35E 2L",
+          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+          "price": 122.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 35E 3L",
+          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+          "price": 143.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 45E 1L",
+          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 136.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 45E 2L",
+          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 157.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 45E 3L",
+          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 178.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 20Nm (solo motor)",
+          "description": "VTi®RE-LION Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 122.25,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 50 Nm (AWNING SYSTEM) VTi®RE-LION Unidi. ACMech.Lim.Mot.45mm | 50Nm | 33rpm | 110AC (S/motor)",
+          "description": "",
+          "price": 150.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion Recargable 1 Nm",
+          "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor25mm|1Nm|30rpm (tubo de 1.5”)",
+          "price": 129.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion Recargable 2 Nm",
+          "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor25mm|2Nm|28rpm (tubo de 1.5”)",
+          "price": 136.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-LIon Recargable 3 Nm",
+          "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor35mm|3Nm|28rpm",
+          "price": 171.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion Recargable 6 Nm",
+          "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor35mm|6Nm|18rpm",
+          "price": 185.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 35E Standard NO RF",
+          "description": "Vti®RE-LION CelticUnidi.ACMech.Lim.Mot.35mm/6Nm/33rpm/110AC",
+          "price": 84.0,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Control Remoto 2 Canales",
+          "description": "POINT Celtic Remote 2CH LED Unidirectional",
+          "price": 24.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto 6 Canales",
+          "description": "POINT Celtic Remote 6CH LED Unidirectional",
+          "price": 28.8,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto 16 Canales",
+          "description": "POINT Celtic Remote 16CH Display Unidirectional",
+          "price": 38.4,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto Escalate 6",
+          "description": "Escalate Celtic Remote 6CH Display Bidireccional - con Timer",
+          "price": 48.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Control Remoto Deco One -",
+          "description": "VTi® RE-LION DECO ONE WALL SWITCH | BIDIRECTIONAL",
+          "price": 52.0,
+          "extra": "",
+          "context": "Canales"
+        },
+        {
+          "name": "VTi Smart Hub",
+          "description": "VTi Re-lion SMARTHUB",
+          "price": 96.0,
+          "extra": "",
+          "context": "6 Canales"
+        },
+        {
+          "name": "VTi Smart Hub Plus",
+          "description": "VTi Re-lion SMARTHUB Plus",
+          "price": 140.0,
+          "extra": "",
+          "context": "6 Canales"
+        },
+        {
+          "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
+          "description": "",
+          "price": 280.0,
+          "extra": "",
+          "context": "6 Canales"
+        },
+        {
+          "name": "Corona y rueda motriz 38mm",
+          "description": "Para motor recargable de 1 y 2 Nm - tubo de 38mm (1.5)",
+          "price": 4.5,
+          "extra": "",
+          "context": "ACCESORIOS"
+        },
+        {
+          "name": "Corona y rueda motriz 38mm",
+          "description": "Para motor recargable de 1 y 2 Nm - tubo de 38mm (1.75)",
+          "price": 5.0,
+          "extra": "",
+          "context": "ACCESORIOS"
+        },
+        {
+          "name": "Corona y rueda motriz 50mm",
+          "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 50mm (2.0)",
+          "price": 5.5,
+          "extra": "",
+          "context": "ACCESORIOS"
+        },
+        {
+          "name": "Corona de 63mm",
+          "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
+          "price": 4.0,
+          "extra": "",
+          "context": "ACCESORIOS"
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "Rueda motriz de 63mm Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5) 4.00",
+      "page": 42,
+      "currency": "USD",
+      "section_headers": [
+        "MOTIONBLINDS",
+        "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL",
+        "SHADE) incluye bateria",
+        "CONTROLES REMOTO"
+      ],
+      "items": [
+        {
+          "name": "Rueda motriz de 63mm",
+          "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
+          "price": 4.0,
+          "extra": "",
+          "context": ""
+        },
+        {
+          "name": "Cargador RE-LION",
+          "description": "cargador con cable de 13 pies de largo",
+          "price": 15.0,
+          "extra": "",
+          "context": ""
+        },
+        {
+          "name": "MOTION CM-09-C120 1L",
+          "description": "Tubular motor Radio 35mm 120VAC 6Nm 33rpm - Tubo de 2” Coulisse",
+          "price": 150.5,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "MOTION CM-09-C120 2L",
+          "description": "Tubular motor Radio 35mm 120VAC 6Nm 33rpm - Tubo de 2” Coulisse",
+          "price": 178.5,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "MOTION CM-06",
+          "description": "Tubular motor pull battery 35 mm 6.0Nm 24rpm - Tubo de 2” Coulisse",
+          "price": 210.0,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "MOTION CM-06-E-R (PEDIDO)",
+          "description": "Tubular motor pull battery EVE 35mm 6.0Nm 24 rpm - Tubo de 2” Coulisse",
+          "price": 266.0,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "MOTION CM-07",
+          "description": "Mid motor Radio 24mm 12VDC 0,7Nm 28rpm (HONEYCOMB / ROMAN",
+          "price": 150.5,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
+        },
+        {
+          "name": "CM-11-BK",
+          "description": "Control Remoto 1 canal color Black",
+          "price": 18.4,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CM-12-BK",
+          "description": "Control Remoto 5 canales color Black",
+          "price": 33.6,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CM-13-BK",
+          "description": "Control Remoto 15 canales color Black",
+          "price": 42.4,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CM-20",
+          "description": "Wifi hub Coulisse motion",
+          "price": 184.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CM-39 (para motor CM-07)",
+          "description": "Battery tube USB-C long 2600mAh 11,1V 29Wh",
+          "price": 60.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "Pull Buttom up",
+          "description": "Pull wand 8mm 40cm matt white",
+          "price": 10.5,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "SOMFY",
+      "page": 43,
+      "currency": "USD",
+      "section_headers": [
+        "SOMFY",
+        "MOTORES ELÉCTRICOS UNIDIRECCIONALES",
+        "CONTROLES REMOTO",
+        "COMPONENTES GENERALES"
+      ],
+      "items": [
+        {
+          "name": "LT50E SONESSE",
+          "description": "Motor RTS 6Nm con tecnología silenciosa para 1 lienzo",
+          "price": 349.3,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "LT50E2L SONESSE",
+          "description": "Motor RTS 6Nm con tecnología silenciosa para 2 lienzos",
+          "price": 419.3,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "LT50E3L SONESSE",
+          "description": "Motor RTS 10Nm con tecnología silenciosa para 3 lienzos",
+          "price": 489.3,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Motor Promo 1L",
+          "description": "Motor RTS 6NM con opción de tubo de 40mm ó 50mm",
+          "price": 150.5,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Motor Promo 2L",
+          "description": "Motor RTS 6NM con opción de tubo de 40mm ó 50mm",
+          "price": 178.5,
+          "extra": "",
+          "context": "MOTORES ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "SITUO 1C",
+          "description": "Control remoto monocanal",
+          "price": 56.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "SITUO 5C",
+          "description": "Control remoto multicanal",
+          "price": 80.8,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "INTEO",
+          "description": "Estación central para integración con Alexa, Siri y Google",
+          "price": 80.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "LT50M",
+          "description": "Motor mecánico 6Nm con tecnología silenciosa para 1 lienzo",
+          "price": 349.3,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "LT50M2L",
+          "description": "Motor mecánico 6Nm con tecnología silenciosa para 1 lienzo",
+          "price": 419.3,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "LT50M3L",
+          "description": "Motor mecánico 6Nm con tecnología silenciosa para 1 lienzo",
+          "price": 489.3,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "TELIS 6",
+          "description": "Control remoto 6 canales con opción de programar horarios",
+          "price": 224.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "TELIS 16",
+          "description": "Control remoto 16 canales",
+          "price": 300.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "SMOOVE PURE 1C",
+          "description": "Botonera wireless monocanal",
+          "price": 80.8,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "SMOOVE PURE 4C",
+          "description": "Botonera wireless multicanal",
+          "price": 128.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "INTERTEC MONOCANAL",
+          "description": "Transmisor de contacto seco 127 VAC",
+          "price": 168.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "INTERTEC 16",
+          "description": "Transmisor de contacto seco 127 VAC - 16 canales",
+          "price": 544.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "CONVERTIDOR DE DATOS",
+          "description": "RS232/ RS485",
+          "price": 160.0,
+          "extra": "",
+          "context": "CONTROLES REMOTO"
+        },
+        {
+          "name": "ADAPTER SKYLINE",
+          "description": "Adaptador de motor para brackets skyline",
+          "price": 7.5,
+          "extra": "",
+          "context": "COMPONENTES GENERALES"
+        },
+        {
+          "name": "ADAPTER COULISSE",
+          "description": "Adaptador de motor para brackets Coulisse",
+          "price": 4.0,
+          "extra": "",
+          "context": "COMPONENTES GENERALES"
+        }
+      ],
+      "category": "Rieles y Motores"
+    }
+  ]
+}
