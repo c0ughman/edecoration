@@ -78,6 +78,7 @@
   // remove native-select change listeners — custom dropdowns handle changes above
 
   let unit = "in";
+  let marginMode = "pct";      // "pct" or "fixed"
   let current = null;          // current computed line preview
   const lines = [];            // quote line items
 
@@ -218,15 +219,15 @@
 
   function computeTotals() {
     let subtotal = lines.reduce((s, l) => s + lineUnit(l) * l.qty, 0);
-    const marginPct = num(cfg.margin.value);
-    const margin = subtotal * marginPct / 100;
+    const marginVal = num(cfg.margin.value);
+    const margin = marginMode === "fixed" ? marginVal : subtotal * marginVal / 100;
     const taxPct = num(cfg.tax.value);
     const taxable = subtotal + margin;
     const tax = taxable * taxPct / 100;
     const total = taxable + tax;
 
     $("qdSubtotal").textContent = money(subtotal);
-    $("qdMarginRow").hidden = marginPct <= 0;
+    $("qdMarginRow").hidden = marginVal <= 0;
     $("qdMargin").textContent = money(margin);
     $("qdTaxLabel").textContent = `ITBMS (${taxPct}%)`;
     $("qdTax").textContent = money(tax);
@@ -341,6 +342,12 @@
     [...$("unitSeg").children].forEach(x => x.classList.toggle("active", x === b));
     $("wUnit").textContent = $("hUnit").textContent = "(" + unit + ")";
     compute();
+  });
+  $("marginModeSeg").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    marginMode = b.dataset.mode;
+    [...$("marginModeSeg").children].forEach(x => x.classList.toggle("active", x === b));
+    computeTotals();
   });
   addBtn.addEventListener("click", addLine);
   $("qdItems").addEventListener("click", e => {

@@ -37,8 +37,14 @@
     <label>Instalación por paño (US$)
       <input type="number" id="cfgInstall" value="0" min="0" step="1">
     </label>
-    <label>Margen / markup (%)
-      <input type="number" id="cfgMargin" value="0" min="0" step="1">
+    <label>Margen / markup
+      <div class="margin-field">
+        <input type="number" id="cfgMargin" value="0" min="0" step="1">
+        <div class="seg seg-sm" id="marginModeSeg">
+          <button data-mode="pct" class="active" type="button">%</button>
+          <button data-mode="fixed" type="button">US$</button>
+        </div>
+      </div>
     </label>
   </div>
   <p class="settings-note">Estos valores son configurables: los precios de la lista PRS son costos. Ajusta margen, instalación e impuestos según tu política.</p>
