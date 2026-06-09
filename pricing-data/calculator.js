@@ -342,7 +342,7 @@
   // ---------- events ----------
   [widthInp, heightInp, qtyInp, mountSel, installChk, lineMarginInp].forEach(el =>
     el.addEventListener("input", compute));
-  Object.values(cfg).forEach(el => el.addEventListener("input", () => { computeTotals(); }));
+  Object.values(cfg).forEach(el => el.addEventListener("input", () => { renderQuote(); }));
   $("unitSeg").addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;
     unit = b.dataset.unit;
