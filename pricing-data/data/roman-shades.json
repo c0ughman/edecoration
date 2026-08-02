@@ -4,7 +4,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Stratos 110” / Paros 110” /Eco Screen (Con Varilla)",
-      "page": 45,
+      "page": 47,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -477,17 +477,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Stratos 110” / Paros 110” /Eco Screen (Sin Varilla)",
-      "page": 45,
+      "page": 47,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -960,10 +957,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -972,7 +966,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Soleil 5% - 78” / 98” / 118” (Con Varilla)",
-      "page": 46,
+      "page": 48,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1445,17 +1439,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Soleil 5% - 78” / 98” / 118” (Sin Varilla)",
-      "page": 46,
+      "page": 48,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1928,10 +1919,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -1940,7 +1928,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Soleil 16% - 98” / Soleil 1% - 98” (Con Varilla)",
-      "page": 47,
+      "page": 49,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -2413,17 +2401,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Soleil 16% - 98” / Soleil 1% - 98” (Sin Varilla)",
-      "page": 47,
+      "page": 49,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -2896,10 +2881,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -2908,7 +2890,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Con Varilla)",
-      "page": 48,
+      "page": 50,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -3381,17 +3363,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Sin Varilla)",
-      "page": 48,
+      "page": 50,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -3864,10 +3843,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -3876,7 +3852,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Sunset Bo 118” / Florencia 118” / Screen 5% (Con Varilla)",
-      "page": 49,
+      "page": 51,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -4349,17 +4325,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Sunset Bo 118” / Florencia 118” / Screen 5% (Sin Varilla)",
-      "page": 49,
+      "page": 51,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -4832,10 +4805,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -4844,7 +4814,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Noble 118” / Captiva 118” / Motion 118” (Con Varilla)",
-      "page": 50,
+      "page": 52,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -5317,17 +5287,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Noble 118” / Captiva 118” / Motion 118” (Sin Varilla)",
-      "page": 50,
+      "page": 52,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -5800,10 +5767,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -5812,7 +5776,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Salvador 94” / Parget 98” (Con Varilla)",
-      "page": 51,
+      "page": 53,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -6285,17 +6249,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Salvador 94” / Parget 98” (Sin Varilla)",
-      "page": 51,
+      "page": 53,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -6768,10 +6729,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -6780,7 +6738,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Stucco BO 110” / Adagio 110” (Con Varilla)",
-      "page": 52,
+      "page": 54,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -7253,17 +7211,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Stucco BO 110” / Adagio 110” (Sin Varilla)",
-      "page": 52,
+      "page": 54,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -7736,10 +7691,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -7748,7 +7700,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Hampton BO 110” (Con Varilla)",
-      "page": 53,
+      "page": 55,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -8221,17 +8173,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Hampton BO 110” (Sin Varilla)",
-      "page": 53,
+      "page": 55,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -8704,10 +8653,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -8716,7 +8662,7 @@
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Explore 118” / Mombassa 118” (Con Varilla)",
-      "page": 54,
+      "page": 56,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -9189,17 +9135,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Roman Shades"
     },
     {
       "type": "fabric_matrix",
       "name": "Roman Shades - Explore 118” / Mombassa 118” (Sin Varilla)",
-      "page": 54,
+      "page": 56,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -9672,10 +9615,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],

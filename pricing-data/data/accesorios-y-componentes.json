@@ -5,7 +5,7 @@
       "type": "width_priced",
       "name": "Cenefas - Carcazas",
       "subheader": "pulgadas",
-      "page": 37,
+      "page": 38,
       "currency": "USD",
       "axis": {
         "cols": "width_in"
@@ -47,37 +47,37 @@
         {
           "label": "Cassette 100",
           "prices": [
-            32.28,
-            38.52,
-            43.36,
-            49.6,
-            54.44,
-            60.68,
-            65.52,
-            71.76,
-            76.6,
-            82.84,
-            87.68,
-            93.92,
-            98.76
+            27.9,
+            34.14,
+            38.98,
+            45.22,
+            50.06,
+            56.3,
+            61.14,
+            67.38,
+            72.22,
+            78.46,
+            83.3,
+            89.54,
+            94.38
           ]
         },
         {
           "label": "Cassette 120",
           "prices": [
-            40.33,
-            48.87,
-            56.01,
-            64.55,
-            71.69,
-            80.23,
-            87.37,
-            95.91,
-            103.05,
-            111.59,
-            118.73,
-            127.27,
-            134.41
+            35.95,
+            44.49,
+            51.63,
+            60.17,
+            67.31,
+            75.85,
+            82.99,
+            91.53,
+            98.67,
+            107.21,
+            114.35,
+            122.89,
+            130.03
           ]
         },
         {
@@ -123,7 +123,7 @@
       "type": "width_priced",
       "name": "Cassette 130",
       "subheader": "pulgadas",
-      "page": 38,
+      "page": 39,
       "currency": "USD",
       "axis": {
         "cols": "width_in"
@@ -168,7 +168,7 @@
     {
       "type": "item_list",
       "name": "COMPONENTES",
-      "page": 39,
+      "page": 40,
       "currency": "USD",
       "section_headers": [
         "COMPONENTES"
@@ -280,6 +280,13 @@
           "context": "COMPONENTES"
         },
         {
+          "name": "Extensión de 3” y 4”",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIEZA",
+          "context": "COMPONENTES"
+        },
+        {
           "name": "Tensor Cadena",
           "description": "",
           "price": 0.75,
@@ -331,7 +338,7 @@
         {
           "name": "Adaptador de 2” (reducción)",
           "description": "",
-          "price": 2.5,
+          "price": 1.5,
           "extra": "PIEZA (blanca)",
           "context": "COMPONENTES"
         },
@@ -369,24 +376,24 @@
           "price": 0.5,
           "extra": "PIEZA (blanca, gris)",
           "context": "COMPONENTES"
-        },
-        {
-          "name": "Bottomrail Clásico",
-          "description": "",
-          "price": 1.25,
-          "extra": "PIE (bronze, negro)",
-          "context": "COMPONENTES"
         }
       ],
       "category": "Accesorios y Componentes"
     },
     {
       "type": "item_list",
-      "name": "Tapa de bottomrail clásico 0.50 PIEZA (bronze, negra)",
-      "page": 40,
+      "name": "Bottomrail Clásico 1.25 PIE (bronze, negro)",
+      "page": 41,
       "currency": "USD",
       "section_headers": [],
       "items": [
+        {
+          "name": "Bottomrail Clásico",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIE (bronze, negro)",
+          "context": ""
+        },
         {
           "name": "Tapa de bottomrail clásico",
           "description": "",

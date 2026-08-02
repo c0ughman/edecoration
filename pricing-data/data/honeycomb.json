@@ -4,7 +4,7 @@
     {
       "type": "fabric_matrix",
       "name": "Honeycomb BU - Rioja Blackout",
-      "page": 56,
+      "page": 58,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -540,19 +540,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
-      "notes": [
-        "Honeycomb BU - Rioja Transparente"
-      ],
+      "requirement_legend": {},
+      "notes": [],
       "category": "Honeycomb"
     },
     {
       "type": "fabric_matrix",
       "name": "Honeycomb BU - Rioja Transparente",
-      "page": 56,
+      "page": 58,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1088,10 +1083,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -1100,7 +1092,7 @@
     {
       "type": "fabric_matrix",
       "name": "Honeycomb BU - Oxford",
-      "page": 57,
+      "page": 59,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1636,10 +1628,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -1648,7 +1637,7 @@
     {
       "type": "fabric_matrix",
       "name": "Honeycomb TDBU - Rioja Blackout",
-      "page": 58,
+      "page": 60,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -2184,19 +2173,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
-      "notes": [
-        "Honeycomb TDBU - Rioja Transparente"
-      ],
+      "requirement_legend": {},
+      "notes": [],
       "category": "Honeycomb"
     },
     {
       "type": "fabric_matrix",
       "name": "Honeycomb TDBU - Rioja Transparente",
-      "page": 58,
+      "page": 60,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -2732,10 +2716,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -2744,7 +2725,7 @@
     {
       "type": "fabric_matrix",
       "name": "Honeycomb TDBU - Oxford",
-      "page": 59,
+      "page": 61,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -3280,17 +3261,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [],
       "category": "Honeycomb"
     },
     {
       "type": "fabric_matrix",
       "name": "Honeycomb Dia y Noche - Rioja Blackout + Rioja Transparente",
-      "page": 60,
+      "page": 62,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -3826,19 +3804,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
-      "notes": [
-        "Honeycomb Dia y Noche - Rioja Blackout + Oxford"
-      ],
+      "requirement_legend": {},
+      "notes": [],
       "category": "Honeycomb"
     },
     {
       "type": "fabric_matrix",
       "name": "Honeycomb Dia y Noche - Rioja Blackout + Oxford",
-      "page": 60,
+      "page": 62,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -4374,10 +4347,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],

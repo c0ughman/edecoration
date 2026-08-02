@@ -17,6 +17,35 @@
   const cfg = { tax: $("cfgTax"), clutch: $("cfgClutch"), motor: $("cfgMotor"),
                 install: $("cfgInstall"), margin: $("cfgMargin") };
 
+  /* Shaded-cell requirements.
+     The extractor decides what a shading colour means per table (the same
+     yellow is "clutch Large" on Roller pages and "bottomrail (Delfin)" on Axio
+     pages) and emits a stable key plus PRS's own wording in
+     table.requirement_legend. Everything the UI does with a requirement is
+     driven from here -- an unknown key still renders a badge and still reaches
+     the quote rather than disappearing. */
+  const REQUIREMENTS = {
+    clutch_large: {
+      label: "clutch Large", cls: "clutch",
+      cost: () => num(cfg.clutch.value),
+    },
+    motorization: {
+      label: "motorización", cls: "motor",
+      cost: () => num(cfg.motor.value),
+    },
+    bottomrail_delfin: {
+      label: "bottomrail (Delfin) · sólo por pedido", cls: "order",
+      cost: () => 0,
+    },
+    thin_fabric_smiles: {
+      label: "tela delgada · puede presentar sonrisas", cls: "warn",
+      cost: () => 0,
+    },
+  };
+  const reqInfo = key => key
+    ? (REQUIREMENTS[key] || { label: key, cls: "warn", cost: () => 0 })
+    : null;
+
   // ---- custom dropdowns ----
   function initCustomSelect(dropId, hiddenSel, onChange) {
     const drop = $(dropId);
@@ -129,6 +158,10 @@
     const h = toIn(parseFloat(heightInp.value));
     const qty = Math.max(1, parseInt(qtyInp.value) || 1);
 
+    // notes belong to the fabric, so they show as soon as one is picked --
+    // before a size is entered and even when the size falls outside the table
+    renderFabricNotes(table);
+
     if (!table || !w || !h) {
       lpValue.textContent = "—"; lpMeta.textContent = ""; addBtn.disabled = true;
       return;
@@ -158,6 +191,9 @@
       table, fabric: cleanName(table.name), category: table.category,
       reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
+      // PRS's own sentence for this requirement, carried onto the quote
+      reqNote: (table.requirement_legend || {})[req] || "",
+      tableNotes: table.notes || [],
       mount: mountSel.value, install: installChk.checked,
       lineMargin: num(lineMarginInp.value), lineMarginMode,
     };
@@ -166,11 +202,25 @@
     lpValue.textContent = money(finalUnit);
     lpMeta.textContent = `Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}" · ${qty} ud · ${money(finalUnit * qty)} subtotal`;
 
-    if (req === "clutch_large")
-      addBadge("clutch", "Requiere clutch Large");
-    if (req === "motorization")
-      addBadge("motor", "Requiere motorización");
+    const info = reqInfo(req);
+    if (info) addBadge(info.cls, "Requiere " + info.label);
+    renderFabricNotes(table);
     addBtn.disabled = false;
+  }
+
+  /* Every sentence PRS printed under a table -- max-width caveats, warranty
+     conditions, special-order parts. Shown on the fabric panel so the person
+     quoting sees them before the paño is added, not after. */
+  function renderFabricNotes(table) {
+    const el = $("fabricNotes");
+    if (!el) return;
+    const ns = (table && table.notes) || [];
+    el.innerHTML = ns.length
+      ? `<ul>${ns.map(n => `<li>${escapeHtml(n)}</li>`).join("")}</ul>` : "";
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"]/g, c =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   }
   const round1 = n => Math.round(n * 10) / 10;
   function addBadge(cls, txt) {
@@ -193,8 +243,8 @@
     } else {
       body.innerHTML = lines.map((l, idx) => {
         const tags = [];
-        if (l.req === "clutch_large") tags.push(`<span class="tag clutch">clutch Large</span>`);
-        if (l.req === "motorization") tags.push(`<span class="tag motor">motorización</span>`);
+        const info = reqInfo(l.req);
+        if (info) tags.push(`<span class="tag ${info.cls}">${escapeHtml(info.label)}</span>`);
         if (l.install) tags.push(`<span class="tag motor">instalación</span>`);
         return `<tr>
           <td>
@@ -215,8 +265,8 @@
   // unit price incl. per-paño add-ons (hardware + install + per-paño margin)
   function lineUnit(l) {
     let p = l.unitPrice;
-    if (l.req === "clutch_large") p += num(cfg.clutch.value);
-    if (l.req === "motorization") p += num(cfg.motor.value);
+    const info = reqInfo(l.req);
+    if (info) p += info.cost();
     if (l.install) p += num(cfg.install.value);
     if (l.lineMargin > 0)
       p += l.lineMarginMode === "fixed" ? l.lineMargin : p * l.lineMargin / 100;
@@ -245,10 +295,21 @@
 
   function renderNotes() {
     const notes = [];
-    if (lines.some(l => l.req === "clutch_large"))
-      notes.push("Una o más medidas requieren <b>clutch Large</b>.");
-    if (lines.some(l => l.req === "motorization"))
-      notes.push("Una o más medidas requieren <b>motorización</b> (sin ella no aplica garantía).");
+    // one bullet per distinct requirement actually present in the quote
+    const seen = new Set();
+    lines.forEach(l => {
+      const info = reqInfo(l.req);
+      if (!info || seen.has(l.req)) return;
+      seen.add(l.req);
+      notes.push(`Una o más medidas requieren <b>${escapeHtml(info.label)}</b>.`);
+    });
+    // and PRS's own sentences from the tables the quote draws on
+    const src = new Set();
+    lines.forEach(l => {
+      if (l.reqNote) src.add(l.reqNote);
+      (l.tableNotes || []).forEach(n => src.add(n));
+    });
+    src.forEach(n => notes.push(escapeHtml(n)));
     notes.push("Precios sujetos a verificación de medidas en sitio.");
     $("qdNotes").innerHTML = notes.length
       ? `<h4>Notas</h4><ul>${notes.map(n => `<li>${n}</li>`).join("")}</ul>` : "";
@@ -279,8 +340,8 @@
     lines.forEach(l => {
       L.push(`${l.qty} × ${l.fabric}  (${l.askW}×${l.askH} → tabla ${l.reqWidth}"×${l.reqHeight}")`);
       const extras = [];
-      if (l.req === "clutch_large") extras.push("clutch Large");
-      if (l.req === "motorization") extras.push("motorización");
+      const info = reqInfo(l.req);
+      if (info) extras.push(info.label);
       if (l.install) extras.push("instalación");
       if (extras.length) L.push("    + " + extras.join(", "));
       L.push("    " + money(lineUnit(l)) + " c/u   =   " + money(lineUnit(l) * l.qty));

@@ -1,17 +1,23 @@
 # PRS / Edecoration price-list data
 
-Structured pricing extracted from **`Lista de precios 2026 PRS - Documentos de
-Google.pdf`** so it can be consumed by an internal quoting tool (HTML/JS).
+Structured pricing extracted from **`lista de precios nueva.pdf`** so it can be
+consumed by an internal quoting tool (HTML/JS).
 
 ## How to (re)generate
 
 ```bash
+# first time only
 python3 -m venv .venv-pricing
 .venv-pricing/bin/pip install pdfplumber
-.venv-pricing/bin/python pricing-data/extract.py "Lista de precios 2026 PRS - Documentos de Google.pdf"
+
+.venv-pricing/bin/python pricing-data/extract.py "lista de precios nueva.pdf"
+.venv-pricing/bin/python pricing-data/tests/verify.py "lista de precios nueva.pdf"
 ```
 
-Output is written to `pricing-data/data/`. Re-run whenever PRS sends a new PDF.
+Output is written to `pricing-data/data/`, which is **wiped first** so a family
+PRS renames or drops cannot leave a stale file behind. Re-run both commands
+whenever PRS sends a new PDF — the extractor raises on anything it does not
+understand, and `verify.py` re-reads the PDF independently to confirm the result.
 
 ## What's in `data/`
 
@@ -29,7 +35,45 @@ Output is written to `pricing-data/data/`. Re-run whenever PRS sends a new PDF.
   Panel Track and Axio drop shades.
 - **34 width-priced tables** — curtain rails (Balinera / Ripplefold / Coulisse /
   Correderas) and Panel Track channel rails (2–5 canales).
-- **13 item lists / ~209 line items** — motorts, remotes, hardware, accessories.
+- **11 item lists / ~209 line items** — motors, remotes, hardware, accessories.
+- **1 awning system** — the Awning System page, priced by projection × number of
+  arms with a width range per arm count.
+
+## Shaded cells
+
+A shaded price cell means something, but *what* it means is written in prose on
+the page, not in the colour. The same light yellow marks **clutch Large** on the
+Roller pages and a special-order **bottomrail (Delfin)** on the Axio pages, so
+the extractor never hardcodes a colour → meaning table. Instead it:
+
+1. reads the raw fill behind every price cell;
+2. treats a colour as a *flag* only when it covers a strict subset of the
+   table's cells — a fill covering every cell is styling (this is what keeps the
+   rail pages' striped header rows from being read as requirements);
+3. resolves the meaning from that table's own notes, per clause, since one
+   sentence routinely defines two colours at once;
+4. **raises** if a flag colour has no note explaining it.
+
+Step 4 matters: silence there is what previously let an unrecognised orange —
+*"EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS"* — disappear from
+the quote entirely. Adding a colour means adding it to `COLOR_WORDS` (the
+Spanish word a note uses for it) and, if the requirement is new, to
+`MEANING_KEYWORDS` plus the `REQUIREMENTS` registry in `calculator.js`.
+
+Current requirement keys: `clutch_large`, `motorization`, `bottomrail_delfin`,
+`thin_fabric_smiles`.
+
+## Tests
+
+```bash
+.venv-pricing/bin/python pricing-data/tests/verify.py "lista de precios nueva.pdf"
+```
+
+34 checks. The first dozen re-derive facts from the PDF by a different route
+than `extract.py` uses (text lines rather than word geometry) and compare — the
+strongest is a row-by-row re-read of all 1108 price rows. The rest boot the real
+`calculator.js` under a stub DOM (`tests/harness.js`) and verify the arithmetic
+end to end: table lookup, round-up, surcharges, margins, ITBMS, quote totals.
 
 ## The calculator
 
@@ -39,8 +83,12 @@ alongside the JSON).
 
 Flow: pick a family → fabric → enter width × height (in/cm) → quantity & options
 → "Agregar a la cotización". Build a multi-paño quote, then export to **PDF /
-image / text**. Sizes round up to the next listed table size; cells shaded in the
-PDF auto-show a *clutch Large* / *motorización* badge and surcharge.
+image / text**. Sizes round up to the next listed table size; a shaded cell
+raises its badge and, where the requirement has a cost, its surcharge.
+
+Every note PRS printed under a table is shown on the fabric panel as soon as the
+fabric is picked, and carried onto the quote in PRS's own wording — max-width
+caveats, warranty conditions and special-order parts included.
 
 The **⚙ Ajustes** panel exposes the configurable numbers (ITBMS %, clutch/motor
 cost, installation, margin) — these are placeholders since the PDF lists *costs*,

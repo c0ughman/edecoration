@@ -276,10 +276,10 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -290,10 +290,10 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -304,10 +304,10 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -318,10 +318,10 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -332,10 +332,10 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -346,10 +346,10 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -360,10 +360,10 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -373,11 +373,11 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -387,11 +387,11 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -401,11 +401,11 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -415,11 +415,11 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
           null,
@@ -428,35 +428,33 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ],
         [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles",
+          "thin_fabric_smiles"
         ]
       ],
       "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
+        "thin_fabric_smiles": "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS"
       },
       "notes": [
-        "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS",
-        "Sheer Elegance - Zakynthos 110” / Inspiration 110” / Creta"
+        "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS"
       ],
       "category": "Sheer Elegance"
     },
@@ -524,9 +522,9 @@
           107.81,
           112.51,
           117.21,
-          126.76,
-          155.03,
-          160.92
+          138.55,
+          145.73,
+          151.26
         ],
         [
           79.37,
@@ -538,9 +536,9 @@
           110.86,
           115.56,
           120.26,
-          129.55,
-          158.27,
-          164.16
+          141.6,
+          148.78,
+          154.31
         ],
         [
           82.42,
@@ -552,9 +550,9 @@
           113.91,
           118.61,
           123.31,
-          132.33,
-          161.51,
-          167.4
+          144.64,
+          151.82,
+          157.36
         ],
         [
           85.46,
@@ -566,9 +564,9 @@
           116.95,
           121.65,
           126.35,
-          135.12,
-          164.76,
-          170.64
+          147.69,
+          154.87,
+          160.41
         ],
         [
           90.39,
@@ -580,9 +578,9 @@
           122.55,
           127.35,
           132.15,
-          144.32,
-          151.2,
-          156.5
+          153.95,
+          161.28,
+          166.93
         ],
         [
           93.51,
@@ -594,9 +592,9 @@
           125.67,
           130.47,
           135.27,
-          147.24,
-          154.12,
-          159.41
+          157.06,
+          164.39,
+          170.04
         ],
         [
           96.62,
@@ -608,9 +606,9 @@
           128.78,
           133.58,
           138.38,
-          150.16,
-          157.03,
-          162.33
+          160.17,
+          167.5,
+          173.15
         ],
         [
           99.73,
@@ -622,9 +620,9 @@
           131.89,
           136.69,
           141.49,
-          153.08,
-          159.95,
-          165.25
+          163.28,
+          170.61,
+          176.27
         ],
         [
           102.84,
@@ -636,9 +634,9 @@
           135.0,
           139.8,
           144.6,
-          155.99,
-          162.87,
-          168.17
+          166.39,
+          173.73,
+          179.38
         ],
         [
           105.95,
@@ -650,9 +648,9 @@
           138.11,
           142.91,
           147.71,
-          158.91,
-          165.79,
-          171.08
+          169.51,
+          176.84,
+          182.49
         ],
         [
           109.07,
@@ -664,9 +662,9 @@
           141.23,
           146.03,
           150.83,
-          161.83,
-          168.7,
-          174.0
+          172.62,
+          179.95,
+          185.6
         ],
         [
           112.18,
@@ -678,9 +676,9 @@
           144.34,
           165.94,
           171.94,
-          182.75,
-          190.75,
-          197.17
+          194.93,
+          203.46,
+          210.31
         ],
         [
           115.29,
@@ -692,9 +690,9 @@
           147.45,
           152.25,
           175.05,
-          185.66,
-          193.66,
-          200.09
+          198.04,
+          206.57,
+          213.43
         ],
         [
           118.4,
@@ -706,9 +704,9 @@
           150.56,
           155.36,
           178.16,
-          188.58,
-          196.58,
-          203.0
+          201.15,
+          209.69,
+          216.54
         ]
       ],
       "requirements": [
@@ -909,10 +907,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -1367,13 +1362,8 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
-      "notes": [
-        "Sheer Elegance - Pleated 110” / Reve 110”"
-      ],
+      "requirement_legend": {},
+      "notes": [],
       "category": "Sheer Elegance"
     },
     {
@@ -1825,10 +1815,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -2283,13 +2270,8 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
-      "notes": [
-        "Sheer Elegance - Palau 110”"
-      ],
+      "requirement_legend": {},
+      "notes": [],
       "category": "Sheer Elegance"
     },
     {
@@ -2741,10 +2723,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -3199,10 +3178,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],

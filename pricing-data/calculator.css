@@ -116,6 +116,13 @@ body{
 .badge.clutch{background:#fdf3d6;color:#8a6a14;border:1px solid #efdca0}
 .badge.motor{background:#ecedef;color:#4a4f57;border:1px solid #d8dbe0}
 .badge.range{background:#fbe4e4;color:#9a2b2b;border:1px solid #f0c4c4}
+.badge.order{background:#e7f0f7;color:#2c5470;border:1px solid #c6dbea}
+.badge.warn{background:#fdeede;color:#8a4a14;border:1px solid #f2d3ac}
+
+/* PRS's own caveats for the selected fabric */
+.fabric-notes{margin-top:12px}
+.fabric-notes ul{margin:0;padding-left:16px}
+.fabric-notes li{font-size:11.5px;line-height:1.5;color:#6c757d;margin-bottom:4px}
 
 .primary-btn{
   margin-top:20px;width:100%;font:inherit;font-size:15px;font-weight:600;
@@ -158,6 +165,8 @@ body{
 .qd-table .desc-sub .tag{display:inline-block;margin-right:6px;padding:1px 7px;border-radius:6px;font-size:10px;font-weight:600}
 .tag.clutch{background:#fdf3d6;color:#8a6a14}
 .tag.motor{background:#ecedef;color:#4a4f57}
+.tag.order{background:#e7f0f7;color:#2c5470}
+.tag.warn{background:#fdeede;color:#8a4a14}
 .qd-empty td{text-align:center;color:var(--muted);font-style:italic;padding:30px}
 .row-del{border:none;background:transparent;color:#c08;cursor:pointer;font-size:15px;opacity:.5;transition:.15s}
 .row-del:hover{opacity:1}

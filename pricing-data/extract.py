@@ -37,9 +37,117 @@ import pdfplumber
 
 ZWSP = "​"  # the PDF wraps every run in a zero-width space
 
-# Fill colours used for cell shading (RGB 0..1, as pdfplumber reports them).
-COLOR_CLUTCH = (1.0, 0.898, 0.6)          # light yellow
-COLOR_MOTOR = (0.9373, 0.9373, 0.9373)    # light gray
+# ---------------------------------------------------------------------------
+# Cell shading
+#
+# A shaded cell means something, but *what* it means is stated in prose on the
+# page, not in the colour itself -- the same light yellow marks "requiere clutch
+# Large" on the Roller pages and "requiere un bottomrail (Delfin)" on the Axio
+# pages. So we never hardcode colour -> meaning. Instead:
+#
+#   1. read the raw fill behind every price cell,
+#   2. treat a colour as a *flag* only if it covers a strict subset of the
+#      table's cells (a fill covering every cell is decoration, not a flag),
+#   3. resolve its meaning from the table's own note text, via the Spanish
+#      colour word that note uses,
+#   4. raise if a flag colour has no note explaining it -- silence here is what
+#      previously let an unrecognised orange disappear from the quote.
+#
+# COLOR_WORDS maps a fill to the word a note would use to refer to it.
+# ---------------------------------------------------------------------------
+COLOR_WORDS = {
+    (1.0, 0.898, 0.6): "amar",       # light yellow  ("amarillo", sic "amarllo")
+    (1.0, 1.0, 0.0): "amar",         # saturated yellow
+    (0.9373, 0.9373, 0.9373): "gris",
+    (1.0, 0.6, 0.0): "naranja",
+    (0.851, 0.851, 0.851): "gris",
+}
+
+# Meaning keywords, searched in the note that mentions the colour. Order
+# matters: "bottomrail" must beat "clutch" on a note that happens to say both.
+MEANING_KEYWORDS = [
+    ("bottomrail", "bottomrail_delfin"),
+    ("delfin", "bottomrail_delfin"),
+    ("clutch", "clutch_large"),
+    ("motoriz", "motorization"),
+    ("sonrisa", "thin_fabric_smiles"),
+    ("delgada", "thin_fabric_smiles"),
+]
+
+# Cells whose fill is one of these carry no requirement.
+NEUTRAL_COLORS = {None, (1.0, 1.0, 1.0)}
+
+
+CLAUSE_SPLIT = re.compile(r"[.,;]")
+
+
+def meaning_of(note_text):
+    """Map a note sentence to a stable requirement key."""
+    low = note_text.lower()
+    for kw, key in MEANING_KEYWORDS:
+        if kw in low:
+            return key
+    return None
+
+
+def meaning_for_color(note, word):
+    """Meaning of the *clause* of `note` that talks about colour `word`.
+
+    One sentence routinely covers two colours -- "las medidas sombreadas en
+    amarillo requieren clutch Large, y las medidas sombreadas en gris requieren
+    motorizacion" -- so reading the whole note would give both colours the same
+    (first-matched) meaning. Resolve per clause instead.
+    """
+    for clause in CLAUSE_SPLIT.split(note):
+        if word in clause.lower():
+            key = meaning_of(clause)
+            if key:
+                return key
+    # only safe to read the note as a whole when it discusses a single colour
+    if len({w for w in set(COLOR_WORDS.values()) if w in note.lower()}) == 1:
+        return meaning_of(note)
+    return None
+
+
+def resolve_requirements(colors, notes, page_no, table_name):
+    """Work out what each shading colour means for one table.
+
+    `colors` is the 2D grid of raw fills behind the price cells. Returns
+    (requirement_grid, legend) where legend maps requirement key -> the note
+    sentence, in PRS's own words, that defines it.
+    """
+    flat = [c for row in colors for c in row]
+    cells = [c for c in flat if c is not None]
+    present = {c for c in flat if c not in NEUTRAL_COLORS}
+
+    # a fill covering every single cell is the table's styling, not a flag
+    flags = {c for c in present if sum(1 for x in cells if x == c) < len(cells)}
+
+    legend, unexplained = {}, []
+    mapping = {}
+    for color in flags:
+        word = COLOR_WORDS.get(color)
+        # a fabric name can contain the colour word by accident, so take the
+        # first note that mentions it *and* resolves to a meaning
+        candidates = [n for n in notes if word and word in n.lower()]
+        resolved = next(((n, meaning_for_color(n, word)) for n in candidates
+                         if meaning_for_color(n, word)), None)
+        if resolved is None:
+            unexplained.append((color, word))
+            continue
+        note, key = resolved
+        mapping[color] = key
+        legend[key] = note
+
+    if unexplained:
+        raise ValueError(
+            f"page {page_no} '{table_name}': shaded cells with no note "
+            f"explaining them: {unexplained}. Add the colour to COLOR_WORDS "
+            f"and/or MEANING_KEYWORDS, or check the note capture."
+        )
+
+    grid = [[mapping.get(c) for c in row] for row in colors]
+    return grid, legend
 
 
 def clean(s: str) -> str:
@@ -98,26 +206,28 @@ def build_rect_lookup(page):
     return color_at
 
 
-def requirement_for(color):
-    if color is None:
-        return None
-    if color == COLOR_CLUTCH:
-        return "clutch_large"
-    if color == COLOR_MOTOR:
-        return "motorization"
-    return None
-
-
 def row_alpha(r):
     line = clean(" ".join(w["txt"] for w in r["words"]))
     return line if any(c.isalpha() for c in line) else ""
 
 
+def join_wrapped(notes):
+    """Re-join note sentences the PDF wrapped across two lines.
+
+    A continuation line starts lowercase and follows a line that did not end on
+    sentence-final punctuation -- e.g. "...requieren motorizacion. Si no se" +
+    "siguen estas recomendaciones, no se otorgara garantia..."
+    """
+    out = []
+    for n in notes:
+        if out and n[:1].islower() and not out[-1].rstrip().endswith((".", ")", ":", "!")):
+            out[-1] = out[-1].rstrip() + " " + n
+        else:
+            out.append(n)
+    return out
+
+
 NUMCELL_RE = re.compile(r"^\d{1,4}([.,]\d{1,2})?$")  # int or price cell
-LEGEND = {
-    "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-    "motorization": "Medida sombreada gris: requiere motorizacion",
-}
 
 
 def header_ints(row):
@@ -170,8 +280,8 @@ def variant_above(rows, hi, stop):
     return None
 
 
-def title_above(rows, hi, stop):
-    """Nearest real title line above a header.
+def title_above_idx(rows, hi, stop):
+    """(line, row index) of the nearest real title above a header.
 
     Skips metros/pulgadas axis labels and data rows (which carry several
     numbers) so we land on an actual section / table heading.
@@ -184,8 +294,144 @@ def title_above(rows, hi, stop):
             continue
         if sum(1 for w in rows[j]["words"] if NUMCELL_RE.match(w["txt"])) >= 3:
             continue  # this is a data row, not a heading
-        return a
-    return None
+        return a, j
+    return None, None
+
+
+def title_above(rows, hi, stop):
+    return title_above_idx(rows, hi, stop)[0]
+
+
+def second_table_title(rows, hi):
+    """Heading of a *second* table stacked under the page's first one.
+
+    Only needed when the first table on the page has no width header of its own
+    (p67's single-column Clear Vinyl), which would otherwise hand its page title
+    to the table below it. A long page title that merely wraps onto a second
+    line is not a heading, so require real data rows to sit between the page
+    title and the candidate -- a wrapped title has none.
+    """
+    cand, j = title_above_idx(rows, hi, -1)
+    if cand is None or j is None or j <= 0:
+        return None
+    has_data = any(sum(1 for w in rows[k]["words"]
+                       if PRICE_RE.match(w["txt"])) >= 2
+                   for k in range(1, j))
+    return cand if has_data else None
+
+
+def is_brazos_row(r):
+    """A '2 BRAZOS  3 BRAZOS  4 BRAZOS' column header."""
+    toks = [w["txt"] for w in r["words"]]
+    return bool(toks) and all(t == "BRAZOS" or is_int(t) for t in toks) \
+        and toks.count("BRAZOS") >= 1
+
+
+def brazos_columns(r):
+    """[(arm_count, x_centre), ...] for a BRAZOS header row."""
+    ws = sorted(r["words"], key=lambda w: w["x0"])
+    cols = []
+    for k, w in enumerate(ws):
+        if w["txt"] == "BRAZOS" and k and is_int(ws[k - 1]["txt"]):
+            cols.append((int(ws[k - 1]["txt"]),
+                         (ws[k - 1]["x0"] + w["x1"]) / 2))
+    return cols
+
+
+def ranges_in(r, drop_labels):
+    """Pull 'a - b' pairs out of a row, with each pair's x centre."""
+    ws = [w for w in sorted(r["words"], key=lambda w: w["x0"])
+          if w["txt"].lower() not in drop_labels]
+    out = []
+    for k in range(len(ws) - 2):
+        if ws[k + 1]["txt"] == "-":
+            a, b = ws[k]["txt"].replace(",", "."), ws[k + 2]["txt"].replace(",", ".")
+            try:
+                lo, hi_ = float(a), float(b)
+            except ValueError:
+                continue
+            out.append((lo, hi_, (ws[k]["x0"] + ws[k + 2]["x1"]) / 2))
+    return out
+
+
+def nearest(cols, x):
+    """Index of the arm column whose centre is closest to x."""
+    return min(range(len(cols)), key=lambda i: abs(cols[i][1] - x))
+
+
+def parse_awning(page, rows):
+    """The Awning System page.
+
+    Unlike every other table this one is a stack of small blocks: a BRAZOS
+    column header, the width range each arm count covers (in metres, then in
+    inches), and a single price row per projection. header_ints() cannot see it
+    -- there is no ascending width header -- so it gets its own parser.
+    """
+    groups, accessories, notes = [], [], []
+    i = 0
+    while i < len(rows):
+        r = rows[i]
+        if not is_brazos_row(r):
+            i += 1
+            continue
+        cols = brazos_columns(r)
+        if not cols or i + 3 >= len(rows):
+            i += 1
+            continue
+
+        m_ranges = ranges_in(rows[i + 1], {"metros", "ancho"})
+        in_ranges = ranges_in(rows[i + 2], {"proyeccion", "pulgadas"})
+        data = sorted(rows[i + 3]["words"], key=lambda w: w["x0"])
+        prices = [w for w in data if PRICE_RE.match(w["txt"])]
+        labels = [w for w in data if w not in prices]
+        if not prices or len(labels) < 2:
+            i += 1
+            continue
+
+        proj_m = to_price(labels[0]["txt"].replace(",", "."))
+        proj_in = int(re.sub(r"[^\d]", "", labels[1]["txt"]) or 0)
+
+        options = [{"arms": a, "width_m": None, "width_in": None, "price": None}
+                   for a, _ in cols]
+        for lo, hi_, x in m_ranges:
+            options[nearest(cols, x)]["width_m"] = [lo, hi_]
+        for lo, hi_, x in in_ranges:
+            options[nearest(cols, x)]["width_in"] = [int(lo), int(hi_)]
+        for w in prices:
+            options[nearest(cols, (w["x0"] + w["x1"]) / 2)]["price"] = to_price(w["txt"])
+
+        groups.append({
+            "projection_m": proj_m,
+            "projection_in": proj_in,
+            "options": [o for o in options if o["price"] is not None],
+        })
+        i += 4
+
+    # trailing accessory lines and the disclaimer
+    for r in rows:
+        toks = sorted(r["words"], key=lambda w: w["x0"])
+        line = clean(" ".join(w["txt"] for w in toks))
+        money = [w for w in toks if PRICE_RE.match(w["txt"])]
+        if len(money) == 1 and money[-1] is toks[-1] and len(toks) > 1:
+            name = clean(" ".join(w["txt"] for w in toks[:-1]))
+            if sum(c.isalpha() for c in name) >= 3:
+                accessories.append({"name": name, "price": to_price(money[0]["txt"])})
+        elif line and sum(c.isalpha() for c in line) > 15 and not is_brazos_row(r):
+            if "metros" not in line.lower() and "proyeccion" not in line.lower():
+                notes.append(line)
+
+    if not groups:
+        return []
+    return [{
+        "type": "awning_system",
+        "name": "Awning System",
+        "page": page.page_number,
+        "currency": "USD",
+        "axis": {"rows": "projection", "cols": "arms"},
+        "groups": groups,
+        "accessories": accessories,
+        "notes": join_wrapped([n for n in notes if n != "Awning System"]),
+    }]
 
 
 def process_page(page, page_title):
@@ -195,6 +441,9 @@ def process_page(page, page_title):
         w["txt"] = clean(w["text"])
     rows = cluster_rows(words)
     color_at = build_rect_lookup(page)
+
+    if any(is_brazos_row(r) for r in rows):
+        return parse_awning(page, rows)
 
     headers = [i for i, r in enumerate(rows) if header_ints(r)]
     consumed = set()
@@ -245,6 +494,11 @@ def process_page(page, page_title):
                         or len(cells) < 2:
                     continue
                 slots = assign_cells(cells, centers, spacing)
+                # a prose line can carry stray numbers that survive the cell
+                # filter ("Nota: En los cassettes 100 Y 120 ..."), but they will
+                # not land in two separate columns the way real prices do
+                if sum(1 for s in slots if s) < 2:
+                    continue
                 table_rows.append({
                     "label": label,
                     "prices": [to_price(s["txt"]) if s else None for s in slots],
@@ -268,7 +522,7 @@ def process_page(page, page_title):
             continue
 
         # ---- fabric matrix ----
-        heights, prices, reqs, notes = [], [], [], []
+        heights, prices, colors, notes = [], [], [], []
         for j in data:
             lab_ints = [int(w["txt"]) for w in labels_of(j, left_limit)
                         if is_int(w["txt"])]
@@ -278,19 +532,20 @@ def process_page(page, page_title):
                      if (w["x0"] + w["x1"]) / 2 >= left_limit
                      and PRICE_RE.match(w["txt"])]
             slots = assign_cells(cells, centers, spacing)
-            row_prices, row_reqs = [], []
+            row_prices, row_colors = [], []
             for s in slots:
                 if s is None:
                     row_prices.append(None)
-                    row_reqs.append(None)
+                    row_colors.append(None)
                 else:
                     cx = (s["x0"] + s["x1"]) / 2
                     cy = (s["top"] + s["bottom"]) / 2
                     row_prices.append(to_price(s["txt"]))
-                    row_reqs.append(requirement_for(color_at(cx, cy)))
+                    c = color_at(cx, cy)
+                    row_colors.append(tuple(c) if c is not None else None)
             heights.append(lab_ints[-1])
             prices.append(row_prices)
-            reqs.append(row_reqs)
+            colors.append(row_colors)
 
         ascending = all(heights[k] < heights[k + 1] for k in range(len(heights) - 1))
         if len(heights) < 3 or not ascending or (heights and min(heights) < 30):
@@ -303,6 +558,7 @@ def process_page(page, page_title):
             line = clean(" ".join(w["txt"] for w in rows[j]["words"]))
             if line and sum(c.isalpha() for c in line) > 15:
                 notes.append(line)
+        notes = join_wrapped(notes)
         for j in range(hi, end):
             consumed.add(j)
 
@@ -322,7 +578,9 @@ def process_page(page, page_title):
         elif hk > 0:
             title = title_above(rows, hi, headers[hk - 1]) or page_title
         else:
-            title = page_title
+            title = second_table_title(rows, hi) or page_title
+
+        reqs, legend = resolve_requirements(colors, notes, page.page_number, title)
 
         blocks.append({
             "type": "fabric_matrix",
@@ -335,7 +593,7 @@ def process_page(page, page_title):
             "heights_in": heights,
             "prices": prices,
             "requirements": reqs,
-            "requirement_legend": LEGEND,
+            "requirement_legend": legend,
             "notes": notes,
         })
 
@@ -368,8 +626,10 @@ def process_page(page, page_title):
                 name = clean(" ".join(w["txt"] for w in lw))
         # a real line item has an alphabetic name; pure-number "names" and bare
         # axis labels are stray header/meter cells that leaked through
+        # a whole axis row can collapse into one "name" when it has no wide gap
+        # to split on, so match the prefix rather than the exact label
         if not name or sum(c.isalpha() for c in name) < 2 \
-                or name.lower() in ("metros", "pulgadas", "proyeccion"):
+                or name.lower().startswith(("metros", "pulgadas", "proyeccion")):
             continue
         trailing = clean(" ".join(w["txt"] for w in toks if w["x0"] > money[-1]["x1"]))
         items.append({"name": name, "description": desc, "price": price,
@@ -434,9 +694,15 @@ def slugify(s):
 
 def main():
     pdf_path = sys.argv[1] if len(sys.argv) > 1 else \
-        "Lista de precios 2026 PRS - Documentos de Google.pdf"
+        "lista de precios nueva.pdf"
     out_dir = Path(__file__).parent / "data"
     out_dir.mkdir(exist_ok=True)
+    # wipe first: writing by name leaves orphaned files from a previous list
+    # behind (a family PRS renamed or dropped would keep its stale prices)
+    for old in out_dir.glob("*.json"):
+        old.unlink()
+    for old in out_dir.glob("*.js"):
+        old.unlink()
 
     pdf = pdfplumber.open(pdf_path)
 
@@ -470,6 +736,14 @@ def main():
                 "text": text,
             })
 
+    # A table heading that sits inside a block span looks exactly like a note
+    # to the >15-letter rule. Now that every title is known, drop the notes
+    # that are really just a neighbouring table's name.
+    titles = {t["name"].lower() for t in catalog}
+    for t in catalog:
+        if t.get("notes"):
+            t["notes"] = [n for n in t["notes"] if n.lower() not in titles]
+
     # write one file per category plus a combined index
     by_cat = defaultdict(list)
     for t in catalog:
@@ -497,12 +771,19 @@ def main():
         json.dumps(catalog, ensure_ascii=False) + ";")
 
     # summary to stderr
-    from collections import Counter
     by_type = Counter(t["type"] for t in catalog)
+    reqs = Counter(r for t in catalog for row in t.get("requirements", [])
+                   for r in row if r)
+    print(f"source          : {pdf_path}", file=sys.stderr)
     print(f"categories      : {len(by_cat)}", file=sys.stderr)
-    for tp, n in by_type.items():
+    for tp, n in sorted(by_type.items()):
         print(f"{tp:16}: {n}", file=sys.stderr)
-    print(f"unparsed pages  : {len(unparsed)}", file=sys.stderr)
+    print("flagged cells   :", file=sys.stderr)
+    for k, n in sorted(reqs.items()):
+        print(f"  {k:22}: {n}", file=sys.stderr)
+    print(f"unparsed pages  : {len(unparsed)}"
+          f"{' -> ' + str([u['page'] for u in unparsed]) if unparsed else ''}",
+          file=sys.stderr)
     print(f"output          : {out_dir}", file=sys.stderr)
 
 

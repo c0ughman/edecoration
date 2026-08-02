@@ -70,412 +70,412 @@
     ],
     "prices": [
       [
-        34.72,
-        36.11,
-        37.49,
-        38.88,
-        40.26,
-        41.65,
-        43.03,
-        44.42,
+        18.39,
+        21.37,
+        23.04,
+        25.51,
+        26.68,
+        35.99,
+        36.99,
+        38.0,
+        45.6,
+        49.94,
+        55.74,
+        56.74,
+        57.75,
+        58.76,
+        59.43
+      ],
+      [
+        18.77,
+        21.94,
+        23.66,
+        26.27,
+        27.44,
+        37.91,
+        38.92,
+        39.92,
+        48.21,
+        52.55,
+        58.35,
+        59.36,
+        60.36,
+        61.37,
+        62.04
+      ],
+      [
+        19.15,
+        22.51,
+        24.29,
+        27.03,
+        28.2,
+        39.83,
+        40.84,
+        41.84,
+        55.62,
+        59.96,
+        60.97,
+        61.97,
+        62.98,
+        63.98,
+        64.65
+      ],
+      [
+        19.53,
+        23.08,
+        24.91,
+        27.79,
+        28.96,
+        41.75,
+        42.76,
+        43.76,
+        58.23,
+        62.57,
+        63.58,
+        64.59,
+        65.59,
+        66.6,
+        67.27
+      ],
+      [
+        19.91,
+        23.65,
+        25.53,
+        28.55,
+        29.72,
+        43.67,
+        44.68,
+        45.68,
+        60.84,
+        65.19,
+        66.19,
+        67.2,
+        68.21,
+        69.21,
+        69.88
+      ],
+      [
+        21.39,
+        24.22,
+        26.16,
+        29.31,
+        32.51,
+        45.59,
+        46.6,
         52.39,
-        64.07,
-        71.91,
-        73.9,
-        75.9,
-        77.89,
-        79.22
+        63.46,
+        67.8,
+        68.81,
+        69.81,
+        70.82,
+        71.83,
+        72.5
       ],
       [
-        36.64,
-        38.03,
-        39.41,
-        40.8,
-        42.18,
-        43.57,
-        44.95,
-        46.34,
-        55.01,
-        66.68,
-        74.52,
-        76.51,
-        78.51,
-        80.51,
-        81.84
-      ],
-      [
-        38.57,
-        39.95,
-        41.33,
-        42.72,
-        44.1,
-        45.49,
-        46.87,
-        48.26,
-        57.62,
-        75.14,
-        77.13,
-        79.13,
-        81.12,
-        83.12,
-        84.45
-      ],
-      [
-        40.49,
-        41.87,
-        43.26,
-        44.64,
-        46.02,
-        47.41,
-        48.79,
-        50.18,
+        24.23,
+        25.93,
+        29.33,
+        32.51,
+        37.19,
+        47.51,
+        48.52,
+        54.31,
         66.07,
-        77.75,
-        79.75,
-        81.74,
-        83.74,
-        85.73,
-        87.06
-      ],
-      [
-        42.41,
-        43.79,
-        45.18,
-        46.56,
-        47.95,
-        49.33,
-        50.71,
-        52.1,
-        68.69,
-        80.37,
-        82.36,
-        84.36,
-        86.35,
-        88.35,
-        89.68
-      ],
-      [
-        44.33,
-        45.71,
-        47.1,
-        48.48,
-        49.87,
-        51.25,
-        52.63,
-        59.86,
-        71.3,
-        82.98,
-        84.98,
-        86.97,
-        88.97,
-        90.96,
-        92.29
-      ],
-      [
-        46.25,
-        47.63,
-        49.02,
-        50.4,
-        51.79,
-        53.17,
-        54.56,
-        61.78,
-        73.92,
-        85.6,
-        87.59,
-        89.59,
-        91.58,
-        93.58,
-        94.91
-      ],
-      [
-        48.17,
-        49.55,
-        50.94,
-        52.32,
-        53.71,
-        55.09,
-        56.48,
-        63.7,
-        76.53,
-        88.21,
-        90.21,
-        92.2,
-        94.2,
-        96.19,
-        97.52
-      ],
-      [
-        50.09,
-        51.47,
-        52.86,
-        54.24,
-        55.63,
-        57.01,
-        58.4,
-        65.62,
-        79.15,
-        90.83,
-        92.82,
-        94.82,
-        96.81,
-        98.81,
-        100.14
-      ],
-      [
-        52.01,
-        53.39,
-        54.78,
-        56.16,
-        57.55,
-        58.93,
-        60.32,
-        67.54,
-        81.76,
-        93.44,
-        95.43,
-        97.43,
-        99.43,
-        101.42,
-        102.75
-      ],
-      [
-        53.93,
-        55.32,
-        56.7,
-        58.08,
-        59.47,
-        60.85,
-        62.24,
-        69.46,
-        84.38,
-        96.05,
-        98.05,
-        100.04,
-        102.04,
-        104.03,
-        105.36
-      ],
-      [
-        55.85,
-        57.24,
-        58.62,
-        60.01,
-        61.39,
-        62.77,
-        64.16,
-        71.38,
-        86.99,
-        98.67,
-        100.66,
-        102.66,
-        104.65,
-        106.65,
-        107.98
-      ],
-      [
-        57.77,
-        59.16,
-        60.54,
-        61.93,
-        63.31,
-        64.69,
-        71.92,
-        73.3,
-        89.6,
-        101.28,
-        103.28,
-        105.27,
-        107.27,
-        109.26,
-        110.59
-      ],
-      [
-        59.69,
-        61.08,
-        62.46,
-        63.85,
-        65.23,
-        66.62,
-        73.84,
-        75.22,
-        92.22,
-        103.9,
-        105.89,
-        107.89,
-        109.88,
-        111.88,
-        113.21
-      ],
-      [
-        61.61,
-        63.0,
-        64.38,
-        65.77,
-        67.15,
-        74.38,
-        75.76,
-        77.15,
-        94.83,
-        106.51,
-        108.51,
-        110.5,
-        112.5,
-        114.49,
-        115.82
-      ],
-      [
-        63.53,
-        64.92,
-        72.14,
-        73.53,
-        74.91,
-        76.3,
-        77.68,
-        79.07,
-        97.45,
-        109.13,
-        111.12,
-        113.12,
-        115.11,
-        117.11,
-        118.44
-      ],
-      [
-        72.52,
-        73.9,
-        75.29,
-        76.67,
-        78.05,
-        79.44,
-        80.82,
-        82.21,
-        100.06,
-        111.74,
-        113.74,
-        115.73,
-        117.73,
-        119.72,
-        121.05
-      ],
-      [
+        70.42,
+        71.42,
+        72.43,
+        73.44,
         74.44,
-        74.6,
-        75.98,
-        77.37,
-        78.75,
-        80.14,
-        81.52,
-        82.91,
-        102.68,
-        114.35,
-        116.35,
-        118.35,
-        120.34,
-        122.34,
-        123.67
+        75.11
       ],
       [
-        76.36,
-        77.74,
-        79.13,
-        80.51,
-        81.9,
-        83.28,
-        84.66,
-        86.05,
-        105.29,
-        116.97,
-        118.96,
-        120.96,
-        122.95,
-        124.95,
-        126.28
+        25.71,
+        27.63,
+        31.03,
+        34.43,
+        39.53,
+        49.43,
+        50.44,
+        56.24,
+        68.69,
+        73.03,
+        74.04,
+        75.04,
+        76.05,
+        77.06,
+        77.73
       ],
       [
-        78.28,
-        79.66,
-        81.05,
+        26.99,
+        29.33,
+        32.94,
+        36.55,
+        41.86,
+        51.35,
+        52.36,
+        58.16,
+        71.3,
+        75.65,
+        76.65,
+        77.66,
+        78.66,
+        79.67,
+        80.34
+      ],
+      [
+        28.26,
+        30.81,
+        34.64,
+        38.46,
+        44.2,
+        53.27,
+        54.28,
+        60.08,
+        73.92,
+        78.26,
+        79.27,
+        80.27,
+        81.28,
+        82.28,
+        82.96
+      ],
+      [
+        29.54,
+        32.51,
+        36.55,
+        40.59,
+        46.54,
+        55.19,
+        56.2,
+        62.0,
+        76.53,
+        80.87,
+        81.88,
+        82.89,
+        83.89,
+        84.9,
+        85.57
+      ],
+      [
+        31.66,
+        33.79,
+        38.25,
+        42.5,
+        48.24,
+        57.12,
+        58.12,
+        63.92,
+        79.15,
+        83.49,
+        84.49,
+        85.5,
+        86.51,
+        87.51,
+        88.18
+      ],
+      [
+        33.58,
+        36.55,
+        39.95,
+        44.2,
+        49.73,
+        59.04,
+        64.83,
+        65.84,
+        81.76,
+        86.1,
+        87.11,
+        88.12,
+        89.12,
+        90.13,
+        90.8
+      ],
+      [
+        35.7,
+        38.68,
+        41.01,
+        45.9,
+        51.43,
+        60.96,
+        66.75,
+        67.76,
+        84.37,
+        88.72,
+        89.72,
+        90.73,
+        91.74,
+        92.74,
+        93.41
+      ],
+      [
+        38.04,
+        40.59,
+        42.5,
+        47.6,
+        53.34,
+        67.67,
+        68.67,
+        69.68,
+        86.99,
+        91.33,
+        92.34,
+        93.34,
+        94.35,
+        95.36,
+        96.03
+      ],
+      [
+        40.59,
+        42.93,
+        44.84,
+        49.09,
+        54.83,
+        69.59,
+        70.59,
+        71.6,
+        89.6,
+        93.95,
+        94.95,
+        95.96,
+        96.96,
+        97.97,
+        98.64
+      ],
+      [
+        42.93,
+        44.63,
+        46.11,
+        50.79,
+        56.31,
+        72.73,
+        73.74,
+        74.74,
+        92.22,
+        96.56,
+        97.57,
+        98.57,
+        99.58,
+        100.59,
+        101.26
+      ],
+      [
+        44.63,
+        46.33,
+        48.66,
+        52.28,
+        57.8,
+        73.43,
+        74.44,
+        75.44,
+        94.83,
+        99.18,
+        100.18,
+        101.19,
+        102.19,
+        103.2,
+        103.87
+      ],
+      [
+        46.54,
+        47.6,
+        49.51,
+        53.76,
+        59.71,
+        76.57,
+        77.58,
+        78.58,
+        97.45,
+        101.79,
+        102.8,
+        103.8,
+        104.81,
+        105.81,
+        106.49
+      ],
+      [
+        47.81,
+        49.51,
+        52.06,
+        55.46,
+        61.41,
+        78.49,
+        79.5,
+        80.5,
+        100.06,
+        104.4,
+        105.41,
+        106.42,
+        107.42,
+        108.43,
+        109.1
+      ],
+      [
+        50.36,
+        52.49,
+        53.76,
+        57.38,
+        62.9,
+        80.41,
+        81.42,
         82.43,
-        83.82,
-        85.2,
-        86.59,
-        87.97,
-        107.9,
-        119.58,
-        121.58,
-        123.57,
-        125.57,
-        127.56,
-        128.89
+        102.68,
+        107.02,
+        108.02,
+        109.03,
+        110.04,
+        111.04,
+        111.71
       ],
       [
-        80.2,
-        81.58,
-        82.97,
+        51.64,
+        53.76,
+        55.46,
+        59.5,
+        64.39,
+        82.33,
+        83.34,
         84.35,
-        85.74,
-        87.12,
-        88.51,
-        89.89,
-        110.52,
-        122.2,
-        124.19,
-        126.19,
-        128.18,
-        130.18,
-        131.51
+        105.29,
+        109.63,
+        110.64,
+        111.65,
+        112.65,
+        113.66,
+        114.33
       ],
       [
-        82.12,
-        83.5,
-        84.89,
+        53.76,
+        55.68,
+        57.38,
+        60.99,
+        65.88,
+        84.25,
+        85.26,
         86.27,
-        87.66,
-        89.04,
-        90.43,
-        91.81,
-        113.13,
-        124.81,
-        126.81,
-        128.8,
-        130.8,
-        132.79,
-        134.12
+        107.9,
+        112.25,
+        113.25,
+        114.26,
+        115.27,
+        116.27,
+        116.94
       ],
       [
-        84.04,
-        85.42,
-        86.81,
+        56.31,
+        57.59,
+        59.5,
+        62.9,
+        67.79,
+        86.17,
+        87.18,
         88.19,
-        89.58,
-        90.96,
-        92.35,
-        93.73,
-        115.75,
-        127.43,
-        129.42,
-        131.42,
-        133.41,
-        135.41,
-        136.74
-      ],
-      [
-        85.96,
-        87.35,
-        88.73,
-        90.11,
-        91.5,
-        92.88,
-        94.27,
-        95.65,
-        118.36,
-        130.04,
-        132.04,
-        134.03,
-        136.03,
-        138.02,
-        139.35
+        110.52,
+        114.86,
+        115.87,
+        116.87,
+        117.88,
+        118.89,
+        119.56
       ]
     ],
     "requirements": [
@@ -523,7 +523,7 @@
         null,
         null,
         null,
-        "clutch_large",
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -539,7 +539,24 @@
         null,
         null,
         null,
+        null,
         "clutch_large",
+        "clutch_large",
+        "clutch_large",
+        "clutch_large",
+        "motorization",
+        "motorization"
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -560,23 +577,6 @@
         "clutch_large",
         "clutch_large",
         "clutch_large",
-        "clutch_large",
-        "motorization",
-        "motorization"
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large",
-        "clutch_large",
-        "clutch_large",
         "motorization",
         "motorization",
         "motorization"
@@ -589,7 +589,7 @@
         null,
         null,
         null,
-        "clutch_large",
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -606,7 +606,7 @@
         null,
         null,
         null,
-        "clutch_large",
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -889,14 +889,13 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Si la roller mide más de 108” de ancho, el alto máximo sería de 102” (esta tela no se puede termosellar",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Si la roller mide más de 108” de ancho, el alto máximo sería de 102” (esta tela no se puede termosellar)",
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -1790,13 +1789,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -2279,13 +2277,8 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Roller Shades - Zakynthos 110” / Inspiration 110” / Creta 110”"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Roller Shades"
   },
   {
@@ -2767,10 +2760,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -2842,327 +2832,327 @@
     ],
     "prices": [
       [
-        29.04,
-        30.65,
-        32.26,
-        33.87,
-        35.48,
-        37.09,
-        38.7,
-        40.31,
-        47.08,
-        60.66,
-        67.98,
-        70.3,
-        72.62,
-        74.94,
-        77.26
-      ],
-      [
-        30.08,
-        31.69,
-        33.3,
-        34.91,
-        36.52,
-        38.13,
-        39.74,
-        41.35,
-        48.67,
-        62.25,
-        69.57,
-        71.89,
-        74.21,
-        76.53,
-        78.85
-      ],
-      [
-        31.12,
-        32.73,
-        34.34,
-        35.95,
+        23.28,
+        28.98,
+        30.41,
+        31.84,
+        33.27,
+        34.7,
+        36.13,
         37.56,
-        39.17,
-        40.78,
-        42.39,
-        50.25,
-        68.83,
-        71.15,
-        73.47,
-        75.79,
-        78.11,
-        80.43
+        43.74,
+        52.25,
+        66.04,
+        68.29,
+        70.54,
+        72.79,
+        74.83
       ],
       [
-        32.16,
-        33.77,
-        35.38,
-        36.99,
-        38.6,
-        40.21,
-        41.82,
-        43.43,
-        56.83,
-        70.41,
-        72.73,
-        75.05,
-        77.37,
-        79.69,
-        82.01
+        24.12,
+        29.98,
+        31.41,
+        32.84,
+        34.27,
+        35.7,
+        37.13,
+        38.56,
+        45.24,
+        53.75,
+        67.54,
+        69.79,
+        72.04,
+        74.29,
+        76.54
       ],
       [
-        33.2,
-        34.81,
-        36.42,
-        38.03,
-        39.64,
-        41.25,
-        42.86,
-        44.47,
-        58.42,
-        72.0,
-        74.32,
-        76.64,
-        78.96,
-        81.28,
-        83.6
+        24.96,
+        30.97,
+        32.4,
+        33.83,
+        35.26,
+        36.69,
+        38.12,
+        39.55,
+        46.73,
+        55.24,
+        69.03,
+        71.28,
+        73.53,
+        75.78,
+        78.03
       ],
       [
-        34.24,
-        35.85,
-        37.46,
-        39.07,
+        25.8,
+        31.97,
+        33.4,
+        34.83,
+        36.26,
+        37.69,
+        39.12,
+        40.55,
+        48.23,
+        61.53,
+        65.53,
+        67.78,
+        70.03,
+        72.28,
+        74.53
+      ],
+      [
+        26.65,
+        32.97,
+        34.4,
+        35.83,
+        37.26,
+        38.69,
+        40.12,
+        41.55,
+        49.73,
+        63.03,
+        72.03,
+        74.28,
+        76.53,
+        78.78,
+        81.03
+      ],
+      [
+        27.49,
+        33.96,
+        35.39,
+        36.82,
+        38.25,
+        39.68,
+        41.11,
+        42.54,
+        51.22,
+        64.52,
+        73.52,
+        75.77,
+        78.02,
+        80.27,
+        82.52
+      ],
+      [
+        28.33,
+        34.96,
+        36.39,
+        37.82,
+        39.25,
         40.68,
-        42.29,
-        43.9,
-        50.51,
-        60.0,
-        73.58,
-        75.9,
-        78.22,
-        80.54,
-        82.86,
-        85.18
+        42.11,
+        43.54,
+        57.72,
+        72.56,
+        75.02,
+        77.27,
+        79.52,
+        81.77,
+        84.02
       ],
       [
-        35.28,
-        36.89,
-        38.5,
-        40.11,
-        41.72,
-        43.33,
-        44.94,
-        51.55,
-        61.58,
-        75.16,
-        77.48,
-        79.8,
-        82.12,
-        84.44,
-        86.76
+        29.17,
+        35.96,
+        37.39,
+        38.82,
+        40.25,
+        41.68,
+        43.11,
+        44.54,
+        59.22,
+        74.06,
+        76.52,
+        78.77,
+        81.02,
+        83.27,
+        85.52
       ],
       [
-        36.32,
-        37.93,
-        39.54,
-        41.15,
-        42.76,
-        44.37,
-        45.98,
-        52.59,
-        63.17,
-        76.75,
-        79.07,
-        81.39,
-        83.71,
-        86.03,
-        88.35
+        30.02,
+        36.95,
+        38.38,
+        39.81,
+        41.24,
+        42.67,
+        44.1,
+        50.53,
+        60.71,
+        75.55,
+        78.01,
+        80.26,
+        82.51,
+        84.76,
+        87.01
       ],
       [
-        37.36,
-        38.97,
-        40.58,
-        42.19,
+        36.52,
+        37.95,
+        39.38,
+        40.81,
+        42.24,
+        43.67,
+        45.1,
+        51.53,
+        62.21,
+        77.26,
+        79.51,
+        81.76,
+        84.01,
+        86.26,
+        88.51
+      ],
+      [
+        37.52,
+        38.95,
+        40.38,
+        41.81,
+        43.24,
+        44.67,
+        46.1,
+        52.53,
+        63.71,
+        78.76,
+        81.01,
+        83.26,
+        85.51,
+        87.76,
+        90.01
+      ],
+      [
+        38.51,
+        39.94,
+        41.37,
+        42.8,
+        44.23,
+        45.66,
+        47.09,
+        53.52,
+        65.2,
+        80.25,
+        82.5,
+        84.75,
+        87.0,
+        89.25,
+        91.5
+      ],
+      [
+        39.51,
+        40.94,
+        42.37,
         43.8,
-        45.41,
-        47.02,
-        53.63,
-        64.75,
-        78.33,
-        80.65,
-        82.97,
-        85.29,
-        87.61,
-        89.93
-      ],
-      [
-        38.4,
-        40.01,
-        41.62,
-        43.23,
-        44.84,
-        46.45,
-        48.06,
-        54.67,
-        66.33,
-        79.91,
-        82.23,
-        84.55,
-        86.87,
-        89.19,
-        91.51
-      ],
-      [
-        39.44,
-        41.05,
-        42.66,
-        44.27,
-        45.88,
-        47.49,
-        49.1,
-        55.71,
-        67.92,
-        81.5,
-        83.82,
-        86.14,
-        88.46,
-        90.78,
-        93.1
-      ],
-      [
-        40.48,
-        42.09,
-        43.7,
-        45.31,
-        46.92,
-        48.53,
-        50.14,
-        56.75,
-        69.5,
-        83.08,
-        85.4,
-        87.72,
-        90.04,
-        92.36,
-        94.68
-      ],
-      [
-        41.52,
-        43.13,
-        44.74,
-        46.35,
-        47.96,
-        49.57,
-        56.18,
-        57.79,
-        71.08,
-        84.66,
-        86.98,
-        89.3,
-        91.62,
-        93.94,
-        96.26
-      ],
-      [
-        42.56,
-        44.17,
-        45.78,
-        47.39,
-        49.0,
-        50.61,
-        57.22,
-        58.83,
-        72.67,
+        45.23,
+        46.66,
+        53.09,
+        54.52,
+        66.7,
+        81.75,
+        84.0,
         86.25,
-        88.57,
-        90.89,
-        93.21,
-        95.53,
-        97.85
+        88.5,
+        90.75,
+        93.0
       ],
       [
-        43.6,
-        45.21,
-        46.82,
-        48.43,
-        50.04,
-        56.65,
-        58.26,
-        59.87,
-        74.25,
-        87.83,
-        90.15,
-        92.47,
-        94.79,
-        97.11,
-        99.43
+        40.51,
+        41.94,
+        43.37,
+        44.8,
+        46.23,
+        47.66,
+        54.09,
+        55.52,
+        68.2,
+        83.25,
+        85.5,
+        87.75,
+        90.0,
+        92.25,
+        94.5
       ],
       [
-        44.64,
-        46.25,
-        52.86,
-        54.47,
+        41.5,
+        42.93,
+        44.36,
+        45.79,
+        47.22,
+        53.65,
+        55.08,
+        56.51,
+        69.69,
+        84.74,
+        86.99,
+        89.24,
+        91.49,
+        93.74,
+        95.99
+      ],
+      [
+        42.5,
+        43.93,
+        50.36,
+        51.79,
+        53.22,
+        54.65,
         56.08,
-        57.69,
-        59.3,
-        60.91,
-        75.83,
-        89.41,
-        91.73,
-        94.05,
-        96.37,
-        98.69,
-        101.01
+        57.51,
+        71.19,
+        86.24,
+        88.49,
+        90.74,
+        92.99,
+        95.24,
+        97.49
       ],
       [
-        50.68,
-        52.29,
-        53.9,
-        55.51,
-        57.12,
-        58.73,
-        60.34,
-        61.95,
-        77.42,
-        91.0,
-        93.32,
-        95.64,
-        97.96,
-        100.28,
-        102.6
+        48.5,
+        49.93,
+        51.36,
+        52.79,
+        54.22,
+        55.65,
+        57.08,
+        58.51,
+        72.69,
+        87.74,
+        89.99,
+        92.24,
+        94.49,
+        96.74,
+        98.99
       ],
       [
-        51.72,
-        53.33,
-        54.94,
-        56.55,
-        58.16,
-        59.77,
-        61.38,
-        62.99,
-        79.0,
-        92.58,
-        94.9,
-        97.22,
-        99.54,
-        101.86,
-        104.18
+        49.49,
+        50.92,
+        52.35,
+        53.78,
+        55.21,
+        56.64,
+        58.07,
+        59.5,
+        74.18,
+        89.23,
+        91.48,
+        93.73,
+        95.98,
+        98.23,
+        100.48
       ],
       [
-        52.76,
-        54.37,
-        55.98,
-        57.59,
-        59.2,
-        60.81,
-        62.42,
-        64.03,
-        80.58,
-        94.16,
-        96.48,
-        98.8,
-        101.12,
-        103.44,
-        105.76
+        50.49,
+        51.92,
+        53.35,
+        54.78,
+        56.21,
+        57.64,
+        59.07,
+        60.5,
+        75.68,
+        90.73,
+        92.98,
+        95.23,
+        97.48,
+        99.73,
+        101.98
       ]
     ],
     "requirements": [
@@ -3210,6 +3200,23 @@
         null,
         null,
         null,
+        null,
+        "clutch_large",
+        "clutch_large",
+        "clutch_large",
+        "clutch_large",
+        "clutch_large"
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -3226,7 +3233,7 @@
         null,
         null,
         null,
-        "clutch_large",
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -3243,24 +3250,7 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large",
-        "clutch_large",
-        "clutch_large",
-        "motorization",
-        "motorization"
-      ],
-      [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        "clutch_large",
-        "clutch_large",
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -3276,7 +3266,7 @@
         null,
         null,
         null,
-        "clutch_large",
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -3293,7 +3283,7 @@
         null,
         null,
         null,
-        "clutch_large",
+        null,
         "clutch_large",
         "clutch_large",
         "clutch_large",
@@ -3491,13 +3481,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -3980,10 +3969,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -4879,13 +4865,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -5779,13 +5764,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -6504,13 +6488,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -7229,13 +7212,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -8129,13 +8111,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -8854,13 +8835,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -9579,13 +9559,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -10304,13 +10283,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -11029,13 +11007,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -11754,13 +11731,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -12479,13 +12455,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -13204,13 +13179,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -13929,13 +13903,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -14654,13 +14627,12 @@
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "clutch_large": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "motorization": "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se",
-      "siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
     "category": "Roller Shades"
   },
@@ -14939,10 +14911,10 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -14953,10 +14925,10 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -14967,10 +14939,10 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -14981,10 +14953,10 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -14995,10 +14967,10 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -15009,10 +14981,10 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -15023,10 +14995,10 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -15036,11 +15008,11 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -15050,11 +15022,11 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -15064,11 +15036,11 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -15078,11 +15050,11 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
         null,
@@ -15091,35 +15063,33 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ],
       [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles",
+        "thin_fabric_smiles"
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "thin_fabric_smiles": "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS"
     },
     "notes": [
-      "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS",
-      "Sheer Elegance - Zakynthos 110” / Inspiration 110” / Creta"
+      "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS"
     ],
     "category": "Sheer Elegance"
   },
@@ -15187,9 +15157,9 @@
         107.81,
         112.51,
         117.21,
-        126.76,
-        155.03,
-        160.92
+        138.55,
+        145.73,
+        151.26
       ],
       [
         79.37,
@@ -15201,9 +15171,9 @@
         110.86,
         115.56,
         120.26,
-        129.55,
-        158.27,
-        164.16
+        141.6,
+        148.78,
+        154.31
       ],
       [
         82.42,
@@ -15215,9 +15185,9 @@
         113.91,
         118.61,
         123.31,
-        132.33,
-        161.51,
-        167.4
+        144.64,
+        151.82,
+        157.36
       ],
       [
         85.46,
@@ -15229,9 +15199,9 @@
         116.95,
         121.65,
         126.35,
-        135.12,
-        164.76,
-        170.64
+        147.69,
+        154.87,
+        160.41
       ],
       [
         90.39,
@@ -15243,9 +15213,9 @@
         122.55,
         127.35,
         132.15,
-        144.32,
-        151.2,
-        156.5
+        153.95,
+        161.28,
+        166.93
       ],
       [
         93.51,
@@ -15257,9 +15227,9 @@
         125.67,
         130.47,
         135.27,
-        147.24,
-        154.12,
-        159.41
+        157.06,
+        164.39,
+        170.04
       ],
       [
         96.62,
@@ -15271,9 +15241,9 @@
         128.78,
         133.58,
         138.38,
-        150.16,
-        157.03,
-        162.33
+        160.17,
+        167.5,
+        173.15
       ],
       [
         99.73,
@@ -15285,9 +15255,9 @@
         131.89,
         136.69,
         141.49,
-        153.08,
-        159.95,
-        165.25
+        163.28,
+        170.61,
+        176.27
       ],
       [
         102.84,
@@ -15299,9 +15269,9 @@
         135.0,
         139.8,
         144.6,
-        155.99,
-        162.87,
-        168.17
+        166.39,
+        173.73,
+        179.38
       ],
       [
         105.95,
@@ -15313,9 +15283,9 @@
         138.11,
         142.91,
         147.71,
-        158.91,
-        165.79,
-        171.08
+        169.51,
+        176.84,
+        182.49
       ],
       [
         109.07,
@@ -15327,9 +15297,9 @@
         141.23,
         146.03,
         150.83,
-        161.83,
-        168.7,
-        174.0
+        172.62,
+        179.95,
+        185.6
       ],
       [
         112.18,
@@ -15341,9 +15311,9 @@
         144.34,
         165.94,
         171.94,
-        182.75,
-        190.75,
-        197.17
+        194.93,
+        203.46,
+        210.31
       ],
       [
         115.29,
@@ -15355,9 +15325,9 @@
         147.45,
         152.25,
         175.05,
-        185.66,
-        193.66,
-        200.09
+        198.04,
+        206.57,
+        213.43
       ],
       [
         118.4,
@@ -15369,9 +15339,9 @@
         150.56,
         155.36,
         178.16,
-        188.58,
-        196.58,
-        203.0
+        201.15,
+        209.69,
+        216.54
       ]
     ],
     "requirements": [
@@ -15572,10 +15542,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -16030,13 +15997,8 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Sheer Elegance - Pleated 110” / Reve 110”"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Sheer Elegance"
   },
   {
@@ -16488,10 +16450,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -16946,13 +16905,8 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Sheer Elegance - Palau 110”"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Sheer Elegance"
   },
   {
@@ -17404,10 +17358,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -17862,10 +17813,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -18407,10 +18355,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -18988,10 +18933,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -19569,10 +19511,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -20017,36 +19956,50 @@
         "price": 96.0,
         "extra": "",
         "context": "6 Canales"
-      },
-      {
-        "name": "VTi Smart Hub Plus",
-        "description": "VTi Re-lion SMARTHUB Plus",
-        "price": 140.0,
-        "extra": "",
-        "context": "6 Canales"
       }
     ],
     "category": "Rieles y Motores"
   },
   {
     "type": "item_list",
-    "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador) 280.00",
+    "name": "VTi Smart Hub Plus VTi Re-lion SMARTHUB Plus 140.00",
     "page": 34,
     "currency": "USD",
     "section_headers": [
+      "POR PEDIDO",
       "ACCESORIOS RIELES RE-LION",
       "COULISSE",
       "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL",
-      "CONTROLES REMOTO",
-      "SOMFY"
+      "CONTROLES REMOTO"
     ],
     "items": [
+      {
+        "name": "VTi Smart Hub Plus",
+        "description": "VTi Re-lion SMARTHUB Plus",
+        "price": 140.0,
+        "extra": "",
+        "context": ""
+      },
       {
         "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
         "description": "",
         "price": 280.0,
         "extra": "",
         "context": ""
+      },
+      {
+        "name": "Control Chic Bidi 2 canales",
+        "description": "CHIC Celtic Remote 2CH color negro",
+        "price": 36.0,
+        "extra": "",
+        "context": "POR PEDIDO"
+      },
+      {
+        "name": "Control Chic Bidi 6 canales",
+        "description": "CHIC Celtic Remote 6CH color negro",
+        "price": 40.0,
+        "extra": "",
+        "context": "POR PEDIDO"
       },
       {
         "name": "Master Pinch Pleat 2 vias",
@@ -20208,34 +20161,35 @@
         "price": 42.4,
         "extra": "",
         "context": "CONTROLES REMOTO"
-      },
-      {
-        "name": "CM-20",
-        "description": "Wifi hub Coulisse motion",
-        "price": 184.0,
-        "extra": "",
-        "context": "CONTROLES REMOTO"
-      },
-      {
-        "name": "Pull Buttom up",
-        "description": "Pull wand 8mm 40cm matt white",
-        "price": 10.5,
-        "extra": "",
-        "context": "CONTROLES REMOTO"
       }
     ],
     "category": "Rieles y Motores"
   },
   {
     "type": "item_list",
-    "name": "RIELES ELECTRICOS UNIDIRECCIONALES",
+    "name": "CM-20 Wifi hub Coulisse motion 184.00",
     "page": 35,
     "currency": "USD",
     "section_headers": [
+      "SOMFY",
       "RIELES ELECTRICOS UNIDIRECCIONALES",
       "CONTROLES REMOTO"
     ],
     "items": [
+      {
+        "name": "CM-20",
+        "description": "Wifi hub Coulisse motion",
+        "price": 184.0,
+        "extra": "",
+        "context": ""
+      },
+      {
+        "name": "Pull Buttom up",
+        "description": "Pull wand 8mm 40cm matt white",
+        "price": 10.5,
+        "extra": "",
+        "context": ""
+      },
       {
         "name": "MOVELITE RTS 60 KG - corredera",
         "description": "Riel motorizado RTS de 60 kg para cortina de tela hasta 228”",
@@ -20417,13 +20371,6 @@
         "price": 544.0,
         "extra": "",
         "context": "CONTROLES REMOTO"
-      },
-      {
-        "name": "CONVERTIDOR DE DATOS",
-        "description": "RS232/ RS485",
-        "price": 160.0,
-        "extra": "",
-        "context": "CONTROLES REMOTO"
       }
     ],
     "category": "Rieles y Motores"
@@ -20432,7 +20379,7 @@
     "type": "width_priced",
     "name": "Cenefas - Carcazas",
     "subheader": "pulgadas",
-    "page": 37,
+    "page": 38,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -20474,37 +20421,37 @@
       {
         "label": "Cassette 100",
         "prices": [
-          32.28,
-          38.52,
-          43.36,
-          49.6,
-          54.44,
-          60.68,
-          65.52,
-          71.76,
-          76.6,
-          82.84,
-          87.68,
-          93.92,
-          98.76
+          27.9,
+          34.14,
+          38.98,
+          45.22,
+          50.06,
+          56.3,
+          61.14,
+          67.38,
+          72.22,
+          78.46,
+          83.3,
+          89.54,
+          94.38
         ]
       },
       {
         "label": "Cassette 120",
         "prices": [
-          40.33,
-          48.87,
-          56.01,
-          64.55,
-          71.69,
-          80.23,
-          87.37,
-          95.91,
-          103.05,
-          111.59,
-          118.73,
-          127.27,
-          134.41
+          35.95,
+          44.49,
+          51.63,
+          60.17,
+          67.31,
+          75.85,
+          82.99,
+          91.53,
+          98.67,
+          107.21,
+          114.35,
+          122.89,
+          130.03
         ]
       },
       {
@@ -20550,7 +20497,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 38,
+    "page": 39,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -20645,7 +20592,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 38,
+    "page": 39,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -20723,7 +20670,7 @@
     "type": "width_priced",
     "name": "Cassette 130",
     "subheader": "pulgadas",
-    "page": 38,
+    "page": 39,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -20768,7 +20715,7 @@
   {
     "type": "item_list",
     "name": "COMPONENTES",
-    "page": 39,
+    "page": 40,
     "currency": "USD",
     "section_headers": [
       "COMPONENTES"
@@ -20880,6 +20827,13 @@
         "context": "COMPONENTES"
       },
       {
+        "name": "Extensión de 3” y 4”",
+        "description": "",
+        "price": 1.0,
+        "extra": "PIEZA",
+        "context": "COMPONENTES"
+      },
+      {
         "name": "Tensor Cadena",
         "description": "",
         "price": 0.75,
@@ -20931,7 +20885,7 @@
       {
         "name": "Adaptador de 2” (reducción)",
         "description": "",
-        "price": 2.5,
+        "price": 1.5,
         "extra": "PIEZA (blanca)",
         "context": "COMPONENTES"
       },
@@ -20969,24 +20923,24 @@
         "price": 0.5,
         "extra": "PIEZA (blanca, gris)",
         "context": "COMPONENTES"
-      },
-      {
-        "name": "Bottomrail Clásico",
-        "description": "",
-        "price": 1.25,
-        "extra": "PIE (bronze, negro)",
-        "context": "COMPONENTES"
       }
     ],
     "category": "Accesorios y Componentes"
   },
   {
     "type": "item_list",
-    "name": "Tapa de bottomrail clásico 0.50 PIEZA (bronze, negra)",
-    "page": 40,
+    "name": "Bottomrail Clásico 1.25 PIE (bronze, negro)",
+    "page": 41,
     "currency": "USD",
     "section_headers": [],
     "items": [
+      {
+        "name": "Bottomrail Clásico",
+        "description": "",
+        "price": 1.25,
+        "extra": "PIE (bronze, negro)",
+        "context": ""
+      },
       {
         "name": "Tapa de bottomrail clásico",
         "description": "",
@@ -21175,7 +21129,7 @@
   {
     "type": "item_list",
     "name": "MOTORES",
-    "page": 41,
+    "page": 42,
     "currency": "USD",
     "section_headers": [
       "MOTORES",
@@ -21314,6 +21268,20 @@
         "context": "Canales"
       },
       {
+        "name": "Control Chic Bidi 2 canales",
+        "description": "CHIC Celtic Remote 2CH color blanco",
+        "price": 32.0,
+        "extra": "",
+        "context": "6 Canales"
+      },
+      {
+        "name": "Control Chic Bidi 6 canales",
+        "description": "CHIC Celtic Remote 6CH color blanco",
+        "price": 38.0,
+        "extra": "",
+        "context": "6 Canales"
+      },
+      {
         "name": "VTi Smart Hub",
         "description": "VTi Re-lion SMARTHUB",
         "price": 96.0,
@@ -21324,6 +21292,13 @@
         "name": "VTi Smart Hub Plus",
         "description": "VTi Re-lion SMARTHUB Plus",
         "price": 140.0,
+        "extra": "",
+        "context": "6 Canales"
+      },
+      {
+        "name": "VTi Re-lion Nexus Bridge",
+        "description": "Compatibilidad con controladores de terceros",
+        "price": 400.0,
         "extra": "",
         "context": "6 Canales"
       },
@@ -21347,49 +21322,126 @@
         "price": 5.0,
         "extra": "",
         "context": "ACCESORIOS"
-      },
-      {
-        "name": "Corona y rueda motriz 50mm",
-        "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 50mm (2.0)",
-        "price": 5.5,
-        "extra": "",
-        "context": "ACCESORIOS"
-      },
-      {
-        "name": "Corona de 63mm",
-        "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
-        "price": 4.0,
-        "extra": "",
-        "context": "ACCESORIOS"
       }
     ],
     "category": "Rieles y Motores"
   },
   {
     "type": "item_list",
-    "name": "Rueda motriz de 63mm Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5) 4.00",
-    "page": 42,
+    "name": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
+    "page": 43,
     "currency": "USD",
     "section_headers": [
+      "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
       "MOTIONBLINDS",
       "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL",
-      "SHADE) incluye bateria",
-      "CONTROLES REMOTO"
+      "SHADE) incluye bateria"
     ],
     "items": [
+      {
+        "name": "Re-Lion 35E 1L",
+        "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+        "price": 105.0,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 35E 2L",
+        "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+        "price": 122.5,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 35E 3L",
+        "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+        "price": 143.5,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 45E 1L",
+        "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "price": 136.5,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 45E 2L",
+        "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "price": 157.5,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 45E 3L",
+        "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "price": 178.5,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 20Nm (solo motor)",
+        "description": "VTi®RE-LION Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "price": 122.25,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 50 Nm (AWNING SYSTEM) VTi®RE-LION Unidi. ACMech.Lim.Mot.45mm | 50Nm | 33rpm | 110AC (S/motor)",
+        "description": "",
+        "price": 150.5,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Corona y rueda motriz 50mm",
+        "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 50mm (2.0)",
+        "price": 5.5,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Corona de 63mm",
+        "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
+        "price": 4.0,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
       {
         "name": "Rueda motriz de 63mm",
         "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
         "price": 4.0,
         "extra": "",
-        "context": ""
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
       },
       {
         "name": "Cargador RE-LION",
         "description": "cargador con cable de 13 pies de largo",
         "price": 15.0,
         "extra": "",
-        "context": ""
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Re-Lion 35E 1L",
+        "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
+        "price": 152.0,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Control Chic Bidi 2 canales",
+        "description": "CHIC Celtic Remote 2CH color negro",
+        "price": 36.0,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+      },
+      {
+        "name": "Control Chic Bidi 6 canales",
+        "description": "CHIC Celtic Remote 6CH color negro",
+        "price": 40.0,
+        "extra": "",
+        "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
       },
       {
         "name": "MOTION CM-09-C120 1L",
@@ -21425,7 +21477,23 @@
         "price": 150.5,
         "extra": "",
         "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
-      },
+      }
+    ],
+    "category": "Rieles y Motores"
+  },
+  {
+    "type": "item_list",
+    "name": "CONTROLES REMOTO",
+    "page": 44,
+    "currency": "USD",
+    "section_headers": [
+      "CONTROLES REMOTO",
+      "SOMFY",
+      "MOTORES ELÉCTRICOS UNIDIRECCIONALES",
+      "CONTROLES REMOTO",
+      "COMPONENTES GENERALES"
+    ],
+    "items": [
       {
         "name": "CM-11-BK",
         "description": "Control Remoto 1 canal color Black",
@@ -21467,22 +21535,7 @@
         "price": 10.5,
         "extra": "",
         "context": "CONTROLES REMOTO"
-      }
-    ],
-    "category": "Rieles y Motores"
-  },
-  {
-    "type": "item_list",
-    "name": "SOMFY",
-    "page": 43,
-    "currency": "USD",
-    "section_headers": [
-      "SOMFY",
-      "MOTORES ELÉCTRICOS UNIDIRECCIONALES",
-      "CONTROLES REMOTO",
-      "COMPONENTES GENERALES"
-    ],
-    "items": [
+      },
       {
         "name": "LT50E SONESSE",
         "description": "Motor RTS 6Nm con tecnología silenciosa para 1 lienzo",
@@ -21615,13 +21668,6 @@
         "price": 7.5,
         "extra": "",
         "context": "COMPONENTES GENERALES"
-      },
-      {
-        "name": "ADAPTER COULISSE",
-        "description": "Adaptador de motor para brackets Coulisse",
-        "price": 4.0,
-        "extra": "",
-        "context": "COMPONENTES GENERALES"
       }
     ],
     "category": "Rieles y Motores"
@@ -21629,7 +21675,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Stratos 110” / Paros 110” /Eco Screen (Con Varilla)",
-    "page": 45,
+    "page": 47,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -22102,17 +22148,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Stratos 110” / Paros 110” /Eco Screen (Sin Varilla)",
-    "page": 45,
+    "page": 47,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -22585,10 +22628,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -22597,7 +22637,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Soleil 5% - 78” / 98” / 118” (Con Varilla)",
-    "page": 46,
+    "page": 48,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -23070,17 +23110,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Soleil 5% - 78” / 98” / 118” (Sin Varilla)",
-    "page": 46,
+    "page": 48,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -23553,10 +23590,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -23565,7 +23599,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Soleil 16% - 98” / Soleil 1% - 98” (Con Varilla)",
-    "page": 47,
+    "page": 49,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -24038,17 +24072,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Soleil 16% - 98” / Soleil 1% - 98” (Sin Varilla)",
-    "page": 47,
+    "page": 49,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -24521,10 +24552,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -24533,7 +24561,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Con Varilla)",
-    "page": 48,
+    "page": 50,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -25006,17 +25034,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Sin Varilla)",
-    "page": 48,
+    "page": 50,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -25489,10 +25514,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -25501,7 +25523,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Sunset Bo 118” / Florencia 118” / Screen 5% (Con Varilla)",
-    "page": 49,
+    "page": 51,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -25974,17 +25996,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Sunset Bo 118” / Florencia 118” / Screen 5% (Sin Varilla)",
-    "page": 49,
+    "page": 51,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -26457,10 +26476,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -26469,7 +26485,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Noble 118” / Captiva 118” / Motion 118” (Con Varilla)",
-    "page": 50,
+    "page": 52,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -26942,17 +26958,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Noble 118” / Captiva 118” / Motion 118” (Sin Varilla)",
-    "page": 50,
+    "page": 52,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -27425,10 +27438,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -27437,7 +27447,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Salvador 94” / Parget 98” (Con Varilla)",
-    "page": 51,
+    "page": 53,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -27910,17 +27920,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Salvador 94” / Parget 98” (Sin Varilla)",
-    "page": 51,
+    "page": 53,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -28393,10 +28400,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -28405,7 +28409,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Stucco BO 110” / Adagio 110” (Con Varilla)",
-    "page": 52,
+    "page": 54,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -28878,17 +28882,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Stucco BO 110” / Adagio 110” (Sin Varilla)",
-    "page": 52,
+    "page": 54,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -29361,10 +29362,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -29373,7 +29371,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Hampton BO 110” (Con Varilla)",
-    "page": 53,
+    "page": 55,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -29846,17 +29844,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Hampton BO 110” (Sin Varilla)",
-    "page": 53,
+    "page": 55,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -30329,10 +30324,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -30341,7 +30333,7 @@
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Explore 118” / Mombassa 118” (Con Varilla)",
-    "page": 54,
+    "page": 56,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -30814,17 +30806,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Roman Shades"
   },
   {
     "type": "fabric_matrix",
     "name": "Roman Shades - Explore 118” / Mombassa 118” (Sin Varilla)",
-    "page": 54,
+    "page": 56,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -31297,10 +31286,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -31309,7 +31295,7 @@
   {
     "type": "fabric_matrix",
     "name": "Honeycomb BU - Rioja Blackout",
-    "page": 56,
+    "page": 58,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -31845,19 +31831,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Honeycomb BU - Rioja Transparente"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Honeycomb"
   },
   {
     "type": "fabric_matrix",
     "name": "Honeycomb BU - Rioja Transparente",
-    "page": 56,
+    "page": 58,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -32393,10 +32374,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -32405,7 +32383,7 @@
   {
     "type": "fabric_matrix",
     "name": "Honeycomb BU - Oxford",
-    "page": 57,
+    "page": 59,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -32941,10 +32919,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -32953,7 +32928,7 @@
   {
     "type": "fabric_matrix",
     "name": "Honeycomb TDBU - Rioja Blackout",
-    "page": 58,
+    "page": 60,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -33489,19 +33464,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Honeycomb TDBU - Rioja Transparente"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Honeycomb"
   },
   {
     "type": "fabric_matrix",
     "name": "Honeycomb TDBU - Rioja Transparente",
-    "page": 58,
+    "page": 60,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -34037,10 +34007,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -34049,7 +34016,7 @@
   {
     "type": "fabric_matrix",
     "name": "Honeycomb TDBU - Oxford",
-    "page": 59,
+    "page": 61,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -34585,17 +34552,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Honeycomb"
   },
   {
     "type": "fabric_matrix",
     "name": "Honeycomb Dia y Noche - Rioja Blackout + Rioja Transparente",
-    "page": 60,
+    "page": 62,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -35131,19 +35095,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Honeycomb Dia y Noche - Rioja Blackout + Oxford"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Honeycomb"
   },
   {
     "type": "fabric_matrix",
     "name": "Honeycomb Dia y Noche - Rioja Blackout + Oxford",
-    "page": 60,
+    "page": 62,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -35679,10 +35638,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
@@ -35691,7 +35647,7 @@
   {
     "type": "item_list",
     "name": "Window Film - Lamina Solar",
-    "page": 62,
+    "page": 64,
     "currency": "USD",
     "section_headers": [
       "Window Film",
@@ -35769,7 +35725,7 @@
   {
     "type": "fabric_matrix",
     "name": "Axio - Drop Shade - Sunbrella",
-    "page": 64,
+    "page": 66,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -36033,19 +35989,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Axio - Drop Shade - Screen 5%"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Toldos"
   },
   {
     "type": "fabric_matrix",
     "name": "Axio - Drop Shade - Screen 5%",
-    "page": 64,
+    "page": 66,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -36205,9 +36156,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36216,9 +36167,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36227,9 +36178,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36238,9 +36189,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36249,9 +36200,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36260,9 +36211,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36271,9 +36222,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36282,9 +36233,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36293,9 +36244,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36304,14 +36255,13 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "bottomrail_delfin": "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido"
     },
     "notes": [
       "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
@@ -36321,8 +36271,8 @@
   },
   {
     "type": "fabric_matrix",
-    "name": "Axio - Drop Shade - Clear Vinyl 54”",
-    "page": 65,
+    "name": "Axio - Balcony",
+    "page": 67,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -36518,9 +36468,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36529,9 +36479,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36540,9 +36490,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36551,9 +36501,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36562,9 +36512,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36573,9 +36523,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36584,9 +36534,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36595,9 +36545,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36606,9 +36556,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36617,9 +36567,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36628,9 +36578,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36639,9 +36589,9 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ],
       [
         null,
@@ -36650,14 +36600,13 @@
         null,
         null,
         null,
-        "clutch_large",
-        "clutch_large",
-        "clutch_large"
+        "bottomrail_delfin",
+        "bottomrail_delfin",
+        "bottomrail_delfin"
       ]
     ],
     "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+      "bottomrail_delfin": "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido"
     },
     "notes": [
       "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
@@ -36668,7 +36617,7 @@
   {
     "type": "item_list",
     "name": "Axio - Drop Shade - Clear Vinyl 54”",
-    "page": 65,
+    "page": 67,
     "currency": "USD",
     "section_headers": [
       "1.20",
@@ -36703,7 +36652,7 @@
   {
     "type": "fabric_matrix",
     "name": "Axio - Arm 90 grados",
-    "page": 66,
+    "page": 68,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -36816,19 +36765,14 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
-    "notes": [
-      "Axio - Arm 180 grados Sunbrella"
-    ],
+    "requirement_legend": {},
+    "notes": [],
     "category": "Toldos"
   },
   {
     "type": "fabric_matrix",
     "name": "Axio - Arm 180 grados Sunbrella",
-    "page": 66,
+    "page": 68,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -36941,10 +36885,199 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
+    "requirement_legend": {},
+    "notes": [
+      "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
+    ],
+    "category": "Toldos"
+  },
+  {
+    "type": "awning_system",
+    "name": "Awning System",
+    "page": 69,
+    "currency": "USD",
+    "axis": {
+      "rows": "projection",
+      "cols": "arms"
     },
+    "groups": [
+      {
+        "projection_m": 1.5,
+        "projection_in": 58,
+        "options": [
+          {
+            "arms": 2,
+            "width_m": [
+              2.12,
+              3.05
+            ],
+            "width_in": [
+              83,
+              120
+            ],
+            "price": 1644.49
+          },
+          {
+            "arms": 3,
+            "width_m": [
+              3.07,
+              3.96
+            ],
+            "width_in": [
+              121,
+              156
+            ],
+            "price": 2130.36
+          },
+          {
+            "arms": 4,
+            "width_m": [
+              4.0,
+              4.67
+            ],
+            "width_in": [
+              157,
+              184
+            ],
+            "price": 3198.2
+          }
+        ]
+      },
+      {
+        "projection_m": 2.0,
+        "projection_in": 78,
+        "options": [
+          {
+            "arms": 2,
+            "width_m": [
+              2.62,
+              3.78
+            ],
+            "width_in": [
+              103,
+              149
+            ],
+            "price": 1843.7
+          },
+          {
+            "arms": 3,
+            "width_m": [
+              3.81,
+              4.97
+            ],
+            "width_in": [
+              150,
+              196
+            ],
+            "price": 2636.91
+          },
+          {
+            "arms": 4,
+            "width_m": [
+              5.0,
+              5.8
+            ],
+            "width_in": [
+              197,
+              228
+            ],
+            "price": 3535.39
+          }
+        ]
+      },
+      {
+        "projection_m": 2.5,
+        "projection_in": 98,
+        "options": [
+          {
+            "arms": 2,
+            "width_m": [
+              3.17,
+              4.6
+            ],
+            "width_in": [
+              125,
+              181
+            ],
+            "price": 2009.89
+          },
+          {
+            "arms": 3,
+            "width_m": [
+              4.62,
+              5.8
+            ],
+            "width_in": [
+              182,
+              228
+            ],
+            "price": 3166.92
+          }
+        ]
+      },
+      {
+        "projection_m": 3.0,
+        "projection_in": 118,
+        "options": [
+          {
+            "arms": 2,
+            "width_m": [
+              3.63,
+              5.31
+            ],
+            "width_in": [
+              143,
+              209
+            ],
+            "price": 2690.41
+          },
+          {
+            "arms": 3,
+            "width_m": [
+              5.33,
+              5.8
+            ],
+            "width_in": [
+              210,
+              228
+            ],
+            "price": 3572.78
+          }
+        ]
+      },
+      {
+        "projection_m": 3.5,
+        "projection_in": 137,
+        "options": [
+          {
+            "arms": 2,
+            "width_m": [
+              4.14,
+              5.8
+            ],
+            "width_in": [
+              163,
+              228
+            ],
+            "price": 2907.32
+          }
+        ]
+      }
+    ],
+    "accessories": [
+      {
+        "name": "+Manivela 1.50m",
+        "price": 25.0
+      },
+      {
+        "name": "+Manivela 2.2m",
+        "price": 35.0
+      },
+      {
+        "name": "Re-Lion 50NM Eléctrico",
+        "price": 150.5
+      }
+    ],
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
     ],
@@ -36953,7 +37086,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Stratos / Paros / Zakros",
-    "page": 69,
+    "page": 71,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -37168,10 +37301,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -37179,7 +37309,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 69,
+    "page": 71,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -37249,23 +37379,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -37274,7 +37387,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 69,
+    "page": 71,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -37327,23 +37440,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -37351,7 +37447,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer",
-    "page": 70,
+    "page": 72,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -37566,10 +37662,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -37577,7 +37670,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 70,
+    "page": 72,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -37647,23 +37740,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -37672,7 +37748,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 70,
+    "page": 72,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -37725,23 +37801,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -37749,7 +37808,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Eco Screen 5% / Veria / Corinto / Creta / Delphi",
-    "page": 71,
+    "page": 73,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -37964,10 +38023,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -37975,7 +38031,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 71,
+    "page": 73,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -38047,23 +38103,6 @@
         ]
       },
       {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
-      },
-      {
         "label": "3 canales",
         "prices": [
           null,
@@ -38096,43 +38135,6 @@
           194.77,
           202.08
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          80.11,
-          84.37,
-          88.63,
-          92.89,
-          97.15,
-          101.4,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      }
-    ],
-    "category": "Panel Track"
-  },
-  {
-    "type": "item_list",
-    "name": "Panel Track - Eco Screen 5% / Veria / Corinto / Creta / Delphi",
-    "page": 71,
-    "currency": "USD",
-    "section_headers": [
-      "2 canales",
-      "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
-    ],
-    "items": [
-      {
-        "name": "pulgadas 80.11 84.37 88.63 92.89 97.15",
-        "description": "",
-        "price": 101.4,
-        "extra": "",
-        "context": ""
       }
     ],
     "category": "Panel Track"
@@ -38140,7 +38142,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Sheer Pleated / Sheer Reve",
-    "page": 72,
+    "page": 74,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -38355,10 +38357,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -38366,7 +38365,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 72,
+    "page": 74,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -38436,23 +38435,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -38461,7 +38443,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 72,
+    "page": 74,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -38514,23 +38496,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -38538,7 +38503,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Soleil 5% / Argos BO / Syros BO",
-    "page": 73,
+    "page": 75,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -38753,10 +38718,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -38764,7 +38726,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 73,
+    "page": 75,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -38834,23 +38796,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -38859,7 +38804,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 73,
+    "page": 75,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -38912,23 +38857,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -38936,7 +38864,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Soleil 16% / Soleil 1%",
-    "page": 74,
+    "page": 76,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -39151,10 +39079,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -39162,7 +39087,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 74,
+    "page": 76,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -39232,23 +39157,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -39257,7 +39165,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 74,
+    "page": 76,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -39310,23 +39218,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -39334,7 +39225,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Wellington",
-    "page": 75,
+    "page": 77,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -39549,10 +39440,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -39560,7 +39448,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 75,
+    "page": 77,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -39630,23 +39518,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -39655,7 +39526,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 75,
+    "page": 77,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -39708,23 +39579,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -39732,7 +39586,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Bimini / Esvedra",
-    "page": 76,
+    "page": 78,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -39947,10 +39801,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -39958,7 +39809,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 76,
+    "page": 78,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -40028,23 +39879,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -40053,7 +39887,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 76,
+    "page": 78,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -40106,23 +39940,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -40130,7 +39947,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter",
-    "page": 77,
+    "page": 79,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -40345,10 +40162,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -40356,7 +40170,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 77,
+    "page": 79,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -40426,23 +40240,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -40451,7 +40248,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 77,
+    "page": 79,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -40504,23 +40301,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -40528,7 +40308,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Noble / Captiva",
-    "page": 78,
+    "page": 80,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -40743,10 +40523,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -40754,7 +40531,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 78,
+    "page": 80,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -40824,23 +40601,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -40849,7 +40609,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 78,
+    "page": 80,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -40902,23 +40662,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -40926,7 +40669,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Explore / Mombassa",
-    "page": 79,
+    "page": 81,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -41141,10 +40884,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -41152,7 +40892,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 79,
+    "page": 81,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -41222,23 +40962,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -41247,7 +40970,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 79,
+    "page": 81,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -41300,23 +41023,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -41324,7 +41030,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Stucco BO / Adagio",
-    "page": 80,
+    "page": 82,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -41539,10 +41245,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -41550,7 +41253,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 80,
+    "page": 82,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -41620,23 +41323,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -41645,7 +41331,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 80,
+    "page": 82,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -41698,23 +41384,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -41722,7 +41391,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Hampton BO",
-    "page": 81,
+    "page": 83,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -41937,10 +41606,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -41948,7 +41614,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 81,
+    "page": 83,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -42018,23 +41684,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -42043,7 +41692,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 81,
+    "page": 83,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -42096,23 +41745,6 @@
           147.87,
           153.26
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
-        ]
       }
     ],
     "category": "Panel Track"
@@ -42120,7 +41752,7 @@
   {
     "type": "fabric_matrix",
     "name": "Panel Track - Salvador / Parget",
-    "page": 82,
+    "page": 84,
     "currency": "USD",
     "axis": {
       "rows": "height_in",
@@ -42335,10 +41967,7 @@
         null
       ]
     ],
-    "requirement_legend": {
-      "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-      "motorization": "Medida sombreada gris: requiere motorizacion"
-    },
+    "requirement_legend": {},
     "notes": [],
     "category": "Panel Track"
   },
@@ -42346,7 +41975,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 1 vía",
     "subheader": "pulgadas",
-    "page": 82,
+    "page": 84,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -42416,23 +42045,6 @@
           null,
           null
         ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          96.72,
-          104.07,
-          111.38,
-          121.89,
-          129.24,
-          136.55,
-          147.06,
-          154.41,
-          161.72,
-          169.03
-        ]
       }
     ],
     "category": "Panel Track"
@@ -42441,7 +42053,7 @@
     "type": "width_priced",
     "name": "Riel de Panel Track a 2 vías",
     "subheader": "pulgadas",
-    "page": 82,
+    "page": 84,
     "currency": "USD",
     "axis": {
       "cols": "width_in"
@@ -42493,23 +42105,6 @@
           142.48,
           147.87,
           153.26
-        ]
-      },
-      {
-        "label": "5 canales",
-        "prices": [
-          null,
-          null,
-          null,
-          143.61,
-          150.92,
-          158.23,
-          165.54,
-          172.85,
-          180.15,
-          187.46,
-          194.77,
-          202.08
         ]
       }
     ],

@@ -440,36 +440,50 @@
           "price": 96.0,
           "extra": "",
           "context": "6 Canales"
-        },
-        {
-          "name": "VTi Smart Hub Plus",
-          "description": "VTi Re-lion SMARTHUB Plus",
-          "price": 140.0,
-          "extra": "",
-          "context": "6 Canales"
         }
       ],
       "category": "Rieles y Motores"
     },
     {
       "type": "item_list",
-      "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador) 280.00",
+      "name": "VTi Smart Hub Plus VTi Re-lion SMARTHUB Plus 140.00",
       "page": 34,
       "currency": "USD",
       "section_headers": [
+        "POR PEDIDO",
         "ACCESORIOS RIELES RE-LION",
         "COULISSE",
         "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL",
-        "CONTROLES REMOTO",
-        "SOMFY"
+        "CONTROLES REMOTO"
       ],
       "items": [
+        {
+          "name": "VTi Smart Hub Plus",
+          "description": "VTi Re-lion SMARTHUB Plus",
+          "price": 140.0,
+          "extra": "",
+          "context": ""
+        },
         {
           "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
           "description": "",
           "price": 280.0,
           "extra": "",
           "context": ""
+        },
+        {
+          "name": "Control Chic Bidi 2 canales",
+          "description": "CHIC Celtic Remote 2CH color negro",
+          "price": 36.0,
+          "extra": "",
+          "context": "POR PEDIDO"
+        },
+        {
+          "name": "Control Chic Bidi 6 canales",
+          "description": "CHIC Celtic Remote 6CH color negro",
+          "price": 40.0,
+          "extra": "",
+          "context": "POR PEDIDO"
         },
         {
           "name": "Master Pinch Pleat 2 vias",
@@ -631,34 +645,35 @@
           "price": 42.4,
           "extra": "",
           "context": "CONTROLES REMOTO"
-        },
-        {
-          "name": "CM-20",
-          "description": "Wifi hub Coulisse motion",
-          "price": 184.0,
-          "extra": "",
-          "context": "CONTROLES REMOTO"
-        },
-        {
-          "name": "Pull Buttom up",
-          "description": "Pull wand 8mm 40cm matt white",
-          "price": 10.5,
-          "extra": "",
-          "context": "CONTROLES REMOTO"
         }
       ],
       "category": "Rieles y Motores"
     },
     {
       "type": "item_list",
-      "name": "RIELES ELECTRICOS UNIDIRECCIONALES",
+      "name": "CM-20 Wifi hub Coulisse motion 184.00",
       "page": 35,
       "currency": "USD",
       "section_headers": [
+        "SOMFY",
         "RIELES ELECTRICOS UNIDIRECCIONALES",
         "CONTROLES REMOTO"
       ],
       "items": [
+        {
+          "name": "CM-20",
+          "description": "Wifi hub Coulisse motion",
+          "price": 184.0,
+          "extra": "",
+          "context": ""
+        },
+        {
+          "name": "Pull Buttom up",
+          "description": "Pull wand 8mm 40cm matt white",
+          "price": 10.5,
+          "extra": "",
+          "context": ""
+        },
         {
           "name": "MOVELITE RTS 60 KG - corredera",
           "description": "Riel motorizado RTS de 60 kg para cortina de tela hasta 228”",
@@ -840,13 +855,6 @@
           "price": 544.0,
           "extra": "",
           "context": "CONTROLES REMOTO"
-        },
-        {
-          "name": "CONVERTIDOR DE DATOS",
-          "description": "RS232/ RS485",
-          "price": 160.0,
-          "extra": "",
-          "context": "CONTROLES REMOTO"
         }
       ],
       "category": "Rieles y Motores"
@@ -854,7 +862,7 @@
     {
       "type": "item_list",
       "name": "MOTORES",
-      "page": 41,
+      "page": 42,
       "currency": "USD",
       "section_headers": [
         "MOTORES",
@@ -993,6 +1001,20 @@
           "context": "Canales"
         },
         {
+          "name": "Control Chic Bidi 2 canales",
+          "description": "CHIC Celtic Remote 2CH color blanco",
+          "price": 32.0,
+          "extra": "",
+          "context": "6 Canales"
+        },
+        {
+          "name": "Control Chic Bidi 6 canales",
+          "description": "CHIC Celtic Remote 6CH color blanco",
+          "price": 38.0,
+          "extra": "",
+          "context": "6 Canales"
+        },
+        {
           "name": "VTi Smart Hub",
           "description": "VTi Re-lion SMARTHUB",
           "price": 96.0,
@@ -1003,6 +1025,13 @@
           "name": "VTi Smart Hub Plus",
           "description": "VTi Re-lion SMARTHUB Plus",
           "price": 140.0,
+          "extra": "",
+          "context": "6 Canales"
+        },
+        {
+          "name": "VTi Re-lion Nexus Bridge",
+          "description": "Compatibilidad con controladores de terceros",
+          "price": 400.0,
           "extra": "",
           "context": "6 Canales"
         },
@@ -1026,49 +1055,126 @@
           "price": 5.0,
           "extra": "",
           "context": "ACCESORIOS"
-        },
-        {
-          "name": "Corona y rueda motriz 50mm",
-          "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 50mm (2.0)",
-          "price": 5.5,
-          "extra": "",
-          "context": "ACCESORIOS"
-        },
-        {
-          "name": "Corona de 63mm",
-          "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
-          "price": 4.0,
-          "extra": "",
-          "context": "ACCESORIOS"
         }
       ],
       "category": "Rieles y Motores"
     },
     {
       "type": "item_list",
-      "name": "Rueda motriz de 63mm Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5) 4.00",
-      "page": 42,
+      "name": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
+      "page": 43,
       "currency": "USD",
       "section_headers": [
+        "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
         "MOTIONBLINDS",
         "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL",
-        "SHADE) incluye bateria",
-        "CONTROLES REMOTO"
+        "SHADE) incluye bateria"
       ],
       "items": [
+        {
+          "name": "Re-Lion 35E 1L",
+          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+          "price": 105.0,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 35E 2L",
+          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+          "price": 122.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 35E 3L",
+          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+          "price": 143.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 45E 1L",
+          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 136.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 45E 2L",
+          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 157.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 45E 3L",
+          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 178.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 20Nm (solo motor)",
+          "description": "VTi®RE-LION Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+          "price": 122.25,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 50 Nm (AWNING SYSTEM) VTi®RE-LION Unidi. ACMech.Lim.Mot.45mm | 50Nm | 33rpm | 110AC (S/motor)",
+          "description": "",
+          "price": 150.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Corona y rueda motriz 50mm",
+          "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 50mm (2.0)",
+          "price": 5.5,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Corona de 63mm",
+          "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
+          "price": 4.0,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
         {
           "name": "Rueda motriz de 63mm",
           "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
           "price": 4.0,
           "extra": "",
-          "context": ""
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
         {
           "name": "Cargador RE-LION",
           "description": "cargador con cable de 13 pies de largo",
           "price": 15.0,
           "extra": "",
-          "context": ""
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Re-Lion 35E 1L",
+          "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
+          "price": 152.0,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Control Chic Bidi 2 canales",
+          "description": "CHIC Celtic Remote 2CH color negro",
+          "price": 36.0,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Control Chic Bidi 6 canales",
+          "description": "CHIC Celtic Remote 6CH color negro",
+          "price": 40.0,
+          "extra": "",
+          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
         {
           "name": "MOTION CM-09-C120 1L",
@@ -1104,7 +1210,23 @@
           "price": 150.5,
           "extra": "",
           "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
-        },
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "CONTROLES REMOTO",
+      "page": 44,
+      "currency": "USD",
+      "section_headers": [
+        "CONTROLES REMOTO",
+        "SOMFY",
+        "MOTORES ELÉCTRICOS UNIDIRECCIONALES",
+        "CONTROLES REMOTO",
+        "COMPONENTES GENERALES"
+      ],
+      "items": [
         {
           "name": "CM-11-BK",
           "description": "Control Remoto 1 canal color Black",
@@ -1146,22 +1268,7 @@
           "price": 10.5,
           "extra": "",
           "context": "CONTROLES REMOTO"
-        }
-      ],
-      "category": "Rieles y Motores"
-    },
-    {
-      "type": "item_list",
-      "name": "SOMFY",
-      "page": 43,
-      "currency": "USD",
-      "section_headers": [
-        "SOMFY",
-        "MOTORES ELÉCTRICOS UNIDIRECCIONALES",
-        "CONTROLES REMOTO",
-        "COMPONENTES GENERALES"
-      ],
-      "items": [
+        },
         {
           "name": "LT50E SONESSE",
           "description": "Motor RTS 6Nm con tecnología silenciosa para 1 lienzo",
@@ -1292,13 +1399,6 @@
           "name": "ADAPTER SKYLINE",
           "description": "Adaptador de motor para brackets skyline",
           "price": 7.5,
-          "extra": "",
-          "context": "COMPONENTES GENERALES"
-        },
-        {
-          "name": "ADAPTER COULISSE",
-          "description": "Adaptador de motor para brackets Coulisse",
-          "price": 4.0,
           "extra": "",
           "context": "COMPONENTES GENERALES"
         }

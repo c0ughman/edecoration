@@ -239,14 +239,14 @@
   },
   {
     "category": "Rieles y Motores",
-    "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador) 280.00",
+    "name": "VTi Smart Hub Plus VTi Re-lion SMARTHUB Plus 140.00",
     "type": "item_list",
     "page": 34,
     "file": "rieles-y-motores.json"
   },
   {
     "category": "Rieles y Motores",
-    "name": "RIELES ELECTRICOS UNIDIRECCIONALES",
+    "name": "CM-20 Wifi hub Coulisse motion 184.00",
     "type": "item_list",
     "page": 35,
     "file": "rieles-y-motores.json"
@@ -255,602 +255,602 @@
     "category": "Rieles y Motores",
     "name": "MOTORES",
     "type": "item_list",
-    "page": 41,
-    "file": "rieles-y-motores.json"
-  },
-  {
-    "category": "Rieles y Motores",
-    "name": "Rueda motriz de 63mm Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5) 4.00",
-    "type": "item_list",
     "page": 42,
     "file": "rieles-y-motores.json"
   },
   {
     "category": "Rieles y Motores",
-    "name": "SOMFY",
+    "name": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
     "type": "item_list",
     "page": 43,
+    "file": "rieles-y-motores.json"
+  },
+  {
+    "category": "Rieles y Motores",
+    "name": "CONTROLES REMOTO",
+    "type": "item_list",
+    "page": 44,
     "file": "rieles-y-motores.json"
   },
   {
     "category": "Accesorios y Componentes",
     "name": "Cenefas - Carcazas",
     "type": "width_priced",
-    "page": 37,
+    "page": 38,
     "file": "accesorios-y-componentes.json"
   },
   {
     "category": "Accesorios y Componentes",
     "name": "Cassette 130",
     "type": "width_priced",
-    "page": 38,
+    "page": 39,
     "file": "accesorios-y-componentes.json"
   },
   {
     "category": "Accesorios y Componentes",
     "name": "COMPONENTES",
     "type": "item_list",
-    "page": 39,
+    "page": 40,
     "file": "accesorios-y-componentes.json"
   },
   {
     "category": "Accesorios y Componentes",
-    "name": "Tapa de bottomrail clásico 0.50 PIEZA (bronze, negra)",
+    "name": "Bottomrail Clásico 1.25 PIE (bronze, negro)",
     "type": "item_list",
-    "page": 40,
+    "page": 41,
     "file": "accesorios-y-componentes.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 38,
+    "page": 39,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 38,
+    "page": 39,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Stratos / Paros / Zakros",
     "type": "fabric_matrix",
-    "page": 69,
+    "page": 71,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 69,
+    "page": 71,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 69,
+    "page": 71,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer",
     "type": "fabric_matrix",
-    "page": 70,
+    "page": 72,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 70,
+    "page": 72,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 70,
+    "page": 72,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Eco Screen 5% / Veria / Corinto / Creta / Delphi",
     "type": "fabric_matrix",
-    "page": 71,
+    "page": 73,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 71,
-    "file": "panel-track.json"
-  },
-  {
-    "category": "Panel Track",
-    "name": "Panel Track - Eco Screen 5% / Veria / Corinto / Creta / Delphi",
-    "type": "item_list",
-    "page": 71,
+    "page": 73,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Sheer Pleated / Sheer Reve",
     "type": "fabric_matrix",
-    "page": 72,
+    "page": 74,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 72,
+    "page": 74,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 72,
+    "page": 74,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Soleil 5% / Argos BO / Syros BO",
     "type": "fabric_matrix",
-    "page": 73,
+    "page": 75,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 73,
+    "page": 75,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 73,
+    "page": 75,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Soleil 16% / Soleil 1%",
     "type": "fabric_matrix",
-    "page": 74,
+    "page": 76,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 74,
+    "page": 76,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 74,
+    "page": 76,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Wellington",
     "type": "fabric_matrix",
-    "page": 75,
+    "page": 77,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 75,
+    "page": 77,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 75,
+    "page": 77,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Bimini / Esvedra",
     "type": "fabric_matrix",
-    "page": 76,
+    "page": 78,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 76,
+    "page": 78,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 76,
+    "page": 78,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter",
     "type": "fabric_matrix",
-    "page": 77,
+    "page": 79,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 77,
+    "page": 79,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 77,
+    "page": 79,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Noble / Captiva",
     "type": "fabric_matrix",
-    "page": 78,
+    "page": 80,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 78,
+    "page": 80,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 78,
+    "page": 80,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Explore / Mombassa",
     "type": "fabric_matrix",
-    "page": 79,
+    "page": 81,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 79,
+    "page": 81,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 79,
+    "page": 81,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Stucco BO / Adagio",
     "type": "fabric_matrix",
-    "page": 80,
+    "page": 82,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 80,
+    "page": 82,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 80,
+    "page": 82,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Hampton BO",
     "type": "fabric_matrix",
-    "page": 81,
+    "page": 83,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 81,
+    "page": 83,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 81,
+    "page": 83,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Panel Track - Salvador / Parget",
     "type": "fabric_matrix",
-    "page": 82,
+    "page": 84,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 1 vía",
     "type": "width_priced",
-    "page": 82,
+    "page": 84,
     "file": "panel-track.json"
   },
   {
     "category": "Panel Track",
     "name": "Riel de Panel Track a 2 vías",
     "type": "width_priced",
-    "page": 82,
+    "page": 84,
     "file": "panel-track.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Stratos 110” / Paros 110” /Eco Screen (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 45,
+    "page": 47,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Stratos 110” / Paros 110” /Eco Screen (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 45,
+    "page": 47,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Soleil 5% - 78” / 98” / 118” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 46,
+    "page": 48,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Soleil 5% - 78” / 98” / 118” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 46,
+    "page": 48,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Soleil 16% - 98” / Soleil 1% - 98” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 47,
+    "page": 49,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Soleil 16% - 98” / Soleil 1% - 98” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 47,
+    "page": 49,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 48,
+    "page": 50,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 48,
+    "page": 50,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Sunset Bo 118” / Florencia 118” / Screen 5% (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 49,
+    "page": 51,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Sunset Bo 118” / Florencia 118” / Screen 5% (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 49,
+    "page": 51,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Noble 118” / Captiva 118” / Motion 118” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 50,
+    "page": 52,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Noble 118” / Captiva 118” / Motion 118” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 50,
+    "page": 52,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Salvador 94” / Parget 98” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 51,
+    "page": 53,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Salvador 94” / Parget 98” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 51,
+    "page": 53,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Stucco BO 110” / Adagio 110” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 52,
+    "page": 54,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Stucco BO 110” / Adagio 110” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 52,
+    "page": 54,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Hampton BO 110” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 53,
+    "page": 55,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Hampton BO 110” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 53,
+    "page": 55,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Explore 118” / Mombassa 118” (Con Varilla)",
     "type": "fabric_matrix",
-    "page": 54,
+    "page": 56,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
     "name": "Roman Shades - Explore 118” / Mombassa 118” (Sin Varilla)",
     "type": "fabric_matrix",
-    "page": 54,
+    "page": 56,
     "file": "roman-shades.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb BU - Rioja Blackout",
     "type": "fabric_matrix",
-    "page": 56,
+    "page": 58,
     "file": "honeycomb.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb BU - Rioja Transparente",
     "type": "fabric_matrix",
-    "page": 56,
+    "page": 58,
     "file": "honeycomb.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb BU - Oxford",
     "type": "fabric_matrix",
-    "page": 57,
+    "page": 59,
     "file": "honeycomb.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb TDBU - Rioja Blackout",
     "type": "fabric_matrix",
-    "page": 58,
+    "page": 60,
     "file": "honeycomb.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb TDBU - Rioja Transparente",
     "type": "fabric_matrix",
-    "page": 58,
+    "page": 60,
     "file": "honeycomb.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb TDBU - Oxford",
     "type": "fabric_matrix",
-    "page": 59,
+    "page": 61,
     "file": "honeycomb.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb Dia y Noche - Rioja Blackout + Rioja Transparente",
     "type": "fabric_matrix",
-    "page": 60,
+    "page": 62,
     "file": "honeycomb.json"
   },
   {
     "category": "Honeycomb",
     "name": "Honeycomb Dia y Noche - Rioja Blackout + Oxford",
     "type": "fabric_matrix",
-    "page": 60,
+    "page": 62,
     "file": "honeycomb.json"
   },
   {
     "category": "Window Film",
     "name": "Window Film - Lamina Solar",
     "type": "item_list",
-    "page": 62,
+    "page": 64,
     "file": "window-film.json"
   },
   {
     "category": "Toldos",
     "name": "Axio - Drop Shade - Sunbrella",
     "type": "fabric_matrix",
-    "page": 64,
+    "page": 66,
     "file": "toldos.json"
   },
   {
     "category": "Toldos",
     "name": "Axio - Drop Shade - Screen 5%",
     "type": "fabric_matrix",
-    "page": 64,
+    "page": 66,
     "file": "toldos.json"
   },
   {
     "category": "Toldos",
-    "name": "Axio - Drop Shade - Clear Vinyl 54”",
+    "name": "Axio - Balcony",
     "type": "fabric_matrix",
-    "page": 65,
+    "page": 67,
     "file": "toldos.json"
   },
   {
     "category": "Toldos",
     "name": "Axio - Drop Shade - Clear Vinyl 54”",
     "type": "item_list",
-    "page": 65,
+    "page": 67,
     "file": "toldos.json"
   },
   {
     "category": "Toldos",
     "name": "Axio - Arm 90 grados",
     "type": "fabric_matrix",
-    "page": 66,
+    "page": 68,
     "file": "toldos.json"
   },
   {
     "category": "Toldos",
     "name": "Axio - Arm 180 grados Sunbrella",
     "type": "fabric_matrix",
-    "page": 66,
+    "page": 68,
+    "file": "toldos.json"
+  },
+  {
+    "category": "Toldos",
+    "name": "Awning System",
+    "type": "awning_system",
+    "page": 69,
     "file": "toldos.json"
   }
 ]

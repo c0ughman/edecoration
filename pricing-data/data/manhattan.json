@@ -537,10 +537,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -1118,10 +1115,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
@@ -1699,10 +1693,7 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
+      "requirement_legend": {},
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],

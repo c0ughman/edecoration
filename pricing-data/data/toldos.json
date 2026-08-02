@@ -4,7 +4,7 @@
     {
       "type": "fabric_matrix",
       "name": "Axio - Drop Shade - Sunbrella",
-      "page": 64,
+      "page": 66,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -268,19 +268,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
-      "notes": [
-        "Axio - Drop Shade - Screen 5%"
-      ],
+      "requirement_legend": {},
+      "notes": [],
       "category": "Toldos"
     },
     {
       "type": "fabric_matrix",
       "name": "Axio - Drop Shade - Screen 5%",
-      "page": 64,
+      "page": 66,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -440,9 +435,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -451,9 +446,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -462,9 +457,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -473,9 +468,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -484,9 +479,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -495,9 +490,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -506,9 +501,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -517,9 +512,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -528,9 +523,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -539,14 +534,13 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ]
       ],
       "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
+        "bottomrail_delfin": "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido"
       },
       "notes": [
         "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
@@ -556,8 +550,8 @@
     },
     {
       "type": "fabric_matrix",
-      "name": "Axio - Drop Shade - Clear Vinyl 54”",
-      "page": 65,
+      "name": "Axio - Balcony",
+      "page": 67,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -753,9 +747,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -764,9 +758,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -775,9 +769,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -786,9 +780,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -797,9 +791,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -808,9 +802,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -819,9 +813,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -830,9 +824,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -841,9 +835,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -852,9 +846,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -863,9 +857,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -874,9 +868,9 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ],
         [
           null,
@@ -885,14 +879,13 @@
           null,
           null,
           null,
-          "clutch_large",
-          "clutch_large",
-          "clutch_large"
+          "bottomrail_delfin",
+          "bottomrail_delfin",
+          "bottomrail_delfin"
         ]
       ],
       "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
+        "bottomrail_delfin": "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido"
       },
       "notes": [
         "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
@@ -903,7 +896,7 @@
     {
       "type": "item_list",
       "name": "Axio - Drop Shade - Clear Vinyl 54”",
-      "page": 65,
+      "page": 67,
       "currency": "USD",
       "section_headers": [
         "1.20",
@@ -938,7 +931,7 @@
     {
       "type": "fabric_matrix",
       "name": "Axio - Arm 90 grados",
-      "page": 66,
+      "page": 68,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1051,19 +1044,14 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
-      },
-      "notes": [
-        "Axio - Arm 180 grados Sunbrella"
-      ],
+      "requirement_legend": {},
+      "notes": [],
       "category": "Toldos"
     },
     {
       "type": "fabric_matrix",
       "name": "Axio - Arm 180 grados Sunbrella",
-      "page": 66,
+      "page": 68,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1176,10 +1164,199 @@
           null
         ]
       ],
-      "requirement_legend": {
-        "clutch_large": "Medida sombreada amarillo: requiere clutch Large",
-        "motorization": "Medida sombreada gris: requiere motorizacion"
+      "requirement_legend": {},
+      "notes": [
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
+      ],
+      "category": "Toldos"
+    },
+    {
+      "type": "awning_system",
+      "name": "Awning System",
+      "page": 69,
+      "currency": "USD",
+      "axis": {
+        "rows": "projection",
+        "cols": "arms"
       },
+      "groups": [
+        {
+          "projection_m": 1.5,
+          "projection_in": 58,
+          "options": [
+            {
+              "arms": 2,
+              "width_m": [
+                2.12,
+                3.05
+              ],
+              "width_in": [
+                83,
+                120
+              ],
+              "price": 1644.49
+            },
+            {
+              "arms": 3,
+              "width_m": [
+                3.07,
+                3.96
+              ],
+              "width_in": [
+                121,
+                156
+              ],
+              "price": 2130.36
+            },
+            {
+              "arms": 4,
+              "width_m": [
+                4.0,
+                4.67
+              ],
+              "width_in": [
+                157,
+                184
+              ],
+              "price": 3198.2
+            }
+          ]
+        },
+        {
+          "projection_m": 2.0,
+          "projection_in": 78,
+          "options": [
+            {
+              "arms": 2,
+              "width_m": [
+                2.62,
+                3.78
+              ],
+              "width_in": [
+                103,
+                149
+              ],
+              "price": 1843.7
+            },
+            {
+              "arms": 3,
+              "width_m": [
+                3.81,
+                4.97
+              ],
+              "width_in": [
+                150,
+                196
+              ],
+              "price": 2636.91
+            },
+            {
+              "arms": 4,
+              "width_m": [
+                5.0,
+                5.8
+              ],
+              "width_in": [
+                197,
+                228
+              ],
+              "price": 3535.39
+            }
+          ]
+        },
+        {
+          "projection_m": 2.5,
+          "projection_in": 98,
+          "options": [
+            {
+              "arms": 2,
+              "width_m": [
+                3.17,
+                4.6
+              ],
+              "width_in": [
+                125,
+                181
+              ],
+              "price": 2009.89
+            },
+            {
+              "arms": 3,
+              "width_m": [
+                4.62,
+                5.8
+              ],
+              "width_in": [
+                182,
+                228
+              ],
+              "price": 3166.92
+            }
+          ]
+        },
+        {
+          "projection_m": 3.0,
+          "projection_in": 118,
+          "options": [
+            {
+              "arms": 2,
+              "width_m": [
+                3.63,
+                5.31
+              ],
+              "width_in": [
+                143,
+                209
+              ],
+              "price": 2690.41
+            },
+            {
+              "arms": 3,
+              "width_m": [
+                5.33,
+                5.8
+              ],
+              "width_in": [
+                210,
+                228
+              ],
+              "price": 3572.78
+            }
+          ]
+        },
+        {
+          "projection_m": 3.5,
+          "projection_in": 137,
+          "options": [
+            {
+              "arms": 2,
+              "width_m": [
+                4.14,
+                5.8
+              ],
+              "width_in": [
+                163,
+                228
+              ],
+              "price": 2907.32
+            }
+          ]
+        }
+      ],
+      "accessories": [
+        {
+          "name": "+Manivela 1.50m",
+          "price": 25.0
+        },
+        {
+          "name": "+Manivela 2.2m",
+          "price": 35.0
+        },
+        {
+          "name": "Re-Lion 50NM Eléctrico",
+          "price": 150.5
+        }
+      ],
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
       ],
