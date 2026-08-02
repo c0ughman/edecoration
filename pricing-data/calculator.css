@@ -220,3 +220,87 @@ body{
   font-size:13.5px;font-weight:500;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.28s;
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============================ responsive ============================ */
+/* Nothing may push the page sideways -- a quoting tool that scrolls
+   horizontally on a phone is unusable in front of a client. */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,table{max-width:100%}
+
+/* ---- tablet / small laptop ---- */
+@media(max-width:820px){
+  .topbar{padding:16px 20px;gap:12px}
+  .brand-logo{height:38px}
+  .brand-text h1{font-size:20px}
+  .layout{padding:12px 16px 44px;gap:18px}
+  .config{padding:18px}
+  .quote-wrap{padding:0}
+  .quote-doc{padding:22px 20px}
+  .qd-head{flex-direction:column;gap:12px}
+  .qd-meta{text-align:left}
+  .qd-client{gap:20px;flex-wrap:wrap}
+  .qd-totals{gap:18px}
+  .qd-sum{min-width:0;width:100%}
+  .qd-notes{min-width:0}
+}
+
+/* ---- phone ---- */
+@media(max-width:600px){
+  .topbar{flex-wrap:wrap}
+  .brand-text span{display:none}
+  .settings{margin:0 16px 4px;padding:16px}
+
+  /* one column: two 50% fields at 360px leaves ~150px each, too tight to read */
+  .field-grid{grid-template-columns:1fr}
+  .field.check,.unit-field,.line-margin-field{grid-column:span 1}
+
+  /* 16px is the threshold below which iOS Safari zooms on focus and leaves the
+     page scrolled sideways */
+  .field select,.field input[type=number],.field input[type=text],
+  .cs-trigger,.client-fields input,.settings-grid input{font-size:16px}
+
+  .seg{width:100%}
+  .seg button{flex:1;padding:10px 8px;min-height:44px}
+  .primary-btn{min-height:48px}
+  .ghost-btn{min-height:40px}
+  .cs-trigger{min-height:46px}
+  .cs-menu{max-height:min(60vh,340px)}
+  .cs-option{padding:12px 10px}          /* touch targets */
+
+  .lp-value{font-size:29px}
+  .live-price{padding:16px}
+
+  .client-fields{flex-direction:column}
+  .client-fields input{min-width:0;width:100%}
+  .export-buttons{width:100%}
+  .export-buttons .ghost-btn{flex:1}
+
+  /* The quote table has 6 columns; at 360px it can only scroll or restack.
+     Restack: each row becomes a card, each cell prints its own label. */
+  .qd-table thead{display:none}
+  .qd-table,.qd-table tbody,.qd-table tr,.qd-table td{display:block;width:100%}
+  .qd-table tr{
+    position:relative;border:1px solid var(--line);border-radius:12px;
+    padding:12px 14px;margin-bottom:10px;background:var(--off);
+  }
+  .qd-table td{border:none;padding:3px 0;font-size:13.5px}
+  .qd-table td.cell-desc{padding-right:26px;margin-bottom:6px}
+  .qd-table td.num{text-align:left}
+  .qd-table td[data-label]{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 12px}
+  /* the "tabla 114"x60"" hint is a second line, not a third column */
+  .qd-table td[data-label] .desc-sub{flex-basis:100%;text-align:right;margin-top:1px}
+  .qd-table td[data-label]::before{
+    content:attr(data-label);color:var(--muted);
+    font-size:11px;text-transform:uppercase;letter-spacing:.5px;
+    align-self:center;
+  }
+  .qd-table td.act{position:absolute;top:8px;right:8px;width:auto;padding:0}
+  .row-del{font-size:20px;opacity:.7;padding:4px 8px}
+  .qd-empty td{padding:22px}
+
+  .qd-sum .row.total{font-size:18px}
+  .quote-doc{padding:18px 14px}
+  .toast{left:16px;right:16px;bottom:16px;transform:translateY(20px);text-align:center}
+  .toast.show{transform:translateY(0)}
+}

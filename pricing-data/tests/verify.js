@@ -151,10 +151,84 @@ check("per-paño margin of zero leaves the price untouched", () => {
   return [a.display === "$18.39", `${a.display}`];
 });
 
-check("fabric notes from the PDF reach the fabric panel", () => {
+const noteCount = html => (html.match(/<li>/g) || []).length;
+
+check("an unremarkable paño shows no notes at all", () => {
   const r = price({ tableIndex: WELL, w: 36, h: 42 });
-  return [r.notes.includes("termosellar") && r.notes.includes("garantía"),
-          `${(r.notes.match(/<li>/g) || []).length} notes rendered`];
+  return [r.notes === "", `${noteCount(r.notes)} notes rendered`];
+});
+
+check("the shading caveat appears only on a cell that carries the flag", () => {
+  const plain = price({ tableIndex: WELL, w: 36, h: 42 });
+  const c = cellWith(WELL, "clutch_large");
+  const flagged = price({ tableIndex: WELL, w: c.w, h: c.h });
+  return [!plain.notes.includes("garantía") && flagged.notes.includes("garantía"),
+          `plain=${noteCount(plain.notes)}, flagged=${noteCount(flagged.notes)}`];
+});
+
+check("a motorization cell shows the shading caveat and nothing else", () => {
+  // pick one narrow enough that the >108" rule cannot also fire, so the count
+  // isolates the shading caveat
+  const t = CATALOG[WELL];
+  let c = null;
+  for (let i = 0; i < t.requirements.length && !c; i++)
+    for (let j = 0; j < t.requirements[i].length; j++)
+      if (t.requirements[i][j] === "motorization" && t.widths_in[j] <= 108) {
+        c = { w: t.widths_in[j], h: t.heights_in[i] };
+        break;
+      }
+  const r = price({ tableIndex: WELL, w: c.w, h: c.h });
+  return [r.notes.includes("gris") && r.notes.includes("motorización")
+          && noteCount(r.notes) === 1,
+          `${c.w}"x${c.h}" -> ${noteCount(r.notes)} note(s)`];
+});
+
+check("two caveats stack when a cell triggers both", () => {
+  // a motorization cell wider than 108" must raise the shading caveat *and*
+  // the max-height rule
+  const t = CATALOG[WELL];
+  let c = null;
+  for (let i = 0; i < t.requirements.length && !c; i++)
+    for (let j = 0; j < t.requirements[i].length; j++)
+      if (t.requirements[i][j] === "motorization" && t.widths_in[j] > 108) {
+        c = { w: t.widths_in[j], h: t.heights_in[i] };
+        break;
+      }
+  const r = price({ tableIndex: WELL, w: c.w, h: c.h });
+  return [noteCount(r.notes) === 2 && r.notes.includes("termosellar")
+          && r.notes.includes("motorización"),
+          `${c.w}"x${c.h}" -> ${noteCount(r.notes)} notes`];
+});
+
+check("the width-conditional caveat appears only past its width", () => {
+  const under = price({ tableIndex: WELL, w: 96, h: 42 });
+  const over = price({ tableIndex: WELL, w: 114, h: 42 });
+  return [!under.notes.includes("termosellar") && over.notes.includes("termosellar"),
+          `at 96" -> ${under.notes.includes("termosellar")}, `
+          + `at 114" -> ${over.notes.includes("termosellar")}`];
+});
+
+check("the blanket cost disclaimer is never shown on the panel", () => {
+  const cells = [[36, 42], [96, 42], [114, 42]];
+  const shown = cells.map(([w, h]) => price({ tableIndex: WELL, w, h }).notes)
+                     .filter(n => /LOS COSTOS PUEDEN VARIAR/i.test(n));
+  return [shown.length === 0, "boilerplate suppressed at every size tested"];
+});
+
+check("the thin-fabric caveat rides along with its flagged cell", () => {
+  const c = cellWith(ZAKROS, "thin_fabric_smiles");
+  const flagged = price({ tableIndex: ZAKROS, w: c.w, h: c.h });
+  let plain = null;
+  const t = CATALOG[ZAKROS];
+  for (let i = 0; i < t.requirements.length && !plain; i++)
+    for (let j = 0; j < t.requirements[i].length; j++)
+      if (!t.requirements[i][j] && t.prices[i][j] != null) {
+        plain = { w: t.widths_in[j], h: t.heights_in[i] };
+        break;
+      }
+  const unflagged = price({ tableIndex: ZAKROS, w: plain.w, h: plain.h });
+  return [flagged.notes.includes("SONRISAS") && !unflagged.notes.includes("SONRISAS"),
+          `flagged=${noteCount(flagged.notes)}, unflagged=${noteCount(unflagged.notes)}`];
 });
 
 check("quantity multiplies into the line subtotal", () => {

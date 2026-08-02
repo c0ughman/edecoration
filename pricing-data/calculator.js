@@ -158,9 +158,9 @@
     const h = toIn(parseFloat(heightInp.value));
     const qty = Math.max(1, parseInt(qtyInp.value) || 1);
 
-    // notes belong to the fabric, so they show as soon as one is picked --
-    // before a size is entered and even when the size falls outside the table
-    renderFabricNotes(table);
+    // covers the early-return paths below; re-run with the requirement once the
+    // cell is known, so a shading caveat appears only when it applies
+    renderFabricNotes(table, null, w);
 
     if (!table || !w || !h) {
       lpValue.textContent = "—"; lpMeta.textContent = ""; addBtn.disabled = true;
@@ -191,9 +191,8 @@
       table, fabric: cleanName(table.name), category: table.category,
       reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
-      // PRS's own sentence for this requirement, carried onto the quote
-      reqNote: (table.requirement_legend || {})[req] || "",
-      tableNotes: table.notes || [],
+      // only the caveats that actually bear on this paño, carried onto the quote
+      notes: relevantNotes(table, req, w),
       mount: mountSel.value, install: installChk.checked,
       lineMargin: num(lineMarginInp.value), lineMarginMode,
     };
@@ -204,17 +203,40 @@
 
     const info = reqInfo(req);
     if (info) addBadge(info.cls, "Requiere " + info.label);
-    renderFabricNotes(table);
+    renderFabricNotes(table, req, w);
     addBtn.disabled = false;
   }
 
-  /* Every sentence PRS printed under a table -- max-width caveats, warranty
-     conditions, special-order parts. Shown on the fabric panel so the person
-     quoting sees them before the paño is added, not after. */
-  function renderFabricNotes(table) {
+  /* PRS's blanket cost disclaimer. True of every table at all times, so it
+     tells the person quoting nothing about the paño in front of them. */
+  const BOILERPLATE = /LOS COSTOS PUEDEN VARIAR/i;
+  /* "Si la roller mide más de 108” de ancho, el alto máximo sería de 102”" */
+  const WIDTH_RULE = /m[áa]s de\s*(\d+)\s*["”'']?\s*de ancho/i;
+
+  /* Which of a table's notes actually bear on the current selection.
+
+     A note that explains a shading colour only matters when this paño's cell
+     carries that flag; a note conditioned on a width only matters past that
+     width. Anything we cannot classify is kept -- dropping a caveat we do not
+     understand is the failure we are trying to avoid. */
+  function relevantNotes(table, req, widthIn) {
+    if (!table) return [];
+    const legend = table.requirement_legend || {};
+    const explained = new Set(Object.values(legend));
+    const active = req ? legend[req] : null;
+    return (table.notes || []).filter(n => {
+      if (BOILERPLATE.test(n)) return false;
+      if (explained.has(n)) return n === active;
+      const m = n.match(WIDTH_RULE);
+      if (m) return widthIn != null && widthIn > parseFloat(m[1]);
+      return true;
+    });
+  }
+
+  function renderFabricNotes(table, req, widthIn) {
     const el = $("fabricNotes");
     if (!el) return;
-    const ns = (table && table.notes) || [];
+    const ns = relevantNotes(table, req, widthIn);
     el.innerHTML = ns.length
       ? `<ul>${ns.map(n => `<li>${escapeHtml(n)}</li>`).join("")}</ul>` : "";
   }
@@ -246,15 +268,17 @@
         const info = reqInfo(l.req);
         if (info) tags.push(`<span class="tag ${info.cls}">${escapeHtml(info.label)}</span>`);
         if (l.install) tags.push(`<span class="tag motor">instalación</span>`);
+        // data-label drives the stacked card layout on narrow screens, where
+        // the header row is hidden and each cell prints its own label
         return `<tr>
-          <td>
+          <td class="cell-desc">
             <div class="desc-main">${l.fabric}</div>
             <div class="desc-sub">${l.category} · ${l.mount} ${tags.join(" ")}</div>
           </td>
-          <td>${l.askW}×${l.askH}<div class="desc-sub">tabla ${l.reqWidth}"×${l.reqHeight}"</div></td>
-          <td class="num">${l.qty}</td>
-          <td class="num">${money(lineUnit(l))}</td>
-          <td class="num">${money(lineUnit(l) * l.qty)}</td>
+          <td data-label="Medida">${l.askW}×${l.askH}<div class="desc-sub">tabla ${l.reqWidth}"×${l.reqHeight}"</div></td>
+          <td class="num" data-label="Cant.">${l.qty}</td>
+          <td class="num" data-label="P. unit.">${money(lineUnit(l))}</td>
+          <td class="num" data-label="Total">${money(lineUnit(l) * l.qty)}</td>
           <td class="act"><button class="row-del" data-i="${idx}" title="Quitar">×</button></td>
         </tr>`;
       }).join("");
@@ -303,12 +327,9 @@
       seen.add(l.req);
       notes.push(`Una o más medidas requieren <b>${escapeHtml(info.label)}</b>.`);
     });
-    // and PRS's own sentences from the tables the quote draws on
+    // and PRS's own wording, but only the caveats the quoted paños triggered
     const src = new Set();
-    lines.forEach(l => {
-      if (l.reqNote) src.add(l.reqNote);
-      (l.tableNotes || []).forEach(n => src.add(n));
-    });
+    lines.forEach(l => (l.notes || []).forEach(n => src.add(n)));
     src.forEach(n => notes.push(escapeHtml(n)));
     notes.push("Precios sujetos a verificación de medidas en sitio.");
     $("qdNotes").innerHTML = notes.length
