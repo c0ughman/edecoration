@@ -55,8 +55,12 @@ body{
 .settings-grid label{font-size:12px;font-weight:600;color:var(--muted);display:flex;flex-direction:column;gap:6px;text-transform:uppercase;letter-spacing:.5px}
 .settings-grid input{font:inherit;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:var(--off)}
 .settings-note{font-size:12px;color:var(--muted);margin-top:12px}
-.margin-field{display:flex;gap:8px;align-items:stretch}
-.margin-field input{flex:1;min-width:0}
+/* Amount box + %/US$ toggle. The toggle is a fixed ~123px, so in a narrow
+   container a plain flex row starves the box to a couple of dozen pixels and
+   you cannot read what you are typing. Give the box a floor and let the toggle
+   wrap beneath it when both will not fit. */
+.margin-field{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.margin-field input{flex:1 1 130px;min-width:130px}
 .seg-sm{padding:2px;align-items:center}
 .seg-sm button{padding:6px 12px;font-size:12px}
 
@@ -262,6 +266,14 @@ img,table{max-width:100%}
 
   .seg{width:100%}
   .seg button{flex:1;padding:10px 8px;min-height:44px}
+
+  /* Margin fields pair an amount box with a %/US$ toggle. Side by side at this
+     width the full-width toggle starves the box down to ~24px -- you cannot
+     read what you are typing. Stack them so the amount gets the full row. */
+  .margin-field{flex-direction:column;align-items:stretch;gap:8px}
+  /* the 130px basis is a width in the row layout above; once the container is
+     a column it would become a 130px-tall box, so reset it here */
+  .margin-field input{flex:0 0 auto;width:100%;min-height:46px}
   .primary-btn{min-height:48px}
   .ghost-btn{min-height:40px}
   .cs-trigger{min-height:46px}
