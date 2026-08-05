@@ -240,8 +240,10 @@
     // the motor notice says this far more loudly; a pill as well is just noise
     if (info && !needsMotor) addBadge(info.cls, "Requiere " + info.label);
     renderFabricNotes(table, req, w);
-    // a motorised paño with no motor chosen would be quoted short, so gate it
-    addBtn.disabled = needsMotor && !motor;
+    // PRS's requirement is a warranty condition, not a physical one: the paño
+    // can be sold manual, it just loses its warranty. So warn loudly, but let
+    // it through -- the notice above is what stops the motor being forgotten.
+    addBtn.disabled = false;
   }
 
   /* PRS's blanket cost disclaimer. True of every table at all times, so it

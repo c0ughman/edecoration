@@ -403,15 +403,16 @@ check("a motorised cell raises the notice with PRS's own wording", () => {
           `notice=${r.motorShown}, reason quoted=${r.motorWhy.length > 0}`];
 });
 
-check("a motorised paño cannot be quoted until a motor is chosen", () => {
+check("a motorised paño warns loudly but can still be added without a motor", () => {
   const r = price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h });
-  return [r.disabled === true && r.warnHidden === false && r.motorTotalHidden,
-          `add disabled=${r.disabled}, warning shown=${!r.warnHidden}`];
+  // PRS's rule is a warranty condition, not a physical one -- warn, do not block
+  return [r.disabled === false && r.warnHidden === false && r.motorTotalHidden,
+          `add enabled=${!r.disabled}, warning shown=${!r.warnHidden}`];
 });
 
-check("choosing a motor unblocks the paño and prices it", () => {
+check("choosing a motor prices it into the paño", () => {
   const r = price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, motorIndex: 3 });
-  return [r.disabled === false
+  return [r.warnHidden === true
           && near(parseMoney(r.display), MOTO.base + MOTORS[3].price),
           `${MOTORS[3].label} -> ${r.display}`];
 });
@@ -448,8 +449,8 @@ check("the motor does not carry over to the next paño", () => {
   fresh.price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, motorIndex: 4 });
   fresh.addAndTotal();
   const r = fresh.price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h });
-  return [r.disabled === true && r.motorTotalHidden,
-          `next paño starts with no motor, add disabled=${r.disabled}`];
+  return [r.motorTotalHidden && !r.warnHidden,
+          `next paño starts with no motor, warning back=${!r.warnHidden}`];
 });
 
 check("the quote line names the motor and its price", () => {
