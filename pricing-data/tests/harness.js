@@ -94,10 +94,12 @@ function boot() {
 
   /* Add a complemento through the real picker: choose kind, choose item, add. */
   function addAddon(prefix, { kind, itemIndex = 0, qty = 1,
-                              customName = null, customPrice = 0 }) {
+                              customName = null, customDesc = "",
+                              customPrice = 0 }) {
     pickOption(prefix + "KindDrop", kind);
     if (customName !== null) {
-      get(prefix + "CustomName").value = customName;
+      get(prefix + "CustomTitle").value = customName;
+      get(prefix + "CustomDesc").value = customDesc;
       get(prefix + "CustomPrice").value = String(customPrice);
     } else {
       pickOption(prefix + "ItemDrop", itemIndex);

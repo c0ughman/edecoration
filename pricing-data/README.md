@@ -33,9 +33,11 @@ understand, and `verify.py` re-reads the PDF independently to confirm the result
 - **77 fabric price matrices** — Roller Shades, Sheer Elegance, Manhattan, Roman
   Shades (each fabric has a *Con Varilla* and *Sin Varilla* table), Honeycomb,
   Panel Track and Axio drop shades.
-- **34 width-priced tables** — curtain rails (Balinera / Ripplefold / Coulisse /
-  Correderas) and Panel Track channel rails (2–5 canales).
-- **11 item lists / ~209 line items** — motors, remotes, hardware, accessories.
+- **37 width-priced tables** — cenefas/cassettes/fascias, Panel Track channel
+  rails (2–5 canales), Romana and Coulisse rails, plus the drapery tracks the
+  calculator excludes.
+- **10 item lists / ~215 line items** — motors, remotes, hardware, accessories.
+- **1 per-unit list** — Perfiles de Enmarcados, priced by the linear foot.
 - **1 awning system** — the Awning System page, priced by projection × number of
   arms with a width range per arm count.
 
@@ -69,7 +71,7 @@ Current requirement keys: `clutch_large`, `motorization`, `bottomrail_delfin`,
 .venv-pricing/bin/python pricing-data/tests/verify.py "lista de precios nueva.pdf"
 ```
 
-34 checks. The first dozen re-derive facts from the PDF by a different route
+164 checks. The data half re-derives facts from the PDF by a different route
 than `extract.py` uses (text lines rather than word geometry) and compare — the
 strongest is a row-by-row re-read of all 1108 price rows. The rest boot the real
 `calculator.js` under a stub DOM (`tests/harness.js`) and verify the arithmetic
@@ -99,9 +101,12 @@ width. The blanket "los costos pueden variar" disclaimer is suppressed.
 
 A grey-shaded cell cannot be built without a motor, so it raises a full notice
 rather than a badge, quotes PRS's own warranty sentence, and makes you pick a
-motor from the price list before the paño can be added. The 24 options come from
-the catalogue with real prices ($84–$489); the chosen motor is added per unit and
-named on the quote.
+motor from the price list. The 24 options come from the catalogue with real
+prices ($84–$489); the chosen motor is added per unit and named on the quote.
+
+PRS's rule is a warranty condition, not a physical one — *"si no se siguen estas
+recomendaciones, no se otorgará garantía"* — so the paño can still be added
+without a motor. The notice is what stops it being forgotten, not a block.
 
 This replaces a settings box that shipped at `0` — a quote could say "requires
 motorization" and charge nothing for it. Note `Re-Lion 35E 1L` exists twice at
@@ -119,7 +124,7 @@ retail. PDF/image export use html2canvas + jsPDF from a CDN (needs internet).
 ### Complementos
 
 Anything that hangs off a paño — motor, cenefa/cassette/fascia, riel, perfil,
-componente — or off the project. More than one of each is allowed, since the
+componente, control/hub. More than one of each is allowed, since the
 person quoting knows what a given job needs. `addon_options` normalises three
 pricing modes so the UI does not have to know each table's layout:
 
@@ -131,25 +136,29 @@ pricing modes so the UI does not have to know each table's layout:
 
 Width- and foot-priced complementos re-price when the paño's size changes; one
 that has no price at the new size is dropped with a toast rather than left
-stale. **Personalizado** is a free-text line (description + price) at either
-level, for anything the price list does not carry.
+stale. **Personalizado** is a free-text line for anything the price list does
+not carry: it takes a **name** (catalogue items are named by what you pick, a
+custom one has nothing until you type it), plus an optional description and a
+price.
 
-Controles/hubs sit at **project** level, not on a paño — a 6-channel remote
-drives six shades, so it cannot belong to any one of them. They appear as their
-own rows on the quote.
+Everything hangs off a paño — there is no separate project-level section.
+Controles and hubs are complementos like anything else.
 
-Deliberately excluded: the p32 drapery tracks (`RIEL HD CON BALINERAS`, `RIEL
-COULISSE NEGRO`, `RIELES MANUALES`). Those are for cortinas de tela, which this
-tool does not quote, and offering them beside a roller shade would let someone
-build a quote that cannot be made.
+**Cortinas de tela are excluded entirely.** The price list carries their
+hardware (pages 31-36, the "Riel de Cortina" section: manual rails, MOVELITE /
+GLYDEA / Motion tracks, master carriers, ripplefold and pinch-pleat parts) but
+never prices the tela itself, so a drapery cannot be quoted here at all. The
+exclusion is by page rather than by name — matching names had let 45 of these
+through into the componente and control groups.
 
 ### Known gaps
 
 - A fabric's own bolt width is not enforced: `Salvador 94”` is priced from a
   table with 120" columns, and 69 of the 146 options can be quoted wider than
   the fabric comes. Nothing warns.
-- Only fabric matrices are quotable. The 91 rail rows, 215 line items and the
-  Awning System are extracted but unreachable from the calculator.
+- Only fabric matrices are quotable as paños. The Awning System is extracted
+  but has no UI; the rail and accessory tables are reachable only as
+  complementos.
 - Coverage is 99.75% of the PDF's price tokens. What remains is the Axio side
   tables (p66–68) and the Clear Vinyl column, plus the `2 canales` row of the
   Panel Track 2-vías table whose prices sit on the axis line in the PDF.

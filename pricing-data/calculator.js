@@ -172,8 +172,7 @@
   let current = null;          // current computed line preview
   const lines = [];            // quote line items
   const panoAddons = [];       // complementos for the paño being configured
-  const jobAddons = [];        // items belonging to the project, not a paño
-  let panoPicker = null, jobPicker = null;
+  let panoPicker = null;
 
   // ---------- helpers ----------
   const money = n => "$" + (n || 0).toLocaleString("en-US",
@@ -346,6 +345,9 @@
       const isCustom = kind.kind === CUSTOM_KIND;
       custom.hidden = !isCustom;
       itemDrop.hidden = isCustom;
+      // a catalogue item is named by what you pick; a custom one needs a name
+      // typed in, so it takes the item picker's place in the row
+      $(prefix + "CustomTitle").hidden = !isCustom;
       if (isCustom) { item = null; return; }
       const opts = kind.items.map((it, i) => {
         const p = addonUnitPrice(kind, it, dims());
@@ -371,11 +373,13 @@
       const qty = Math.max(1, parseInt(qtyEl.value) || 1);
       let entry = null;
       if (kind.kind === CUSTOM_KIND) {
-        const name = $(prefix + "CustomName").value.trim();
+        const name = $(prefix + "CustomTitle").value.trim();
+        const desc = $(prefix + "CustomDesc").value.trim();
         const price = num($(prefix + "CustomPrice").value);
-        if (!name) return toast("Escribe una descripción");
-        entry = { kind: CUSTOM_KIND, label: name, price, qty, detail: "" };
-        $(prefix + "CustomName").value = "";
+        if (!name) return toast("Escribe el nombre del complemento");
+        entry = { kind: CUSTOM_KIND, label: name, price, qty, detail: desc };
+        $(prefix + "CustomTitle").value = "";
+        $(prefix + "CustomDesc").value = "";
         $(prefix + "CustomPrice").value = "";
       } else {
         if (!item) return;
@@ -500,24 +504,9 @@
     toast("Paño agregado a la cotización");
   }
 
-  /* Project items get their own rows, after the paños. */
-  function jobRows() {
-    return jobAddons.map((a, i) => `<tr class="qd-job">
-      <td class="cell-desc">
-        <div class="desc-main">${escapeHtml(a.label)}</div>
-        <div class="desc-sub">Ítem del proyecto</div>
-      </td>
-      <td data-label="Medida">—</td>
-      <td class="num" data-label="Cant.">${a.qty}</td>
-      <td class="num" data-label="P. unit.">${money(a.price)}</td>
-      <td class="num" data-label="Total">${money(a.price * a.qty)}</td>
-      <td class="act"><button class="job-del" data-i="${i}" title="Quitar">×</button></td>
-    </tr>`).join("");
-  }
-
   function renderQuote() {
     const body = $("qdItems");
-    if (!lines.length && !jobAddons.length) {
+    if (!lines.length) {
       body.innerHTML = `<tr class="qd-empty"><td colspan="6">Aún no has agregado paños a la cotización.</td></tr>`;
     } else {
       body.innerHTML = lines.map((l, idx) => {
@@ -543,7 +532,7 @@
           <td class="num" data-label="Total">${money(lineUnit(l) * l.qty)}</td>
           <td class="act"><button class="row-del" data-i="${idx}" title="Quitar">×</button></td>
         </tr>`;
-      }).join("") + jobRows();
+      }).join("");
     }
     computeTotals();
   }
@@ -563,8 +552,7 @@
   const num = v => parseFloat(v) || 0;
 
   function computeTotals() {
-    let subtotal = lines.reduce((s, l) => s + lineUnit(l) * l.qty, 0)
-                 + addonsTotal(jobAddons);
+    let subtotal = lines.reduce((s, l) => s + lineUnit(l) * l.qty, 0);
     const marginVal = num(cfg.margin.value);
     const margin = marginMode === "fixed" ? marginVal : subtotal * marginVal / 100;
     const taxPct = num(cfg.tax.value);
@@ -636,12 +624,6 @@
       if (extras.length) L.push("    + " + extras.join(", "));
       L.push("    " + money(lineUnit(l)) + " c/u   =   " + money(lineUnit(l) * l.qty));
     });
-    if (jobAddons.length) {
-      L.push("");
-      L.push("Ítems del proyecto:");
-      jobAddons.forEach(a => L.push(
-        `  ${a.qty} × ${a.label}   =   ${money(a.price * a.qty)}`));
-    }
     L.push("".padEnd(56, "─"));
     L.push("Subtotal:  " + $("qdSubtotal").textContent);
     if (!$("qdMarginRow").hidden) L.push("Margen:    " + $("qdMargin").textContent);
@@ -735,13 +717,7 @@
   addBtn.addEventListener("click", addLine);
   $("qdItems").addEventListener("click", e => {
     const row = e.target.closest(".row-del");
-    if (row) { lines.splice(+row.dataset.i, 1); renderQuote(); return; }
-    const job = e.target.closest(".job-del");
-    if (job) {
-      jobAddons.splice(+job.dataset.i, 1);
-      if (jobPicker) jobPicker.render();
-      renderQuote();
-    }
+    if (row) { lines.splice(+row.dataset.i, 1); renderQuote(); }
   });
   ["clientName", "projectName"].forEach(id => $(id).addEventListener("input", syncClient));
   $("settingsToggle").addEventListener("click", () =>
@@ -772,9 +748,6 @@
       return (w && h) ? { w, h } : null;
     },
     () => compute());
-  jobPicker = makeAddonPicker("job", "job", jobAddons, () => null,
-    () => renderQuote());
-
   buildFamilies();
   refreshMeta();
 })();

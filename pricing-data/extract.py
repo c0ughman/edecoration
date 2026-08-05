@@ -917,12 +917,14 @@ def collect_motors(catalog):
 #             (cenefas, cassettes, fascias, rails)
 #   per_foot  price x feet of the paño's height or width   (perfiles)
 #
-# Deliberately excluded: the p32 drapery tracks (RIEL HD CON BALINERAS, RIEL
-# COULISSE NEGRO, RIELES MANUALES). Those belong to cortinas de tela, a product
-# this tool does not quote, and offering them next to a roller shade would let
-# somebody build a quote that cannot be made.
+# Cortinas de tela are excluded entirely. The price list carries their hardware
+# (pages 31-36, the "Riel de Cortina" section: manual rails, MOVELITE / GLYDEA /
+# Motion tracks, master carriers, ripplefold and pinch-pleat parts) but never
+# prices the tela itself, so a drapery cannot be quoted here at all. Excluding
+# by page rather than by name catches the whole section -- matching names had
+# let 45 of these through into the componente and control groups.
 # ---------------------------------------------------------------------------
-DRAPERY_TRACKS = re.compile(r"riel hd|coulisse negro|rieles manuales|balineras", re.I)
+DRAPERY_PAGES = set(range(31, 37))
 CENEFA_RE = re.compile(r"cenefa|carcaza|cassette|fascia", re.I)
 RAIL_RE = re.compile(r"riel|sistema guiado", re.I)
 CONTROL_RE = re.compile(r"control|remoto|hub|bridge|canales|situo|telis|smoove"
@@ -943,7 +945,7 @@ def collect_addons(catalog):
         "componente": {"kind": "componente", "label": "Componente",
                        "scope": "pano", "pricing": "flat", "items": []},
         "control": {"kind": "control", "label": "Control / hub",
-                    "scope": "job", "pricing": "flat", "items": []},
+                    "scope": "pano", "pricing": "flat", "items": []},
     }
 
     groups["motor"]["items"] = [
@@ -952,9 +954,9 @@ def collect_addons(catalog):
 
     seen_width = set()
     for b in catalog:
+        if b.get("page") in DRAPERY_PAGES:
+            continue                       # cortinas de tela, not quoted here
         if b["type"] == "width_priced":
-            if DRAPERY_TRACKS.search(b["name"]):
-                continue
             kind = ("cenefa" if CENEFA_RE.search(b["name"])
                     else "riel" if RAIL_RE.search(b["name"]) else None)
             if not kind:

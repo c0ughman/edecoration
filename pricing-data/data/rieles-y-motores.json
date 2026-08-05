@@ -1757,7 +1757,7 @@
       "type": "addon_options",
       "name": "Complementos",
       "category": "Rieles y Motores",
-      "page": 33,
+      "page": 38,
       "currency": "USD",
       "groups": [
         {
@@ -2498,11 +2498,6 @@
               "page": 41
             },
             {
-              "label": "Gancho de inicio pinch pleat",
-              "price": 0.5,
-              "page": 34
-            },
-            {
               "label": "Conector - Stop",
               "price": 0.5,
               "page": 40
@@ -2633,11 +2628,6 @@
               "page": 41
             },
             {
-              "label": "Cinta dentada",
-              "price": 2.25,
-              "page": 34
-            },
-            {
               "label": "Polea (child safety)",
               "price": 2.5,
               "page": 40
@@ -2673,11 +2663,6 @@
               "page": 42
             },
             {
-              "label": "Bracket de Riel",
-              "price": 4.7,
-              "page": 34
-            },
-            {
               "label": "Adaptador de 2.5” (reducción)",
               "price": 5.0,
               "page": 40
@@ -2686,21 +2671,6 @@
               "label": "Corona y rueda motriz 38mm",
               "price": 5.0,
               "page": 42
-            },
-            {
-              "label": "Master Pinch Pleat 1 vía",
-              "price": 5.75,
-              "page": 34
-            },
-            {
-              "label": "Riel con corredera adicional",
-              "price": 7.0,
-              "page": 33
-            },
-            {
-              "label": "Riel MOVELITE adicional",
-              "price": 7.0,
-              "page": 35
             },
             {
               "label": "ADAPTER SKYLINE",
@@ -2718,34 +2688,9 @@
               "page": 64
             },
             {
-              "label": "Riel con onda adicional",
-              "price": 10.0,
-              "page": 33
-            },
-            {
-              "label": "Unión de Riel",
-              "price": 10.0,
-              "page": 33
-            },
-            {
-              "label": "Unión de Riel Coulisse",
-              "price": 10.0,
-              "page": 34
-            },
-            {
-              "label": "Riel MOVELITE adicional",
-              "price": 10.0,
-              "page": 35
-            },
-            {
               "label": "Soporte Intermedio Vertilux",
               "price": 10.0,
               "page": 40
-            },
-            {
-              "label": "Pull Buttom up",
-              "price": 10.5,
-              "page": 35
             },
             {
               "label": "+Resortes (pieza)",
@@ -2783,11 +2728,6 @@
               "page": 41
             },
             {
-              "label": "Master Pinch Pleat 2 vias",
-              "price": 16.5,
-              "page": 34
-            },
-            {
               "label": "SIGNATURE 20 (SG-20) 60 IN X 100 FT",
               "price": 18.54,
               "page": 64
@@ -2823,196 +2763,21 @@
               "page": 40
             },
             {
-              "label": "Master Ripplefold 2 vías",
-              "price": 24.0,
-              "page": 34
-            },
-            {
               "label": "Spring System 38 mm",
               "price": 24.0,
               "page": 41
             },
             {
-              "label": "Servicio de curvado",
-              "price": 150.0,
-              "page": 33
-            },
-            {
               "label": "Re-Lion 45E 20NM Electrico 136.50 /",
               "price": 150.5,
               "page": 67
-            },
-            {
-              "label": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
-              "price": 175.0,
-              "page": 33
-            },
-            {
-              "label": "CM-20",
-              "price": 184.0,
-              "page": 35
-            },
-            {
-              "label": "Riel Eléctrico 40 KG - Onda",
-              "price": 220.0,
-              "page": 33
-            },
-            {
-              "label": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
-              "price": 225.0,
-              "page": 33
-            },
-            {
-              "label": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 114”",
-              "price": 235.0,
-              "page": 33
-            },
-            {
-              "label": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
-              "price": 260.0,
-              "page": 33
-            },
-            {
-              "label": "Riel Eléctrico 60 KG - Onda",
-              "price": 275.0,
-              "page": 33
-            },
-            {
-              "label": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 228”",
-              "price": 280.0,
-              "page": 33
-            },
-            {
-              "label": "Riel de Batería 40 KG - Onda",
-              "price": 300.0,
-              "page": 33
-            },
-            {
-              "label": "Riel Eléctrico 40 KG - Onda",
-              "price": 310.0,
-              "page": 33
-            },
-            {
-              "label": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
-              "price": 311.5,
-              "page": 33
-            },
-            {
-              "label": "Riel Eléctrico 114” - Corredera",
-              "price": 315.0,
-              "page": 34
-            },
-            {
-              "label": "MOVELITE RTS 35 KG - corredera",
-              "price": 345.0,
-              "page": 35
-            },
-            {
-              "label": "Riel Eléctrico 228” - Corredera",
-              "price": 350.0,
-              "page": 34
-            },
-            {
-              "label": "Riel Eléctrico 114” - Onda",
-              "price": 350.0,
-              "page": 34
-            },
-            {
-              "label": "Riel Eléctrico 60 KG - Onda",
-              "price": 365.0,
-              "page": 33
-            },
-            {
-              "label": "Riel Eléctrico 228” - Onda",
-              "price": 385.0,
-              "page": 34
-            },
-            {
-              "label": "Riel de Batería 114” - Corredera",
-              "price": 385.0,
-              "page": 34
-            },
-            {
-              "label": "MOVELITE RTS 35 KG - onda",
-              "price": 385.0,
-              "page": 35
-            },
-            {
-              "label": "Riel de Batería 40 KG - Onda",
-              "price": 390.0,
-              "page": 33
-            },
-            {
-              "label": "MOVELITE RTS 35 KG - corredera",
-              "price": 395.0,
-              "page": 35
-            },
-            {
-              "label": "Riel Eléctrico 114” - Wave",
-              "price": 420.0,
-              "page": 34
-            },
-            {
-              "label": "Riel de Batería 228” - Corredera Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
-              "price": 420.0,
-              "page": 34
-            },
-            {
-              "label": "Riel de Batería 114” - Onda",
-              "price": 420.0,
-              "page": 34
-            },
-            {
-              "label": "MOVELITE RTS 60 KG - corredera",
-              "price": 425.0,
-              "page": 35
-            },
-            {
-              "label": "Riel Eléctrico 228” - Wave",
-              "price": 455.0,
-              "page": 34
-            },
-            {
-              "label": "Riel de Batería 228” - Onda",
-              "price": 455.0,
-              "page": 34
-            },
-            {
-              "label": "Riel de Batería 114” - Wave",
-              "price": 455.0,
-              "page": 34
-            },
-            {
-              "label": "MOVELITE RTS 60 KG - onda",
-              "price": 470.0,
-              "page": 35
-            },
-            {
-              "label": "MOVELITE RTS 60 KG - corredera",
-              "price": 472.5,
-              "page": 35
-            },
-            {
-              "label": "MOVELITE RTS 35 KG - onda",
-              "price": 475.0,
-              "page": 35
-            },
-            {
-              "label": "Riel de Batería 228” - Wave",
-              "price": 490.0,
-              "page": 34
-            },
-            {
-              "label": "MOVELITE RTS 60 KG - onda",
-              "price": 560.0,
-              "page": 35
             }
           ]
         },
         {
           "kind": "control",
           "label": "Control / hub",
-          "scope": "job",
+          "scope": "pano",
           "pricing": "flat",
           "items": [
             {
@@ -3061,11 +2826,6 @@
               "page": 40
             },
             {
-              "label": "Riel GLYDEA adicional",
-              "price": 16.0,
-              "page": 35
-            },
-            {
               "label": "Control Twin Pull Romana 1:4",
               "price": 17.5,
               "page": 41
@@ -3073,7 +2833,7 @@
             {
               "label": "CM-11-BK",
               "price": 18.4,
-              "page": 34
+              "page": 44
             },
             {
               "label": "Control Coulisse Twin Pull",
@@ -3083,7 +2843,7 @@
             {
               "label": "Control Remoto 2 Canales",
               "price": 24.0,
-              "page": 33
+              "page": 42
             },
             {
               "label": "Control Coulisse L Geared",
@@ -3093,7 +2853,7 @@
             {
               "label": "Control Remoto 6 Canales",
               "price": 28.8,
-              "page": 33
+              "page": 42
             },
             {
               "label": "Control Chic Bidi 2 canales",
@@ -3103,12 +2863,7 @@
             {
               "label": "CM-12-BK",
               "price": 33.6,
-              "page": 34
-            },
-            {
-              "label": "Control Chic Bidi 2 canales",
-              "price": 36.0,
-              "page": 34
+              "page": 44
             },
             {
               "label": "Control Chic Bidi 6 canales",
@@ -3118,32 +2873,27 @@
             {
               "label": "Control Remoto 16 Canales",
               "price": 38.4,
-              "page": 33
-            },
-            {
-              "label": "Control Chic Bidi 6 canales",
-              "price": 40.0,
-              "page": 34
+              "page": 42
             },
             {
               "label": "CM-13-BK",
               "price": 42.4,
-              "page": 34
+              "page": 44
             },
             {
               "label": "Control Remoto Escalate 6",
               "price": 48.0,
-              "page": 33
+              "page": 42
             },
             {
               "label": "Control Remoto Deco One -",
               "price": 52.0,
-              "page": 33
+              "page": 42
             },
             {
               "label": "SITUO 1C",
               "price": 56.0,
-              "page": 35
+              "page": 44
             },
             {
               "label": "CM-39 (para motor CM-07)",
@@ -3153,32 +2903,32 @@
             {
               "label": "INTEO",
               "price": 80.0,
-              "page": 35
+              "page": 44
             },
             {
               "label": "SITUO 5C",
               "price": 80.8,
-              "page": 35
+              "page": 44
             },
             {
               "label": "SMOOVE PURE 1C",
               "price": 80.8,
-              "page": 35
+              "page": 44
             },
             {
               "label": "VTi Smart Hub",
               "price": 96.0,
-              "page": 33
+              "page": 42
             },
             {
               "label": "SMOOVE PURE 4C",
               "price": 128.0,
-              "page": 35
+              "page": 44
             },
             {
               "label": "VTi Smart Hub Plus",
               "price": 140.0,
-              "page": 34
+              "page": 42
             },
             {
               "label": "CONVERTIDOR DE DATOS",
@@ -3188,7 +2938,7 @@
             {
               "label": "INTERTEC MONOCANAL",
               "price": 168.0,
-              "page": 35
+              "page": 44
             },
             {
               "label": "CM-20",
@@ -3198,17 +2948,17 @@
             {
               "label": "TELIS 6",
               "price": 224.0,
-              "page": 35
+              "page": 44
             },
             {
               "label": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
               "price": 280.0,
-              "page": 34
+              "page": 42
             },
             {
               "label": "TELIS 16",
               "price": 300.0,
-              "page": 35
+              "page": 44
             },
             {
               "label": "LT50M",
@@ -3233,32 +2983,7 @@
             {
               "label": "INTERTEC 16",
               "price": 544.0,
-              "page": 35
-            },
-            {
-              "label": "GLYDEA RTS 35 KG",
-              "price": 600.0,
-              "page": 35
-            },
-            {
-              "label": "GLYDEA RTS 35 KG",
-              "price": 650.0,
-              "page": 35
-            },
-            {
-              "label": "GLYDEA RTS 60 KG",
-              "price": 770.0,
-              "page": 35
-            },
-            {
-              "label": "GLYDEA Mecánico 60 KG",
-              "price": 840.0,
-              "page": 35
-            },
-            {
-              "label": "GLYDEA RTS 60 KG",
-              "price": 875.0,
-              "page": 35
+              "page": 44
             }
           ]
         }

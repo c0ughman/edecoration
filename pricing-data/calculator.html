@@ -204,9 +204,13 @@
           <div class="cs-menu" hidden></div>
         </div>
         <select id="panoItemSel" hidden></select>
+        <!-- catalogue items get their name from the item picked; a custom one
+             has no name until you give it, so it takes the picker's slot -->
+        <input type="text" class="addon-name" id="panoCustomTitle"
+               placeholder="Nombre del complemento" hidden>
       </div>
       <div class="addon-custom" id="panoCustom" hidden>
-        <input type="text" id="panoCustomName" placeholder="Descripción del ítem">
+        <input type="text" id="panoCustomDesc" placeholder="Descripción (opcional)">
         <input type="number" id="panoCustomPrice" placeholder="0.00" step="0.01" min="0">
       </div>
       <div class="addon-actions">
@@ -232,39 +236,6 @@
         <button class="ghost-btn" id="exportTxt">Texto</button>
       </div>
     </div>
-
-    <!-- Items that belong to the job rather than to one paño: a 6-channel
-         remote drives six shades, so it cannot hang off any single one. -->
-    <section class="addons job-addons" id="jobBox">
-      <span class="addons-title">Ítems del proyecto <small>(no van por paño)</small></span>
-      <div class="addon-picker">
-        <div class="custom-select" id="jobKindDrop">
-          <button class="cs-trigger" type="button">
-            <span class="cs-value">Tipo</span>
-            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-          </button>
-          <div class="cs-menu" hidden></div>
-        </div>
-        <select id="jobKindSel" hidden></select>
-        <div class="custom-select wide" id="jobItemDrop">
-          <button class="cs-trigger" type="button">
-            <span class="cs-value">Ítem</span>
-            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-          </button>
-          <div class="cs-menu" hidden></div>
-        </div>
-        <select id="jobItemSel" hidden></select>
-      </div>
-      <div class="addon-custom" id="jobCustom" hidden>
-        <input type="text" id="jobCustomName" placeholder="Descripción del ítem">
-        <input type="number" id="jobCustomPrice" placeholder="0.00" step="0.01" min="0">
-      </div>
-      <div class="addon-actions">
-        <input type="number" id="jobAddonQty" value="1" min="1" aria-label="Cantidad">
-        <button class="ghost-btn" id="jobAddonAdd" type="button">+ Añadir al proyecto</button>
-      </div>
-      <ul class="addon-list" id="jobAddonList"></ul>
-    </section>
 
     <!-- the printable quote document -->
     <article class="quote-doc" id="quoteDoc">

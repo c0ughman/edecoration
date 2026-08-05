@@ -196,6 +196,14 @@ body{
 .addon-picker .custom-select{flex:0 0 150px;min-width:0}
 .addon-picker .custom-select.wide{flex:1 1 220px}
 .addon-picker .cs-trigger{background:var(--paper)}
+/* the name field takes the item picker's slot when "Personalizado" is chosen */
+.addon-name{
+  flex:1 1 220px;min-width:0;font:inherit;font-size:14px;font-weight:500;
+  color:var(--ink);padding:11px 12px;border:1px solid var(--line);
+  border-radius:10px;background:var(--paper);transition:.16s;
+}
+.addon-name:focus{outline:none;border-color:var(--wine);
+  box-shadow:0 0 0 3px rgba(93,15,37,.1);background:#fff}
 .addon-custom{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
 .addon-custom input{
   font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);

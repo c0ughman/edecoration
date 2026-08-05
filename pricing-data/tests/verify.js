@@ -596,35 +596,59 @@ check("complementos reach the quote line and its total", () => {
           `line names it; subtotal ${t.subtotal}`];
 });
 
-check("project items are their own rows, not attached to a paño", () => {
+check("controls are available as a paño complemento", () => {
+  const g = grp("control");
   const f = panoAt(60, 72);
-  const base = f.parseMoney(f.get("lpValue").textContent);
-  f.addAndTotal();
-  const item = grp("control").items[2];
-  f.addAddon("job", { kind: "control", itemIndex: 2, qty: 3 });
-  const sub = f.parseMoney(f.get("qdSubtotal").textContent);
-  return [near(sub, base + item.price * 3)
-          && f.get("qdItems").innerHTML.includes("Ítem del proyecto"),
-          `${item.label} × 3 -> subtotal ${f.get("qdSubtotal").textContent}`];
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  f.addAddon("pano", { kind: "control", itemIndex: 2, qty: 2 });
+  return [g.scope === "pano"
+          && near(f.parseMoney(f.get("lpValue").textContent),
+                  before + g.items[2].price * 2),
+          `${g.items[2].label} × 2 on the paño`];
 });
 
-check("a project item can be a custom line too", () => {
+check("there is no separate project-items section any more", () => {
   const f = boot();
-  f.addAddon("job", { kind: "personalizado",
-                      customName: "Visita técnica", customPrice: 60, qty: 2 });
-  return [near(f.parseMoney(f.get("qdSubtotal").textContent), 120)
-          && f.get("qdItems").innerHTML.includes("Visita técnica"),
-          `2 × 60 -> ${f.get("qdSubtotal").textContent}`];
+  const gone = f.get("jobAddonList").innerHTML === ""
+            && f.get("jobKindDrop").children.length === 0;
+  return [gone, "project section removed; everything is per paño"];
 });
 
-check("ITBMS applies to paños and project items alike", () => {
+check("a custom complemento carries its own name", () => {
   const f = panoAt(60, 72);
-  f.addAndTotal();
-  f.addAddon("job", { kind: "personalizado",
-                      customName: "Flete", customPrice: 100 });
-  const sub = f.parseMoney(f.get("qdSubtotal").textContent);
-  return [near(f.parseMoney(f.get("qdTax").textContent), sub * 0.07),
-          `subtotal ${f.get("qdSubtotal").textContent}, tax ${f.get("qdTax").textContent}`];
+  f.addAddon("pano", { kind: "personalizado",
+                       customName: "Refuerzo estructural", customPrice: 30 });
+  const html = f.get("panoAddonList").innerHTML;
+  return [html.includes("Refuerzo estructural"),
+          "name shown, not the category"];
+});
+
+check("a custom complemento keeps name and description apart", () => {
+  const f = panoAt(60, 72);
+  f.addAddon("pano", { kind: "personalizado", customName: "Refuerzo",
+                       customDesc: "perfil extra en el cabezal", customPrice: 30 });
+  const html = f.get("panoAddonList").innerHTML;
+  const t = f.addAndTotal();
+  return [html.includes("Refuerzo") && html.includes("perfil extra")
+          && t.items.includes("Refuerzo") && t.items.includes("perfil extra"),
+          "name is the label, description is the detail"];
+});
+
+check("a custom complemento without a name is refused", () => {
+  const f = panoAt(60, 72);
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  f.addAddon("pano", { kind: "personalizado", customName: "", customPrice: 30 });
+  return [near(f.parseMoney(f.get("lpValue").textContent), before)
+          && f.get("panoAddonList").innerHTML === "",
+          "nothing added without a name"];
+});
+
+check("no cortina de tela hardware is offered anywhere", () => {
+  const pat = /movelite|glydea|ripplefold|pinch pleat|master carrier|huesitos|balinera|coulisse negro|riel hd|bracket de pared|riel el.ctrico|riel de bater/i;
+  const leaked = ADDONS.flatMap(g => g.items.map(i => [g.kind, i.label]))
+                       .filter(([, l]) => pat.test(l));
+  return [leaked.length === 0,
+          leaked.length ? `leaked: ${leaked[0][1]}` : "drapery fully excluded"];
 });
 
 out.forEach(r => console.log(JSON.stringify(r)));
