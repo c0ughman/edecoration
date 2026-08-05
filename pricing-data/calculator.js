@@ -137,23 +137,38 @@
     familySel.value = fams[0] || "";
     buildFabrics();
   }
+  /* One PRS table often prices several fabrics that happen to cost the same
+     ("Zakros 110” / Stratos 110” / Paros 110”"). They are separate products,
+     so each gets its own entry and a quote names only the one chosen. The
+     option value is "<table index>:<fabric index>". */
   function buildFabrics() {
     const fam = familySel.value;
-    const list = FABRICS.filter(f => f.category === fam);
-    const opts = list.map(f => ({ value: String(CATALOG.indexOf(f)), label: cleanName(f.name) }));
+    const opts = [];
+    CATALOG.forEach((t, ti) => {
+      if (t.type !== "fabric_matrix" || t.category !== fam || !t.prices.length) return;
+      (t.fabrics && t.fabrics.length ? t.fabrics : [t.name])
+        .forEach((name, fi) => opts.push({ value: `${ti}:${fi}`, label: name }));
+    });
+    opts.sort((a, b) => a.label.localeCompare(b.label, "es"));
     $("fabricDrop")._rebuild(opts);
     fabricSel.value = opts[0]?.value || "";
     compute();
   }
-  function cleanName(n) {
-    return n.replace(/^[^-]+-\s*/, "").trim() || n;   // drop family prefix
+
+  /* "12:3" -> the table and the single fabric selected within it. */
+  function selectedFabric() {
+    const parts = String(fabricSel.value || "").split(":");
+    const table = CATALOG[+parts[0]];
+    if (!table) return { table: null, name: "" };
+    const list = table.fabrics && table.fabrics.length ? table.fabrics : [table.name];
+    return { table, name: list[+(parts[1] || 0)] || list[0] };
   }
 
   // ---------- compute current preview ----------
   function compute() {
     current = null;
     reqBadges.innerHTML = "";
-    const table = CATALOG[+fabricSel.value];
+    const { table, name: fabricName } = selectedFabric();
     const w = toIn(parseFloat(widthInp.value));
     const h = toIn(parseFloat(heightInp.value));
     const qty = Math.max(1, parseInt(qtyInp.value) || 1);
@@ -188,7 +203,7 @@
 
     const req = table.requirements[hi][wi];
     current = {
-      table, fabric: cleanName(table.name), category: table.category,
+      table, fabric: fabricName, category: table.category,
       reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
       // only the caveats that actually bear on this paño, carried onto the quote

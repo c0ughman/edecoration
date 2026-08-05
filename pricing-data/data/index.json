@@ -29,7 +29,7 @@
   },
   {
     "category": "Roller Shades",
-    "name": "Roller Shades - Eco Screen 5% 78”-118” / Delphi 98” / Corinto",
+    "name": "Roller Shades - Eco Screen 5% 78”-118” / Delphi 98” / Corinto 110” / Veria 98”",
     "type": "fabric_matrix",
     "page": 6,
     "file": "roller-shades.json"
@@ -43,7 +43,7 @@
   },
   {
     "category": "Roller Shades",
-    "name": "Roller Shades - Soleil 5% 78”-98”-118” /Argos BO 110” / Syros",
+    "name": "Roller Shades - Soleil 5% 78”-98”-118” /Argos BO 110” / Syros BO 110”",
     "type": "fabric_matrix",
     "page": 8,
     "file": "roller-shades.json"
@@ -78,7 +78,7 @@
   },
   {
     "category": "Roller Shades",
-    "name": "Roller Shades - Florencia 118” / Shelter Island 110” (más de 108” se",
+    "name": "Roller Shades - Florencia 118” / Shelter Island 110” (más de 108” se debe calcular como dos rollers)",
     "type": "fabric_matrix",
     "page": 13,
     "file": "roller-shades.json"
@@ -204,7 +204,7 @@
   },
   {
     "category": "Manhattan",
-    "name": "Manhattan Sheer 110” (60mm) / Manhattan Sheer 110”",
+    "name": "Manhattan Sheer 110” (60mm) / Manhattan Sheer 110” (75mm)",
     "type": "fabric_matrix",
     "page": 30,
     "file": "manhattan.json"
@@ -337,7 +337,7 @@
   },
   {
     "category": "Panel Track",
-    "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer",
+    "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer Creta",
     "type": "fabric_matrix",
     "page": 72,
     "file": "panel-track.json"
@@ -477,7 +477,7 @@
   },
   {
     "category": "Panel Track",
-    "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter",
+    "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter Island / Nature 5%",
     "type": "fabric_matrix",
     "page": 79,
     "file": "panel-track.json"
@@ -645,14 +645,14 @@
   },
   {
     "category": "Roman Shades",
-    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Con Varilla)",
+    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” / Mathilde 118” (Con Varilla)",
     "type": "fabric_matrix",
     "page": 50,
     "file": "roman-shades.json"
   },
   {
     "category": "Roman Shades",
-    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Sin Varilla)",
+    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” / Mathilde 118” (Sin Varilla)",
     "type": "fabric_matrix",
     "page": 50,
     "file": "roman-shades.json"

@@ -897,7 +897,10 @@
       "Si la roller mide más de 108” de ancho, el alto máximo sería de 102” (esta tela no se puede termosellar)",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Wellington 78” / 118”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -1796,7 +1799,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Blackout Basic Off White 72” / 96” / 118”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -2279,7 +2285,12 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Zakros 110”",
+      "Stratos 110”",
+      "Paros 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -2764,11 +2775,16 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Zakynthos 110”",
+      "Inspiration 110”",
+      "Creta 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
-    "name": "Roller Shades - Eco Screen 5% 78”-118” / Delphi 98” / Corinto",
+    "name": "Roller Shades - Eco Screen 5% 78”-118” / Delphi 98” / Corinto 110” / Veria 98”",
     "page": 6,
     "currency": "USD",
     "axis": {
@@ -3488,7 +3504,13 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Eco Screen 5% 78”-118”",
+      "Delphi 98”",
+      "Corinto 110”",
+      "Veria 98”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -3973,11 +3995,15 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Pleated 110”",
+      "Reve 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
-    "name": "Roller Shades - Soleil 5% 78”-98”-118” /Argos BO 110” / Syros",
+    "name": "Roller Shades - Soleil 5% 78”-98”-118” /Argos BO 110” / Syros BO 110”",
     "page": 8,
     "currency": "USD",
     "axis": {
@@ -4872,7 +4898,12 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Soleil 5% 78”-98”-118”",
+      "Argos BO 110”",
+      "Syros BO 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -5771,7 +5802,11 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Soleil 16% 98”",
+      "Soleil 1% 98”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -6495,7 +6530,11 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Bimini BO 98”",
+      "Nature 5% 98”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -7219,7 +7258,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Esvedra 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -8118,11 +8160,15 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Sunset BO 118”",
+      "Screen 5% Taupe 98”"
+    ]
   },
   {
     "type": "fabric_matrix",
-    "name": "Roller Shades - Florencia 118” / Shelter Island 110” (más de 108” se",
+    "name": "Roller Shades - Florencia 118” / Shelter Island 110” (más de 108” se debe calcular como dos rollers)",
     "page": 13,
     "currency": "USD",
     "axis": {
@@ -8840,9 +8886,14 @@
     },
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+      "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+      "(más de 108” se debe calcular como dos rollers)"
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Florencia 118”",
+      "Shelter Island 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -9566,7 +9617,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Captiva 118”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -10290,7 +10344,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Noble 118”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -11014,7 +11071,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Explore 118”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -11738,7 +11798,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Stucco BO 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -12462,7 +12525,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Adagio 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -13186,7 +13252,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Salvador 94”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -13910,7 +13979,10 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Parget 98”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -14634,7 +14706,11 @@
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
       "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
     ],
-    "category": "Roller Shades"
+    "category": "Roller Shades",
+    "fabrics": [
+      "Hampton BO 110”",
+      "Mombassa 118”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -15091,7 +15167,10 @@
     "notes": [
       "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS"
     ],
-    "category": "Sheer Elegance"
+    "category": "Sheer Elegance",
+    "fabrics": [
+      "Zakros 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -15546,7 +15625,12 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Sheer Elegance"
+    "category": "Sheer Elegance",
+    "fabrics": [
+      "Zakynthos 110”",
+      "Inspiration 110”",
+      "Creta"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -15999,7 +16083,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Sheer Elegance"
+    "category": "Sheer Elegance",
+    "fabrics": [
+      "Veria 98”",
+      "Corinto 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -16454,7 +16542,11 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Sheer Elegance"
+    "category": "Sheer Elegance",
+    "fabrics": [
+      "Pleated 110”",
+      "Reve 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -16907,7 +16999,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Sheer Elegance"
+    "category": "Sheer Elegance",
+    "fabrics": [
+      "Argos BO 110”",
+      "Syros BO 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -17362,7 +17458,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Sheer Elegance"
+    "category": "Sheer Elegance",
+    "fabrics": [
+      "Palau 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -17817,7 +17916,11 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Sheer Elegance"
+    "category": "Sheer Elegance",
+    "fabrics": [
+      "Bahia Dimout 110”",
+      "Arcadia 110”"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -18359,7 +18462,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Manhattan"
+    "category": "Manhattan",
+    "fabrics": [
+      "Sheer 102” (75mm)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -18937,11 +19043,14 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Manhattan"
+    "category": "Manhattan",
+    "fabrics": [
+      "Manhattan BO 110” (55mm)"
+    ]
   },
   {
     "type": "fabric_matrix",
-    "name": "Manhattan Sheer 110” (60mm) / Manhattan Sheer 110”",
+    "name": "Manhattan Sheer 110” (60mm) / Manhattan Sheer 110” (75mm)",
     "page": 30,
     "currency": "USD",
     "axis": {
@@ -19515,7 +19624,11 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Manhattan"
+    "category": "Manhattan",
+    "fabrics": [
+      "Manhattan Sheer 110” (60mm)",
+      "Manhattan Sheer 110” (75mm)"
+    ]
   },
   {
     "type": "width_priced",
@@ -22150,7 +22263,12 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Stratos 110” (Con Varilla)",
+      "Paros 110” (Con Varilla)",
+      "Eco Screen (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -22632,7 +22750,12 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Stratos 110” (Sin Varilla)",
+      "Paros 110” (Sin Varilla)",
+      "Eco Screen (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -23112,7 +23235,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Soleil 5% - 78” / 98” / 118” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -23594,7 +23720,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Soleil 5% - 78” / 98” / 118” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -24074,7 +24203,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Soleil 16% - 98” (Con Varilla)",
+      "Soleil 1% - 98” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -24556,11 +24689,15 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Soleil 16% - 98” (Sin Varilla)",
+      "Soleil 1% - 98” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
-    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Con Varilla)",
+    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” / Mathilde 118” (Con Varilla)",
     "page": 50,
     "currency": "USD",
     "axis": {
@@ -25036,11 +25173,17 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Esvedra 110” (Con Varilla)",
+      "Bimini 98” (Con Varilla)",
+      "Draper 118” (Con Varilla)",
+      "Mathilde 118” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
-    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Sin Varilla)",
+    "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” / Mathilde 118” (Sin Varilla)",
     "page": 50,
     "currency": "USD",
     "axis": {
@@ -25518,7 +25661,13 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Esvedra 110” (Sin Varilla)",
+      "Bimini 98” (Sin Varilla)",
+      "Draper 118” (Sin Varilla)",
+      "Mathilde 118” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -25998,7 +26147,12 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Sunset Bo 118” (Con Varilla)",
+      "Florencia 118” (Con Varilla)",
+      "Screen 5% (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -26480,7 +26634,12 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Sunset Bo 118” (Sin Varilla)",
+      "Florencia 118” (Sin Varilla)",
+      "Screen 5% (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -26960,7 +27119,12 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Noble 118” (Con Varilla)",
+      "Captiva 118” (Con Varilla)",
+      "Motion 118” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -27442,7 +27606,12 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Noble 118” (Sin Varilla)",
+      "Captiva 118” (Sin Varilla)",
+      "Motion 118” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -27922,7 +28091,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Salvador 94” (Con Varilla)",
+      "Parget 98” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -28404,7 +28577,11 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Salvador 94” (Sin Varilla)",
+      "Parget 98” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -28884,7 +29061,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Stucco BO 110” (Con Varilla)",
+      "Adagio 110” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -29366,7 +29547,11 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Stucco BO 110” (Sin Varilla)",
+      "Adagio 110” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -29846,7 +30031,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Hampton BO 110” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -30328,7 +30516,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Hampton BO 110” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -30808,7 +30999,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Explore 118” (Con Varilla)",
+      "Mombassa 118” (Con Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -31290,7 +31485,11 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Roman Shades"
+    "category": "Roman Shades",
+    "fabrics": [
+      "Explore 118” (Sin Varilla)",
+      "Mombassa 118” (Sin Varilla)"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -31833,7 +32032,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "BU - Rioja Blackout"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -32378,7 +32580,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "BU - Rioja Transparente"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -32923,7 +33128,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "BU - Oxford"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -33466,7 +33674,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "TDBU - Rioja Blackout"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -34011,7 +34222,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "TDBU - Rioja Transparente"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -34554,7 +34768,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "TDBU - Oxford"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -35097,7 +35314,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "Dia y Noche - Rioja Blackout + Rioja Transparente"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -35642,7 +35862,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Honeycomb"
+    "category": "Honeycomb",
+    "fabrics": [
+      "Dia y Noche - Rioja Blackout + Oxford"
+    ]
   },
   {
     "type": "item_list",
@@ -35991,7 +36214,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Toldos"
+    "category": "Toldos",
+    "fabrics": [
+      "Axio - Drop Shade - Sunbrella"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -36267,7 +36493,10 @@
       "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
     ],
-    "category": "Toldos"
+    "category": "Toldos",
+    "fabrics": [
+      "Axio - Drop Shade - Screen 5%"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -36612,7 +36841,10 @@
       "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
     ],
-    "category": "Toldos"
+    "category": "Toldos",
+    "fabrics": [
+      "Axio - Balcony"
+    ]
   },
   {
     "type": "item_list",
@@ -36767,7 +36999,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Toldos"
+    "category": "Toldos",
+    "fabrics": [
+      "Axio - Arm 90 grados"
+    ]
   },
   {
     "type": "fabric_matrix",
@@ -36889,7 +37124,10 @@
     "notes": [
       "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
     ],
-    "category": "Toldos"
+    "category": "Toldos",
+    "fabrics": [
+      "Axio - Arm 180 grados Sunbrella"
+    ]
   },
   {
     "type": "awning_system",
@@ -37303,7 +37541,12 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Stratos",
+      "Paros",
+      "Zakros"
+    ]
   },
   {
     "type": "width_priced",
@@ -37446,7 +37689,7 @@
   },
   {
     "type": "fabric_matrix",
-    "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer",
+    "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer Creta",
     "page": 72,
     "currency": "USD",
     "axis": {
@@ -37664,7 +37907,12 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Sheer Zakynthos",
+      "Sheer Inspiration",
+      "Sheer Creta"
+    ]
   },
   {
     "type": "width_priced",
@@ -38025,7 +38273,14 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Eco Screen 5%",
+      "Veria",
+      "Corinto",
+      "Creta",
+      "Delphi"
+    ]
   },
   {
     "type": "width_priced",
@@ -38359,7 +38614,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Sheer Pleated",
+      "Sheer Reve"
+    ]
   },
   {
     "type": "width_priced",
@@ -38720,7 +38979,12 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Soleil 5%",
+      "Argos BO",
+      "Syros BO"
+    ]
   },
   {
     "type": "width_priced",
@@ -39081,7 +39345,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Soleil 16%",
+      "Soleil 1%"
+    ]
   },
   {
     "type": "width_priced",
@@ -39442,7 +39710,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Wellington"
+    ]
   },
   {
     "type": "width_priced",
@@ -39803,7 +40074,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Bimini",
+      "Esvedra"
+    ]
   },
   {
     "type": "width_priced",
@@ -39946,7 +40221,7 @@
   },
   {
     "type": "fabric_matrix",
-    "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter",
+    "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter Island / Nature 5%",
     "page": 79,
     "currency": "USD",
     "axis": {
@@ -40164,7 +40439,14 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Sunset BO",
+      "Florencia",
+      "Screen 5%",
+      "Shelter Island",
+      "Nature 5%"
+    ]
   },
   {
     "type": "width_priced",
@@ -40525,7 +40807,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Noble",
+      "Captiva"
+    ]
   },
   {
     "type": "width_priced",
@@ -40886,7 +41172,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Explore",
+      "Mombassa"
+    ]
   },
   {
     "type": "width_priced",
@@ -41247,7 +41537,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Stucco BO",
+      "Adagio"
+    ]
   },
   {
     "type": "width_priced",
@@ -41608,7 +41902,10 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Hampton BO"
+    ]
   },
   {
     "type": "width_priced",
@@ -41969,7 +42266,11 @@
     ],
     "requirement_legend": {},
     "notes": [],
-    "category": "Panel Track"
+    "category": "Panel Track",
+    "fabrics": [
+      "Salvador",
+      "Parget"
+    ]
   },
   {
     "type": "width_priced",

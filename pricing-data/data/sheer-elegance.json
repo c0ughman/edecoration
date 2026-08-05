@@ -456,7 +456,10 @@
       "notes": [
         "ESTAS TELAS SON DELGADAS. EN LAS MEDIDAS EN NARANJA LA TELA PUEDE PRESENTAR SONRISAS"
       ],
-      "category": "Sheer Elegance"
+      "category": "Sheer Elegance",
+      "fabrics": [
+        "Zakros 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -911,7 +914,12 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Sheer Elegance"
+      "category": "Sheer Elegance",
+      "fabrics": [
+        "Zakynthos 110”",
+        "Inspiration 110”",
+        "Creta"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1364,7 +1372,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Sheer Elegance"
+      "category": "Sheer Elegance",
+      "fabrics": [
+        "Veria 98”",
+        "Corinto 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1819,7 +1831,11 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Sheer Elegance"
+      "category": "Sheer Elegance",
+      "fabrics": [
+        "Pleated 110”",
+        "Reve 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2272,7 +2288,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Sheer Elegance"
+      "category": "Sheer Elegance",
+      "fabrics": [
+        "Argos BO 110”",
+        "Syros BO 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2727,7 +2747,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Sheer Elegance"
+      "category": "Sheer Elegance",
+      "fabrics": [
+        "Palau 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -3182,7 +3205,11 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Sheer Elegance"
+      "category": "Sheer Elegance",
+      "fabrics": [
+        "Bahia Dimout 110”",
+        "Arcadia 110”"
+      ]
     }
   ]
 }

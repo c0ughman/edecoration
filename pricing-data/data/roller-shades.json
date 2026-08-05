@@ -899,7 +899,10 @@
         "Si la roller mide más de 108” de ancho, el alto máximo sería de 102” (esta tela no se puede termosellar)",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Wellington 78” / 118”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1798,7 +1801,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Blackout Basic Off White 72” / 96” / 118”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2281,7 +2287,12 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Zakros 110”",
+        "Stratos 110”",
+        "Paros 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2766,11 +2777,16 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Zakynthos 110”",
+        "Inspiration 110”",
+        "Creta 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
-      "name": "Roller Shades - Eco Screen 5% 78”-118” / Delphi 98” / Corinto",
+      "name": "Roller Shades - Eco Screen 5% 78”-118” / Delphi 98” / Corinto 110” / Veria 98”",
       "page": 6,
       "currency": "USD",
       "axis": {
@@ -3490,7 +3506,13 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Eco Screen 5% 78”-118”",
+        "Delphi 98”",
+        "Corinto 110”",
+        "Veria 98”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -3975,11 +3997,15 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Pleated 110”",
+        "Reve 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
-      "name": "Roller Shades - Soleil 5% 78”-98”-118” /Argos BO 110” / Syros",
+      "name": "Roller Shades - Soleil 5% 78”-98”-118” /Argos BO 110” / Syros BO 110”",
       "page": 8,
       "currency": "USD",
       "axis": {
@@ -4874,7 +4900,12 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Soleil 5% 78”-98”-118”",
+        "Argos BO 110”",
+        "Syros BO 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -5773,7 +5804,11 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Soleil 16% 98”",
+        "Soleil 1% 98”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -6497,7 +6532,11 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Bimini BO 98”",
+        "Nature 5% 98”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -7221,7 +7260,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Esvedra 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -8120,11 +8162,15 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Sunset BO 118”",
+        "Screen 5% Taupe 98”"
+      ]
     },
     {
       "type": "fabric_matrix",
-      "name": "Roller Shades - Florencia 118” / Shelter Island 110” (más de 108” se",
+      "name": "Roller Shades - Florencia 118” / Shelter Island 110” (más de 108” se debe calcular como dos rollers)",
       "page": 13,
       "currency": "USD",
       "axis": {
@@ -8842,9 +8888,14 @@
       },
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
-        "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
+        "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado.",
+        "(más de 108” se debe calcular como dos rollers)"
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Florencia 118”",
+        "Shelter Island 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -9568,7 +9619,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Captiva 118”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -10292,7 +10346,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Noble 118”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -11016,7 +11073,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Explore 118”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -11740,7 +11800,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Stucco BO 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -12464,7 +12527,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Adagio 110”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -13188,7 +13254,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Salvador 94”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -13912,7 +13981,10 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Parget 98”"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -14636,7 +14708,11 @@
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
         "Las medidas sombreadas en amarillo requieren clutch Large, y las medidas sombreadas en gris requieren motorización. Si no se siguen estas recomendaciones, no se otorgará garantía sobre el producto comprado."
       ],
-      "category": "Roller Shades"
+      "category": "Roller Shades",
+      "fabrics": [
+        "Hampton BO 110”",
+        "Mombassa 118”"
+      ]
     }
   ]
 }

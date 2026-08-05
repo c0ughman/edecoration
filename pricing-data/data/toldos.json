@@ -270,7 +270,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Toldos"
+      "category": "Toldos",
+      "fabrics": [
+        "Axio - Drop Shade - Sunbrella"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -546,7 +549,10 @@
         "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Toldos"
+      "category": "Toldos",
+      "fabrics": [
+        "Axio - Drop Shade - Screen 5%"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -891,7 +897,10 @@
         "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
       ],
-      "category": "Toldos"
+      "category": "Toldos",
+      "fabrics": [
+        "Axio - Balcony"
+      ]
     },
     {
       "type": "item_list",
@@ -1046,7 +1055,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Toldos"
+      "category": "Toldos",
+      "fabrics": [
+        "Axio - Arm 90 grados"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1168,7 +1180,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
       ],
-      "category": "Toldos"
+      "category": "Toldos",
+      "fabrics": [
+        "Axio - Arm 180 grados Sunbrella"
+      ]
     },
     {
       "type": "awning_system",

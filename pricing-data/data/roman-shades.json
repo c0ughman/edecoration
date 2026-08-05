@@ -479,7 +479,12 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Stratos 110” (Con Varilla)",
+        "Paros 110” (Con Varilla)",
+        "Eco Screen (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -961,7 +966,12 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Stratos 110” (Sin Varilla)",
+        "Paros 110” (Sin Varilla)",
+        "Eco Screen (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1441,7 +1451,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Soleil 5% - 78” / 98” / 118” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1923,7 +1936,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Soleil 5% - 78” / 98” / 118” (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2403,7 +2419,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Soleil 16% - 98” (Con Varilla)",
+        "Soleil 1% - 98” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2885,11 +2905,15 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Soleil 16% - 98” (Sin Varilla)",
+        "Soleil 1% - 98” (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
-      "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Con Varilla)",
+      "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” / Mathilde 118” (Con Varilla)",
       "page": 50,
       "currency": "USD",
       "axis": {
@@ -3365,11 +3389,17 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Esvedra 110” (Con Varilla)",
+        "Bimini 98” (Con Varilla)",
+        "Draper 118” (Con Varilla)",
+        "Mathilde 118” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
-      "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” (Sin Varilla)",
+      "name": "Roman Shades - Esvedra 110” / Bimini 98” / Draper 118” / Mathilde 118” (Sin Varilla)",
       "page": 50,
       "currency": "USD",
       "axis": {
@@ -3847,7 +3877,13 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Esvedra 110” (Sin Varilla)",
+        "Bimini 98” (Sin Varilla)",
+        "Draper 118” (Sin Varilla)",
+        "Mathilde 118” (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -4327,7 +4363,12 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Sunset Bo 118” (Con Varilla)",
+        "Florencia 118” (Con Varilla)",
+        "Screen 5% (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -4809,7 +4850,12 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Sunset Bo 118” (Sin Varilla)",
+        "Florencia 118” (Sin Varilla)",
+        "Screen 5% (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -5289,7 +5335,12 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Noble 118” (Con Varilla)",
+        "Captiva 118” (Con Varilla)",
+        "Motion 118” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -5771,7 +5822,12 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Noble 118” (Sin Varilla)",
+        "Captiva 118” (Sin Varilla)",
+        "Motion 118” (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -6251,7 +6307,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Salvador 94” (Con Varilla)",
+        "Parget 98” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -6733,7 +6793,11 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Salvador 94” (Sin Varilla)",
+        "Parget 98” (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -7213,7 +7277,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Stucco BO 110” (Con Varilla)",
+        "Adagio 110” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -7695,7 +7763,11 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Stucco BO 110” (Sin Varilla)",
+        "Adagio 110” (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -8175,7 +8247,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Hampton BO 110” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -8657,7 +8732,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Hampton BO 110” (Sin Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -9137,7 +9215,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Explore 118” (Con Varilla)",
+        "Mombassa 118” (Con Varilla)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -9619,7 +9701,11 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Roman Shades"
+      "category": "Roman Shades",
+      "fabrics": [
+        "Explore 118” (Sin Varilla)",
+        "Mombassa 118” (Sin Varilla)"
+      ]
     }
   ]
 }

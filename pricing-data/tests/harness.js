@@ -32,14 +32,14 @@ function boot() {
   const CATALOG = sandbox.window.PRS_CATALOG;
 
   /* Price one paño through the UI's own code path. */
-  function price({ tableIndex, w, h, qty = 1, install = false,
+  function price({ tableIndex, fabricIndex = 0, w, h, qty = 1, install = false,
                    lineMargin = "0", clutch = "25", motor = "0", tax = "7" }) {
     get("cfgClutch").value = String(clutch);
     get("cfgMotor").value = String(motor);
     get("cfgTax").value = String(tax);
     get("installChk").checked = install;
     get("lineMargin").value = String(lineMargin);
-    get("fabricSel").value = String(tableIndex);
+    get("fabricSel").value = `${tableIndex}:${fabricIndex}`;
     get("qtyInp").value = String(qty);
     get("heightInp").value = String(h);
     get("widthInp").value = String(w);

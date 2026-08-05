@@ -403,6 +403,57 @@ check("every legend quotes a note from its own table", legend_sourced)
 check("every legend sentence names the colour it explains", legend_mentions_colour)
 
 
+# -------------------------------------------------------------- fabrics ----
+def fabrics_recovered():
+    """Fabrics that only appear on the wrapped second line of a title."""
+    names = {f for t in matrices for f in t["fabrics"]}
+    want = ["Veria 98”", "Mathilde 118” (Con Varilla)", "Nature 5%",
+            "Sheer Creta", "Syros BO 110”"]
+    missing = [w for w in want if w not in names]
+    return not missing, (f"{len(names)} distinct fabric names"
+                         if not missing else f"missing {missing}")
+
+
+def fabrics_split_not_widths():
+    """A "/" between bare measurements is a bolt width, not another fabric."""
+    bad = []
+    for t in matrices:
+        for f in t["fabrics"]:
+            for seg in f.split("/")[1:]:
+                # a trailing segment with letters would mean we failed to split
+                if any(c.isalpha() for c in seg) and "varilla" not in seg.lower() \
+                        and "mm" not in seg.lower():
+                    bad.append((t["page"], f))
+    return not bad, "no unsplit fabric list remains" if not bad else str(bad[:3])
+
+
+def fabrics_unique_per_family():
+    seen = Counter((t["category"], f) for t in matrices for f in t["fabrics"])
+    dups = {k: v for k, v in seen.items() if v > 1}
+    return not dups, f"{len(seen)} fabrics across {len(families)} families"
+
+
+def fabrics_nonempty():
+    bad = [t["name"] for t in matrices
+           if not t.get("fabrics") or any(not f.strip() for f in t["fabrics"])]
+    return not bad, f"{sum(len(t['fabrics']) for t in matrices)} total options"
+
+
+def caveat_moved_to_notes():
+    """The p13 rule is a note, not part of a fabric's name."""
+    t = next((x for x in matrices if x["page"] == 13), None)
+    in_note = any("dos rollers" in n for n in (t["notes"] or []))
+    in_name = any("dos rollers" in f for f in t["fabrics"])
+    return in_note and not in_name, f"note={in_note}, leaked into name={in_name}"
+
+
+check("fabrics lost to wrapped titles are recovered", fabrics_recovered)
+check("bolt widths are not mistaken for separate fabrics", fabrics_split_not_widths)
+check("no fabric name repeats inside a family", fabrics_unique_per_family)
+check("every matrix exposes at least one named fabric", fabrics_nonempty)
+check("a trailing rule becomes a note, not part of a name", caveat_moved_to_notes)
+
+
 # --------------------------------------------------------------- notes ----
 all_notes = [n for t in catalog for n in (t.get("notes") or [])]
 check("notes carry no leaked table titles",

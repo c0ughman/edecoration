@@ -542,7 +542,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "BU - Rioja Blackout"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1087,7 +1090,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "BU - Rioja Transparente"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1632,7 +1638,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "BU - Oxford"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2175,7 +2184,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "TDBU - Rioja Blackout"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -2720,7 +2732,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "TDBU - Rioja Transparente"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -3263,7 +3278,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "TDBU - Oxford"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -3806,7 +3824,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "Dia y Noche - Rioja Blackout + Rioja Transparente"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -4351,7 +4372,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Honeycomb"
+      "category": "Honeycomb",
+      "fabrics": [
+        "Dia y Noche - Rioja Blackout + Oxford"
+      ]
     }
   ]
 }

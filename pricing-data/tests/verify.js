@@ -275,4 +275,73 @@ check("PRS's own wording reaches the quote's notes block", () => {
           `quote notes mention the special-order bottomrail`];
 });
 
+/* ---- one table, several fabrics: the quote must name only the chosen one ---- */
+const multi = CATALOG.findIndex(t =>
+  t.type === "fabric_matrix" && (t.fabrics || []).length >= 3);
+
+check("a shared price table offers each fabric separately", () => {
+  const t = CATALOG[multi];
+  return [t.fabrics.length >= 3 && t.fabrics.every(f => !f.includes("/")
+          || /\d\s*[”"]\s*\/\s*\d/.test(f)),
+          `${t.name.slice(0, 44)} -> ${t.fabrics.length} fabrics`];
+});
+
+check("the quote names the selected fabric, not the whole table", () => {
+  const fresh = boot();
+  const t = CATALOG[multi];
+  const i = t.heights_in.findIndex((_, k) => t.prices[k].some(p => p != null));
+  const j = t.prices[i].findIndex(p => p != null);
+  fresh.price({ tableIndex: multi, fabricIndex: 1,
+                w: t.widths_in[j], h: t.heights_in[i] });
+  const q = fresh.addAndTotal();
+  const chosen = t.fabrics[1], other = t.fabrics[0];
+  return [q.items.includes(chosen) && !q.items.includes(other),
+          `shows "${chosen}", omits "${other}"`];
+});
+
+check("picking a different fabric changes the quoted name only", () => {
+  const t = CATALOG[multi];
+  const i = t.heights_in.findIndex((_, k) => t.prices[k].some(p => p != null));
+  const j = t.prices[i].findIndex(p => p != null);
+  const a = price({ tableIndex: multi, fabricIndex: 0, w: t.widths_in[j], h: t.heights_in[i] });
+  const b = price({ tableIndex: multi, fabricIndex: 2, w: t.widths_in[j], h: t.heights_in[i] });
+  return [a.display === b.display, `both ${a.display} (they share the table)`];
+});
+
+check("bolt widths stay on one fabric rather than splitting it", () => {
+  // "Wellington 78” / 118”" is one fabric in two widths, not two fabrics
+  const t = CATALOG[WELL];
+  return [t.fabrics.length === 1 && t.fabrics[0].includes("78") && t.fabrics[0].includes("118"),
+          `${t.fabrics.length} fabric: ${t.fabrics[0]}`];
+});
+
+check("no fabric name is duplicated inside a family", () => {
+  const seen = new Map();
+  const dups = [];
+  CATALOG.forEach(t => {
+    if (t.type !== "fabric_matrix") return;
+    (t.fabrics || []).forEach(f => {
+      const k = t.category + "|" + f;
+      if (seen.has(k)) dups.push(k); else seen.set(k, 1);
+    });
+  });
+  return [dups.length === 0, `${seen.size} fabrics, ${dups.length} duplicates`];
+});
+
+check("every fabric in the dropdown resolves to a priceable table", () => {
+  let n = 0, bad = 0;
+  CATALOG.forEach((t, ti) => {
+    if (t.type !== "fabric_matrix" || !t.prices.length) return;
+    (t.fabrics || []).forEach((_, fi) => {
+      n++;
+      const i = t.heights_in.findIndex((_, k) => t.prices[k].some(p => p != null));
+      const j = t.prices[i].findIndex(p => p != null);
+      const r = price({ tableIndex: ti, fabricIndex: fi,
+                        w: t.widths_in[j], h: t.heights_in[i] });
+      if (!/^\$[\d,]+\.\d\d$/.test(r.display)) bad++;
+    });
+  });
+  return [bad === 0, `${n} fabric options priced, ${bad} failed`];
+});
+
 out.forEach(r => console.log(JSON.stringify(r)));

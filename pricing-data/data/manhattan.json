@@ -541,7 +541,10 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Manhattan"
+      "category": "Manhattan",
+      "fabrics": [
+        "Sheer 102” (75mm)"
+      ]
     },
     {
       "type": "fabric_matrix",
@@ -1119,11 +1122,14 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Manhattan"
+      "category": "Manhattan",
+      "fabrics": [
+        "Manhattan BO 110” (55mm)"
+      ]
     },
     {
       "type": "fabric_matrix",
-      "name": "Manhattan Sheer 110” (60mm) / Manhattan Sheer 110”",
+      "name": "Manhattan Sheer 110” (60mm) / Manhattan Sheer 110” (75mm)",
       "page": 30,
       "currency": "USD",
       "axis": {
@@ -1697,7 +1703,11 @@
       "notes": [
         "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
       ],
-      "category": "Manhattan"
+      "category": "Manhattan",
+      "fabrics": [
+        "Manhattan Sheer 110” (60mm)",
+        "Manhattan Sheer 110” (75mm)"
+      ]
     }
   ]
 }

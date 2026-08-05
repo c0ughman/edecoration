@@ -394,7 +394,12 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Stratos",
+        "Paros",
+        "Zakros"
+      ]
     },
     {
       "type": "width_priced",
@@ -537,7 +542,7 @@
     },
     {
       "type": "fabric_matrix",
-      "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer",
+      "name": "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer Creta",
       "page": 72,
       "currency": "USD",
       "axis": {
@@ -755,7 +760,12 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Sheer Zakynthos",
+        "Sheer Inspiration",
+        "Sheer Creta"
+      ]
     },
     {
       "type": "width_priced",
@@ -1116,7 +1126,14 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Eco Screen 5%",
+        "Veria",
+        "Corinto",
+        "Creta",
+        "Delphi"
+      ]
     },
     {
       "type": "width_priced",
@@ -1450,7 +1467,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Sheer Pleated",
+        "Sheer Reve"
+      ]
     },
     {
       "type": "width_priced",
@@ -1811,7 +1832,12 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Soleil 5%",
+        "Argos BO",
+        "Syros BO"
+      ]
     },
     {
       "type": "width_priced",
@@ -2172,7 +2198,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Soleil 16%",
+        "Soleil 1%"
+      ]
     },
     {
       "type": "width_priced",
@@ -2533,7 +2563,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Wellington"
+      ]
     },
     {
       "type": "width_priced",
@@ -2894,7 +2927,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Bimini",
+        "Esvedra"
+      ]
     },
     {
       "type": "width_priced",
@@ -3037,7 +3074,7 @@
     },
     {
       "type": "fabric_matrix",
-      "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter",
+      "name": "Panel Track - Sunset BO/ Florencia / Screen 5% / Shelter Island / Nature 5%",
       "page": 79,
       "currency": "USD",
       "axis": {
@@ -3255,7 +3292,14 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Sunset BO",
+        "Florencia",
+        "Screen 5%",
+        "Shelter Island",
+        "Nature 5%"
+      ]
     },
     {
       "type": "width_priced",
@@ -3616,7 +3660,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Noble",
+        "Captiva"
+      ]
     },
     {
       "type": "width_priced",
@@ -3977,7 +4025,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Explore",
+        "Mombassa"
+      ]
     },
     {
       "type": "width_priced",
@@ -4338,7 +4390,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Stucco BO",
+        "Adagio"
+      ]
     },
     {
       "type": "width_priced",
@@ -4699,7 +4755,10 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Hampton BO"
+      ]
     },
     {
       "type": "width_priced",
@@ -5060,7 +5119,11 @@
       ],
       "requirement_legend": {},
       "notes": [],
-      "category": "Panel Track"
+      "category": "Panel Track",
+      "fabrics": [
+        "Salvador",
+        "Parget"
+      ]
     },
     {
       "type": "width_priced",

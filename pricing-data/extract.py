@@ -302,6 +302,99 @@ def title_above(rows, hi, stop):
     return title_above_idx(rows, hi, stop)[0]
 
 
+VARIANT_RE = re.compile(r"\((con|sin)\s+varilla\)", re.I)
+BARE_VARIANT_RE = re.compile(r"^\s*(con|sin)\s+varilla\s*$", re.I)
+MEASURE_END_RE = re.compile(r"\d+\s*[”\"']?\s*$")
+
+
+def wrap_separator(first_line, continuation):
+    """How a wrapped title's second line attaches to the first.
+
+    PRS drops the "/" when a fabric list wraps, so "… / Draper 118”" +
+    "Mathilde 118”" is two fabrics while "… / Syros" + "BO 110”" is one. The
+    tell is whether the last fabric on line one already carries its bolt width:
+    if it does, its name is complete and the next line starts a new fabric.
+    """
+    if continuation.startswith("(") or continuation[:1].islower():
+        return " "                       # a qualifier or a wrapped sentence
+    last = first_line.split("/")[-1].strip()
+    return " / " if MEASURE_END_RE.search(last) else " "
+
+
+def joined_title(rows, page_title):
+    """Page titles wrap, and row 1 is often the tail of row 0.
+
+    "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer" + "Creta", or
+    "... / Shelter" + "Island / Nature 5%" -- keeping only the first line drops
+    whole fabrics. A continuation is a fragment: it carries letters but is not
+    itself a heading (headings contain the " - " family separator) and is not
+    the Con/Sin Varilla label, which is picked up separately.
+    """
+    if len(rows) < 2:
+        return page_title
+    a = row_alpha(rows[1])
+    if not a or " - " in a or len(a) > 40:
+        return page_title
+    if a.lower().startswith(("metros", "pulgadas")):
+        return page_title
+    if BARE_VARIANT_RE.match(a):
+        return page_title
+    if sum(1 for w in rows[1]["words"] if NUMCELL_RE.match(w["txt"])) >= 3:
+        return page_title            # that is the metric axis row, not a title
+    return clean(page_title + wrap_separator(page_title, a) + a)
+
+
+def split_fabrics(name, category=""):
+    """The individual fabrics a table prices, and any trailing rule.
+
+    PRS puts several fabrics on one matrix when they share a price, separating
+    them with "/". The same "/" also separates the bolt widths of a *single*
+    fabric ("Wellington 78” / 118”"), so a segment carrying no letters
+    continues the fabric before it instead of starting a new one.
+
+    Returns (fabric names, caveat) where caveat is a trailing parenthetical
+    sentence -- "(más de 108” se debe calcular como dos rollers)" -- which is a
+    rule about the product, not part of anybody's name.
+    """
+    # The prefix is dropped only when it is just the family name. "Honeycomb
+    # BU" and "Honeycomb TDBU" both sit in the Honeycomb family but are
+    # different systems, and dropping the whole prefix would leave two
+    # different products called "Rioja Blackout".
+    prefix, sep, rest = name.partition(" - ")
+    lead, base = "", name
+    if sep:
+        base = rest
+        keep = prefix.strip()
+        if keep == category:
+            keep = ""
+        elif category and keep.startswith(category):
+            keep = keep[len(category):].strip(" -")
+        lead = f"{keep} - " if keep else ""
+
+    variant = ""                            # applies to every fabric listed
+    m = VARIANT_RE.search(base)
+    if m:
+        variant = " " + m.group(0)
+        base = VARIANT_RE.sub("", base).strip()
+
+    caveat = None
+    pm = re.search(r"\(([^()]{12,})\)\s*$", base)
+    if pm and len(pm.group(1).split()) > 2:
+        caveat = pm.group(0)
+        base = base[:pm.start()].strip()
+
+    out = []
+    for seg in base.split("/"):
+        seg = seg.strip()
+        if not seg:
+            continue
+        if not any(c.isalpha() for c in seg) and out:
+            out[-1] += " / " + seg          # another bolt width, same fabric
+        else:
+            out.append(seg)
+    return [lead + s + variant for s in out] or [name], caveat
+
+
 def second_table_title(rows, hi):
     """Heading of a *second* table stacked under the page's first one.
 
@@ -571,14 +664,15 @@ def process_page(page, page_title):
 
         # naming: Con/Sin Varilla variants share the page fabric name;
         # otherwise a stacked second table takes the nearest title line
+        full_title = joined_title(rows, page_title)
         v = variant_above(rows, hi, headers[hk - 1] if hk else -1)
         if v:
             v = v.strip().title()
-            title = f"{page_title} ({v})"
+            title = f"{full_title} ({v})"
         elif hk > 0:
-            title = title_above(rows, hi, headers[hk - 1]) or page_title
+            title = title_above(rows, hi, headers[hk - 1]) or full_title
         else:
-            title = second_table_title(rows, hi) or page_title
+            title = second_table_title(rows, hi) or full_title
 
         reqs, legend = resolve_requirements(colors, notes, page.page_number, title)
 
@@ -727,6 +821,12 @@ def main():
         if blocks:
             for b in blocks:
                 b["category"] = category_for(b, current_category)
+                # one table can price several fabrics, and a quote has to name
+                # the one that was chosen -- needs the family, so it happens here
+                if b["type"] == "fabric_matrix":
+                    b["fabrics"], caveat = split_fabrics(b["name"], b["category"])
+                    if caveat and caveat not in b["notes"]:
+                        b["notes"].append(caveat)
                 catalog.append(b)
         else:
             unparsed.append({
