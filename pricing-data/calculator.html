@@ -144,22 +144,40 @@
     <!-- A shaded-grey cell cannot be built without a motor. Rather than a
          silent surcharge, the motor is chosen here at its real PRS price. -->
     <section class="req-alert" id="motorNotice" hidden>
-      <div class="ra-head">
-        <span class="ra-icon" aria-hidden="true">⚡</span>
-        <div>
-          <h4>Esta medida requiere motorización</h4>
+      <header class="ra-head">
+        <span class="ra-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M13 2.5 4.8 13.2a.6.6 0 0 0 .47.97H11l-.9 7.3 8.2-10.7a.6.6 0 0 0-.47-.97H12l1-7.3Z"
+                  stroke="currentColor" stroke-width="1.6"
+                  stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="ra-headings">
+          <h4>Requiere motorización</h4>
           <p id="motorWhy"></p>
         </div>
+      </header>
+
+      <div class="ra-field">
+        <span>Motor</span>
+        <div class="custom-select" id="motorDrop">
+          <button class="cs-trigger" type="button">
+            <span class="cs-value">Elegir motor</span>
+            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="cs-menu" hidden></div>
+        </div>
+        <select id="motorSel" hidden></select>
       </div>
-      <label class="ra-pick">Motor
-        <select id="motorSel"></select>
-      </label>
+
       <div class="ra-total" id="motorTotal" hidden>
-        <span class="ra-total-label">Motorización</span>
+        <div>
+          <span class="ra-total-label">Motorización</span>
+          <span class="ra-total-sub" id="motorTotalSub"></span>
+        </div>
         <span class="ra-total-value" id="motorTotalValue">—</span>
-        <span class="ra-total-sub" id="motorTotalSub"></span>
       </div>
-      <p class="ra-warn" id="motorWarn">Elige un motor para poder cotizar este paño.</p>
+      <p class="ra-warn" id="motorWarn">Elige un motor para cotizar este paño.</p>
     </section>
 
     <!-- notes PRS printed under this fabric's table, straight from the PDF -->

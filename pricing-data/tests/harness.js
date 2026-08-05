@@ -59,7 +59,7 @@ function boot() {
       motorTotal: get("motorTotalValue").textContent,
       motorTotalHidden: get("motorTotal").hidden,
       warnHidden: get("motorWarn").hidden,
-      motorOptions: get("motorSel").innerHTML,
+      motorLabel: get("motorDrop").querySelector(".cs-value").textContent,
     };
   }
 

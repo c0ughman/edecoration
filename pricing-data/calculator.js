@@ -112,6 +112,10 @@
   initCustomSelect("familyDrop", familySel, val => { familySel.value = val; buildFabrics(); });
   initCustomSelect("fabricDrop", fabricSel, val => { fabricSel.value = val; compute(); });
   initCustomSelect("mountDrop", mountSel, () => compute());
+  initCustomSelect("motorDrop", $("motorSel"), val => {
+    motor = val === "" ? null : MOTORS[+val];
+    compute();
+  });
   // remove native-select change listeners — custom dropdowns handle changes above
 
   let unit = "in";
@@ -274,6 +278,8 @@
   function clearMotor() {
     motor = null;
     if ($("motorSel")) $("motorSel").value = "";
+    const drop = $("motorDrop");
+    if (drop && drop._setValue) drop._setValue("", "Elegir motor");
   }
 
   function renderMotorNotice(required, table, req, qty) {
@@ -285,13 +291,6 @@
     // user just picked (choosing one re-enters compute)
     if (!required) return;
 
-    if (!$("motorSel").options.length && MOTORS.length) {
-      $("motorSel").innerHTML =
-        `<option value="">— Elegir motor —</option>` +
-        MOTORS.map((m, i) =>
-          `<option value="${i}">${escapeHtml(m.label)} · ${money(m.price)}</option>`
-        ).join("");
-    }
     // PRS's own sentence, so the reason comes from the price list not from us
     $("motorWhy").textContent = (table.requirement_legend || {})[req] || "";
 
@@ -528,9 +527,17 @@
     [...$("lineMarginSeg").children].forEach(x => x.classList.toggle("active", x === b));
     compute();
   });
+  // The custom dropdown above drives selection; this keeps the underlying
+  // <select> authoritative too, so the field still works if it is set directly.
   $("motorSel").addEventListener("change", e => {
     const i = e.target.value;
     motor = i === "" ? null : MOTORS[+i];
+    // keep the visible trigger in step; _setValue does not re-fire change
+    const drop = $("motorDrop");
+    if (drop && drop._setValue) {
+      drop._setValue(i, motor ? `${motor.label} · ${money(motor.price)}`
+                              : "Elegir motor");
+    }
     compute();
   });
   addBtn.addEventListener("click", addLine);
@@ -550,6 +557,13 @@
     document.querySelector(".config").innerHTML =
       "<p style='color:#9a2b2b'>No se pudo cargar la lista de precios (data/catalog.js).</p>";
     return;
+  }
+  // the motor list never changes, so build it once (needs money(), so not
+  // alongside initCustomSelect above)
+  if (MOTORS.length) {
+    $("motorDrop")._rebuild(MOTORS.map((m, i) =>
+      ({ value: String(i), label: `${m.label} · ${money(m.price)}` })));
+    clearMotor();
   }
   buildFamilies();
   refreshMeta();

@@ -52,7 +52,7 @@ function makeDocument() {
   };
 
   // the two data-driven dropdowns need cs-trigger / cs-value / cs-menu children
-  for (const id of ["familyDrop", "fabricDrop", "mountDrop"]) {
+  for (const id of ["familyDrop", "fabricDrop", "mountDrop", "motorDrop"]) {
     const drop = get(id);
     const trigger = new El("", "cs-trigger");
     const value = new El("", "cs-value");

@@ -76,7 +76,9 @@ body{
   background:var(--paper);border:1px solid var(--line);
   border-radius:var(--radius);box-shadow:var(--shadow);
 }
-.config{padding:24px;min-width:0;overflow:hidden}
+/* not overflow:hidden — an open dropdown menu has to escape the panel. Long
+   fabric names are already contained by .cs-value's ellipsis plus min-width:0. */
+.config{padding:24px;min-width:0}
 .panel-title{
   font-family:'Playfair Display',serif;font-weight:600;font-size:20px;
   margin-bottom:18px;position:relative;padding-bottom:12px;
@@ -123,38 +125,62 @@ body{
 .badge.order{background:#e7f0f7;color:#2c5470;border:1px solid #c6dbea}
 .badge.warn{background:#fdeede;color:#8a4a14;border:1px solid #f2d3ac}
 
-/* Motorisation notice — deliberately loud: this paño cannot be built without a
-   motor, and the motor is a material part of its price. */
+/* Motorisation notice. This paño cannot be built without a motor and the motor
+   is a material part of its price, so it gets a panel rather than a pill — but
+   in the page's own wine/cream palette, with a gold rule to mark it out. */
 .req-alert{
-  margin-top:14px;padding:16px 18px;border-radius:14px;
-  background:linear-gradient(180deg,#fff8ec,#fdf1dc);
-  border:1px solid #eccf9b;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6);
+  margin-top:16px;padding:18px 20px;border-radius:14px;
+  background:linear-gradient(180deg,var(--cream-soft),#fdf6e6);
+  border:1px solid #e6d5ae;position:relative;
 }
-.ra-head{display:flex;gap:12px;align-items:flex-start}
-.ra-icon{font-size:20px;line-height:1.1}
-.ra-head h4{font-size:14px;font-weight:700;color:#8a5a14;letter-spacing:.2px}
-.ra-head p{font-size:11.5px;line-height:1.5;color:#8d7a5c;margin-top:4px}
-.ra-pick{display:flex;flex-direction:column;gap:6px;margin-top:12px;
-  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#8a5a14}
-.ra-pick select{
-  font:inherit;font-size:14px;font-weight:500;color:var(--ink);
-  padding:11px 12px;border:1px solid #e0c79a;border-radius:10px;background:#fff;width:100%;
+/* no overflow:hidden here — it would clip the motor dropdown's menu, so the
+   accent bar rounds its own corners instead */
+.req-alert::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  border-radius:14px 0 0 14px;
+  background:linear-gradient(180deg,var(--wine),var(--gold));
 }
-.ra-pick select:focus{outline:none;border-color:var(--wine);box-shadow:0 0 0 3px rgba(93,15,37,.1)}
+
+.ra-head{display:flex;gap:13px;align-items:flex-start}
+.ra-icon{
+  flex:0 0 auto;width:34px;height:34px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--wine);color:var(--cream);
+  box-shadow:0 6px 16px -8px rgba(93,15,37,.9);
+}
+.ra-icon svg{width:17px;height:17px;display:block}
+.ra-headings h4{
+  font-family:'Playfair Display',serif;font-size:17px;font-weight:600;
+  color:var(--wine);line-height:1.2;
+}
+.ra-headings p{font-size:11.5px;line-height:1.55;color:var(--muted);margin-top:5px}
+
+.ra-field{display:flex;flex-direction:column;gap:7px;margin-top:15px;
+  font-size:12.5px;font-weight:600;letter-spacing:.3px;color:var(--muted)}
+/* the picker is the page's own dropdown, just tinted to sit on the cream */
+.ra-field .cs-trigger{background:var(--paper);border-color:#e0cba4}
+.ra-field .cs-trigger:hover{border-color:var(--wine)}
+
 .ra-total{
-  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
-  margin-top:12px;padding-top:12px;border-top:1px dashed #e0c79a;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin-top:15px;padding-top:14px;border-top:1px solid rgba(184,137,63,.35);
 }
 /* an explicit display beats the browser's [hidden] rule, so restore it */
 .ra-total[hidden]{display:none}
-.ra-total-label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#8a5a14;font-weight:700}
-.ra-total-value{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:#7a4a0f}
-.ra-total-sub{font-size:11.5px;color:#8d7a5c}
-.ra-warn{margin-top:10px;font-size:11.5px;font-weight:600;color:#9a2b2b}
+.ra-total-label{
+  display:block;font-size:11px;text-transform:uppercase;
+  letter-spacing:.6px;color:var(--muted);font-weight:600;
+}
+.ra-total-sub{display:block;font-size:11.5px;color:var(--gold);margin-top:2px}
+.ra-total-value{
+  font-family:'Playfair Display',serif;font-size:27px;font-weight:600;
+  color:var(--wine);line-height:1;white-space:nowrap;
+}
+.ra-warn{margin-top:12px;font-size:11.5px;font-weight:500;color:var(--wine-soft)}
 
 /* the motor on a quote line */
-.desc-motor{font-size:11.5px;color:#8a5a14;margin-top:4px}
-.desc-motor b{font-weight:700}
+.desc-motor{font-size:11.5px;color:var(--gold);margin-top:4px}
+.desc-motor b{font-weight:700;color:var(--wine)}
 
 /* PRS's own caveats for the selected fabric */
 .fabric-notes{margin-top:12px}
