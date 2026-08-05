@@ -82,33 +82,36 @@ check("clutch_large cell adds the configured clutch surcharge", () => {
           `base ${c.base} +25 -> ${r.display}`];
 });
 
-check("motorization cell adds the configured motor surcharge", () => {
+const MOTORS = (CATALOG.find(t => t.type === "motor_options") || {}).items || [];
+
+check("motorization cell adds the chosen motor's real catalogue price", () => {
   const c = cellWith(WELL, "motorization");
-  const r = price({ tableIndex: WELL, w: c.w, h: c.h, clutch: 25, motor: 40 });
-  return [near(parseMoney(r.display), c.base + 40),
-          `base ${c.base} +40 -> ${r.display}`];
+  const r = price({ tableIndex: WELL, w: c.w, h: c.h, clutch: 25, motorIndex: 3 });
+  const m = MOTORS[3];
+  return [near(parseMoney(r.display), c.base + m.price),
+          `base ${c.base} + ${m.label} ${m.price} -> ${r.display}`];
 });
 
 check("clutch surcharge applies to clutch cells only, not motor cells", () => {
   const cl = cellWith(WELL, "clutch_large");
   const mo = cellWith(WELL, "motorization");
-  const a = price({ tableIndex: WELL, w: cl.w, h: cl.h, clutch: 25, motor: 40 });
-  const b = price({ tableIndex: WELL, w: mo.w, h: mo.h, clutch: 25, motor: 40 });
+  const a = price({ tableIndex: WELL, w: cl.w, h: cl.h, clutch: 25 });
+  const b = price({ tableIndex: WELL, w: mo.w, h: mo.h, clutch: 25, motorIndex: 0 });
   return [near(parseMoney(a.display), cl.base + 25)
-          && near(parseMoney(b.display), mo.base + 40),
+          && near(parseMoney(b.display), mo.base + MOTORS[0].price),
           `clutch ${a.display}, motor ${b.display}`];
 });
 
 check("bottomrail (Delfin) flags the paño but adds no surcharge", () => {
   const c = cellWith(AXIO, "bottomrail_delfin");
-  const r = price({ tableIndex: AXIO, w: c.w, h: c.h, clutch: 25, motor: 40 });
+  const r = price({ tableIndex: AXIO, w: c.w, h: c.h, clutch: 25 });
   return [near(parseMoney(r.display), c.base) && r.badges.includes("bottomrail"),
           `base ${c.base} -> ${r.display}; badge=${/>([^<]*)</.exec(r.badges)?.[1] || "none"}`];
 });
 
 check("thin-fabric warning flags the paño but adds no surcharge", () => {
   const c = cellWith(ZAKROS, "thin_fabric_smiles");
-  const r = price({ tableIndex: ZAKROS, w: c.w, h: c.h, clutch: 25, motor: 40 });
+  const r = price({ tableIndex: ZAKROS, w: c.w, h: c.h, clutch: 25 });
   return [near(parseMoney(r.display), c.base) && r.badges.includes("sonrisas"),
           `base ${c.base} -> ${r.display}; badge shown=${r.badges.includes("sonrisas")}`];
 });
@@ -166,7 +169,22 @@ check("the shading caveat appears only on a cell that carries the flag", () => {
           `plain=${noteCount(plain.notes)}, flagged=${noteCount(flagged.notes)}`];
 });
 
-check("a motorization cell shows the shading caveat and nothing else", () => {
+check("the motor notice carries the caveat instead of repeating it below", () => {
+  const t = CATALOG[WELL];
+  let c = null;
+  for (let i = 0; i < t.requirements.length && !c; i++)
+    for (let j = 0; j < t.requirements[i].length; j++)
+      if (t.requirements[i][j] === "motorization" && t.widths_in[j] <= 108) {
+        c = { w: t.widths_in[j], h: t.heights_in[i] };
+        break;
+      }
+  const r = price({ tableIndex: WELL, w: c.w, h: c.h });
+  // stated once, in the notice; not duplicated into the bullet list
+  return [/motoriz/i.test(r.motorWhy) && !r.notes.includes("motorización"),
+          `notice=yes, bullets=${noteCount(r.notes)}`];
+});
+
+check("a motorization cell shows no duplicate caveat in the bullets", () => {
   // pick one narrow enough that the >108" rule cannot also fire, so the count
   // isolates the shading caveat
   const t = CATALOG[WELL];
@@ -178,14 +196,13 @@ check("a motorization cell shows the shading caveat and nothing else", () => {
         break;
       }
   const r = price({ tableIndex: WELL, w: c.w, h: c.h });
-  return [r.notes.includes("gris") && r.notes.includes("motorización")
-          && noteCount(r.notes) === 1,
-          `${c.w}"x${c.h}" -> ${noteCount(r.notes)} note(s)`];
+  return [noteCount(r.notes) === 0 && r.motorShown,
+          `${c.w}"x${c.h}" -> ${noteCount(r.notes)} bullet(s), notice shown`];
 });
 
-check("two caveats stack when a cell triggers both", () => {
-  // a motorization cell wider than 108" must raise the shading caveat *and*
-  // the max-height rule
+check("an unrelated caveat still shows alongside the motor notice", () => {
+  // a motorization cell wider than 108" raises the max-height rule too; that
+  // one is not in the notice, so it must still appear as a bullet
   const t = CATALOG[WELL];
   let c = null;
   for (let i = 0; i < t.requirements.length && !c; i++)
@@ -195,9 +212,9 @@ check("two caveats stack when a cell triggers both", () => {
         break;
       }
   const r = price({ tableIndex: WELL, w: c.w, h: c.h });
-  return [noteCount(r.notes) === 2 && r.notes.includes("termosellar")
-          && r.notes.includes("motorización"),
-          `${c.w}"x${c.h}" -> ${noteCount(r.notes)} notes`];
+  return [noteCount(r.notes) === 1 && r.notes.includes("termosellar")
+          && r.motorShown,
+          `${c.w}"x${c.h}" -> ${noteCount(r.notes)} bullet + notice`];
 });
 
 check("the width-conditional caveat appears only past its width", () => {
@@ -342,6 +359,96 @@ check("every fabric in the dropdown resolves to a priceable table", () => {
     });
   });
   return [bad === 0, `${n} fabric options priced, ${bad} failed`];
+});
+
+/* ---------------- motorisation: no silent zero, ever ---------------- */
+const MOTO = cellWith(WELL, "motorization");
+
+check("a motorised cell raises the notice with PRS's own wording", () => {
+  const r = price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h });
+  return [r.motorShown && /motoriz/i.test(r.motorWhy),
+          `notice=${r.motorShown}, reason quoted=${r.motorWhy.length > 0}`];
+});
+
+check("a motorised paño cannot be quoted until a motor is chosen", () => {
+  const r = price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h });
+  return [r.disabled === true && r.warnHidden === false && r.motorTotalHidden,
+          `add disabled=${r.disabled}, warning shown=${!r.warnHidden}`];
+});
+
+check("choosing a motor unblocks the paño and prices it", () => {
+  const r = price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, motorIndex: 3 });
+  return [r.disabled === false
+          && near(parseMoney(r.display), MOTO.base + MOTORS[3].price),
+          `${MOTORS[3].label} -> ${r.display}`];
+});
+
+check("the motor total reflects quantity", () => {
+  const r = price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, qty: 3, motorIndex: 5 });
+  return [near(parseMoney(r.motorTotal), MOTORS[5].price * 3),
+          `${MOTORS[5].price} × 3 = ${r.motorTotal}`];
+});
+
+check("the live breakdown separates fabric from motor", () => {
+  const r = price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, motorIndex: 2 });
+  return [r.meta.includes("tela") && r.meta.includes("motor"), r.meta];
+});
+
+check("an unshaded cell shows no motor notice and drops any motor", () => {
+  const fresh = boot();
+  fresh.price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, motorIndex: 4 });
+  const t = CATALOG[WELL];
+  let cell = null;
+  for (let i = 0; i < t.requirements.length && !cell; i++)
+    for (let j = 0; j < t.requirements[i].length; j++)
+      if (!t.requirements[i][j] && t.prices[i][j] != null) {
+        cell = { w: t.widths_in[j], h: t.heights_in[i], base: t.prices[i][j] };
+        break;
+      }
+  const r = fresh.price({ tableIndex: WELL, w: cell.w, h: cell.h });
+  return [!r.motorShown && near(parseMoney(r.display), cell.base),
+          `notice=${r.motorShown}, ${r.display} (fabric ${cell.base})`];
+});
+
+check("the motor does not carry over to the next paño", () => {
+  const fresh = boot();
+  fresh.price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, motorIndex: 4 });
+  fresh.addAndTotal();
+  const r = fresh.price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h });
+  return [r.disabled === true && r.motorTotalHidden,
+          `next paño starts with no motor, add disabled=${r.disabled}`];
+});
+
+check("the quote line names the motor and its price", () => {
+  const fresh = boot();
+  fresh.price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, motorIndex: 3 });
+  const q = fresh.addAndTotal();
+  return [q.items.includes(MOTORS[3].label)
+          && q.items.includes(MOTORS[3].price.toFixed(2)),
+          `line shows "${MOTORS[3].label}" at ${MOTORS[3].price}`];
+});
+
+check("quote totals include the motor", () => {
+  const fresh = boot();
+  fresh.price({ tableIndex: WELL, w: MOTO.w, h: MOTO.h, qty: 2, motorIndex: 6 });
+  const q = fresh.addAndTotal();
+  const want = (MOTO.base + MOTORS[6].price) * 2;
+  return [near(fresh.parseMoney(q.subtotal), want),
+          `(${MOTO.base}+${MOTORS[6].price})×2 = ${want.toFixed(2)} -> ${q.subtotal}`];
+});
+
+check("every motor option carries a real price", () => {
+  const zero = MOTORS.filter(m => !(m.price > 0));
+  return [MOTORS.length >= 20 && zero.length === 0,
+          `${MOTORS.length} motors, ${zero.length} priced at zero`];
+});
+
+check("no two motor options share a label at different prices", () => {
+  const byLabel = {};
+  MOTORS.forEach(m => (byLabel[m.label] = byLabel[m.label] || new Set()).add(m.price));
+  const bad = Object.entries(byLabel).filter(([, s]) => s.size > 1);
+  return [bad.length === 0,
+          bad.length ? `ambiguous: ${bad[0][0]}` : "every label maps to one price"];
 });
 
 out.forEach(r => console.log(JSON.stringify(r)));

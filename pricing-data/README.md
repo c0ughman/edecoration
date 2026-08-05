@@ -86,13 +86,46 @@ Flow: pick a family → fabric → enter width × height (in/cm) → quantity & 
 image / text**. Sizes round up to the next listed table size; a shaded cell
 raises its badge and, where the requirement has a cost, its surcharge.
 
-Every note PRS printed under a table is shown on the fabric panel as soon as the
-fabric is picked, and carried onto the quote in PRS's own wording — max-width
-caveats, warranty conditions and special-order parts included.
+One PRS table often prices several fabrics that happen to cost the same, so each
+is listed separately — 77 tables become 146 selectable fabrics, and a quote names
+only the one chosen. A `/` between bare measurements is a bolt width, not another
+fabric, so `Wellington 78” / 118”` stays one entry.
 
-The **⚙ Ajustes** panel exposes the configurable numbers (ITBMS %, clutch/motor
-cost, installation, margin) — these are placeholders since the PDF lists *costs*,
-not retail. PDF/image export use html2canvas + jsPDF from a CDN (needs internet).
+PRS's notes surface **only when they bear on the paño in front of you**: a
+shading caveat when that cell carries the flag, a width rule once past its
+width. The blanket "los costos pueden variar" disclaimer is suppressed.
+
+### Motorisation
+
+A grey-shaded cell cannot be built without a motor, so it raises a full notice
+rather than a badge, quotes PRS's own warranty sentence, and makes you pick a
+motor from the price list before the paño can be added. The 24 options come from
+the catalogue with real prices ($84–$489); the chosen motor is added per unit and
+named on the quote.
+
+This replaces a settings box that shipped at `0` — a quote could say "requires
+motorization" and charge nothing for it. Note `Re-Lion 35E 1L` exists twice at
+different prices (unidirectional $105, bidirectional $152), so the direction is
+part of the label.
+
+Only tube motors are offered. The MOVELITE / GLYDEA / "Riel Eléctrico" items
+drive curtain tracks, not shades, and are deliberately excluded.
+
+The **⚙ Ajustes** panel holds the numbers the PDF cannot supply: ITBMS %, clutch
+cost, installation, margin. The clutch figure in particular is unsourced — there
+is no clutch line item anywhere in the price list. The PDF lists *costs*, not
+retail. PDF/image export use html2canvas + jsPDF from a CDN (needs internet).
+
+### Known gaps
+
+- A fabric's own bolt width is not enforced: `Salvador 94”` is priced from a
+  table with 120" columns, and 69 of the 146 options can be quoted wider than
+  the fabric comes. Nothing warns.
+- Only fabric matrices are quotable. The 91 rail rows, 215 line items and the
+  Awning System are extracted but unreachable from the calculator.
+- Coverage is 99.42% of the PDF's price tokens: unlabelled single-row rail
+  tables (Sistema Guiado Coulisse, Cassette 130, Riel de Romana Coulisse) and
+  the Axio side tables are still missing.
 
 ## Data shapes
 

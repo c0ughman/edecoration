@@ -12,7 +12,7 @@ function boot() {
 
   // defaults that the HTML ships with, so the harness starts where the UI does
   const defaults = {
-    cfgTax: "7", cfgClutch: "25", cfgMotor: "0",
+    cfgTax: "7", cfgClutch: "25",
     cfgInstall: "0", cfgMargin: "0", lineMargin: "0",
     qtyInp: "1", widthInp: "", heightInp: "",
   };
@@ -33,9 +33,8 @@ function boot() {
 
   /* Price one paño through the UI's own code path. */
   function price({ tableIndex, fabricIndex = 0, w, h, qty = 1, install = false,
-                   lineMargin = "0", clutch = "25", motor = "0", tax = "7" }) {
+                   lineMargin = "0", clutch = "25", tax = "7", motorIndex = null }) {
     get("cfgClutch").value = String(clutch);
-    get("cfgMotor").value = String(motor);
     get("cfgTax").value = String(tax);
     get("installChk").checked = install;
     get("lineMargin").value = String(lineMargin);
@@ -44,12 +43,23 @@ function boot() {
     get("heightInp").value = String(h);
     get("widthInp").value = String(w);
     get("widthInp").fire("input");          // triggers compute()
+    if (motorIndex !== null) {              // pick a motor the way the UI does
+      const sel = get("motorSel");
+      sel.value = String(motorIndex);
+      sel.fire("change");
+    }
     return {
       display: get("lpValue").textContent,
       meta: get("lpMeta").textContent,
       badges: get("reqBadges").innerHTML,
       notes: get("fabricNotes").innerHTML,
       disabled: get("addBtn").disabled,
+      motorShown: !get("motorNotice").hidden,
+      motorWhy: get("motorWhy").textContent,
+      motorTotal: get("motorTotalValue").textContent,
+      motorTotalHidden: get("motorTotal").hidden,
+      warnHidden: get("motorWarn").hidden,
+      motorOptions: get("motorSel").innerHTML,
     };
   }
 

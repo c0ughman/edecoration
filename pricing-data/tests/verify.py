@@ -205,7 +205,8 @@ check("guard: one note defining two colours resolves each separately", guard_two
 check("block counts match the PDF's table inventory",
       lambda: (Counter(t["type"] for t in catalog) ==
                Counter({"fabric_matrix": 77, "width_priced": 34,
-                        "item_list": 10, "awning_system": 1}),
+                        "item_list": 10, "awning_system": 1,
+                        "motor_options": 1}),
                str(dict(Counter(t["type"] for t in catalog)))))
 check("no unparsed pages",
       lambda: (not unparsed, f"{len(unparsed)} unparsed page(s)"))
@@ -452,6 +453,45 @@ check("bolt widths are not mistaken for separate fabrics", fabrics_split_not_wid
 check("no fabric name repeats inside a family", fabrics_unique_per_family)
 check("every matrix exposes at least one named fabric", fabrics_nonempty)
 check("a trailing rule becomes a note, not part of a name", caveat_moved_to_notes)
+
+
+# -------------------------------------------------------------- motors ----
+MOTORS = next((t["items"] for t in catalog if t["type"] == "motor_options"), [])
+
+
+def motors_traceable():
+    """Every motor price must exist as a line item in the PDF."""
+    items = {(i["name"], i["price"]) for t in items_ for i in t["items"]}
+    bad = [m["label"] for m in MOTORS if (m["name"], m["price"]) not in items]
+    return not bad, f"{len(MOTORS)} motors, all traced to a line item" \
+        if not bad else str(bad[:3])
+
+
+def motors_are_tube_motors():
+    """Track motors (MOVELITE / GLYDEA / Riel Eléctrico) drive curtain tracks,
+    not shades, and must not appear in a shade's motor picker."""
+    bad = [m["label"] for m in MOTORS
+           if re.search(r"movelite|glydea|riel", m["label"], re.I)]
+    return not bad, "no track motors offered" if not bad else str(bad[:3])
+
+
+def motors_disambiguated():
+    """Re-Lion 35E 1L exists twice at different prices; the label must say which."""
+    by_label = defaultdict(set)
+    for m in MOTORS:
+        by_label[m["label"]].add(m["price"])
+    bad = {k: v for k, v in by_label.items() if len(v) > 1}
+    return not bad, "each label maps to one price" if not bad else str(bad)
+
+
+items_ = [t for t in catalog if t["type"] == "item_list"]
+check("motor options exist and are priced", lambda: (
+    len(MOTORS) >= 20 and all(m["price"] > 0 for m in MOTORS),
+    f"{len(MOTORS)} motors, ${min(m['price'] for m in MOTORS)}"
+    f"-${max(m['price'] for m in MOTORS)}"))
+check("every motor price traces back to a PDF line item", motors_traceable)
+check("only tube motors are offered, not curtain-track motors", motors_are_tube_motors)
+check("motors sharing a name are disambiguated by direction", motors_disambiguated)
 
 
 # --------------------------------------------------------------- notes ----

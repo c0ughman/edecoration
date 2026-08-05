@@ -31,9 +31,6 @@
     <label>Costo clutch Large (US$)
       <input type="number" id="cfgClutch" value="25" min="0" step="1">
     </label>
-    <label>Costo motorización (US$)
-      <input type="number" id="cfgMotor" value="0" min="0" step="1">
-    </label>
     <label>Instalación por paño (US$)
       <input type="number" id="cfgInstall" value="0" min="0" step="1">
     </label>
@@ -143,6 +140,27 @@
     </div>
 
     <div class="badges" id="reqBadges"></div>
+
+    <!-- A shaded-grey cell cannot be built without a motor. Rather than a
+         silent surcharge, the motor is chosen here at its real PRS price. -->
+    <section class="req-alert" id="motorNotice" hidden>
+      <div class="ra-head">
+        <span class="ra-icon" aria-hidden="true">⚡</span>
+        <div>
+          <h4>Esta medida requiere motorización</h4>
+          <p id="motorWhy"></p>
+        </div>
+      </div>
+      <label class="ra-pick">Motor
+        <select id="motorSel"></select>
+      </label>
+      <div class="ra-total" id="motorTotal" hidden>
+        <span class="ra-total-label">Motorización</span>
+        <span class="ra-total-value" id="motorTotalValue">—</span>
+        <span class="ra-total-sub" id="motorTotalSub"></span>
+      </div>
+      <p class="ra-warn" id="motorWarn">Elige un motor para poder cotizar este paño.</p>
+    </section>
 
     <!-- notes PRS printed under this fabric's table, straight from the PDF -->
     <div class="fabric-notes" id="fabricNotes"></div>

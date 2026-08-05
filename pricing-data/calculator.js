@@ -14,8 +14,15 @@
   const lineMarginInp = $("lineMargin");
   const lpValue = $("lpValue"), lpMeta = $("lpMeta"), reqBadges = $("reqBadges");
   const addBtn = $("addBtn");
-  const cfg = { tax: $("cfgTax"), clutch: $("cfgClutch"), motor: $("cfgMotor"),
+  const cfg = { tax: $("cfgTax"), clutch: $("cfgClutch"),
                 install: $("cfgInstall"), margin: $("cfgMargin") };
+
+  /* Motors, with PRS's own prices. A motorised paño used to add whatever was
+     typed into a settings box -- which shipped at 0, so a quote could say
+     "requires motorization" and charge nothing for it. The motor is now an
+     explicit choice from the price list. */
+  const MOTORS = (CATALOG.find(t => t.type === "motor_options") || {}).items || [];
+  let motor = null;                 // the motor chosen for the current paño
 
   /* Shaded-cell requirements.
      The extractor decides what a shading colour means per table (the same
@@ -31,7 +38,7 @@
     },
     motorization: {
       label: "motorización", cls: "motor",
-      cost: () => num(cfg.motor.value),
+      cost: () => 0,               // priced by the chosen motor, not a guess
     },
     bottomrail_delfin: {
       label: "bottomrail (Delfin) · sólo por pedido", cls: "order",
@@ -176,6 +183,7 @@
     // covers the early-return paths below; re-run with the requirement once the
     // cell is known, so a shading caveat appears only when it applies
     renderFabricNotes(table, null, w);
+    renderMotorNotice(false);
 
     if (!table || !w || !h) {
       lpValue.textContent = "—"; lpMeta.textContent = ""; addBtn.disabled = true;
@@ -202,10 +210,16 @@
     }
 
     const req = table.requirements[hi][wi];
+    const needsMotor = req === "motorization";
+    // moving off a motorised cell must drop the motor, not carry it silently
+    if (!needsMotor) clearMotor();
+    renderMotorNotice(needsMotor, table, req, qty);
+
     current = {
       table, fabric: fabricName, category: table.category,
       reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
+      motor: needsMotor ? motor : null,
       // only the caveats that actually bear on this paño, carried onto the quote
       notes: relevantNotes(table, req, w),
       mount: mountSel.value, install: installChk.checked,
@@ -214,12 +228,18 @@
 
     const finalUnit = lineUnit(current);
     lpValue.textContent = money(finalUnit);
-    lpMeta.textContent = `Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}" · ${qty} ud · ${money(finalUnit * qty)} subtotal`;
+    const bits = [`Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}"`,
+                  `${qty} ud`];
+    if (current.motor) bits.push(`tela ${money(unitPrice)} + motor ${money(current.motor.price)}`);
+    bits.push(`${money(finalUnit * qty)} subtotal`);
+    lpMeta.textContent = bits.join(" · ");
 
     const info = reqInfo(req);
-    if (info) addBadge(info.cls, "Requiere " + info.label);
+    // the motor notice says this far more loudly; a pill as well is just noise
+    if (info && !needsMotor) addBadge(info.cls, "Requiere " + info.label);
     renderFabricNotes(table, req, w);
-    addBtn.disabled = false;
+    // a motorised paño with no motor chosen would be quoted short, so gate it
+    addBtn.disabled = needsMotor && !motor;
   }
 
   /* PRS's blanket cost disclaimer. True of every table at all times, so it
@@ -248,10 +268,52 @@
     });
   }
 
+  /* The motorisation notice. Shown only when the chosen cell is shaded for it,
+     and it gates "Agregar" until a motor is picked -- adding the paño with no
+     motor is precisely the silent under-quote this replaces. */
+  function clearMotor() {
+    motor = null;
+    if ($("motorSel")) $("motorSel").value = "";
+  }
+
+  function renderMotorNotice(required, table, req, qty) {
+    const box = $("motorNotice");
+    if (!box) return;
+    box.hidden = !required;
+    // note this never clears the selection: compute() runs it once defensively
+    // before the cell is known, and clearing there would discard the motor the
+    // user just picked (choosing one re-enters compute)
+    if (!required) return;
+
+    if (!$("motorSel").options.length && MOTORS.length) {
+      $("motorSel").innerHTML =
+        `<option value="">— Elegir motor —</option>` +
+        MOTORS.map((m, i) =>
+          `<option value="${i}">${escapeHtml(m.label)} · ${money(m.price)}</option>`
+        ).join("");
+    }
+    // PRS's own sentence, so the reason comes from the price list not from us
+    $("motorWhy").textContent = (table.requirement_legend || {})[req] || "";
+
+    const chosen = motor;
+    $("motorTotal").hidden = !chosen;
+    $("motorWarn").hidden = !!chosen;
+    if (chosen) {
+      $("motorTotalValue").textContent = money(chosen.price * qty);
+      $("motorTotalSub").textContent = qty > 1
+        ? `${money(chosen.price)} × ${qty} ud` : "por paño";
+    }
+  }
+
   function renderFabricNotes(table, req, widthIn) {
     const el = $("fabricNotes");
     if (!el) return;
-    const ns = relevantNotes(table, req, widthIn);
+    let ns = relevantNotes(table, req, widthIn);
+    // the motor notice already prints this sentence in full, prominently
+    if (req === "motorization" && table) {
+      const shown = (table.requirement_legend || {})[req];
+      ns = ns.filter(n => n !== shown);
+    }
     el.innerHTML = ns.length
       ? `<ul>${ns.map(n => `<li>${escapeHtml(n)}</li>`).join("")}</ul>` : "";
   }
@@ -269,6 +331,9 @@
     if (!current) return;
     lines.push({ ...current });
     lineMarginInp.value = "0";
+    // the next paño must choose its own motor rather than inherit this one
+    motor = null;
+    if ($("motorSel")) $("motorSel").value = "";
     renderQuote();
     toast("Paño agregado a la cotización");
   }
@@ -289,6 +354,8 @@
           <td class="cell-desc">
             <div class="desc-main">${l.fabric}</div>
             <div class="desc-sub">${l.category} · ${l.mount} ${tags.join(" ")}</div>
+            ${l.motor ? `<div class="desc-motor">⚡ ${escapeHtml(l.motor.label)}
+              <b>${money(l.motor.price)}</b> c/u</div>` : ""}
           </td>
           <td data-label="Medida">${l.askW}×${l.askH}<div class="desc-sub">tabla ${l.reqWidth}"×${l.reqHeight}"</div></td>
           <td class="num" data-label="Cant.">${l.qty}</td>
@@ -306,6 +373,7 @@
     let p = l.unitPrice;
     const info = reqInfo(l.req);
     if (info) p += info.cost();
+    if (l.motor) p += l.motor.price;          // one motor per paño
     if (l.install) p += num(cfg.install.value);
     if (l.lineMargin > 0)
       p += l.lineMarginMode === "fixed" ? l.lineMargin : p * l.lineMargin / 100;
@@ -378,6 +446,7 @@
       const extras = [];
       const info = reqInfo(l.req);
       if (info) extras.push(info.label);
+      if (l.motor) extras.push(`${l.motor.label} ${money(l.motor.price)}`);
       if (l.install) extras.push("instalación");
       if (extras.length) L.push("    + " + extras.join(", "));
       L.push("    " + money(lineUnit(l)) + " c/u   =   " + money(lineUnit(l) * l.qty));
@@ -457,6 +526,11 @@
     const b = e.target.closest("button"); if (!b) return;
     lineMarginMode = b.dataset.mode;
     [...$("lineMarginSeg").children].forEach(x => x.classList.toggle("active", x === b));
+    compute();
+  });
+  $("motorSel").addEventListener("change", e => {
+    const i = e.target.value;
+    motor = i === "" ? null : MOTORS[+i];
     compute();
   });
   addBtn.addEventListener("click", addLine);

@@ -273,6 +273,13 @@
     "file": "rieles-y-motores.json"
   },
   {
+    "category": "Rieles y Motores",
+    "name": "Motores",
+    "type": "motor_options",
+    "page": 42,
+    "file": "rieles-y-motores.json"
+  },
+  {
     "category": "Accesorios y Componentes",
     "name": "Cenefas - Carcazas",
     "type": "width_priced",

@@ -12,6 +12,7 @@ class El {
     this.hidden = false;
     this.dataset = {};
     this.children = [];
+    this.options = [];          // <select>: live in a browser, inert here
     this._listeners = {};
     this.classList = {
       _s: new Set(),

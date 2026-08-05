@@ -42410,5 +42410,182 @@
       }
     ],
     "category": "Panel Track"
+  },
+  {
+    "type": "motor_options",
+    "name": "Motores",
+    "category": "Rieles y Motores",
+    "page": 42,
+    "currency": "USD",
+    "items": [
+      {
+        "name": "Re-Lion 35E Standard NO RF",
+        "label": "Re-Lion 35E Standard NO RF (unidireccional)",
+        "price": 84.0,
+        "description": "Vti®RE-LION CelticUnidi.ACMech.Lim.Mot.35mm/6Nm/33rpm/110AC",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion 35E 1L",
+        "label": "Re-Lion 35E 1L (unidireccional)",
+        "price": 105.0,
+        "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion 20Nm (solo motor)",
+        "label": "Re-Lion 20Nm (solo motor) (unidireccional)",
+        "price": 122.25,
+        "description": "VTi®RE-LION Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion 35E 2L",
+        "label": "Re-Lion 35E 2L (unidireccional)",
+        "price": 122.5,
+        "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion Recargable 1 Nm",
+        "label": "Re-Lion Recargable 1 Nm (unidireccional)",
+        "price": 129.5,
+        "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor25mm|1Nm|30rpm (tubo de 1.5”)",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion 45E 1L",
+        "label": "Re-Lion 45E 1L (unidireccional)",
+        "price": 136.5,
+        "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion Recargable 2 Nm",
+        "label": "Re-Lion Recargable 2 Nm (unidireccional)",
+        "price": 136.5,
+        "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor25mm|2Nm|28rpm (tubo de 1.5”)",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion 35E 3L",
+        "label": "Re-Lion 35E 3L (unidireccional)",
+        "price": 143.5,
+        "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion 50 Nm (AWNING SYSTEM) VTi®RE-LION Unidi. ACMech.Lim.Mot.45mm | 50Nm | 33rpm | 110AC (S/motor)",
+        "label": "Re-Lion 50 Nm (AWNING SYSTEM) (unidireccional)",
+        "price": 150.5,
+        "description": "",
+        "page": 42
+      },
+      {
+        "name": "MOTION CM-09-C120 1L",
+        "label": "MOTION CM-09-C120 1L",
+        "price": 150.5,
+        "description": "Tubular motor Radio 35mm 120VAC 6Nm 33rpm - Tubo de 2” Coulisse",
+        "page": 43
+      },
+      {
+        "name": "MOTION CM-07",
+        "label": "MOTION CM-07",
+        "price": 150.5,
+        "description": "Mid motor Radio 24mm 12VDC 0,7Nm 28rpm (HONEYCOMB / ROMAN",
+        "page": 43
+      },
+      {
+        "name": "Motor Promo 1L",
+        "label": "Motor Promo 1L",
+        "price": 150.5,
+        "description": "Motor RTS 6NM con opción de tubo de 40mm ó 50mm",
+        "page": 44
+      },
+      {
+        "name": "Re-Lion 35E 1L",
+        "label": "Re-Lion 35E 1L (bidireccional)",
+        "price": 152.0,
+        "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
+        "page": 43
+      },
+      {
+        "name": "Re-Lion 45E 2L",
+        "label": "Re-Lion 45E 2L (unidireccional)",
+        "price": 157.5,
+        "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "page": 42
+      },
+      {
+        "name": "Re-LIon Recargable 3 Nm",
+        "label": "Re-LIon Recargable 3 Nm (unidireccional)",
+        "price": 171.5,
+        "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor35mm|3Nm|28rpm",
+        "page": 42
+      },
+      {
+        "name": "Re-Lion 45E 3L",
+        "label": "Re-Lion 45E 3L (unidireccional)",
+        "price": 178.5,
+        "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
+        "page": 42
+      },
+      {
+        "name": "MOTION CM-09-C120 2L",
+        "label": "MOTION CM-09-C120 2L",
+        "price": 178.5,
+        "description": "Tubular motor Radio 35mm 120VAC 6Nm 33rpm - Tubo de 2” Coulisse",
+        "page": 43
+      },
+      {
+        "name": "Motor Promo 2L",
+        "label": "Motor Promo 2L",
+        "price": 178.5,
+        "description": "Motor RTS 6NM con opción de tubo de 40mm ó 50mm",
+        "page": 44
+      },
+      {
+        "name": "Re-Lion Recargable 6 Nm",
+        "label": "Re-Lion Recargable 6 Nm (unidireccional)",
+        "price": 185.5,
+        "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor35mm|6Nm|18rpm",
+        "page": 42
+      },
+      {
+        "name": "MOTION CM-06",
+        "label": "MOTION CM-06",
+        "price": 210.0,
+        "description": "Tubular motor pull battery 35 mm 6.0Nm 24rpm - Tubo de 2” Coulisse",
+        "page": 43
+      },
+      {
+        "name": "MOTION CM-06-E-R (PEDIDO)",
+        "label": "MOTION CM-06-E-R (PEDIDO)",
+        "price": 266.0,
+        "description": "Tubular motor pull battery EVE 35mm 6.0Nm 24 rpm - Tubo de 2” Coulisse",
+        "page": 43
+      },
+      {
+        "name": "LT50E SONESSE",
+        "label": "LT50E SONESSE",
+        "price": 349.3,
+        "description": "Motor RTS 6Nm con tecnología silenciosa para 1 lienzo",
+        "page": 44
+      },
+      {
+        "name": "LT50E2L SONESSE",
+        "label": "LT50E2L SONESSE",
+        "price": 419.3,
+        "description": "Motor RTS 6Nm con tecnología silenciosa para 2 lienzos",
+        "page": 44
+      },
+      {
+        "name": "LT50E3L SONESSE",
+        "label": "LT50E3L SONESSE",
+        "price": 489.3,
+        "description": "Motor RTS 10Nm con tecnología silenciosa para 3 lienzos",
+        "page": 44
+      }
+    ]
   }
 ]

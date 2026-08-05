@@ -780,6 +780,53 @@ def category_for(block, fallback):
     return fallback
 
 
+# Tube motors, the ones a motorised shade actually takes. The track motors on
+# the Rieles pages (MOVELITE / GLYDEA / "Riel Eléctrico") drive curtain tracks,
+# not shades, so they are deliberately not here.
+MOTOR_NAME_RE = re.compile(r"re-?lion|motion\s*cm|lt50|sonesse|motor\s*promo", re.I)
+MOTOR_EXCLUDE_RE = re.compile(
+    r"cargador|control|corona|rueda|hub|bridge|canal|cinta|bracket|gancho"
+    r"|adapter|interfaz|convertidor|smart|tapa|soporte", re.I)
+
+
+def collect_motors(catalog):
+    """The motor list a quote can choose from, with PRS's own prices.
+
+    The same model appears under more than one section and, worse, "Re-Lion 35E
+    1L" exists twice at different prices -- once unidirectional ($105) and once
+    bidirectional ($152). Only the description tells them apart, so the
+    direction is folded into the label; two identical rows in a picker would be
+    the same defect as a quote naming three fabrics at once.
+    """
+    seen, out = set(), []
+    for b in catalog:
+        if b["type"] != "item_list":
+            continue
+        for i in b["items"]:
+            if not (i.get("context") or "").upper().startswith("MOTORES"):
+                continue
+            name = i["name"]
+            if not MOTOR_NAME_RE.search(name) or MOTOR_EXCLUDE_RE.search(name):
+                continue
+            desc = i.get("description") or ""
+            # the PDF runs words together ("CelticUnidi."), so no word boundary
+            suffix = ""
+            if re.search(r"unidi", desc + name, re.I):
+                suffix = " (unidireccional)"
+            elif re.search(r"bidi", desc + name, re.I):
+                suffix = " (bidireccional)"
+            # a row with no wide gap keeps its whole spec string in the name
+            short = re.split(r"\s*VTi®|\s*Vti®", name)[0].strip() or name
+            label = short + suffix
+            if (label, i["price"]) in seen:
+                continue
+            seen.add((label, i["price"]))
+            out.append({"name": name, "label": label, "price": i["price"],
+                        "description": desc, "page": b["page"]})
+    out.sort(key=lambda x: x["price"])
+    return out
+
+
 def slugify(s):
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     s = re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-").lower()
@@ -835,6 +882,19 @@ def main():
                 "title": first_line,
                 "text": text,
             })
+
+    # A motorised paño has to price a real motor, so publish the choices as a
+    # first-class block rather than leaving the calculator to guess a number.
+    motors = collect_motors(catalog)
+    if motors:
+        catalog.append({
+            "type": "motor_options",
+            "name": "Motores",
+            "category": "Rieles y Motores",
+            "page": min(m["page"] for m in motors),
+            "currency": "USD",
+            "items": motors,
+        })
 
     # A table heading that sits inside a block span looks exactly like a note
     # to the >15-letter rule. Now that every title is known, drop the notes
