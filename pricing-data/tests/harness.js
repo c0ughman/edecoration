@@ -83,9 +83,34 @@ function boot() {
     get("unitSeg").fireWith("click", btn);
   }
 
+  /* Pick an option in one of the custom dropdowns the way a click would. */
+  function pickOption(dropId, value) {
+    const menu = get(dropId).querySelector(".cs-menu");
+    const opt = menu.children.find(c => c.dataset.value === String(value));
+    if (!opt) throw new Error(`no option "${value}" in ${dropId}`);
+    opt.fire("click");
+    return opt.textContent;
+  }
+
+  /* Add a complemento through the real picker: choose kind, choose item, add. */
+  function addAddon(prefix, { kind, itemIndex = 0, qty = 1,
+                              customName = null, customPrice = 0 }) {
+    pickOption(prefix + "KindDrop", kind);
+    if (customName !== null) {
+      get(prefix + "CustomName").value = customName;
+      get(prefix + "CustomPrice").value = String(customPrice);
+    } else {
+      pickOption(prefix + "ItemDrop", itemIndex);
+    }
+    get(prefix + "AddonQty").value = String(qty);
+    get(prefix + "AddonAdd").fire("click");
+    return get(prefix + "AddonList").innerHTML;
+  }
+
   const parseMoney = s => parseFloat(String(s).replace(/[$,]/g, ""));
 
-  return { CATALOG, get, price, addAndTotal, parseMoney, setUnit };
+  return { CATALOG, get, price, addAndTotal, parseMoney, setUnit,
+           pickOption, addAddon };
 }
 
 module.exports = { boot };

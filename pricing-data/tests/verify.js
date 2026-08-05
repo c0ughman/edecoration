@@ -485,4 +485,146 @@ check("no two motor options share a label at different prices", () => {
           bad.length ? `ambiguous: ${bad[0][0]}` : "every label maps to one price"];
 });
 
+/* ------------------- complementos: per paño and per project ------------------ */
+const ADDONS = (CATALOG.find(t => t.type === "addon_options") || {}).groups || [];
+const grp = k => ADDONS.find(g => g.kind === k);
+
+function panoAt(w, h) {                       // a fresh calculator on one paño
+  const f = boot();
+  f.get("fabricSel").value = "0:0";
+  f.get("heightInp").value = String(h);
+  f.get("widthInp").value = String(w);
+  f.get("widthInp").fire("input");
+  return f;
+}
+
+check("the add-on catalogue exposes every kind with items", () => {
+  const want = ["motor", "cenefa", "riel", "perfil", "componente", "control"];
+  const missing = want.filter(k => !grp(k) || !grp(k).items.length);
+  return [missing.length === 0,
+          ADDONS.map(g => `${g.kind}(${g.items.length})`).join(" ")];
+});
+
+check("drapery tracks are kept out of the shade add-ons", () => {
+  const bad = ADDONS.flatMap(g => g.items)
+    .filter(i => /riel hd|coulisse negro|rieles manuales|balineras/i.test(i.label));
+  return [bad.length === 0,
+          bad.length ? `leaked: ${bad[0].label}` : "cortinas de tela excluded"];
+});
+
+check("a width-priced cenefa is looked up on the paño's width", () => {
+  const f = panoAt(60, 72);
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  f.addAddon("pano", { kind: "cenefa", itemIndex: 1 });
+  const item = grp("cenefa").items[1];
+  const col = item.widths_in.findIndex(x => x >= 60);
+  const want = before + item.prices[col];
+  return [near(f.parseMoney(f.get("lpValue").textContent), want),
+          `${item.label} at 60" -> ${item.prices[col]}`];
+});
+
+check("a per-foot perfil multiplies by the paño's feet", () => {
+  const f = panoAt(60, 72);                   // 72" high = 6 ft
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  const item = grp("perfil").items.find(i => i.basis === "height_ft");
+  const idx = grp("perfil").items.indexOf(item);
+  f.addAddon("pano", { kind: "perfil", itemIndex: idx });
+  return [near(f.parseMoney(f.get("lpValue").textContent), before + item.price * 6),
+          `${item.price} × 6 ft = ${(item.price * 6).toFixed(2)}`];
+});
+
+check("a per-piece perfil is not multiplied by any dimension", () => {
+  const f = panoAt(60, 72);
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  const item = grp("perfil").items.find(i => i.basis === "each");
+  const idx = grp("perfil").items.indexOf(item);
+  f.addAddon("pano", { kind: "perfil", itemIndex: idx });
+  return [near(f.parseMoney(f.get("lpValue").textContent), before + item.price),
+          `${item.label} stays ${item.price}`];
+});
+
+check("the same add-on can be added more than once", () => {
+  const f = panoAt(60, 72);
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  const item = grp("componente").items[0];
+  f.addAddon("pano", { kind: "componente", itemIndex: 0 });
+  f.addAddon("pano", { kind: "componente", itemIndex: 0, qty: 2 });
+  return [near(f.parseMoney(f.get("lpValue").textContent), before + item.price * 3),
+          `3 × ${item.price} across two entries`];
+});
+
+check("a custom line adds its own description and price", () => {
+  const f = panoAt(60, 72);
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  f.addAddon("pano", { kind: "personalizado",
+                       customName: "Mano de obra especial", customPrice: 45 });
+  return [near(f.parseMoney(f.get("lpValue").textContent), before + 45)
+          && f.get("panoAddonList").innerHTML.includes("Mano de obra especial"),
+          `+45 -> ${f.get("lpValue").textContent}`];
+});
+
+check("changing the size re-prices a width-based add-on", () => {
+  const f = panoAt(60, 72);
+  f.addAddon("pano", { kind: "cenefa", itemIndex: 1 });
+  const at60 = f.parseMoney(f.get("lpValue").textContent);
+  f.get("widthInp").value = "120";
+  f.get("widthInp").fire("input");
+  const item = grp("cenefa").items[1];
+  const c60 = item.prices[item.widths_in.findIndex(x => x >= 60)];
+  const c120 = item.prices[item.widths_in.findIndex(x => x >= 120)];
+  const at120 = f.parseMoney(f.get("lpValue").textContent);
+  return [c120 !== c60 && at120 !== at60,
+          `cenefa ${c60} at 60" -> ${c120} at 120", not left stale`];
+});
+
+check("complementos clear after the paño is added", () => {
+  const f = panoAt(60, 72);
+  f.addAddon("pano", { kind: "componente", itemIndex: 0 });
+  f.addAndTotal();
+  return [f.get("panoAddonList").innerHTML === "",
+          "next paño starts empty"];
+});
+
+check("complementos reach the quote line and its total", () => {
+  const f = panoAt(60, 72);
+  const base = f.parseMoney(f.get("lpValue").textContent);
+  const item = grp("componente").items[0];
+  f.addAddon("pano", { kind: "componente", itemIndex: 0 });
+  const t = f.addAndTotal();
+  return [t.items.includes(item.label)
+          && near(f.parseMoney(t.subtotal), base + item.price),
+          `line names it; subtotal ${t.subtotal}`];
+});
+
+check("project items are their own rows, not attached to a paño", () => {
+  const f = panoAt(60, 72);
+  const base = f.parseMoney(f.get("lpValue").textContent);
+  f.addAndTotal();
+  const item = grp("control").items[2];
+  f.addAddon("job", { kind: "control", itemIndex: 2, qty: 3 });
+  const sub = f.parseMoney(f.get("qdSubtotal").textContent);
+  return [near(sub, base + item.price * 3)
+          && f.get("qdItems").innerHTML.includes("Ítem del proyecto"),
+          `${item.label} × 3 -> subtotal ${f.get("qdSubtotal").textContent}`];
+});
+
+check("a project item can be a custom line too", () => {
+  const f = boot();
+  f.addAddon("job", { kind: "personalizado",
+                      customName: "Visita técnica", customPrice: 60, qty: 2 });
+  return [near(f.parseMoney(f.get("qdSubtotal").textContent), 120)
+          && f.get("qdItems").innerHTML.includes("Visita técnica"),
+          `2 × 60 -> ${f.get("qdSubtotal").textContent}`];
+});
+
+check("ITBMS applies to paños and project items alike", () => {
+  const f = panoAt(60, 72);
+  f.addAndTotal();
+  f.addAddon("job", { kind: "personalizado",
+                      customName: "Flete", customPrice: 100 });
+  const sub = f.parseMoney(f.get("qdSubtotal").textContent);
+  return [near(f.parseMoney(f.get("qdTax").textContent), sub * 0.07),
+          `subtotal ${f.get("qdSubtotal").textContent}, tax ${f.get("qdTax").textContent}`];
+});
+
 out.forEach(r => console.log(JSON.stringify(r)));

@@ -182,6 +182,54 @@ body{
 .desc-motor{font-size:11.5px;color:var(--gold);margin-top:4px}
 .desc-motor b{font-weight:700;color:var(--wine)}
 
+/* ---------- complementos (per-paño and per-project add-ons) ---------- */
+.addons{
+  margin-top:16px;padding:16px 18px;border-radius:14px;
+  background:var(--off);border:1px solid var(--line);
+}
+.addons-title{
+  display:block;font-size:12.5px;font-weight:600;color:var(--muted);
+  letter-spacing:.3px;margin-bottom:10px;
+}
+.addons-title small{font-weight:500;color:var(--gold)}
+.addon-picker{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+.addon-picker .custom-select{flex:0 0 150px;min-width:0}
+.addon-picker .custom-select.wide{flex:1 1 220px}
+.addon-picker .cs-trigger{background:var(--paper)}
+.addon-custom{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.addon-custom input{
+  font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);
+  border-radius:10px;background:var(--paper);min-width:0;
+}
+.addon-custom input[type=text]{flex:1 1 220px}
+.addon-custom input[type=number]{flex:0 0 110px}
+.addon-actions{display:flex;gap:8px;margin-top:8px;align-items:stretch}
+.addon-actions input{
+  font:inherit;font-size:14px;width:74px;padding:10px 12px;
+  border:1px solid var(--line);border-radius:10px;background:var(--paper);
+}
+.addon-actions .ghost-btn{flex:1}
+
+.addon-list{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.addon-list li{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:8px 10px;border-radius:10px;background:var(--paper);
+  border:1px solid var(--line);font-size:12.5px;
+}
+.ad-name{flex:1;min-width:0;font-weight:500}
+.ad-detail{font-size:11px;color:var(--gold)}
+.ad-price{font-weight:600;color:var(--wine)}
+.ad-del{border:none;background:transparent;color:#c08;cursor:pointer;font-size:15px;
+  opacity:.55;transition:.15s;padding:0 2px}
+.ad-del:hover{opacity:1}
+
+.job-addons{margin-top:0;margin-bottom:14px}
+
+/* add-ons printed under a quote line */
+.desc-addon{font-size:11.5px;color:var(--muted);margin-top:3px}
+.desc-addon b{font-weight:700;color:var(--wine)}
+.qd-job .desc-main{font-weight:600}
+
 /* PRS's own caveats for the selected fabric */
 .fabric-notes{margin-top:12px}
 .fabric-notes ul{margin:0;padding-left:16px}

@@ -253,6 +253,34 @@
   },
   {
     "category": "Rieles y Motores",
+    "name": "Sistema Guiado Coulisse para rollers (interior)",
+    "type": "width_priced",
+    "page": 38,
+    "file": "rieles-y-motores.json"
+  },
+  {
+    "category": "Rieles y Motores",
+    "name": "Riel de Romana Coulisse",
+    "type": "width_priced",
+    "page": 38,
+    "file": "rieles-y-motores.json"
+  },
+  {
+    "category": "Rieles y Motores",
+    "name": "Riel de Romana Coulisse - sistema Twin Pull",
+    "type": "width_priced",
+    "page": 38,
+    "file": "rieles-y-motores.json"
+  },
+  {
+    "category": "Rieles y Motores",
+    "name": "Perfiles de Enmarcados",
+    "type": "per_unit_list",
+    "page": 39,
+    "file": "rieles-y-motores.json"
+  },
+  {
+    "category": "Rieles y Motores",
     "name": "MOTORES",
     "type": "item_list",
     "page": 42,
@@ -277,6 +305,13 @@
     "name": "Motores",
     "type": "motor_options",
     "page": 42,
+    "file": "rieles-y-motores.json"
+  },
+  {
+    "category": "Rieles y Motores",
+    "name": "Complementos",
+    "type": "addon_options",
+    "page": 33,
     "file": "rieles-y-motores.json"
   },
   {

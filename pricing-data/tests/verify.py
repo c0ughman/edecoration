@@ -204,9 +204,10 @@ check("guard: one note defining two colours resolves each separately", guard_two
 # ------------------------------------------------------- file-level shape ----
 check("block counts match the PDF's table inventory",
       lambda: (Counter(t["type"] for t in catalog) ==
-               Counter({"fabric_matrix": 77, "width_priced": 34,
+               Counter({"fabric_matrix": 77, "width_priced": 37,
                         "item_list": 10, "awning_system": 1,
-                        "motor_options": 1}),
+                        "motor_options": 1, "per_unit_list": 1,
+                        "addon_options": 1}),
                str(dict(Counter(t["type"] for t in catalog)))))
 check("no unparsed pages",
       lambda: (not unparsed, f"{len(unparsed)} unparsed page(s)"))

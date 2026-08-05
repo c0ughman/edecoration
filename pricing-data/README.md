@@ -116,6 +116,33 @@ cost, installation, margin. The clutch figure in particular is unsourced — the
 is no clutch line item anywhere in the price list. The PDF lists *costs*, not
 retail. PDF/image export use html2canvas + jsPDF from a CDN (needs internet).
 
+### Complementos
+
+Anything that hangs off a paño — motor, cenefa/cassette/fascia, riel, perfil,
+componente — or off the project. More than one of each is allowed, since the
+person quoting knows what a given job needs. `addon_options` normalises three
+pricing modes so the UI does not have to know each table's layout:
+
+| mode | meaning | source |
+|------|---------|--------|
+| `flat` | price as-is × qty | motors, componentes, controles |
+| `width` | looked up on the paño's width, like the fabric | cenefas, cassettes, fascias, rieles |
+| `per_foot` | price × feet of the paño's height or width | perfiles de enmarcado |
+
+Width- and foot-priced complementos re-price when the paño's size changes; one
+that has no price at the new size is dropped with a toast rather than left
+stale. **Personalizado** is a free-text line (description + price) at either
+level, for anything the price list does not carry.
+
+Controles/hubs sit at **project** level, not on a paño — a 6-channel remote
+drives six shades, so it cannot belong to any one of them. They appear as their
+own rows on the quote.
+
+Deliberately excluded: the p32 drapery tracks (`RIEL HD CON BALINERAS`, `RIEL
+COULISSE NEGRO`, `RIELES MANUALES`). Those are for cortinas de tela, which this
+tool does not quote, and offering them beside a roller shade would let someone
+build a quote that cannot be made.
+
 ### Known gaps
 
 - A fabric's own bolt width is not enforced: `Salvador 94”` is priced from a
@@ -123,9 +150,9 @@ retail. PDF/image export use html2canvas + jsPDF from a CDN (needs internet).
   the fabric comes. Nothing warns.
 - Only fabric matrices are quotable. The 91 rail rows, 215 line items and the
   Awning System are extracted but unreachable from the calculator.
-- Coverage is 99.42% of the PDF's price tokens: unlabelled single-row rail
-  tables (Sistema Guiado Coulisse, Cassette 130, Riel de Romana Coulisse) and
-  the Axio side tables are still missing.
+- Coverage is 99.75% of the PDF's price tokens. What remains is the Axio side
+  tables (p66–68) and the Clear Vinyl column, plus the `2 canales` row of the
+  Panel Track 2-vías table whose prices sit on the axis line in the PDF.
 
 ## Data shapes
 

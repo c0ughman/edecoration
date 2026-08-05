@@ -23,7 +23,23 @@ class El {
     };
   }
   get innerHTML() { return this._html; }
-  set innerHTML(v) { this._html = String(v); }
+  /* Parse out `<button ... data-value=...>` so the custom dropdowns can be
+     driven the way a real click drives them, instead of tests reaching past
+     the component and setting the hidden <select> directly. */
+  set innerHTML(v) {
+    this._html = String(v);
+    const re = /<button[^>]*class="([^"]*)"[^>]*data-value="([^"]*)"[^>]*>([\s\S]*?)<\/button>/g;
+    const found = [];
+    let m;
+    while ((m = re.exec(this._html))) {
+      const el = new El("", m[1]);
+      el.dataset.value = m[2];
+      el.textContent = m[3].replace(/<[^>]*>/g, "").trim();
+      el.closest = (sel) => el.className.split(/\s+/).includes(sel.replace(/^\./, "")) ? el : null;
+      found.push(el);
+    }
+    if (found.length) this.children = found;
+  }
   addEventListener(ev, fn) { (this._listeners[ev] ||= []).push(fn); }
   removeEventListener() {}
   insertAdjacentHTML(_pos, html) { this._html += html; }
@@ -52,7 +68,8 @@ function makeDocument() {
   };
 
   // the two data-driven dropdowns need cs-trigger / cs-value / cs-menu children
-  for (const id of ["familyDrop", "fabricDrop", "mountDrop", "motorDrop"]) {
+  for (const id of ["familyDrop", "fabricDrop", "mountDrop", "motorDrop",
+                    "panoKindDrop", "panoItemDrop", "jobKindDrop", "jobItemDrop"]) {
     const drop = get(id);
     const trigger = new El("", "cs-trigger");
     const value = new El("", "cs-value");

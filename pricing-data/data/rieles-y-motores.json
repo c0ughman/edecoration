@@ -860,6 +860,177 @@
       "category": "Rieles y Motores"
     },
     {
+      "type": "width_priced",
+      "name": "Sistema Guiado Coulisse para rollers (interior)",
+      "subheader": "pulgadas",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        42,
+        54,
+        66,
+        78,
+        90,
+        102,
+        114,
+        128
+      ],
+      "rows": [
+        {
+          "label": "Sistema Guiado Coulisse para rollers (interior)",
+          "prices": [
+            55.36,
+            56.16,
+            56.96,
+            57.76,
+            58.56,
+            59.36,
+            60.16,
+            60.96
+          ]
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Romana Coulisse",
+      "subheader": "pulgadas",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        42,
+        48,
+        54,
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "rows": [
+        {
+          "label": "Riel de Romana Coulisse",
+          "prices": [
+            24.37,
+            25.96,
+            27.56,
+            29.15,
+            33.71,
+            35.3,
+            36.9,
+            41.46,
+            43.05,
+            44.64,
+            49.2,
+            50.79,
+            52.39,
+            53.98
+          ]
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "width_priced",
+      "name": "Riel de Romana Coulisse - sistema Twin Pull",
+      "subheader": "pulgadas",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        42,
+        48,
+        54,
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120
+      ],
+      "rows": [
+        {
+          "label": "Riel de Romana Coulisse - sistema Twin Pull",
+          "prices": [
+            38.21,
+            39.73,
+            41.25,
+            42.77,
+            47.11,
+            48.62,
+            50.14,
+            54.48,
+            56.0,
+            57.52,
+            61.86,
+            63.38,
+            64.9,
+            66.41
+          ]
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "per_unit_list",
+      "name": "Perfiles de Enmarcados",
+      "page": 39,
+      "currency": "USD",
+      "items": [
+        {
+          "name": "Side Channel (Par / 2 Piezas)",
+          "price": 7.25,
+          "unit": "Pie de Alto",
+          "basis": "height_ft"
+        },
+        {
+          "name": "Riel Inferior",
+          "price": 3.75,
+          "unit": "Pie de Ancho",
+          "basis": "width_ft"
+        },
+        {
+          "name": "End cap Side Chanel (blanco)",
+          "price": 1.25,
+          "unit": "Par (superior-inferior)",
+          "basis": "each"
+        },
+        {
+          "name": "Bottomrail Euro Slim (blanco, gris)",
+          "price": 2.25,
+          "unit": "Pie",
+          "basis": "width_ft"
+        },
+        {
+          "name": "End caps Euro Slim (blanco, gris)",
+          "price": 0.5,
+          "unit": "pieza",
+          "basis": "each"
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
       "type": "item_list",
       "name": "MOTORES",
       "page": 42,
@@ -1579,6 +1750,1517 @@
           "price": 489.3,
           "description": "Motor RTS 10Nm con tecnología silenciosa para 3 lienzos",
           "page": 44
+        }
+      ]
+    },
+    {
+      "type": "addon_options",
+      "name": "Complementos",
+      "category": "Rieles y Motores",
+      "page": 33,
+      "currency": "USD",
+      "groups": [
+        {
+          "kind": "motor",
+          "label": "Motor",
+          "scope": "pano",
+          "pricing": "flat",
+          "items": [
+            {
+              "label": "Re-Lion 35E Standard NO RF (unidireccional)",
+              "price": 84.0,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion 35E 1L (unidireccional)",
+              "price": 105.0,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion 20Nm (solo motor) (unidireccional)",
+              "price": 122.25,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion 35E 2L (unidireccional)",
+              "price": 122.5,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion Recargable 1 Nm (unidireccional)",
+              "price": 129.5,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion 45E 1L (unidireccional)",
+              "price": 136.5,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion Recargable 2 Nm (unidireccional)",
+              "price": 136.5,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion 35E 3L (unidireccional)",
+              "price": 143.5,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion 50 Nm (AWNING SYSTEM) (unidireccional)",
+              "price": 150.5,
+              "page": 42
+            },
+            {
+              "label": "MOTION CM-09-C120 1L",
+              "price": 150.5,
+              "page": 43
+            },
+            {
+              "label": "MOTION CM-07",
+              "price": 150.5,
+              "page": 43
+            },
+            {
+              "label": "Motor Promo 1L",
+              "price": 150.5,
+              "page": 44
+            },
+            {
+              "label": "Re-Lion 35E 1L (bidireccional)",
+              "price": 152.0,
+              "page": 43
+            },
+            {
+              "label": "Re-Lion 45E 2L (unidireccional)",
+              "price": 157.5,
+              "page": 42
+            },
+            {
+              "label": "Re-LIon Recargable 3 Nm (unidireccional)",
+              "price": 171.5,
+              "page": 42
+            },
+            {
+              "label": "Re-Lion 45E 3L (unidireccional)",
+              "price": 178.5,
+              "page": 42
+            },
+            {
+              "label": "MOTION CM-09-C120 2L",
+              "price": 178.5,
+              "page": 43
+            },
+            {
+              "label": "Motor Promo 2L",
+              "price": 178.5,
+              "page": 44
+            },
+            {
+              "label": "Re-Lion Recargable 6 Nm (unidireccional)",
+              "price": 185.5,
+              "page": 42
+            },
+            {
+              "label": "MOTION CM-06",
+              "price": 210.0,
+              "page": 43
+            },
+            {
+              "label": "MOTION CM-06-E-R (PEDIDO)",
+              "price": 266.0,
+              "page": 43
+            },
+            {
+              "label": "LT50E SONESSE",
+              "price": 349.3,
+              "page": 44
+            },
+            {
+              "label": "LT50E2L SONESSE",
+              "price": 419.3,
+              "page": 44
+            },
+            {
+              "label": "LT50E3L SONESSE",
+              "price": 489.3,
+              "page": 44
+            }
+          ]
+        },
+        {
+          "kind": "cenefa",
+          "label": "Cenefa / cassette / fascia",
+          "scope": "pano",
+          "pricing": "width",
+          "items": [
+            {
+              "label": "Cenefas - Carcazas · Regular",
+              "widths_in": [
+                42,
+                54,
+                66,
+                78,
+                90,
+                102,
+                114,
+                126,
+                138,
+                150,
+                162,
+                174,
+                186
+              ],
+              "prices": [
+                9.8,
+                11.2,
+                12.6,
+                14.0,
+                16.1,
+                18.2,
+                20.3,
+                22.4,
+                24.5,
+                25.9,
+                28.0,
+                30.1,
+                32.2
+              ],
+              "page": 38
+            },
+            {
+              "label": "Cenefas - Carcazas · Cassette 100",
+              "widths_in": [
+                42,
+                54,
+                66,
+                78,
+                90,
+                102,
+                114,
+                126,
+                138,
+                150,
+                162,
+                174,
+                186
+              ],
+              "prices": [
+                27.9,
+                34.14,
+                38.98,
+                45.22,
+                50.06,
+                56.3,
+                61.14,
+                67.38,
+                72.22,
+                78.46,
+                83.3,
+                89.54,
+                94.38
+              ],
+              "page": 38
+            },
+            {
+              "label": "Cenefas - Carcazas · Cassette 120",
+              "widths_in": [
+                42,
+                54,
+                66,
+                78,
+                90,
+                102,
+                114,
+                126,
+                138,
+                150,
+                162,
+                174,
+                186
+              ],
+              "prices": [
+                35.95,
+                44.49,
+                51.63,
+                60.17,
+                67.31,
+                75.85,
+                82.99,
+                91.53,
+                98.67,
+                107.21,
+                114.35,
+                122.89,
+                130.03
+              ],
+              "page": 38
+            },
+            {
+              "label": "Cenefas - Carcazas · Fascia L (1 R)",
+              "widths_in": [
+                42,
+                54,
+                66,
+                78,
+                90,
+                102,
+                114,
+                126,
+                138,
+                150,
+                162,
+                174,
+                186
+              ],
+              "prices": [
+                49.84,
+                57.16,
+                64.48,
+                71.8,
+                79.12,
+                86.44,
+                93.76,
+                101.08,
+                108.4,
+                115.72,
+                123.04,
+                130.36,
+                137.68
+              ],
+              "page": 38
+            },
+            {
+              "label": "Cenefas - Carcazas · Fascia L (2 R)",
+              "widths_in": [
+                42,
+                54,
+                66,
+                78,
+                90,
+                102,
+                114,
+                126,
+                138,
+                150,
+                162,
+                174,
+                186
+              ],
+              "prices": [
+                51.56,
+                58.88,
+                66.2,
+                73.52,
+                80.84,
+                88.16,
+                95.48,
+                102.8,
+                110.12,
+                117.44,
+                124.76,
+                132.08,
+                139.4
+              ],
+              "page": 38
+            },
+            {
+              "label": "Cassette 130",
+              "widths_in": [
+                42,
+                54,
+                66,
+                78,
+                90,
+                102,
+                114,
+                126,
+                138,
+                150,
+                162,
+                174,
+                186
+              ],
+              "prices": [
+                102.53,
+                122.63,
+                145.17,
+                165.27,
+                187.81,
+                207.91,
+                230.45,
+                250.55,
+                273.09,
+                293.19,
+                315.73,
+                353.83,
+                358.37
+              ],
+              "page": 39
+            }
+          ]
+        },
+        {
+          "kind": "riel",
+          "label": "Riel",
+          "scope": "pano",
+          "pricing": "width",
+          "items": [
+            {
+              "label": "Sistema Guiado Coulisse para rollers (interior)",
+              "widths_in": [
+                42,
+                54,
+                66,
+                78,
+                90,
+                102,
+                114,
+                128
+              ],
+              "prices": [
+                55.36,
+                56.16,
+                56.96,
+                57.76,
+                58.56,
+                59.36,
+                60.16,
+                60.96
+              ],
+              "page": 38
+            },
+            {
+              "label": "Riel de Romana Coulisse",
+              "widths_in": [
+                42,
+                48,
+                54,
+                60,
+                66,
+                72,
+                78,
+                84,
+                90,
+                96,
+                102,
+                108,
+                114,
+                120
+              ],
+              "prices": [
+                24.37,
+                25.96,
+                27.56,
+                29.15,
+                33.71,
+                35.3,
+                36.9,
+                41.46,
+                43.05,
+                44.64,
+                49.2,
+                50.79,
+                52.39,
+                53.98
+              ],
+              "page": 38
+            },
+            {
+              "label": "Riel de Romana Coulisse - sistema Twin Pull",
+              "widths_in": [
+                42,
+                48,
+                54,
+                60,
+                66,
+                72,
+                78,
+                84,
+                90,
+                96,
+                102,
+                108,
+                114,
+                120
+              ],
+              "prices": [
+                38.21,
+                39.73,
+                41.25,
+                42.77,
+                47.11,
+                48.62,
+                50.14,
+                54.48,
+                56.0,
+                57.52,
+                61.86,
+                63.38,
+                64.9,
+                66.41
+              ],
+              "page": 38
+            },
+            {
+              "label": "Riel de Panel Track a 1 vía · 2 canales",
+              "widths_in": [
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160
+              ],
+              "prices": [
+                43.64,
+                47.8,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "page": 39
+            },
+            {
+              "label": "Riel de Panel Track a 1 vía · 3 canales",
+              "widths_in": [
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160
+              ],
+              "prices": [
+                51.66,
+                55.97,
+                63.6,
+                68.07,
+                72.49,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "page": 39
+            },
+            {
+              "label": "Riel de Panel Track a 1 vía · 4 canales",
+              "widths_in": [
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160
+              ],
+              "prices": [
+                null,
+                56.71,
+                65.3,
+                76.74,
+                82.13,
+                90.72,
+                102.16,
+                107.55,
+                116.14,
+                null,
+                null,
+                null
+              ],
+              "page": 39
+            },
+            {
+              "label": "Riel de Panel Track a 1 vía · 5 canales",
+              "widths_in": [
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160
+              ],
+              "prices": [
+                null,
+                null,
+                96.72,
+                104.07,
+                111.38,
+                121.89,
+                129.24,
+                136.55,
+                147.06,
+                154.41,
+                161.72,
+                169.03
+              ],
+              "page": 39
+            },
+            {
+              "label": "Riel de Panel Track a 2 vías · 2 canales",
+              "widths_in": [
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160
+              ],
+              "prices": [
+                80.11,
+                84.37,
+                88.63,
+                92.89,
+                97.15,
+                101.4,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "page": 39
+            },
+            {
+              "label": "Riel de Panel Track a 2 vías · 4 canales",
+              "widths_in": [
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160
+              ],
+              "prices": [
+                null,
+                null,
+                null,
+                110.13,
+                115.52,
+                120.91,
+                126.3,
+                131.7,
+                137.09,
+                142.48,
+                147.87,
+                153.26
+              ],
+              "page": 39
+            },
+            {
+              "label": "Riel de Panel Track a 2 vías · 5 canales",
+              "widths_in": [
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160
+              ],
+              "prices": [
+                null,
+                null,
+                null,
+                143.61,
+                150.92,
+                158.23,
+                165.54,
+                172.85,
+                180.15,
+                187.46,
+                194.77,
+                202.08
+              ],
+              "page": 39
+            }
+          ]
+        },
+        {
+          "kind": "perfil",
+          "label": "Perfil de enmarcado",
+          "scope": "pano",
+          "pricing": "per_foot",
+          "items": [
+            {
+              "label": "End caps Euro Slim (blanco, gris)",
+              "price": 0.5,
+              "unit": "pieza",
+              "basis": "each",
+              "page": 39
+            },
+            {
+              "label": "End cap Side Chanel (blanco)",
+              "price": 1.25,
+              "unit": "Par (superior-inferior)",
+              "basis": "each",
+              "page": 39
+            },
+            {
+              "label": "Bottomrail Euro Slim (blanco, gris)",
+              "price": 2.25,
+              "unit": "Pie",
+              "basis": "width_ft",
+              "page": 39
+            },
+            {
+              "label": "Riel Inferior",
+              "price": 3.75,
+              "unit": "Pie de Ancho",
+              "basis": "width_ft",
+              "page": 39
+            },
+            {
+              "label": "Side Channel (Par / 2 Piezas)",
+              "price": 7.25,
+              "unit": "Pie de Alto",
+              "basis": "height_ft",
+              "page": 39
+            }
+          ]
+        },
+        {
+          "kind": "componente",
+          "label": "Componente",
+          "scope": "pano",
+          "pricing": "flat",
+          "items": [
+            {
+              "label": "Varilla de fibra de vidrio 3mm",
+              "price": 0.2,
+              "page": 41
+            },
+            {
+              "label": "Tapa para varilla de metal (romana)",
+              "price": 0.25,
+              "page": 41
+            },
+            {
+              "label": "Argolla para varilla de metal (romana)",
+              "price": 0.3,
+              "page": 41
+            },
+            {
+              "label": "Varilla de fibra de vidrio 4mm",
+              "price": 0.4,
+              "page": 41
+            },
+            {
+              "label": "Gancho de inicio pinch pleat",
+              "price": 0.5,
+              "page": 34
+            },
+            {
+              "label": "Conector - Stop",
+              "price": 0.5,
+              "page": 40
+            },
+            {
+              "label": "Cadena",
+              "price": 0.5,
+              "page": 40
+            },
+            {
+              "label": "Tapa de basta redonda",
+              "price": 0.5,
+              "page": 40
+            },
+            {
+              "label": "Tapa de bottomrail Euro Slim",
+              "price": 0.5,
+              "page": 40
+            },
+            {
+              "label": "Tapa de bottomrail clásico",
+              "price": 0.5,
+              "page": 41
+            },
+            {
+              "label": "Tapa de bottomrail Coulisse",
+              "price": 0.5,
+              "page": 41
+            },
+            {
+              "label": "Tapa de bottomrail Slim Coulisse",
+              "price": 0.5,
+              "page": 41
+            },
+            {
+              "label": "Varilla de fibra de vidrio 5mm",
+              "price": 0.5,
+              "page": 41
+            },
+            {
+              "label": "Tensor Cadena",
+              "price": 0.75,
+              "page": 40
+            },
+            {
+              "label": "Extensión de 3” y 4”",
+              "price": 1.0,
+              "page": 40
+            },
+            {
+              "label": "Bracket cassette 100/120 skyline",
+              "price": 1.0,
+              "page": 41
+            },
+            {
+              "label": "Metal hold cassette 100/120",
+              "price": 1.0,
+              "page": 41
+            },
+            {
+              "label": "Tapa de Bottomrail Manhattan",
+              "price": 1.0,
+              "page": 41
+            },
+            {
+              "label": "Varilla de metal (romana)",
+              "price": 1.0,
+              "page": 41
+            },
+            {
+              "label": "Bottomrail Euro Slim",
+              "price": 1.25,
+              "page": 40
+            },
+            {
+              "label": "Bottomrail Clásico",
+              "price": 1.25,
+              "page": 41
+            },
+            {
+              "label": "Bottomrail de Sheer",
+              "price": 1.25,
+              "page": 41
+            },
+            {
+              "label": "Tapa de Bottom Rail de Sheer",
+              "price": 1.25,
+              "page": 41
+            },
+            {
+              "label": "Tapa de Cassette 100",
+              "price": 1.25,
+              "page": 41
+            },
+            {
+              "label": "Brackets Cassette Sheer",
+              "price": 1.5,
+              "page": 40
+            },
+            {
+              "label": "Polea Colgante (Sheer/Roller)",
+              "price": 1.5,
+              "page": 40
+            },
+            {
+              "label": "Adaptador de 2” (reducción)",
+              "price": 1.5,
+              "page": 40
+            },
+            {
+              "label": "Bottomrail Coulisse",
+              "price": 1.5,
+              "page": 41
+            },
+            {
+              "label": "Tapa de Cassette 120",
+              "price": 1.5,
+              "page": 41
+            },
+            {
+              "label": "Basta redonda",
+              "price": 1.75,
+              "page": 40
+            },
+            {
+              "label": "Bottomrail de Manhattan",
+              "price": 2.0,
+              "page": 41
+            },
+            {
+              "label": "Cinta dentada",
+              "price": 2.25,
+              "page": 34
+            },
+            {
+              "label": "Polea (child safety)",
+              "price": 2.5,
+              "page": 40
+            },
+            {
+              "label": "Cadena Continua",
+              "price": 2.5,
+              "page": 40
+            },
+            {
+              "label": "Bottomrail Slim Coulisse",
+              "price": 3.0,
+              "page": 41
+            },
+            {
+              "label": "Cassette 100",
+              "price": 3.0,
+              "page": 41
+            },
+            {
+              "label": "Soporte Central Skyline (roller)",
+              "price": 4.5,
+              "page": 40
+            },
+            {
+              "label": "Cassette 120",
+              "price": 4.5,
+              "page": 41
+            },
+            {
+              "label": "Corona y rueda motriz 38mm",
+              "price": 4.5,
+              "page": 42
+            },
+            {
+              "label": "Bracket de Riel",
+              "price": 4.7,
+              "page": 34
+            },
+            {
+              "label": "Adaptador de 2.5” (reducción)",
+              "price": 5.0,
+              "page": 40
+            },
+            {
+              "label": "Corona y rueda motriz 38mm",
+              "price": 5.0,
+              "page": 42
+            },
+            {
+              "label": "Master Pinch Pleat 1 vía",
+              "price": 5.75,
+              "page": 34
+            },
+            {
+              "label": "Riel con corredera adicional",
+              "price": 7.0,
+              "page": 33
+            },
+            {
+              "label": "Riel MOVELITE adicional",
+              "price": 7.0,
+              "page": 35
+            },
+            {
+              "label": "ADAPTER SKYLINE",
+              "price": 7.5,
+              "page": 44
+            },
+            {
+              "label": "HOMEY 10 (HM-10) 60 IN X 100 FT",
+              "price": 8.86,
+              "page": 64
+            },
+            {
+              "label": "HOMEY 30 (HM-30) 60 IN X 100 FT",
+              "price": 8.86,
+              "page": 64
+            },
+            {
+              "label": "Riel con onda adicional",
+              "price": 10.0,
+              "page": 33
+            },
+            {
+              "label": "Unión de Riel",
+              "price": 10.0,
+              "page": 33
+            },
+            {
+              "label": "Unión de Riel Coulisse",
+              "price": 10.0,
+              "page": 34
+            },
+            {
+              "label": "Riel MOVELITE adicional",
+              "price": 10.0,
+              "page": 35
+            },
+            {
+              "label": "Soporte Intermedio Vertilux",
+              "price": 10.0,
+              "page": 40
+            },
+            {
+              "label": "Pull Buttom up",
+              "price": 10.5,
+              "page": 35
+            },
+            {
+              "label": "+Resortes (pieza)",
+              "price": 10.5,
+              "page": 67
+            },
+            {
+              "label": "Bracket Doble Vertical Skyline",
+              "price": 12.0,
+              "page": 40
+            },
+            {
+              "label": "Soporte Central Coulisse",
+              "price": 12.0,
+              "page": 40
+            },
+            {
+              "label": "STANZA 10 (ST-10) 60 IN X 100 FT",
+              "price": 12.89,
+              "page": 64
+            },
+            {
+              "label": "STANZA 30 (ST-30) 60 IN X 100 FT",
+              "price": 12.89,
+              "page": 64
+            },
+            {
+              "label": "STANZA 50 (ST-50) 60 IN X 100 FT",
+              "price": 12.89,
+              "page": 64
+            },
+            {
+              "label": "Spring System 32 mm",
+              "price": 16.0,
+              "page": 41
+            },
+            {
+              "label": "Master Pinch Pleat 2 vias",
+              "price": 16.5,
+              "page": 34
+            },
+            {
+              "label": "SIGNATURE 20 (SG-20) 60 IN X 100 FT",
+              "price": 18.54,
+              "page": 64
+            },
+            {
+              "label": "SIGNATURE 35 (SG-35) 60 IN X 100 FT",
+              "price": 18.54,
+              "page": 64
+            },
+            {
+              "label": "SIGNATURE 50 (SG-50) 60 IN X 100 FT",
+              "price": 18.54,
+              "page": 64
+            },
+            {
+              "label": "SIGNATURE 70 (SG-70) 60 IN X 100 FT",
+              "price": 18.54,
+              "page": 64
+            },
+            {
+              "label": "Bracket Doble Horizontal Skyline",
+              "price": 20.0,
+              "page": 40
+            },
+            {
+              "label": "Bracket Doble Coulisse",
+              "price": 20.0,
+              "page": 40
+            },
+            {
+              "label": "Soporte Intermedio Coulisse",
+              "price": 20.0,
+              "page": 40
+            },
+            {
+              "label": "Master Ripplefold 2 vías",
+              "price": 24.0,
+              "page": 34
+            },
+            {
+              "label": "Spring System 38 mm",
+              "price": 24.0,
+              "page": 41
+            },
+            {
+              "label": "Servicio de curvado",
+              "price": 150.0,
+              "page": 33
+            },
+            {
+              "label": "Re-Lion 45E 20NM Electrico 136.50 /",
+              "price": 150.5,
+              "page": 67
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+              "price": 175.0,
+              "page": 33
+            },
+            {
+              "label": "CM-20",
+              "price": 184.0,
+              "page": 35
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Onda",
+              "price": 220.0,
+              "page": 33
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+              "price": 225.0,
+              "page": 33
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 114”",
+              "price": 235.0,
+              "page": 33
+            },
+            {
+              "label": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+              "price": 260.0,
+              "page": 33
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Onda",
+              "price": 275.0,
+              "page": 33
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 228”",
+              "price": 280.0,
+              "page": 33
+            },
+            {
+              "label": "Riel de Batería 40 KG - Onda",
+              "price": 300.0,
+              "page": 33
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Onda",
+              "price": 310.0,
+              "page": 33
+            },
+            {
+              "label": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+              "price": 311.5,
+              "page": 33
+            },
+            {
+              "label": "Riel Eléctrico 114” - Corredera",
+              "price": 315.0,
+              "page": 34
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - corredera",
+              "price": 345.0,
+              "page": 35
+            },
+            {
+              "label": "Riel Eléctrico 228” - Corredera",
+              "price": 350.0,
+              "page": 34
+            },
+            {
+              "label": "Riel Eléctrico 114” - Onda",
+              "price": 350.0,
+              "page": 34
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Onda",
+              "price": 365.0,
+              "page": 33
+            },
+            {
+              "label": "Riel Eléctrico 228” - Onda",
+              "price": 385.0,
+              "page": 34
+            },
+            {
+              "label": "Riel de Batería 114” - Corredera",
+              "price": 385.0,
+              "page": 34
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - onda",
+              "price": 385.0,
+              "page": 35
+            },
+            {
+              "label": "Riel de Batería 40 KG - Onda",
+              "price": 390.0,
+              "page": 33
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - corredera",
+              "price": 395.0,
+              "page": 35
+            },
+            {
+              "label": "Riel Eléctrico 114” - Wave",
+              "price": 420.0,
+              "page": 34
+            },
+            {
+              "label": "Riel de Batería 228” - Corredera Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
+              "price": 420.0,
+              "page": 34
+            },
+            {
+              "label": "Riel de Batería 114” - Onda",
+              "price": 420.0,
+              "page": 34
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - corredera",
+              "price": 425.0,
+              "page": 35
+            },
+            {
+              "label": "Riel Eléctrico 228” - Wave",
+              "price": 455.0,
+              "page": 34
+            },
+            {
+              "label": "Riel de Batería 228” - Onda",
+              "price": 455.0,
+              "page": 34
+            },
+            {
+              "label": "Riel de Batería 114” - Wave",
+              "price": 455.0,
+              "page": 34
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - onda",
+              "price": 470.0,
+              "page": 35
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - corredera",
+              "price": 472.5,
+              "page": 35
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - onda",
+              "price": 475.0,
+              "page": 35
+            },
+            {
+              "label": "Riel de Batería 228” - Wave",
+              "price": 490.0,
+              "page": 34
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - onda",
+              "price": 560.0,
+              "page": 35
+            }
+          ]
+        },
+        {
+          "kind": "control",
+          "label": "Control / hub",
+          "scope": "job",
+          "pricing": "flat",
+          "items": [
+            {
+              "label": "Control de Romana 1:1",
+              "price": 4.5,
+              "page": 41
+            },
+            {
+              "label": "Control de Romana 1:4",
+              "price": 5.5,
+              "page": 41
+            },
+            {
+              "label": "Control Skyline S",
+              "price": 8.0,
+              "page": 40
+            },
+            {
+              "label": "Control Skyline M",
+              "price": 10.0,
+              "page": 40
+            },
+            {
+              "label": "Control Coulisse Medium",
+              "price": 10.0,
+              "page": 40
+            },
+            {
+              "label": "Pull Buttom up",
+              "price": 10.5,
+              "page": 44
+            },
+            {
+              "label": "Control Skyline L",
+              "price": 15.0,
+              "page": 40
+            },
+            {
+              "label": "Control Coulisse M Geared",
+              "price": 15.0,
+              "page": 40
+            },
+            {
+              "label": "Control Coulisse L",
+              "price": 15.0,
+              "page": 40
+            },
+            {
+              "label": "Riel GLYDEA adicional",
+              "price": 16.0,
+              "page": 35
+            },
+            {
+              "label": "Control Twin Pull Romana 1:4",
+              "price": 17.5,
+              "page": 41
+            },
+            {
+              "label": "CM-11-BK",
+              "price": 18.4,
+              "page": 34
+            },
+            {
+              "label": "Control Coulisse Twin Pull",
+              "price": 20.0,
+              "page": 40
+            },
+            {
+              "label": "Control Remoto 2 Canales",
+              "price": 24.0,
+              "page": 33
+            },
+            {
+              "label": "Control Coulisse L Geared",
+              "price": 25.0,
+              "page": 40
+            },
+            {
+              "label": "Control Remoto 6 Canales",
+              "price": 28.8,
+              "page": 33
+            },
+            {
+              "label": "Control Chic Bidi 2 canales",
+              "price": 32.0,
+              "page": 42
+            },
+            {
+              "label": "CM-12-BK",
+              "price": 33.6,
+              "page": 34
+            },
+            {
+              "label": "Control Chic Bidi 2 canales",
+              "price": 36.0,
+              "page": 34
+            },
+            {
+              "label": "Control Chic Bidi 6 canales",
+              "price": 38.0,
+              "page": 42
+            },
+            {
+              "label": "Control Remoto 16 Canales",
+              "price": 38.4,
+              "page": 33
+            },
+            {
+              "label": "Control Chic Bidi 6 canales",
+              "price": 40.0,
+              "page": 34
+            },
+            {
+              "label": "CM-13-BK",
+              "price": 42.4,
+              "page": 34
+            },
+            {
+              "label": "Control Remoto Escalate 6",
+              "price": 48.0,
+              "page": 33
+            },
+            {
+              "label": "Control Remoto Deco One -",
+              "price": 52.0,
+              "page": 33
+            },
+            {
+              "label": "SITUO 1C",
+              "price": 56.0,
+              "page": 35
+            },
+            {
+              "label": "CM-39 (para motor CM-07)",
+              "price": 60.0,
+              "page": 44
+            },
+            {
+              "label": "INTEO",
+              "price": 80.0,
+              "page": 35
+            },
+            {
+              "label": "SITUO 5C",
+              "price": 80.8,
+              "page": 35
+            },
+            {
+              "label": "SMOOVE PURE 1C",
+              "price": 80.8,
+              "page": 35
+            },
+            {
+              "label": "VTi Smart Hub",
+              "price": 96.0,
+              "page": 33
+            },
+            {
+              "label": "SMOOVE PURE 4C",
+              "price": 128.0,
+              "page": 35
+            },
+            {
+              "label": "VTi Smart Hub Plus",
+              "price": 140.0,
+              "page": 34
+            },
+            {
+              "label": "CONVERTIDOR DE DATOS",
+              "price": 160.0,
+              "page": 44
+            },
+            {
+              "label": "INTERTEC MONOCANAL",
+              "price": 168.0,
+              "page": 35
+            },
+            {
+              "label": "CM-20",
+              "price": 184.0,
+              "page": 44
+            },
+            {
+              "label": "TELIS 6",
+              "price": 224.0,
+              "page": 35
+            },
+            {
+              "label": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
+              "price": 280.0,
+              "page": 34
+            },
+            {
+              "label": "TELIS 16",
+              "price": 300.0,
+              "page": 35
+            },
+            {
+              "label": "LT50M",
+              "price": 349.3,
+              "page": 44
+            },
+            {
+              "label": "VTi Re-lion Nexus Bridge",
+              "price": 400.0,
+              "page": 42
+            },
+            {
+              "label": "LT50M2L",
+              "price": 419.3,
+              "page": 44
+            },
+            {
+              "label": "LT50M3L",
+              "price": 489.3,
+              "page": 44
+            },
+            {
+              "label": "INTERTEC 16",
+              "price": 544.0,
+              "page": 35
+            },
+            {
+              "label": "GLYDEA RTS 35 KG",
+              "price": 600.0,
+              "page": 35
+            },
+            {
+              "label": "GLYDEA RTS 35 KG",
+              "price": 650.0,
+              "page": 35
+            },
+            {
+              "label": "GLYDEA RTS 60 KG",
+              "price": 770.0,
+              "page": 35
+            },
+            {
+              "label": "GLYDEA Mecánico 60 KG",
+              "price": 840.0,
+              "page": 35
+            },
+            {
+              "label": "GLYDEA RTS 60 KG",
+              "price": 875.0,
+              "page": 35
+            }
+          ]
         }
       ]
     }

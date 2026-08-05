@@ -527,6 +527,53 @@ def parse_awning(page, rows):
     }]
 
 
+# "Side Channel (Par / 2 Piezas)   7.25 / Pie de Alto" -- these are sold by the
+# linear foot of the paño's height or width, not from a size table, so they need
+# their own shape: price x feet rather than a lookup.
+PER_UNIT_RE = re.compile(
+    r"^(?P<label>.+?)\s+(?P<price>\d{1,3}\.\d{2})\s*/\s*(?P<unit>.+)$")
+
+
+def unit_basis(unit_text):
+    """Which dimension a per-unit price multiplies, if any."""
+    u = unit_text.lower()
+    # "pieza" contains "pie", so the per-piece forms have to be ruled out first
+    if "pieza" in u or "par" in u or "unidad" in u:
+        return "each"
+    if "alto" in u:
+        return "height_ft"
+    if "ancho" in u:
+        return "width_ft"
+    if "pie" in u:
+        return "width_ft"          # a bare "/ Pie" runs along the paño
+    return "each"
+
+
+def parse_per_unit_section(rows, start, page_no, title):
+    """Rows under a heading that price by the foot or by the piece."""
+    items = []
+    for j in range(start, len(rows)):
+        line = clean(" ".join(w["txt"] for w in rows[j]["words"]))
+        m = PER_UNIT_RE.match(line)
+        if not m:
+            continue
+        items.append({
+            "name": clean(m.group("label")),
+            "price": to_price(m.group("price")),
+            "unit": clean(m.group("unit")),
+            "basis": unit_basis(m.group("unit")),
+        })
+    if not items:
+        return []
+    return [{
+        "type": "per_unit_list",
+        "name": title,
+        "page": page_no,
+        "currency": "USD",
+        "items": items,
+    }]
+
+
 def process_page(page, page_title):
     """Return a list of structured blocks found on the page."""
     words = [w for w in page.extract_words() if clean(w["text"])]
@@ -541,6 +588,16 @@ def process_page(page, page_title):
     headers = [i for i, r in enumerate(rows) if header_ints(r)]
     consumed = set()
     blocks = []
+
+    # A per-foot section sits under its own heading, after the size tables. Its
+    # rows are claimed here so the accessory pass does not read them as flat
+    # line items -- their price means "per foot", not "each".
+    for i, r in enumerate(rows):
+        if clean(" ".join(w["txt"] for w in r["words"])).lower().startswith("perfiles"):
+            heading = clean(" ".join(w["txt"] for w in r["words"]))
+            blocks += parse_per_unit_section(rows, i + 1, page.page_number, heading)
+            consumed.update(range(i, len(rows)))
+            break
 
     def labels_of(j, left_limit):
         return [w for w in rows[j]["words"]
@@ -560,7 +617,19 @@ def process_page(page, page_title):
                     if (w["x0"] + w["x1"]) / 2 >= left_limit
                     and NUMCELL_RE.match(w["txt"])]
 
-        data = [j for j in range(hi + 1, end) if col_cells(j)]
+        # A short heading carrying no digits at all starts a new section, and
+        # its rows are not this table's ("Perfiles de Enmarcados" sits directly
+        # under Cassette 130 and was being read as a row of it). Only the price
+        # rows are cut here -- notes are still collected out to `end`.
+        sec_end = end
+        for j in range(hi + 1, end):
+            line = clean(" ".join(w["txt"] for w in rows[j]["words"]))
+            if (line and len(line) <= 45 and any(c.isalpha() for c in line)
+                    and not any(c.isdigit() for c in line)):
+                sec_end = j
+                break
+
+        data = [j for j in range(hi + 1, sec_end) if col_cells(j)]
         if not data:
             continue
 
@@ -568,8 +637,14 @@ def process_page(page, page_title):
             return any(c.isalpha() for w in labels_of(j, left_limit)
                        for c in w["txt"])
 
+        # A fabric matrix labels each row with its height. With no integer row
+        # labels anywhere there are no heights, so it cannot be a matrix -- it
+        # is a width-priced table whose single price row carries no label
+        # (Cassette 130, Sistema Guiado Coulisse, Riel de Romana Coulisse).
+        has_heights = any(any(is_int(w["txt"]) for w in labels_of(j, left_limit))
+                          for j in data)
         alpha_rows = sum(has_alpha(j) for j in data)
-        is_width = alpha_rows > len(data) / 2
+        is_width = alpha_rows > len(data) / 2 or not has_heights
 
         if is_width:
             sub = clean(" ".join(w["txt"] for w in rows[hi]["words"]
@@ -580,11 +655,14 @@ def process_page(page, page_title):
             used = [hi]
             for j in data:
                 label = clean(" ".join(w["txt"] for w in labels_of(j, left_limit)))
+                # a table whose single price row has no label of its own is
+                # named by the table itself (Cassette 130)
+                if not label:
+                    label = title
                 cells = col_cells(j)
                 # genuine rail/channel rows span several columns; a lone price
                 # is an accessory line and belongs in the item list instead
-                if not label or label.lower() in ("metros", "pulgadas") \
-                        or len(cells) < 2:
+                if label.lower() in ("metros", "pulgadas") or len(cells) < 2:
                     continue
                 slots = assign_cells(cells, centers, spacing)
                 # a prose line can carry stray numbers that survive the cell
@@ -827,6 +905,98 @@ def collect_motors(catalog):
     return out
 
 
+# ---------------------------------------------------------------------------
+# Add-on catalogue
+#
+# The quoting tool needs one normalised list of everything that can hang off a
+# paño or off the job, whatever shape the PDF stored it in. Three pricing modes
+# cover all of it:
+#
+#   flat      price as-is, times quantity      (motors, components, controls)
+#   width     look the price up by the paño's width, like the fabric does
+#             (cenefas, cassettes, fascias, rails)
+#   per_foot  price x feet of the paño's height or width   (perfiles)
+#
+# Deliberately excluded: the p32 drapery tracks (RIEL HD CON BALINERAS, RIEL
+# COULISSE NEGRO, RIELES MANUALES). Those belong to cortinas de tela, a product
+# this tool does not quote, and offering them next to a roller shade would let
+# somebody build a quote that cannot be made.
+# ---------------------------------------------------------------------------
+DRAPERY_TRACKS = re.compile(r"riel hd|coulisse negro|rieles manuales|balineras", re.I)
+CENEFA_RE = re.compile(r"cenefa|carcaza|cassette|fascia", re.I)
+RAIL_RE = re.compile(r"riel|sistema guiado", re.I)
+CONTROL_RE = re.compile(r"control|remoto|hub|bridge|canales|situo|telis|smoove"
+                        r"|intertec|inteo|convertidor|cargador", re.I)
+
+
+def collect_addons(catalog):
+    """Everything quotable as an add-on, grouped by kind."""
+    groups = {
+        "motor": {"kind": "motor", "label": "Motor",
+                  "scope": "pano", "pricing": "flat", "items": []},
+        "cenefa": {"kind": "cenefa", "label": "Cenefa / cassette / fascia",
+                   "scope": "pano", "pricing": "width", "items": []},
+        "riel": {"kind": "riel", "label": "Riel",
+                 "scope": "pano", "pricing": "width", "items": []},
+        "perfil": {"kind": "perfil", "label": "Perfil de enmarcado",
+                   "scope": "pano", "pricing": "per_foot", "items": []},
+        "componente": {"kind": "componente", "label": "Componente",
+                       "scope": "pano", "pricing": "flat", "items": []},
+        "control": {"kind": "control", "label": "Control / hub",
+                    "scope": "job", "pricing": "flat", "items": []},
+    }
+
+    groups["motor"]["items"] = [
+        {"label": m["label"], "price": m["price"], "page": m["page"]}
+        for m in collect_motors(catalog)]
+
+    seen_width = set()
+    for b in catalog:
+        if b["type"] == "width_priced":
+            if DRAPERY_TRACKS.search(b["name"]):
+                continue
+            kind = ("cenefa" if CENEFA_RE.search(b["name"])
+                    else "riel" if RAIL_RE.search(b["name"]) else None)
+            if not kind:
+                continue
+            for r in b["rows"]:
+                label = r["label"] if r["label"] != b["name"] else b["name"]
+                if label != b["name"]:
+                    label = f"{b['name']} · {label}"
+                # PRS repeats the Panel Track rail table on every fabric page
+                if label in seen_width:
+                    continue
+                seen_width.add(label)
+                groups[kind]["items"].append({
+                    "label": label, "widths_in": b["widths_in"],
+                    "prices": r["prices"], "page": b["page"]})
+
+        elif b["type"] == "per_unit_list":
+            for i in b["items"]:
+                groups["perfil"]["items"].append({
+                    "label": i["name"], "price": i["price"],
+                    "unit": i["unit"], "basis": i["basis"], "page": b["page"]})
+
+        elif b["type"] == "item_list":
+            for i in b["items"]:
+                ctx = (i.get("context") or "").upper()
+                name = i["name"]
+                if ctx.startswith("MOTORES"):
+                    continue                       # already in the motor group
+                kind = "control" if CONTROL_RE.search(name) or "CONTROL" in ctx \
+                    else "componente"
+                key = (kind, name, i["price"])
+                if key in seen_width:
+                    continue
+                seen_width.add(key)
+                groups[kind]["items"].append(
+                    {"label": name, "price": i["price"], "page": b["page"]})
+
+    for g in groups.values():
+        g["items"].sort(key=lambda x: x.get("price", 0) or 0)
+    return [g for g in groups.values() if g["items"]]
+
+
 def slugify(s):
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     s = re.sub(r"[^a-zA-Z0-9]+", "-", s).strip("-").lower()
@@ -894,6 +1064,21 @@ def main():
             "page": min(m["page"] for m in motors),
             "currency": "USD",
             "items": motors,
+        })
+
+    # everything else that can hang off a paño or the job, in one normalised
+    # shape so the calculator does not have to know each table's layout
+    addons = collect_addons(catalog)
+    if addons:
+        catalog.append({
+            "type": "addon_options",
+            "name": "Complementos",
+            "category": "Rieles y Motores",
+            # an aggregate block; point it at the earliest page it draws from
+            "page": min((i.get("page", 1) for g in addons for i in g["items"]),
+                        default=1),
+            "currency": "USD",
+            "groups": addons,
         })
 
     # A table heading that sits inside a block span looks exactly like a note
