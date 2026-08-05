@@ -224,8 +224,6 @@
       reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
       motor: needsMotor ? motor : null,
-      // only the caveats that actually bear on this paño, carried onto the quote
-      notes: relevantNotes(table, req, w),
       mount: mountSel.value, install: installChk.checked,
       lineMargin: num(lineMarginInp.value), lineMarginMode,
     };
@@ -353,8 +351,8 @@
           <td class="cell-desc">
             <div class="desc-main">${l.fabric}</div>
             <div class="desc-sub">${l.category} · ${l.mount} ${tags.join(" ")}</div>
-            ${l.motor ? `<div class="desc-motor">⚡ ${escapeHtml(l.motor.label)}
-              <b>${money(l.motor.price)}</b> c/u</div>` : ""}
+            ${l.motor ? `<div class="desc-motor">Motor ${escapeHtml(l.motor.label)}
+              · <b>${money(l.motor.price)}</b> c/u</div>` : ""}
           </td>
           <td data-label="Medida">${l.askW}×${l.askH}<div class="desc-sub">tabla ${l.reqWidth}"×${l.reqHeight}"</div></td>
           <td class="num" data-label="Cant.">${l.qty}</td>
@@ -399,6 +397,11 @@
     renderNotes();
   }
 
+  /* The quote goes to the client, so it carries only what the client needs to
+     know. PRS's own sentences talk about shaded cells in a supplier price list
+     and how to build a wide roller -- internal manufacturing language that has
+     no place on a customer document. Those stay in the tool, on the fabric
+     panel and in the motorisation notice, where the person quoting sees them. */
   function renderNotes() {
     const notes = [];
     // one bullet per distinct requirement actually present in the quote
@@ -409,10 +412,6 @@
       seen.add(l.req);
       notes.push(`Una o más medidas requieren <b>${escapeHtml(info.label)}</b>.`);
     });
-    // and PRS's own wording, but only the caveats the quoted paños triggered
-    const src = new Set();
-    lines.forEach(l => (l.notes || []).forEach(n => src.add(n)));
-    src.forEach(n => notes.push(escapeHtml(n)));
     notes.push("Precios sujetos a verificación de medidas en sitio.");
     $("qdNotes").innerHTML = notes.length
       ? `<h4>Notas</h4><ul>${notes.map(n => `<li>${n}</li>`).join("")}</ul>` : "";

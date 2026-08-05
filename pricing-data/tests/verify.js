@@ -283,13 +283,46 @@ check("two paños from different tables sum correctly", () => {
           `2x18.39 + ${c.base} = ${want.toFixed(2)} -> ${t.subtotal}`];
 });
 
-check("PRS's own wording reaches the quote's notes block", () => {
+check("the client quote states the requirement without the supplier's wording", () => {
   const fresh = boot();
   const c = cellWith(AXIO, "bottomrail_delfin");
   fresh.price({ tableIndex: AXIO, w: c.w, h: c.h });
   const t = fresh.addAndTotal();
-  return [t.notes.includes("bottomrail") && t.notes.includes("pedido"),
-          `quote notes mention the special-order bottomrail`];
+  // the requirement is named; the price-list sentence explaining it is not
+  return [t.notes.includes("bottomrail") && !t.notes.includes("sombreadas"),
+          `requirement stated, supplier sentence withheld`];
+});
+
+check("no supplier shading language ever reaches the client quote", () => {
+  const fresh = boot();
+  const moto = cellWith(WELL, "motorization");
+  fresh.price({ tableIndex: WELL, w: moto.w, h: moto.h, motorIndex: 2 });
+  fresh.addAndTotal();
+  const clutch = cellWith(WELL, "clutch_large");
+  fresh.price({ tableIndex: WELL, w: clutch.w, h: clutch.h });
+  const t = fresh.addAndTotal();
+  const leaked = ["sombreadas", "amarillo", "termosellar", "dos rollers",
+                  "LOS COSTOS"].filter(s => t.notes.includes(s));
+  return [leaked.length === 0,
+          leaked.length ? `leaked: ${leaked.join(", ")}` : "quote is clean"];
+});
+
+check("the quote keeps the requirement and the site-check disclaimer", () => {
+  const fresh = boot();
+  const m = cellWith(WELL, "motorization");
+  fresh.price({ tableIndex: WELL, w: m.w, h: m.h, motorIndex: 1 });
+  const t = fresh.addAndTotal();
+  return [t.notes.includes("motorización") && t.notes.includes("verificación"),
+          `${(t.notes.match(/<li>/g) || []).length} notes on the quote`];
+});
+
+check("the quote line names the motor without an emoji", () => {
+  const fresh = boot();
+  const m = cellWith(WELL, "motorization");
+  fresh.price({ tableIndex: WELL, w: m.w, h: m.h, motorIndex: 3 });
+  const t = fresh.addAndTotal();
+  return [t.items.includes("Motor ") && !/[\u{1F300}-\u{1FAFF}⚡]/u.test(t.items),
+          `line reads "Motor <model> · $x c/u", no emoji`];
 });
 
 /* ---- one table, several fabrics: the quote must name only the chosen one ---- */
