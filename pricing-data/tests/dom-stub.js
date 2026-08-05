@@ -28,14 +28,19 @@ class El {
      the component and setting the hidden <select> directly. */
   set innerHTML(v) {
     this._html = String(v);
-    const re = /<button[^>]*class="([^"]*)"[^>]*data-value="([^"]*)"[^>]*>([\s\S]*?)<\/button>/g;
+    const re = /<button([^>]*)>([\s\S]*?)<\/button>/g;
     const found = [];
     let m;
     while ((m = re.exec(this._html))) {
-      const el = new El("", m[1]);
-      el.dataset.value = m[2];
-      el.textContent = m[3].replace(/<[^>]*>/g, "").trim();
-      el.closest = (sel) => el.className.split(/\s+/).includes(sel.replace(/^\./, "")) ? el : null;
+      const attrs = m[1];
+      const cls = (/class="([^"]*)"/.exec(attrs) || [])[1] || "";
+      const el = new El("", cls);
+      let d;
+      const dre = /data-([a-zA-Z0-9-]+)="([^"]*)"/g;
+      while ((d = dre.exec(attrs))) el.dataset[d[1]] = d[2];
+      el.textContent = m[2].replace(/<[^>]*>/g, "").trim();
+      el.closest = (sel) =>
+        el.className.split(/\s+/).includes(sel.replace(/^\./, "")) ? el : null;
       found.push(el);
     }
     if (found.length) this.children = found;
@@ -69,7 +74,8 @@ function makeDocument() {
 
   // the two data-driven dropdowns need cs-trigger / cs-value / cs-menu children
   for (const id of ["familyDrop", "fabricDrop", "mountDrop", "motorDrop",
-                    "panoKindDrop", "panoItemDrop"]) {
+                    "panoKindDrop", "panoItemDrop",
+                    "extraKindDrop", "extraItemDrop"]) {
     const drop = get(id);
     const trigger = new El("", "cs-trigger");
     const value = new El("", "cs-value");

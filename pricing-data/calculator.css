@@ -231,7 +231,26 @@ body{
   opacity:.55;transition:.15s;padding:0 2px}
 .ad-del:hover{opacity:1}
 
-.job-addons{margin-top:0;margin-bottom:14px}
+/* The catch-all under the quote. Deliberately recessive: no panel, no card, no
+   shadow -- it sits on the page background so it reads as a tool rather than
+   as part of the quote above it. */
+.extra-items{
+  margin-top:14px;padding:14px 16px;border-radius:12px;
+  background:transparent;border:1px dashed var(--line);
+}
+.extra-title{
+  display:block;font-size:11.5px;font-weight:500;color:var(--muted);
+  letter-spacing:.3px;margin-bottom:9px;opacity:.85;
+}
+.extra-items .addon-picker .custom-select{flex:0 0 140px}
+.extra-items .addon-picker .custom-select.wide{flex:1 1 200px}
+.extra-items .cs-trigger,
+.extra-items .addon-custom input,
+.extra-items .addon-actions input,
+.extra-items .addon-name{background:var(--paper);font-size:13.5px;padding:9px 11px}
+.extra-items .ghost-btn{font-size:12.5px;padding:8px 14px}
+.extra-items .addon-list li{background:var(--paper);font-size:12px;padding:7px 9px}
+.qd-extra .desc-main{font-weight:600}
 
 /* add-ons printed under a quote line */
 .desc-addon{font-size:11.5px;color:var(--muted);margin-top:3px}

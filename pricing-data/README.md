@@ -141,8 +141,15 @@ not carry: it takes a **name** (catalogue items are named by what you pick, a
 custom one has nothing until you type it), plus an optional description and a
 price.
 
-Everything hangs off a paño — there is no separate project-level section.
-Controles and hubs are complementos like anything else.
+Controles and hubs are complementos like anything else, on the paño.
+
+Under the quote sits a quiet **Añadir ítems adicionales** list for things that
+belong to no paño — delivery, labour, a spare part. It defaults to
+Personalizado, which is mostly what it is for, but any flat-priced kind (motor,
+componente, control) can be added on its own. Cenefas, rieles and perfiles are
+not offered there: they price off a paño's width or height, and without one
+there is nothing to price them against. They become their own quote rows and
+are taxed with everything else.
 
 **Cortinas de tela are excluded entirely.** The price list carries their
 hardware (pages 31-36, the "Riel de Cortina" section: manual rails, MOVELITE /

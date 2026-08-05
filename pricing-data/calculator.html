@@ -287,6 +287,42 @@
         <p class="qd-disclaimer">Cotización referencial. Los costos pueden variar sin previo aviso por cambios en los costos de la materia prima. Válida por 15 días.</p>
       </div>
     </article>
+
+    <!-- A quiet catch-all under the quote for anything that belongs to no
+         single paño: delivery, labour, a spare part. Styled to sit back so it
+         does not compete with the quote above it. -->
+    <section class="extra-items" id="extraBox">
+      <span class="extra-title">Añadir ítems adicionales</span>
+      <div class="addon-picker">
+        <div class="custom-select" id="extraKindDrop">
+          <button class="cs-trigger" type="button">
+            <span class="cs-value">Personalizado</span>
+            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="cs-menu" hidden></div>
+        </div>
+        <select id="extraKindSel" hidden></select>
+        <div class="custom-select wide" id="extraItemDrop">
+          <button class="cs-trigger" type="button">
+            <span class="cs-value">Ítem</span>
+            <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="cs-menu" hidden></div>
+        </div>
+        <select id="extraItemSel" hidden></select>
+        <input type="text" class="addon-name" id="extraCustomTitle"
+               placeholder="Nombre del ítem" hidden>
+      </div>
+      <div class="addon-custom" id="extraCustom" hidden>
+        <input type="text" id="extraCustomDesc" placeholder="Descripción (opcional)">
+        <input type="number" id="extraCustomPrice" placeholder="0.00" step="0.01" min="0">
+      </div>
+      <div class="addon-actions">
+        <input type="number" id="extraAddonQty" value="1" min="1" aria-label="Cantidad">
+        <button class="ghost-btn" id="extraAddonAdd" type="button">+ Añadir</button>
+      </div>
+      <ul class="addon-list" id="extraAddonList"></ul>
+    </section>
   </section>
 
 </main>

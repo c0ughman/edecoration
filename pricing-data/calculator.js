@@ -34,10 +34,17 @@
   const ADDONS = (CATALOG.find(t => t.type === "addon_options") || {}).groups || [];
   const CUSTOM_KIND = "personalizado";
   const groupOf = kind => ADDONS.find(g => g.kind === kind);
-  const kindsFor = scope => [
-    ...ADDONS.filter(g => g.scope === scope),
-    { kind: CUSTOM_KIND, label: "Personalizado", pricing: "flat", items: [] },
-  ];
+  const CUSTOM_GROUP = { kind: CUSTOM_KIND, label: "Personalizado",
+                         pricing: "flat", items: [] };
+  const kindsFor = scope => [...ADDONS.filter(g => g.scope === scope),
+                             CUSTOM_GROUP];
+
+  /* The extra-items list under the quote is for things that belong to no paño.
+     Only flat-priced kinds can appear: a cenefa, riel or perfil is priced from
+     a paño's width or height, so without one there is nothing to price it
+     against. Personalizado leads, since that is what the list is mostly for. */
+  const extraKinds = () => [CUSTOM_GROUP,
+                            ...ADDONS.filter(g => g.pricing === "flat")];
 
   /* Unit price of one add-on for a given paño, or null if it cannot be priced
      at that size. Frozen onto the line when added, like the paño itself. */
@@ -172,7 +179,8 @@
   let current = null;          // current computed line preview
   const lines = [];            // quote line items
   const panoAddons = [];       // complementos for the paño being configured
-  let panoPicker = null;
+  const extraAddons = [];      // items that belong to no paño, listed under the quote
+  let panoPicker = null, extraPicker = null;
 
   // ---------- helpers ----------
   const money = n => "$" + (n || 0).toLocaleString("en-US",
@@ -333,8 +341,7 @@
   /* One picker component, used for the paño section and the project section.
      `dims()` returns the current paño's size for width/per-foot pricing, or
      null at job level where there is no paño to measure against. */
-  function makeAddonPicker(prefix, scope, store, dims, onChange) {
-    const kinds = kindsFor(scope);
+  function makeAddonPicker(prefix, kinds, store, dims, onChange) {
     let kind = kinds[0], item = null;
 
     const kindDrop = $(prefix + "KindDrop"), itemDrop = $(prefix + "ItemDrop");
@@ -504,9 +511,24 @@
     toast("Paño agregado a la cotización");
   }
 
+  /* Extra items sit after the paños, as plain rows. */
+  function extraRows() {
+    return extraAddons.map((a, i) => `<tr class="qd-extra">
+      <td class="cell-desc">
+        <div class="desc-main">${escapeHtml(a.label)}</div>
+        ${a.detail ? `<div class="desc-sub">${escapeHtml(a.detail)}</div>` : ""}
+      </td>
+      <td data-label="Medida">—</td>
+      <td class="num" data-label="Cant.">${a.qty}</td>
+      <td class="num" data-label="P. unit.">${money(a.price)}</td>
+      <td class="num" data-label="Total">${money(a.price * a.qty)}</td>
+      <td class="act"><button class="extra-del" data-i="${i}" title="Quitar">×</button></td>
+    </tr>`).join("");
+  }
+
   function renderQuote() {
     const body = $("qdItems");
-    if (!lines.length) {
+    if (!lines.length && !extraAddons.length) {
       body.innerHTML = `<tr class="qd-empty"><td colspan="6">Aún no has agregado paños a la cotización.</td></tr>`;
     } else {
       body.innerHTML = lines.map((l, idx) => {
@@ -532,7 +554,7 @@
           <td class="num" data-label="Total">${money(lineUnit(l) * l.qty)}</td>
           <td class="act"><button class="row-del" data-i="${idx}" title="Quitar">×</button></td>
         </tr>`;
-      }).join("");
+      }).join("") + extraRows();
     }
     computeTotals();
   }
@@ -552,7 +574,8 @@
   const num = v => parseFloat(v) || 0;
 
   function computeTotals() {
-    let subtotal = lines.reduce((s, l) => s + lineUnit(l) * l.qty, 0);
+    let subtotal = lines.reduce((s, l) => s + lineUnit(l) * l.qty, 0)
+                 + addonsTotal(extraAddons);
     const marginVal = num(cfg.margin.value);
     const margin = marginMode === "fixed" ? marginVal : subtotal * marginVal / 100;
     const taxPct = num(cfg.tax.value);
@@ -624,6 +647,12 @@
       if (extras.length) L.push("    + " + extras.join(", "));
       L.push("    " + money(lineUnit(l)) + " c/u   =   " + money(lineUnit(l) * l.qty));
     });
+    if (extraAddons.length) {
+      L.push("");
+      L.push("Ítems adicionales:");
+      extraAddons.forEach(a => L.push(
+        `  ${a.qty} × ${a.label}   =   ${money(a.price * a.qty)}`));
+    }
     L.push("".padEnd(56, "─"));
     L.push("Subtotal:  " + $("qdSubtotal").textContent);
     if (!$("qdMarginRow").hidden) L.push("Margen:    " + $("qdMargin").textContent);
@@ -717,7 +746,13 @@
   addBtn.addEventListener("click", addLine);
   $("qdItems").addEventListener("click", e => {
     const row = e.target.closest(".row-del");
-    if (row) { lines.splice(+row.dataset.i, 1); renderQuote(); }
+    if (row) { lines.splice(+row.dataset.i, 1); renderQuote(); return; }
+    const extra = e.target.closest(".extra-del");
+    if (extra) {
+      extraAddons.splice(+extra.dataset.i, 1);
+      if (extraPicker) extraPicker.render();
+      renderQuote();
+    }
   });
   ["clientName", "projectName"].forEach(id => $(id).addEventListener("input", syncClient));
   $("settingsToggle").addEventListener("click", () =>
@@ -741,13 +776,16 @@
   }
   // paño-level complementos price against the size currently entered; project
   // items have no paño to measure against, so their pickers get no dims
-  panoPicker = makeAddonPicker("pano", "pano", panoAddons,
+  panoPicker = makeAddonPicker("pano", kindsFor("pano"), panoAddons,
     () => {
       const w = toIn(parseFloat(widthInp.value));
       const h = toIn(parseFloat(heightInp.value));
       return (w && h) ? { w, h } : null;
     },
     () => compute());
+  extraPicker = makeAddonPicker("extra", extraKinds(), extraAddons,
+    () => null, () => renderQuote());
+
   buildFamilies();
   refreshMeta();
 })();

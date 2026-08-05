@@ -651,4 +651,63 @@ check("no cortina de tela hardware is offered anywhere", () => {
           leaked.length ? `leaked: ${leaked[0][1]}` : "drapery fully excluded"];
 });
 
+check("the extra-items list defaults to Personalizado", () => {
+  const f = boot();
+  const kinds = f.get("extraKindDrop").querySelector(".cs-menu")
+                 .children.map(c => c.dataset.value);
+  return [kinds[0] === "personalizado", kinds.join(", ")];
+});
+
+check("extra items offer only kinds that price without a paño", () => {
+  const f = boot();
+  const kinds = f.get("extraKindDrop").querySelector(".cs-menu")
+                 .children.map(c => c.dataset.value);
+  const dimensional = ["cenefa", "riel", "perfil"].filter(k => kinds.includes(k));
+  return [dimensional.length === 0,
+          dimensional.length ? `offered without a size: ${dimensional}` : kinds.join(", ")];
+});
+
+check("a custom extra item reaches the quote and the subtotal", () => {
+  const f = panoAt(60, 72);
+  f.addAndTotal();
+  const base = f.parseMoney(f.get("qdSubtotal").textContent);
+  f.addAddon("extra", { kind: "personalizado", customName: "Flete e instalación",
+                        customDesc: "Costa del Este", customPrice: 120 });
+  const html = f.get("qdItems").innerHTML;
+  return [near(f.parseMoney(f.get("qdSubtotal").textContent), base + 120)
+          && html.includes("Flete e instalación") && html.includes("Costa del Este"),
+          `subtotal ${f.get("qdSubtotal").textContent}, name and detail both shown`];
+});
+
+check("a catalogue item can be added as an extra on its own", () => {
+  const f = boot();
+  const item = grp("control").items[2];
+  f.addAddon("extra", { kind: "control", itemIndex: 2, qty: 2 });
+  return [near(f.parseMoney(f.get("qdSubtotal").textContent), item.price * 2)
+          && f.get("qdItems").innerHTML.includes(item.label),
+          `${item.label} × 2 with no paño present`];
+});
+
+check("extra items are taxed with everything else", () => {
+  const f = panoAt(60, 72);
+  f.addAndTotal();
+  f.addAddon("extra", { kind: "personalizado",
+                        customName: "Flete", customPrice: 100 });
+  const sub = f.parseMoney(f.get("qdSubtotal").textContent);
+  return [near(f.parseMoney(f.get("qdTax").textContent), sub * 0.07),
+          `tax ${f.get("qdTax").textContent} of ${f.get("qdSubtotal").textContent}`];
+});
+
+check("removing an extra item takes it off the total", () => {
+  const f = boot();
+  f.addAddon("extra", { kind: "personalizado", customName: "Temporal",
+                        customPrice: 75 });
+  const withIt = f.parseMoney(f.get("qdSubtotal").textContent);
+  // the handler is delegated on qdItems, and the stub does not bubble
+  const btn = f.get("qdItems").children.find(c => c.className.includes("extra-del"));
+  f.get("qdItems").fireWith("click", btn);
+  return [near(withIt, 75) && f.parseMoney(f.get("qdSubtotal").textContent) === 0,
+          `75 -> ${f.get("qdSubtotal").textContent}`];
+});
+
 out.forEach(r => console.log(JSON.stringify(r)));
