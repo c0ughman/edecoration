@@ -5,7 +5,7 @@ than extract.py uses (text lines rather than word geometry), so a shared bug is
 unlikely to hide in both. The calculator-side checks live in verify.js and drive
 the shipped calculator.js under a stub DOM.
 
-    .venv-pricing/bin/python pricing-data/tests/verify.py "<the pdf>"
+    .venv-pricing/bin/python cotizador-yjxo0o/tests/verify.py "<the pdf>"
 """
 import json
 import re

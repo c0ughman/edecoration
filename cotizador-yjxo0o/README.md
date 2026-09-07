@@ -10,11 +10,11 @@ consumed by an internal quoting tool (HTML/JS).
 python3 -m venv .venv-pricing
 .venv-pricing/bin/pip install pdfplumber
 
-.venv-pricing/bin/python pricing-data/extract.py "lista de precios nueva.pdf"
-.venv-pricing/bin/python pricing-data/tests/verify.py "lista de precios nueva.pdf"
+.venv-pricing/bin/python cotizador-yjxo0o/extract.py "lista de precios nueva.pdf"
+.venv-pricing/bin/python cotizador-yjxo0o/tests/verify.py "lista de precios nueva.pdf"
 ```
 
-Output is written to `pricing-data/data/`, which is **wiped first** so a family
+Output is written to `cotizador-yjxo0o/data/`, which is **wiped first** so a family
 PRS renames or drops cannot leave a stale file behind. Re-run both commands
 whenever PRS sends a new PDF — the extractor raises on anything it does not
 understand, and `verify.py` re-reads the PDF independently to confirm the result.
@@ -68,7 +68,7 @@ Current requirement keys: `clutch_large`, `motorization`, `bottomrail_delfin`,
 ## Tests
 
 ```bash
-.venv-pricing/bin/python pricing-data/tests/verify.py "lista de precios nueva.pdf"
+.venv-pricing/bin/python cotizador-yjxo0o/tests/verify.py "lista de precios nueva.pdf"
 ```
 
 164 checks. The data half re-derives facts from the PDF by a different route
@@ -79,7 +79,7 @@ end to end: table lookup, round-up, surcharges, margins, ITBMS, quote totals.
 
 ## The calculator
 
-Open **`pricing-data/calculator.html`** directly in a browser (double-click — no
+Open **`cotizador-yjxo0o/calculator.html`** directly in a browser (double-click — no
 server needed; it reads `data/catalog.js`, an embed the extractor writes
 alongside the JSON).
 

@@ -23,7 +23,7 @@ Anything the script cannot confidently classify is written to
 Usage:
     python extract.py "Lista de precios 2026 PRS - Documentos de Google.pdf"
 Output:
-    pricing-data/data/*.json
+    cotizador-yjxo0o/data/*.json
 """
 
 import json
