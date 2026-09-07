@@ -71,5 +71,5 @@ export default async (request: Request, context: Context) => {
 };
 
 export const config = {
-  path: ["/cotizador-yjxo0o", "/cotizador-yjxo0o/*"],
+  path: ["/cotizador", "/cotizador/*"],
 };
