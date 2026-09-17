@@ -680,11 +680,18 @@
   const A4 = { w: 210, h: 297, margin: 10, foot: 8 };    // mm
 
   /* Browsers cap how large a canvas may be, and past the cap the render comes
-     back short or blank -- its own way of losing the tail of a long quote.
-     2x while it fits, stepped down only when the document is enormous. */
-  const MAX_SIDE = 12000, MAX_AREA = 80e6;
+     back short or blank -- its own way of losing the tail of a long quote. So
+     the quote is rendered at 2x while it fits and stepped down when it does
+     not: a softer PDF, but a whole one. 16000 is just inside the 16384-per-side
+     limit Safari and Chrome share; the area cap sits far below Chrome's own so
+     that phones, which are stingier, keep some headroom. Around 150 line items
+     the step-down starts, and quality falls away slowly from there. */
+  const MAX_SIDE = 16000, MAX_AREA = 80e6;
   function renderScale(el) {
-    const w = el.scrollWidth, h = el.scrollHeight;
+    // the bounding rect, not scrollHeight: this is the box html2canvas sizes
+    // its canvas from, and on a long quote the two do not always agree
+    const r = el.getBoundingClientRect();
+    const w = Math.ceil(r.width), h = Math.ceil(r.height);
     return Math.min(2, MAX_SIDE / w, MAX_SIDE / h, Math.sqrt(MAX_AREA / (w * h)));
   }
 
@@ -694,9 +701,24 @@
   async function withExportLayout(job) {
     const el = $("quoteDoc");
     el.classList.add("exporting");
+    // a webfont still swapping in re-wraps the table underneath us, and then
+    // what gets drawn is not what was measured
+    try { await document.fonts.ready; } catch (e) { /* older browser: carry on */ }
     el.getBoundingClientRect();                  // settle the layout before measuring
     try { return await job(el); }
     finally { el.classList.remove("exporting"); }
+  }
+
+  /* Draws the quote and, if the result overshot the cap, draws it once more at
+     a scale corrected against the canvas actually produced. The overshoot is
+     not cosmetic: past the browser's hard limit a canvas comes back blank, and
+     a blank render is a quote that downloads with nothing on it. */
+  async function masterCanvas(el) {
+    let scale = renderScale(el);
+    let canvas = await canvasOfQuote(el, scale);
+    const over = Math.max(canvas.width, canvas.height) / MAX_SIDE;
+    if (over > 1) canvas = await canvasOfQuote(el, scale / over * 0.995);
+    return canvas;
   }
 
   async function canvasOfQuote(el, scale) {
@@ -716,12 +738,13 @@
      of: header, client band, table heading, each row. Notas, totals and the
      footer are deliberately absent -- they close the document together, and a
      page break between the total and the phone numbers under it helps nobody. */
-  function breakPoints(el, scale) {
-    const top = el.getBoundingClientRect().top;
+  function breakPoints(el, canvas) {
+    const box = el.getBoundingClientRect();
+    const k = canvas.height / box.height;      // derived from the render itself
     const ys = new Set();
     el.querySelectorAll(".qd-head, .qd-client, .qd-table thead, #qdItems tr")
       .forEach(p => {
-        const y = Math.round((p.getBoundingClientRect().bottom - top) * scale);
+        const y = Math.round((p.getBoundingClientRect().bottom - box.top) * k);
         if (y > 0) ys.add(y);
       });
     return [...ys].sort((a, b) => a - b);
@@ -730,15 +753,16 @@
   /* The band to reprint at the top of a continuation page, in canvas px: a page
      of rows under no column headings reads as a column of loose numbers, so the
      table heading repeats on every page that carries rows. */
-  function headBand(el, scale) {
-    const top = el.getBoundingClientRect().top;
-    const box = e => e && e.getBoundingClientRect();
-    const head = box(el.querySelector(".qd-table thead"));
-    const rows = box($("qdItems"));
+  function headBand(el, canvas) {
+    const outer = el.getBoundingClientRect();
+    const k = canvas.height / outer.height;
+    const at = e => e && e.getBoundingClientRect();
+    const head = at(el.querySelector(".qd-table thead"));
+    const rows = at($("qdItems"));
     if (!head || !rows) return { y: 0, h: 0, until: 0 };
-    return { y: Math.round((head.top - top) * scale),
-             h: Math.round(head.height * scale),
-             until: Math.round((rows.bottom - top) * scale) };
+    return { y: Math.round((head.top - outer.top) * k),
+             h: Math.round(head.height * k),
+             until: Math.round((rows.bottom - outer.top) * k) };
   }
 
   /* Slice the render into pages: every page takes as much as it can hold and
@@ -770,7 +794,7 @@
   }
 
   async function exportImg() {
-    const canvas = await withExportLayout(el => canvasOfQuote(el, renderScale(el)));
+    const canvas = await withExportLayout(masterCanvas);
     await new Promise(done => canvas.toBlob(b => {
       if (b) { download(b, fileBase() + ".png"); toast("Imagen descargada"); }
       else toast("Cotización muy larga para una imagen · descarga el PDF");
@@ -780,12 +804,12 @@
 
   async function exportPdf() {
     const { canvas, band, points } = await withExportLayout(async el => {
-      const scale = renderScale(el);
-      const canvas = await canvasOfQuote(el, scale);
-      // measured while the export layout is still applied -- the offsets are
-      // meaningless once the element springs back to its on-screen width
-      return { canvas, band: headBand(el, scale),
-               points: breakPoints(el, scale).concat(canvas.height) };
+      const canvas = await masterCanvas(el);
+      // measured against the finished canvas, and while the export layout is
+      // still applied -- the offsets mean nothing once the element springs
+      // back to its on-screen width
+      return { canvas, band: headBand(el, canvas),
+               points: breakPoints(el, canvas).concat(canvas.height) };
     });
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF("p", "mm", "a4");
