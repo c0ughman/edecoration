@@ -278,6 +278,8 @@ body{
 .client-fields input{font:inherit;font-size:13.5px;padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:var(--paper);min-width:150px;flex:1}
 .client-fields input:focus{outline:none;border-color:var(--wine)}
 .export-buttons{display:flex;gap:8px}
+/* a long quote takes a second or two to render; the buttons say so */
+.export-buttons.busy{opacity:.5;pointer-events:none}
 
 .quote-doc{
   background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
@@ -452,3 +454,39 @@ img,table{max-width:100%}
   .toast{left:16px;right:16px;bottom:16px;transform:translateY(20px);text-align:center}
   .toast.show{transform:translateY(0)}
 }
+
+/* ======================= export layout =======================
+   A download must be the same document whoever makes it. On a phone the quote
+   table restacks into cards and the whole thing is laid out at ~350px, so a
+   PDF made in front of a client used to look nothing like the one made at a
+   desk. For the moment it takes to render, the quote is pinned to a fixed
+   width with its table layout restored -- these rules come last so they beat
+   the responsive blocks above, which key off the viewport and cannot see that
+   we are exporting. */
+.quote-doc.exporting{width:720px;max-width:none;padding:34px 36px;box-shadow:none}
+.quote-doc.exporting .qd-head{flex-direction:row;gap:0}
+.quote-doc.exporting .qd-meta{text-align:right}
+.quote-doc.exporting .qd-client{gap:40px}
+.quote-doc.exporting .qd-table{display:table;width:100%;table-layout:auto}
+.quote-doc.exporting .qd-table thead{display:table-header-group}
+.quote-doc.exporting .qd-table tbody{display:table-row-group}
+.quote-doc.exporting .qd-table tr{
+  display:table-row;position:static;border:none;border-radius:0;
+  padding:0;margin:0;background:none;
+}
+.quote-doc.exporting .qd-table td{
+  display:table-cell;width:auto;padding:13px 8px;
+  border-bottom:1px solid var(--line);vertical-align:top;
+}
+.quote-doc.exporting .qd-table td.cell-desc{padding-right:8px;margin-bottom:0}
+.quote-doc.exporting .qd-table td.num{text-align:right}
+.quote-doc.exporting .qd-table td[data-label]::before{content:none}
+.quote-doc.exporting .qd-table td[data-label] .desc-sub{flex-basis:auto;text-align:left;margin-top:3px}
+.quote-doc.exporting .qd-table td.act{position:static;width:26px;padding:13px 8px}
+/* the phone enlarges the remove button for thumbs; left that size here it
+   widens its column and wraps the descriptions beside it */
+.quote-doc.exporting .row-del,.quote-doc.exporting .extra-del{font-size:15px;opacity:.5;padding:revert}
+.quote-doc.exporting .qd-totals{gap:24px}
+.quote-doc.exporting .qd-notes{min-width:200px}
+.quote-doc.exporting .qd-sum{min-width:240px;width:auto}
+.quote-doc.exporting .qd-sum .row.total{font-size:20px}

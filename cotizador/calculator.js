@@ -672,8 +672,96 @@
     return "edecoration-" + c;
   }
 
-  async function canvasOfQuote() {
-    return html2canvas($("quoteDoc"), { scale: 2, backgroundColor: "#fffefb" });
+  /* A quote is as long as it needs to be. A long one used to be pasted onto a
+     single A4 page at full height, so everything past that first page -- often
+     the totals themselves -- was quietly cut off. The render now always covers
+     the whole article and the PDF spreads it over as many pages as it takes. */
+  const PAPER = "#fffefb";
+  const A4 = { w: 210, h: 297, margin: 10, foot: 8 };    // mm
+
+  /* Browsers cap how large a canvas may be, and past the cap the render comes
+     back short or blank -- its own way of losing the tail of a long quote.
+     2x while it fits, stepped down only when the document is enormous. */
+  const MAX_SIDE = 12000, MAX_AREA = 80e6;
+  function renderScale(el) {
+    const w = el.scrollWidth, h = el.scrollHeight;
+    return Math.min(2, MAX_SIDE / w, MAX_SIDE / h, Math.sqrt(MAX_AREA / (w * h)));
+  }
+
+  /* Renders the quote at the fixed export width (see calculator.css) and hands
+     the settled element to the job, so measuring and rendering both see the
+     layout that is actually going into the file. */
+  async function withExportLayout(job) {
+    const el = $("quoteDoc");
+    el.classList.add("exporting");
+    el.getBoundingClientRect();                  // settle the layout before measuring
+    try { return await job(el); }
+    finally { el.classList.remove("exporting"); }
+  }
+
+  async function canvasOfQuote(el, scale) {
+    return html2canvas(el, {
+      scale, backgroundColor: PAPER, useCORS: true, logging: false,
+      // html2canvas re-renders the page into a window of this size; left at the
+      // real viewport, an article taller than the screen can come back clipped
+      windowWidth: document.documentElement.clientWidth,
+      windowHeight: Math.max(document.documentElement.clientHeight,
+                             el.scrollHeight + 240),
+    });
+  }
+
+  /* Heights, in canvas px, where the document may be cut. Cutting anywhere else
+     is what leaves half a row at the foot of one page and half at the head of
+     the next, so the candidates are the bottoms of the blocks the quote is made
+     of: header, client band, table heading, each row. Notas, totals and the
+     footer are deliberately absent -- they close the document together, and a
+     page break between the total and the phone numbers under it helps nobody. */
+  function breakPoints(el, scale) {
+    const top = el.getBoundingClientRect().top;
+    const ys = new Set();
+    el.querySelectorAll(".qd-head, .qd-client, .qd-table thead, #qdItems tr")
+      .forEach(p => {
+        const y = Math.round((p.getBoundingClientRect().bottom - top) * scale);
+        if (y > 0) ys.add(y);
+      });
+    return [...ys].sort((a, b) => a - b);
+  }
+
+  /* The band to reprint at the top of a continuation page, in canvas px: a page
+     of rows under no column headings reads as a column of loose numbers, so the
+     table heading repeats on every page that carries rows. */
+  function headBand(el, scale) {
+    const top = el.getBoundingClientRect().top;
+    const box = e => e && e.getBoundingClientRect();
+    const head = box(el.querySelector(".qd-table thead"));
+    const rows = box($("qdItems"));
+    if (!head || !rows) return { y: 0, h: 0, until: 0 };
+    return { y: Math.round((head.top - top) * scale),
+             h: Math.round(head.height * scale),
+             until: Math.round((rows.bottom - top) * scale) };
+  }
+
+  /* Slice the render into pages: every page takes as much as it can hold and
+     ends at the last break point that still fits. A single block taller than a
+     whole page has nowhere to break and is cut at the page edge -- the one case
+     left, and one no quote row reaches. */
+  function pageSlices(total, pageH, points, band) {
+    const slices = [];
+    for (let y = 0; y < total;) {
+      const head = y > 0 && y < band.until ? band.h : 0;   // never on page one
+      const room = pageH - head;
+      if (total - y <= room) { slices.push({ y, h: total - y, head }); break; }
+      const limit = y + room;
+      let cut = 0;
+      for (const p of points) {
+        if (p > limit) break;
+        if (p > y) cut = p;
+      }
+      if (cut <= y) cut = limit;
+      slices.push({ y, h: cut - y, head });
+      y = cut;
+    }
+    return slices;
   }
 
   function guardEmpty() {
@@ -682,29 +770,73 @@
   }
 
   async function exportImg() {
-    if (guardEmpty()) return;
-    const canvas = await canvasOfQuote();
-    canvas.toBlob(b => download(b, fileBase() + ".png"));
-    toast("Imagen descargada");
+    const canvas = await withExportLayout(el => canvasOfQuote(el, renderScale(el)));
+    await new Promise(done => canvas.toBlob(b => {
+      if (b) { download(b, fileBase() + ".png"); toast("Imagen descargada"); }
+      else toast("Cotización muy larga para una imagen · descarga el PDF");
+      done();
+    }));
   }
 
   async function exportPdf() {
-    if (guardEmpty()) return;
-    const canvas = await canvasOfQuote();
-    const img = canvas.toDataURL("image/png");
+    const { canvas, band, points } = await withExportLayout(async el => {
+      const scale = renderScale(el);
+      const canvas = await canvasOfQuote(el, scale);
+      // measured while the export layout is still applied -- the offsets are
+      // meaningless once the element springs back to its on-screen width
+      return { canvas, band: headBand(el, scale),
+               points: breakPoints(el, scale).concat(canvas.height) };
+    });
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF("p", "mm", "a4");
-    const w = pdf.internal.pageSize.getWidth();
-    const h = canvas.height * w / canvas.width;
-    pdf.addImage(img, "PNG", 0, 0, w, h);
+
+    const w = A4.w - A4.margin * 2;                      // printable width, mm
+    const pxPerMm = canvas.width / w;
+    const pageH = Math.floor((A4.h - A4.margin * 2 - A4.foot) * pxPerMm);
+    const slices = pageSlices(canvas.height, pageH, points, band);
+
+    const page = document.createElement("canvas");
+    const ctx = page.getContext("2d");
+    page.width = canvas.width;
+    slices.forEach((s, i) => {
+      if (i) pdf.addPage();
+      const total = s.head + s.h;
+      page.height = total;                               // also clears the canvas
+      ctx.fillStyle = PAPER;
+      ctx.fillRect(0, 0, page.width, total);
+      if (s.head)
+        ctx.drawImage(canvas, 0, band.y, canvas.width, band.h,
+                              0, 0, canvas.width, band.h);
+      ctx.drawImage(canvas, 0, s.y, canvas.width, s.h, 0, s.head, canvas.width, s.h);
+      pdf.addImage(page.toDataURL("image/png"), "PNG",
+                   A4.margin, A4.margin, w, total / pxPerMm, "p" + i, "FAST");
+      if (slices.length > 1) {
+        pdf.setFontSize(8);
+        pdf.setTextColor(150);
+        pdf.text(`Página ${i + 1} de ${slices.length}`, A4.w / 2, A4.h - 6,
+                 { align: "center" });
+      }
+    });
     pdf.save(fileBase() + ".pdf");
-    toast("PDF descargado");
+    toast(slices.length > 1 ? `PDF descargado · ${slices.length} páginas`
+                            : "PDF descargado");
   }
 
   function exportTxt() {
-    if (guardEmpty()) return;
     download(new Blob([quoteText()], { type: "text/plain" }), fileBase() + ".txt");
     toast("Texto descargado");
+  }
+
+  /* Rendering a long quote takes a moment; without this a second click starts a
+     second render on top of the first. */
+  let exporting = false;
+  async function runExport(job) {
+    if (exporting || guardEmpty()) return;
+    exporting = true;
+    $("exportBtns").classList.add("busy");
+    try { await job(); }
+    catch (err) { console.error(err); toast("No se pudo generar la descarga"); }
+    finally { exporting = false; $("exportBtns").classList.remove("busy"); }
   }
 
   // ---------- events ----------
@@ -757,9 +889,9 @@
   ["clientName", "projectName"].forEach(id => $(id).addEventListener("input", syncClient));
   $("settingsToggle").addEventListener("click", () =>
     $("settingsPanel").hidden = !$("settingsPanel").hidden);
-  $("exportPdf").addEventListener("click", exportPdf);
-  $("exportImg").addEventListener("click", exportImg);
-  $("exportTxt").addEventListener("click", exportTxt);
+  $("exportPdf").addEventListener("click", () => runExport(exportPdf));
+  $("exportImg").addEventListener("click", () => runExport(exportImg));
+  $("exportTxt").addEventListener("click", () => runExport(exportTxt));
 
   // ---------- init ----------
   if (!FABRICS.length) {
