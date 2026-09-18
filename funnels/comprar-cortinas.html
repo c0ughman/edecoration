@@ -31,12 +31,249 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     }
     </script>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto Directo | Edecoration S.A. — Llama o Escríbenos por WhatsApp</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="contact-funnel.css">
+    <style>
+    /* =========================================================
+       Funnel tweaks — comprar-cortinas only.
+       Goal: trim the header + hero so the gallery images land
+       inside the first viewport, without shrinking the type.
+       Values are a middle ground between the original sizes
+       and the first (too tight) pass.
+       ========================================================= */
+
+    /* Header: white bar, wine-red mark — back in normal flow above the hero */
+    .funnel-header {
+        background: var(--light-gray);
+        padding: 0.5rem 0;
+        box-shadow: var(--shadow);
+        position: relative;
+        z-index: 100;
+    }
+    .logo-section { gap: 0.75rem; }
+    .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+    .logo-section .brand-name {
+        font-family: var(--font-display);
+        font-weight: 300;
+        font-size: 1.15rem;
+        color: var(--wine-red);
+        letter-spacing: 0.01em;
+    }
+
+    /* Hero: flat wine-red, no more reserved space for a floating header */
+    .hero-funnel {
+        position: relative;
+        padding: 3.25rem 0;
+        background: var(--wine-red);
+    }
+    .hero-funnel .hero-rating { margin-bottom: 0; }
+    .hero-funnel .hero-title {
+        font-size: 3.2rem;
+        line-height: 1.08;
+        letter-spacing: -0.015em;
+        margin: 0 auto 1.15rem;
+    }
+
+    /* Shrink-wraps to the headline's own width, so .hero-topline inside it
+       stretches to exactly the headline's edges — no hard-coded width. */
+    .hero-headline-group {
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Question left, rating pill right, on one line */
+    .hero-topline {
+        display: flex;
+        align-items: center;
+        justify-content: center;   /* one centred pair — no stray edges */
+        gap: 0.6rem;
+        text-align: left;
+        margin: 0 0 0.575rem;
+    }
+    .hero-funnel .lead-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 0 auto 2rem;
+        max-width: 660px;   /* ~70 characters per line — was running to ~84 */
+    }
+
+    /* Buttons + pills read as one cluster */
+    .hero-funnel .main-cta-buttons { margin-top: 0; margin-bottom: 0.5rem; }
+    .hero-funnel .cta-badges { margin-top: 1.25rem; }
+
+    /* Desktop only — mobile sizes these to fit one line at 360px */
+    @media (min-width: 769px) {
+        /* Equal-width buttons, so the pair reads as one control */
+        .hero-funnel .cta-primary-btn,
+        .hero-funnel .cta-secondary-btn {
+            min-width: 265px;
+            justify-content: center;
+        }
+
+        /* lift the primary off the background */
+        .hero-funnel .cta-primary-btn {
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+        }
+        .hero-funnel .cta-primary-btn:hover {
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34);
+        }
+        .hero-funnel .cta-secondary-btn { border-width: 1.5px; }
+
+        /* The trust pills were 12px — too small to actually be read */
+        .hero-funnel .pill-badge { font-size: 0.84rem; padding: 0.3rem 0.7rem; }
+        .hero-funnel .pill-badge i { font-size: 0.85em; }
+    }
+
+    /* Underlined bold in the lead reads as a link — keep the emphasis, drop the rule */
+    .hero-funnel .lead-text u { text-decoration: none; }
+
+    /* <strong> renders at weight 700 — make sure the font file for it is actually requested */
+    .testimonial-card blockquote strong { font-weight: 700; }
+
+    /* Mobile-only copy: bold clause stays plain on desktop, the closing line stays on desktop */
+    .intro-text strong { font-weight: 400; }
+
+    /* Eyebrow question above the H1 */
+    .hero-eyebrow {
+        font-family: var(--font-body);
+        font-size: 1.45rem;
+        font-weight: 300;
+        color: var(--primary-white);
+        opacity: 0.68;
+        letter-spacing: 0.01em;
+        margin-bottom: 0;
+    }
+
+    /* Floating WhatsApp button — opens the same lead form */
+    .whatsapp-float {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 900;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: var(--wine-red);
+        color: var(--primary-white);
+        text-decoration: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .whatsapp-float i { font-size: 2.3rem; }
+
+    /* Icon only — the label stays for screen readers */
+    .whatsapp-float-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .whatsapp-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.33);
+        color: var(--primary-white);
+    }
+
+    /* Keep it out of the way while the lead modal is open */
+    body.modal-active .whatsapp-float { display: none; }
+
+    /* Rating badge: always one line */
+    .hero-rating .rating-badge {
+        flex-wrap: nowrap;
+        padding: 0.4rem 0.85rem;
+        background: rgba(255, 255, 255, 0.10);
+        border-color: rgba(255, 255, 255, 0.22);
+    }
+    .hero-rating .stars { font-size: 0.78rem; }
+    .hero-rating .rating-text { font-size: 0.7rem; }
+    .hero-rating .stars { white-space: nowrap; letter-spacing: 0.4px; }
+    .hero-rating .rating-text { white-space: nowrap; }
+
+    @media (max-width: 768px) {
+        .funnel-header { padding: 0.4rem 0; }
+        .logo-img { width: 26px; height: 26px; }
+        /* was effectively ~4.75rem (see the old 480px override below) — now under half of that */
+        .hero-funnel { padding: 1.4rem 0 1.5rem; }
+        .logo-section .brand-name { font-size: 1rem; }
+
+        .hero-funnel .hero-rating { margin-bottom: 0; }
+        /* bigger — this is the one thing that should dominate the mobile hero */
+        .hero-funnel .hero-title { font-size: 2.45rem; margin-bottom: 0.7rem; }
+
+        /* Not enough width for one row — stack, badge first */
+        .hero-topline {
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
+            gap: 0.35rem;
+            margin-bottom: 0.4rem;
+        }
+        /* shorter copy (last sentence dropped below) + smaller, so the title leads */
+        .hero-funnel .lead-text { font-size: 0.92rem; line-height: 1.5; margin-bottom: 1.2rem; }
+        .lead-text-tail { display: none; }
+        .intro-text-tail { display: none; }
+        .intro-text strong { font-weight: 700; }
+
+        .hero-funnel .main-cta-buttons { gap: 0.65rem; margin-bottom: 0.45rem; }
+        .hero-funnel .cta-primary-btn,
+        .hero-funnel .cta-secondary-btn { padding: 0.8rem 1.3rem; font-size: 0.95rem; }
+
+        /* Pill: smaller, still one line */
+        .hero-rating .rating-badge { padding: 0.3rem 0.6rem; gap: 0.35rem; }
+        .hero-rating .stars { font-size: clamp(0.6rem, 2vw, 0.7rem); letter-spacing: 0; }
+        .hero-rating .separator { font-size: 0.6rem; }
+        .hero-rating .rating-text { font-size: clamp(0.56rem, 2vw, 0.64rem); }
+
+        /* Pills: all three on one row */
+        .cta-badges { flex-wrap: nowrap; gap: 0.25rem; margin-top: 0.95rem; }
+        .pill-badge {
+            font-size: clamp(0.5rem, 2.15vw, 0.7rem);
+            padding: 0.3rem 0.42rem;
+            gap: 0.22rem;
+            white-space: nowrap;
+        }
+        .pill-badge i { font-size: 0.72em; }
+
+        /* Question: smaller, recedes behind the (now bigger) title */
+        .hero-eyebrow { font-size: 0.95rem; margin-bottom: 0; }
+
+        .whatsapp-float {
+            right: 16px;
+            bottom: 16px;
+            width: 66px;
+            height: 66px;
+        }
+        .whatsapp-float i { font-size: 2.1rem; }
+
+        /* Taller gallery strip now that the hero is shorter */
+        .gallery-row { height: 190px; }
+    }
+
+    @media (max-width: 480px) {
+        .hero-funnel { padding: 1.1rem 0 1.3rem; }
+        .hero-funnel .hero-title { font-size: 2.15rem; margin-bottom: 0.65rem; }
+        .hero-funnel .lead-text { font-size: 0.88rem; margin-bottom: 1rem; }
+        .gallery-row { height: 150px; }
+    }
+    </style>
     <meta name="description" content="Habla hoy con un experto de Edecoration S.A. por llamada o WhatsApp. Asesoría directa para cortinas, persianas, toldos, rolling shutters y más.">
 </head>
 <body>
@@ -44,8 +281,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <header class="funnel-header">
         <div class="container">
             <div class="logo-section">
-                <img src="../media/logo.png" alt="Edecoration Logo" class="logo-img" />
-                <h1>Edecoration S.A.</h1>
+                <img src="../media/optimized/logo-small.webp" alt="Edecoration Logo" class="logo-img" />
+                <p class="brand-name">Edecoration S.A.</p>
             </div>
         </div>
     </header>
@@ -54,25 +291,30 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <section class="hero-funnel">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-rating">
-                    <div class="rating-badge">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="hero-headline-group">
+                <div class="hero-topline">
+                    <p class="hero-eyebrow">¿Buscas cortinas en Panamá?</p>
+                    <div class="hero-rating">
+                        <div class="rating-badge">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="separator">|</span>
+                            <span class="rating-text">2,000+ clientes satisfechos en Panamá</span>
                         </div>
-                        <span class="separator">|</span>
-                        <span class="rating-text">1000+ clientes satisfechos en Panamá</span>
                     </div>
                 </div>
                 <h1 class="hero-title">
                     Deja tus cortinas <span class="highlight-text">en manos de los expertos.</span> 
                 </h1>
-                <div class="hero-subtitle">
-                    <p class="lead-text">Con <b><u>25 años de experiencia,</u></b> te ofrecemos cortinas elegantes, de alta calidad y con un servicio que realmente responde cuando lo necesitas. No dejes que tus cortinas se conviertan en un problema.</p>
                 </div>
-                <div class="main-cta-buttons" style="justify-content:center;">
+                <div class="hero-subtitle">
+                    <p class="lead-text">Con <b><u>25 años de experiencia,</u></b> te ofrecemos cortinas elegantes, de alta calidad y con un servicio que realmente responde cuando lo necesitas. <span class="lead-text-tail">No dejes que tus cortinas se conviertan en un problema.</span></p>
+                </div>
+                <div class="main-cta-buttons">
                     <a class="cta-primary-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp 390-0869
+                        Empezar por WhatsApp
                     </a>
                     <a class="cta-secondary-btn" href="tel:+50766729051">
                         <i class="fas fa-phone"></i>
@@ -81,8 +323,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </div>
                 <div class="cta-badges">
                     <span class="pill-badge"><i class="fas fa-clock"></i>Respuesta en minutos</span>
-                    <span class="pill-badge"><i class="fas fa-ruler"></i>Medición profesional</span>
-                    <span class="pill-badge"><i class="fas fa-shield-alt"></i>Garantía y compromiso</span>
+                    <span class="pill-badge"><i class="fas fa-ruler"></i>Medición precisa</span>
+                    <span class="pill-badge"><i class="fas fa-shield-alt"></i>Con garantía</span>
                 </div>
             </div>
         </div>
@@ -93,21 +335,21 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <div class="gallery-grid">
             <div class="gallery-row row-30-50-20">
                 <div class="gallery-item">
-                    <img src="../media/roller/comedor.jpeg" alt="Comedor con cortinas roller" loading="lazy">
+                    <img src="../media/roller/comedor.jpeg" alt="Comedor con cortinas roller">
                     <div class="gallery-item-content">
                         <h3 class="gallery-item-title">Embellece tu hogar</h3>
                         <p class="gallery-item-subtitle">Cortinas como parte de tu decoración.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../landing-media/optimized/sala-pequeña-medium.webp" alt="Sala pequeña con cortinas elegantes" loading="lazy">
+                    <img src="../landing-media/optimized/sala-pequeña-medium.webp" alt="Sala pequeña con cortinas elegantes">
                     <div class="gallery-item-content">
                         <h3 class="gallery-item-title">Tu espacio, tu estilo</h3>
                         <p class="gallery-item-subtitle">Opciones para cada espacio, para cada esquina de tu hogar.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="../landing-media/lobby-con-cortinas.jpg" alt="Lobby corporativo con cortinas" loading="lazy">
+                    <img src="../landing-media/optimized/lobby-con-cortinas-medium.webp" alt="Lobby corporativo con cortinas">
                     <div class="gallery-item-content">
                         <h3 class="gallery-item-title">Elegancia Corporativa</h3>
                         <p class="gallery-item-subtitle">Cortinas dependibles para tu espacio laboral.</p>
@@ -122,7 +364,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <div class="container">
             <div class="intro-content">
                 <h2 class="intro-title">La reputación no miente. Los mejores en Panamá.</h2>
-                <p class="intro-text">Más de 2,000 clientes han confiado en nosotros porque entregamos lo que prometemos: los mejores materiales, instalación profesional y un servicio que realmente resuelve. Deja tus cortinas en manos de los mejores.</p>
+                <p class="intro-text">Más de 2,000 clientes han confiado en nosotros porque entregamos lo que prometemos: <strong>los mejores materiales, instalación profesional y un servicio que realmente resuelve.</strong> <span class="intro-text-tail">Deja tus cortinas en manos de los mejores.</span></p>
                 <div class="intro-stats">
  
                     <div class="stat-item">
@@ -150,21 +392,21 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Tengo mas de 15 años de trabajar con Edecoration, son gente seria, responsable, amigable, te atienden, cogen la llamada cuando algo anda mal o algo se daña... esa es la gente que uno quiere! No una compañia que te pone a escuchar música de espera..."</blockquote>
+                    <blockquote>"Tengo mas de 15 años de trabajar con Edecoration, <strong>son gente seria, responsable, amigable, te atienden, cogen la llamada</strong> cuando algo anda mal o algo se daña... esa es la gente que uno quiere! No una compañia que te pone a escuchar música de espera..."</blockquote>
                     <div class="testimonial-author"><span>Costa del Este</span></div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"¡Excelente opción en cortinas! Decorativas, de alta calidad y duraderas. Gran variedad de colores y estilos a precios accesibles. Se integraron fácilmente al sistema eléctrico Lutron automatizado. 100% recomendados..."</blockquote>
+                    <blockquote>"<strong>¡Excelente opción en cortinas!</strong> Decorativas, de alta calidad y duraderas. Gran variedad de colores y estilos a precios accesibles. Se integraron fácilmente al sistema eléctrico Lutron automatizado. <strong>100% recomendados</strong>..."</blockquote>
                     <div class="testimonial-author"><span>Hato Pintado</span></div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Muchos años con cortinas de Edecoration... Excelente calidad y estética, gran utilidad, y servicio increíblemente atento. Siempre ha sido una excelente experiencia... 5 estrellas!"</blockquote>
+                    <blockquote>"Muchos años con cortinas de Edecoration... <strong>Excelente calidad y estética, gran utilidad, y servicio increíblemente atento.</strong> Siempre ha sido una excelente experiencia... 5 estrellas!"</blockquote>
                     <div class="testimonial-author"><span>Clayton</span></div>
                 </div>
             </div>
@@ -181,7 +423,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <span class="separator">|</span>
-                        <span class="rating-text">1000+ clientes satisfechos en Panamá</span>
+                        <span class="rating-text">2,000+ clientes satisfechos en Panamá</span>
                     </div>
                 </div>
                 <h2>No esperes más, Asesoría y Cotización hoy mismo</h2>
@@ -189,12 +431,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <div class="main-cta-buttons" style="justify-content: center;">
                     <a class="cta-primary-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp 390-0869
+                        Empezar por WhatsApp
                     </a>
                 </div>
                 <div class="cta-badges">
                     <span class="pill-badge"><i class="fas fa-handshake"></i>Sin compromiso</span>
-                    <span class="pill-badge"><i class="fas fa-award"></i>Cotizamos el mismo día</span>
+                    <span class="pill-badge"><i class="fas fa-award"></i>Cotizamos hoy</span>
                     <span class="pill-badge"><i class="fas fa-clock"></i>Respuesta en minutos</span>
 
                 </div>
@@ -207,17 +449,17 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <div class="container">
                 <h2 class="section-title">-- Nuestros clientes de confianza --</h2>
                 <div class="trust-logos">
-                    <div class="logo-item"><img src="../logos/telemetro.png" alt="Telemetro" /></div>
-                    <div class="logo-item"><img src="../logos/adidas.jpg" alt="Adidas" /></div>
-                    <div class="logo-item"><img src="../logos/banesco.png" alt="Banesco" /></div>
-                    <div class="logo-item"><img src="../logos/tigo.png" alt="Tigo" /></div>
-                    <div class="logo-item"><img src="../logos/geely.png" alt="Geely" /></div>
-                    <div class="logo-item"><img src="../logos/medcom.png" alt="Medcom" /></div>
-                    <div class="logo-item"><img src="../logos/Digicel_logo.svg.png" alt="Digicel" /></div>
-                    <div class="logo-item"><img src="../logos/heineken.png" alt="Heineken" /></div>
-                    <div class="logo-item"><img src="../logos/jr.png" alt="Grupo JR" /></div>
-                    <div class="logo-item"><img src="../logos/banistmo.webp" alt="Banistmo" /></div>
-                    <div class="logo-item"><img src="../logos/huawei.png" alt="Huawei" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/telemetro-small.webp" alt="Telemetro" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/adidas-small.webp" alt="Adidas" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/banesco-small.webp" alt="Banesco" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/tigo-small.webp" alt="Tigo" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/geely-small.webp" alt="Geely" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/medcom-small.webp" alt="Medcom" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/Digicel_logo.svg-small.webp" alt="Digicel" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/heineken-small.webp" alt="Heineken" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/jr.png" alt="Grupo JR" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/banistmo-small.webp" alt="Banistmo" loading="lazy" /></div>
+                    <div class="logo-item"><img src="../logos/optimized/huawei-small.webp" alt="Huawei" loading="lazy" /></div>
                 </div>
             </div>
         </section>
@@ -305,19 +547,25 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <div class="main-cta-buttons">
                     <a class="cta-whatsapp-btn" href="https://api.whatsapp.com/send/?phone=5073900869&text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&type=phone_number&app_absent=0" target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp 390-0869
+                        Empezar por WhatsApp
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Floating WhatsApp button (opens the same lead form) -->
+    <a class="whatsapp-float" href="https://api.whatsapp.com/send/?phone=5073900869&amp;text=Hola%2C+estoy+interesado+en+cortinas+para+mi+oficina%2Fhogar%2C+%C2%BFme+podr%C3%ADa+asesorar+por+favor%3F&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Empezar por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="whatsapp-float-label">Empezar por WhatsApp</span>
+    </a>
+
     <!-- Footer -->
     <footer class="funnel-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="../media/logo.png" alt="Edecoration Logo" />
+                    <img src="../media/optimized/logo-small.webp" alt="Edecoration Logo" loading="lazy" />
                     <span>Edecoration S.A.</span>
                 </div>
                 <div class="footer-contact">
