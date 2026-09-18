@@ -289,6 +289,24 @@ body{
 /* a long quote takes a second or two to render; the buttons say so */
 .export-buttons.busy{opacity:.5;pointer-events:none}
 
+/* Starting a fresh quote is a quiet action while one is still being built, and
+   the obvious next step the moment it has been downloaded -- so the button
+   only raises its voice then, and drops it again as soon as the quote moves. */
+.quote-actions{display:flex}
+#newQuote{white-space:nowrap}
+#newQuote.cta{
+  background:var(--wine);color:var(--cream);border-color:var(--wine);
+  box-shadow:0 12px 26px -14px rgba(93,15,37,.95);
+  animation:cta-step-up .55s ease-out;
+}
+#newQuote.cta:hover{transform:translateY(-1px)}
+@keyframes cta-step-up{
+  0%  {transform:scale(.97);box-shadow:0 0 0 0 rgba(93,15,37,.4)}
+  55% {transform:scale(1.04);box-shadow:0 0 0 12px rgba(93,15,37,0)}
+  100%{transform:scale(1);box-shadow:0 12px 26px -14px rgba(93,15,37,.95)}
+}
+@media(prefers-reduced-motion:reduce){#newQuote.cta{animation:none}}
+
 .quote-doc{
   background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
   padding:34px 36px;box-shadow:var(--shadow);
@@ -433,6 +451,8 @@ img,table{max-width:100%}
   .client-fields input{min-width:0;width:100%}
   .export-buttons{width:100%}
   .export-buttons .ghost-btn{flex:1}
+  .quote-actions{width:100%}
+  .quote-actions .ghost-btn{flex:1}
 
   /* The quote table has 6 columns; at 360px it can only scroll or restack.
      Restack: each row becomes a card, each cell prints its own label. */

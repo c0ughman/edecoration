@@ -501,7 +501,11 @@
   // ---------- quote lines ----------
   function addLine() {
     if (!current) return;
-    lines.push({ ...current });
+    /* The table the paño was priced from is not part of the paño: nothing
+       reads it once the line exists, it is hundreds of kilobytes of price
+       matrix, and it would ride along into every saved draft. */
+    const { table, ...line } = current;
+    lines.push(line);
     lineMarginInp.value = "0";
     // the next paño must choose its own motor and complementos, not inherit
     clearMotor();
@@ -631,6 +635,8 @@
     $("qdTotal").textContent = money(total);
 
     renderNotes();
+    saveDraft();
+    setExported(false);      // the quote moved, so it is no longer a finished one
   }
 
   /* The quote goes to the client, so it carries only what the client needs to
@@ -665,6 +671,8 @@
   function syncClient() {
     $("qdClient").textContent = $("clientName").value.trim() || "—";
     $("qdProject").textContent = $("projectName").value.trim() || "—";
+    saveDraft();
+    setExported(false);
   }
 
   // ---------- exports ----------
@@ -905,9 +913,121 @@
     if (exporting || guardEmpty()) return;
     exporting = true;
     $("exportBtns").classList.add("busy");
-    try { await job(); }
+    try { await job(); setExported(true); }
     catch (err) { console.error(err); toast("No se pudo generar la descarga"); }
     finally { exporting = false; $("exportBtns").classList.remove("busy"); }
+  }
+
+  // ---------- draft ----------
+
+  /* The quote lived in memory and nowhere else, so a refresh, a flat battery
+     or a stray ⌘W took the afternoon's work with it. It is now written to this
+     browser after every change -- the whole quote, not a summary, so reopening
+     the tab picks the work up mid-sentence. Deliberately local: a draft is not
+     a filed quote, and it has no business travelling anywhere. */
+  const DRAFT_KEY = "edecoration.cotizador.draft.v1";
+
+  function setMarginMode(mode) {
+    marginMode = mode;
+    [...$("marginModeSeg").children].forEach(b =>
+      b.classList.toggle("active", b.dataset.mode === mode));
+  }
+
+  function draftState() {
+    return {
+      meta: { number: $("qdNumber").textContent, date: $("qdDate").textContent },
+      client: $("clientName").value, project: $("projectName").value,
+      lines, extras: extraAddons,
+      cfg: { tax: cfg.tax.value, clutch: cfg.clutch.value,
+             install: cfg.install.value, margin: cfg.margin.value },
+      marginMode,
+    };
+  }
+
+  /* Writing is debounced because this runs on every keystroke in the settings;
+     pagehide flushes it, so a tab closed inside that window still keeps its
+     work. Storage can refuse -- a private window, a full disk -- and that is
+     survivable: quoting carries on, only the safety net is missing. */
+  let draftTimer = null;
+  function saveDraft() {
+    clearTimeout(draftTimer);
+    draftTimer = setTimeout(writeDraft, 300);
+  }
+  function writeDraft() {
+    clearTimeout(draftTimer);
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(draftState())); }
+    catch (err) { /* nothing to be done, and nothing worth interrupting for */ }
+  }
+
+  function restoreDraft() {
+    let d = null;
+    try { d = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null"); }
+    catch (err) { return false; }
+    if (!d) return false;
+
+    /* The Ajustes are how this business quotes rather than part of any one
+       document, so they come back whether or not there is a quote to come back
+       to -- otherwise ITBMS and instalación silently fall to zero the first
+       time the tool is opened after finishing a quote. */
+    if (d.cfg) {
+      cfg.tax.value = d.cfg.tax; cfg.clutch.value = d.cfg.clutch;
+      cfg.install.value = d.cfg.install; cfg.margin.value = d.cfg.margin;
+    }
+    if (d.marginMode) setMarginMode(d.marginMode);
+
+    const savedLines = d.lines || [], savedExtras = d.extras || [];
+    if (!savedLines.length && !savedExtras.length) { renderQuote(); return false; }
+
+    lines.length = 0; savedLines.forEach(l => lines.push(l));
+    extraAddons.length = 0; savedExtras.forEach(a => extraAddons.push(a));
+    $("clientName").value = d.client || "";
+    $("projectName").value = d.project || "";
+    /* A restored draft keeps the number it was issued. Reopening a tab is the
+       same quote, and renumbering it would quietly make two documents out of
+       one -- the client has the first one in their inbox. */
+    if (d.meta && d.meta.number) {
+      $("qdNumber").textContent = d.meta.number;
+      $("qdDate").textContent = d.meta.date;
+    }
+    if (extraPicker) extraPicker.render();
+    renderQuote();
+    toast("Cotización recuperada");
+    return true;
+  }
+
+  // ---------- starting over ----------
+
+  /* An export is the moment a quote is finished, and the moment starting the
+     next one stops being an afterthought -- so that is when this button steps
+     forward. Touch the quote again and it steps back: there is nothing
+     finished to move on from. The same flag decides whether clearing has to
+     ask first, since a quote already downloaded has nothing left to lose. */
+  let exported = false;
+  function setExported(on) {
+    if (exported === on) return;
+    exported = on;
+    $("newQuote").classList.toggle("cta", on);
+  }
+
+  function newQuote() {
+    if ((lines.length || extraAddons.length) && !exported &&
+        !confirm("Se borrará la cotización actual, que aún no has descargado. ¿Empezar una nueva?"))
+      return;
+    lines.length = 0;
+    extraAddons.length = 0;
+    panoAddons.length = 0;
+    if (panoPicker) panoPicker.render();
+    if (extraPicker) extraPicker.render();
+    $("clientName").value = "";
+    $("projectName").value = "";
+    lineMarginInp.value = "0";
+    clearMotor();
+    // the Ajustes stay put: ITBMS, margin and installation are how this
+    // business quotes, not part of the document being cleared
+    refreshMeta();
+    renderQuote();
+    writeDraft();
+    toast("Cotización nueva");
   }
 
   // ---------- events ----------
@@ -923,8 +1043,7 @@
   });
   $("marginModeSeg").addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;
-    marginMode = b.dataset.mode;
-    [...$("marginModeSeg").children].forEach(x => x.classList.toggle("active", x === b));
+    setMarginMode(b.dataset.mode);
     computeTotals();
   });
   $("lineMarginSeg").addEventListener("click", e => {
@@ -960,6 +1079,9 @@
   ["clientName", "projectName"].forEach(id => $(id).addEventListener("input", syncClient));
   $("settingsToggle").addEventListener("click", () =>
     $("settingsPanel").hidden = !$("settingsPanel").hidden);
+  $("newQuote").addEventListener("click", newQuote);
+  // a tab closed inside the debounce window should still keep its work
+  addEventListener("pagehide", writeDraft);
   $("exportPdf").addEventListener("click", () => runExport(exportPdf));
   $("exportImg").addEventListener("click", () => runExport(exportImg));
   $("exportTxt").addEventListener("click", () => runExport(exportTxt));
@@ -991,4 +1113,5 @@
 
   buildFamilies();
   refreshMeta();
+  restoreDraft();      // after the pickers exist, so a restored quote can paint
 })();
