@@ -179,8 +179,16 @@ body{
 .ra-warn{margin-top:12px;font-size:11.5px;font-weight:500;color:var(--wine-soft)}
 
 /* the motor on a quote line */
-.desc-motor{font-size:11.5px;color:var(--gold);margin-top:4px}
-.desc-motor b{font-weight:700;color:var(--wine)}
+/* The motor is quoted on its own line, indented under the paño it drives so
+   that the two still read as one item. Specificity beats the export block's
+   td padding, which comes later in the file. */
+.qd-table tr.qd-sub td.cell-desc{padding-left:30px;position:relative}
+.qd-table tr.qd-sub td.cell-desc::before{
+  content:"";position:absolute;left:12px;top:16px;width:9px;height:9px;
+  border-left:1px solid var(--line);border-bottom:1px solid var(--line);
+  border-bottom-left-radius:3px;
+}
+.qd-table tr.qd-sub .desc-main{font-weight:500}
 
 /* ---------- complementos (per-paño and per-project add-ons) ---------- */
 .addons{

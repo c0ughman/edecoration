@@ -291,7 +291,7 @@
       lineMargin: num(lineMarginInp.value), lineMarginMode,
     };
 
-    const finalUnit = lineUnit(current);
+    const finalUnit = lineUnit(current) + motorUnit(current);
     lpValue.textContent = money(finalUnit);
     const bits = [`Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}"`,
                   `${qty} ud`];
@@ -526,6 +526,25 @@
     </tr>`).join("");
   }
 
+  /* The motor's own line, tucked under the paño it drives. It carries no
+     remove button on purpose: it is not free-standing, it belongs to that paño
+     and goes when the paño goes -- and on a shaded cell PRS will not warrant
+     the paño without it, so it is not the client's to drop. */
+  function motorRow(l) {
+    if (!l.motor) return "";
+    return `<tr class="qd-sub">
+      <td class="cell-desc">
+        <div class="desc-main">Motorización · ${escapeHtml(l.motor.label)}</div>
+        <div class="desc-sub">para ${escapeHtml(l.fabric)} ${l.askW}×${l.askH}</div>
+      </td>
+      <td data-label="Medida">—</td>
+      <td class="num" data-label="Cant.">${l.qty}</td>
+      <td class="num" data-label="P. unit.">${money(motorUnit(l))}</td>
+      <td class="num" data-label="Total">${money(motorUnit(l) * l.qty)}</td>
+      <td class="act"></td>
+    </tr>`;
+  }
+
   function renderQuote() {
     const body = $("qdItems");
     if (!lines.length && !extraAddons.length) {
@@ -542,8 +561,6 @@
           <td class="cell-desc">
             <div class="desc-main">${l.fabric}</div>
             <div class="desc-sub">${l.category} · ${l.mount} ${tags.join(" ")}</div>
-            ${l.motor ? `<div class="desc-motor">Motor ${escapeHtml(l.motor.label)}
-              · <b>${money(l.motor.price)}</b> c/u</div>` : ""}
             ${(l.addons || []).map(a => `<div class="desc-addon">${escapeHtml(a.label)}${
               a.detail ? ` <span class="desc-sub">(${escapeHtml(a.detail)})</span>` : ""}
               · ${a.qty > 1 ? a.qty + " × " : ""}<b>${money(a.price)}</b></div>`).join("")}
@@ -553,28 +570,51 @@
           <td class="num" data-label="P. unit.">${money(lineUnit(l))}</td>
           <td class="num" data-label="Total">${money(lineUnit(l) * l.qty)}</td>
           <td class="act"><button class="row-del" data-i="${idx}" title="Quitar">×</button></td>
-        </tr>`;
+        </tr>${motorRow(l)}`;
       }).join("") + extraRows();
     }
     computeTotals();
   }
 
-  // unit price incl. per-paño add-ons (hardware + install + per-paño margin)
+  /* The motor is quoted on its own line. Folded into the paño's unit price it
+     was invisible to the client reading the quote -- a note under the
+     description said which motor, but the number was buried in a single
+     figure, so nobody could see what the motorisation cost or compare it.
+     Splitting it changes no arithmetic: the paño keeps everything except the
+     motor, the motor carries the margin the paño would have applied to it, and
+     the two lines still add up to the one that was there before. */
+
+  // the paño itself: fabric, requirement, complementos, installation -- no motor
   function lineUnit(l) {
     let p = l.unitPrice;
     const info = reqInfo(l.req);
     if (info) p += info.cost();
-    if (l.motor) p += l.motor.price;          // one motor per paño
     p += addonsTotal(l.addons);               // complementos, per paño
     if (l.install) p += num(cfg.install.value);
-    if (l.lineMargin > 0)
-      p += l.lineMarginMode === "fixed" ? l.lineMargin : p * l.lineMargin / 100;
-    return p;
+    return withLineMargin(p, l, true);
   }
+
+  // the motor driving that paño, one per paño, at the same margin
+  function motorUnit(l) {
+    return l.motor ? withLineMargin(l.motor.price, l, false) : 0;
+  }
+
+  /* A percentage margin is a rate, so it applies to each line and the split is
+     exact. A fixed one is a lump sum on the paño, which cannot be split
+     without inventing a rule -- it rides with the paño and the motor takes
+     none of it. Either way the two lines total what the single line did. */
+  function withLineMargin(p, l, carriesFixed) {
+    if (!(l.lineMargin > 0)) return p;
+    if (l.lineMarginMode === "fixed") return carriesFixed ? p + l.lineMargin : p;
+    return p + p * l.lineMargin / 100;
+  }
+
+  // what one quote line is worth in total, motor included
+  const lineTotal = l => (lineUnit(l) + motorUnit(l)) * l.qty;
   const num = v => parseFloat(v) || 0;
 
   function computeTotals() {
-    let subtotal = lines.reduce((s, l) => s + lineUnit(l) * l.qty, 0)
+    let subtotal = lines.reduce((s, l) => s + lineTotal(l), 0)
                  + addonsTotal(extraAddons);
     const marginVal = num(cfg.margin.value);
     const margin = marginMode === "fixed" ? marginVal : subtotal * marginVal / 100;
@@ -640,12 +680,15 @@
       const extras = [];
       const info = reqInfo(l.req);
       if (info) extras.push(info.label);
-      if (l.motor) extras.push(`${l.motor.label} ${money(l.motor.price)}`);
       (l.addons || []).forEach(a => extras.push(
         `${a.label}${a.qty > 1 ? ` x${a.qty}` : ""} ${money(a.price)}`));
       if (l.install) extras.push("instalación");
       if (extras.length) L.push("    + " + extras.join(", "));
       L.push("    " + money(lineUnit(l)) + " c/u   =   " + money(lineUnit(l) * l.qty));
+      if (l.motor) {
+        L.push(`  Motorización · ${l.motor.label}`);
+        L.push("    " + money(motorUnit(l)) + " c/u   =   " + money(motorUnit(l) * l.qty));
+      }
     });
     if (extraAddons.length) {
       L.push("");
@@ -744,6 +787,10 @@
     const ys = new Set();
     el.querySelectorAll(".qd-head, .qd-client, .qd-table thead, #qdItems tr")
       .forEach(p => {
+        // a motor line belongs with the paño above it; a break in between
+        // would strand the motorisation at the top of the next page
+        const next = p.nextElementSibling;
+        if (next && next.classList.contains("qd-sub")) return;
         const y = Math.round((p.getBoundingClientRect().bottom - box.top) * k);
         if (y > 0) ys.add(y);
       });
