@@ -4,7 +4,7 @@
     {
       "type": "fabric_matrix",
       "name": "Axio - Drop Shade - Sunbrella",
-      "page": 66,
+      "page": 74,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -269,7 +269,121 @@
         ]
       ],
       "requirement_legend": {},
-      "notes": [],
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "Los toldos con tela Sunbrella ofrecen una protección solar excepcional y una alta repelencia al agua. Sin embargo, para proteger la estructura del toldo y evitar la acumulación de agua, se recomienda mantenerlo recogido durante vientos fuertes o lluvias intensas."
+      ],
       "category": "Toldos",
       "fabrics": [
         "Axio - Drop Shade - Sunbrella"
@@ -278,7 +392,7 @@
     {
       "type": "fabric_matrix",
       "name": "Axio - Drop Shade - Screen 5%",
-      "page": 66,
+      "page": 74,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -438,9 +552,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -449,9 +563,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -460,9 +574,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -471,9 +585,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -482,9 +596,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -493,9 +607,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -504,9 +618,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -515,9 +629,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -526,9 +640,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -537,17 +651,128 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ]
       ],
-      "requirement_legend": {
-        "bottomrail_delfin": "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido"
-      },
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
       "notes": [
-        "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
-        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA."
+        "Este producto está diseñado exclusivamente para filtrar la luz solar en exteriores; no protege contra el viento, la brisa o la lluvia, por lo que se debe recoger para evitar su deterioro.",
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
+        "Para garantizar la calidad y el correcto funcionamiento de los toldos, no se recomienda fabricarlos fuera de las medidas establecidas en la tabla."
       ],
       "category": "Toldos",
       "fabrics": [
@@ -557,7 +782,7 @@
     {
       "type": "fabric_matrix",
       "name": "Axio - Balcony",
-      "page": 67,
+      "page": 75,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -595,10 +820,7 @@
         120,
         132,
         144,
-        156,
-        168,
-        180,
-        192
+        156
       ],
       "prices": [
         [
@@ -653,96 +875,63 @@
           532.13,
           620.64,
           974.76,
-          854.56,
-          879.82
+          null,
+          null
         ],
         [
           242.93,
           336.5,
           351.02,
           444.59,
-          554.53,
-          646.68,
-          1009.48,
-          884.94,
-          911.07
+          null,
+          null,
+          null,
+          null,
+          null
         ],
         [
           250.43,
           351.48,
           366.0,
           408.57,
-          577.01,
-          672.82,
-          1044.32,
-          915.43,
-          942.43
+          null,
+          null,
+          null,
+          null,
+          null
         ],
         [
           257.93,
           366.51,
           381.03,
-          431.1,
-          599.54,
-          699.02,
-          1079.26,
-          946.0,
-          973.87
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
         ],
         [
           265.46,
-          381.56,
-          396.08,
-          453.68,
-          622.12,
-          725.28,
-          1114.26,
-          976.62,
-          1005.37
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
         ],
         [
           273.0,
-          396.63,
-          411.15,
-          476.29,
-          644.72,
-          751.56,
-          1149.32,
-          1007.3,
-          1036.93
-        ],
-        [
-          280.55,
-          411.73,
-          426.25,
-          498.94,
-          667.38,
-          777.9,
-          1184.42,
-          1038.01,
-          1068.52
-        ],
-        [
-          288.1,
-          426.84,
-          441.35,
-          521.59,
-          690.03,
-          804.24,
-          1219.56,
-          1068.76,
-          1100.14
-        ],
-        [
-          295.67,
-          441.95,
-          456.47,
-          544.28,
-          712.72,
-          830.62,
-          1254.72,
-          1099.53,
-          1131.79
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       ],
       "requirements": [
@@ -753,9 +942,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -764,9 +953,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -775,9 +964,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -786,9 +975,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -797,9 +986,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -808,9 +997,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -819,9 +1008,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -830,9 +1019,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -841,9 +1030,9 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null,
+          null,
+          null
         ],
         [
           null,
@@ -852,50 +1041,128 @@
           null,
           null,
           null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
-        ],
-        [
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
-        ],
-        [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          "bottomrail_delfin",
-          "bottomrail_delfin",
-          "bottomrail_delfin"
+          null
         ]
       ],
-      "requirement_legend": {
-        "bottomrail_delfin": "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido"
-      },
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
       "notes": [
-        "Las medidas sombreadas con amarllo requieren un bottomrail (Delfin) que solo es por pedido",
-        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA",
+        "Para garantizar la calidad y el correcto funcionamiento de los toldos, no se recomienda fabricarlos fuera de las medidas establecidas en la tabla.",
+        "Los toldos con tela Sunbrella ofrecen una protección solar excepcional y una alta repelencia al agua. Sin embargo, para proteger la estructura del toldo y evitar la acumulación de agua, se recomienda mantenerlo recogido durante vientos fuertes o lluvias intensas."
       ],
       "category": "Toldos",
       "fabrics": [
@@ -905,7 +1172,7 @@
     {
       "type": "item_list",
       "name": "Axio - Drop Shade - Clear Vinyl 54”",
-      "page": 67,
+      "page": 75,
       "currency": "USD",
       "section_headers": [
         "1.20",
@@ -928,10 +1195,17 @@
           "context": "1.83 72 275.08"
         },
         {
-          "name": "Re-Lion 45E 20NM Electrico 136.50 /",
+          "name": "Re-Lion 45E 20NM Eléctrico",
+          "description": "",
+          "price": 136.5,
+          "extra": "",
+          "context": "2.13 84 290.94"
+        },
+        {
+          "name": "Re-Lion 45E 50NM Eléctrico",
           "description": "",
           "price": 150.5,
-          "extra": "(50NM)",
+          "extra": "",
           "context": "2.13 84 290.94"
         }
       ],
@@ -940,7 +1214,7 @@
     {
       "type": "fabric_matrix",
       "name": "Axio - Arm 90 grados",
-      "page": 68,
+      "page": 76,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1054,6 +1328,48 @@
         ]
       ],
       "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
       "notes": [],
       "category": "Toldos",
       "fabrics": [
@@ -1063,7 +1379,7 @@
     {
       "type": "fabric_matrix",
       "name": "Axio - Arm 180 grados Sunbrella",
-      "page": 68,
+      "page": 76,
       "currency": "USD",
       "axis": {
         "rows": "height_in",
@@ -1177,8 +1493,52 @@
         ]
       ],
       "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
       "notes": [
-        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA.",
+        "Para garantizar la calidad y el correcto funcionamiento de los toldos, no se recomienda fabricarlos fuera de las medidas establecidas en la tabla.",
+        "Los toldos con tela Sunbrella ofrecen una protección solar excepcional y una alta repelencia al agua. Sin embargo, para proteger la estructura del toldo y evitar la acumulación de agua, se recomienda mantenerlo recogido durante vientos fuertes o lluvias intensas."
       ],
       "category": "Toldos",
       "fabrics": [
@@ -1188,7 +1548,7 @@
     {
       "type": "awning_system",
       "name": "Awning System",
-      "page": 69,
+      "page": 77,
       "currency": "USD",
       "axis": {
         "rows": "projection",
@@ -1373,7 +1733,9 @@
         }
       ],
       "notes": [
-        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA"
+        "LOS COSTOS PUEDEN VARIAR SIN PREVIO AVISO POR CAMBIOS EN LOS COSTOS DE LA MATERIA PRIMA",
+        "Para garantizar la calidad y el correcto funcionamiento de los toldos, no se recomienda fabricarlos fuera de las medidas establecidas en la tabla.",
+        "Los toldos con tela Sunbrella ofrecen una protección solar excepcional y una alta repelencia al agua. Sin embargo, para proteger la estructura del toldo y evitar la acumulación de agua, se recomienda mantenerlo recogido durante vientos fuertes o lluvias intensas."
       ],
       "category": "Toldos"
     }

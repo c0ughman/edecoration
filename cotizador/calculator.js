@@ -21,8 +21,33 @@
      typed into a settings box -- which shipped at 0, so a quote could say
      "requires motorization" and charge nothing for it. The motor is now an
      explicit choice from the price list. */
-  const MOTORS = (CATALOG.find(t => t.type === "motor_options") || {}).items || [];
+  const MOTOR_BLOCK = CATALOG.find(t => t.type === "motor_options") || {};
+  const MOTORS = MOTOR_BLOCK.items || [];
   let motor = null;                 // the motor chosen for the current paño
+  /* PRS heads the motor list "MOTORES PARA ROLLER, SHEER, MANHATTAN Y
+     ROMANAS". A family outside that list (Horizontales, whose grey cells also
+     say "motorizar") has no motor in the price list at all, and offering it a
+     roller tube motor would quote the wrong product. With no heading the list
+     is open to every family, as it always was. */
+  const MOTOR_FAMILIES = MOTOR_BLOCK.families || null;
+  const motorsServe = category => !MOTOR_FAMILIES || MOTOR_FAMILIES.includes(category);
+  const MOTOR_WARN = "Sin motor puedes cotizarlo igual, pero PRS no otorga garantía.";
+  const NO_MOTOR_WARN = "La lista PRS no incluye un motor para esta familia: "
+    + "agrégalo como complemento Personalizado con el precio que indique fábrica.";
+
+  /* Panel Track is no longer a table per fabric. It is the rail, priced by
+     width for its vías and canales, plus the fabric sold by the yard. PRS does
+     not say how many yards a panel track takes, so that figure is entered by
+     the person quoting -- the tool never guesses it. */
+  const PT = CATALOG.find(t => t.type === "panel_track"
+    && (t.telas || []).length && (t.rails || []).length) || null;
+  const PT_FAMILY = PT ? PT.category : null;
+
+  /* Cortinas de tela are priced per one-way curtain. PRS: "Si quieres cotizar
+     una cortina de dos vías, divide el ancho total en 2 y cotiza como si
+     fueran 2 cortinas" -- so a two-way curtain looks up half the width and
+     counts twice. */
+  let draperyWays = 1;
 
   /* Add-ons: everything that hangs off a paño or off the job. The extractor
      normalises three pricing modes so the UI does not need to know how each
@@ -36,8 +61,15 @@
   const groupOf = kind => ADDONS.find(g => g.kind === kind);
   const CUSTOM_GROUP = { kind: CUSTOM_KIND, label: "Personalizado",
                          pricing: "flat", items: [] };
-  const kindsFor = scope => [...ADDONS.filter(g => g.scope === scope),
-                             CUSTOM_GROUP];
+  /* A shade and a cortina de tela take different hardware: a curtain is not
+     offered a cenefa or a tube motor, and a roller is not offered a curtain
+     track. Groups that predate the split carry no applies_to and are shade
+     hardware, which is what they always were. */
+  const kindsFor = (scope, applies) => [
+    ...ADDONS.filter(g => g.scope === scope && (g.applies_to || "shade") === applies),
+    CUSTOM_GROUP];
+  const isDraperyFamily = fam => FABRICS.some(t => t.category === fam && t.drapery);
+  const appliesTo = fam => isDraperyFamily(fam) ? "drapery" : "shade";
 
   /* The extra-items list under the quote is for things that belong to no paño.
      Only flat-priced kinds can appear: a cenefa, riel or perfil is priced from
@@ -103,6 +135,26 @@
       label: "tela delgada · puede presentar sonrisas", cls: "warn",
       cost: () => 0,
     },
+    /* Horizontales. Yellow: the lift system works at its limit, cords wear
+       fast and lifting is heavy -- PRS recommends splitting it in two or
+       motorising. Red: neither manual nor motor can lift it, there is no
+       warranty, and PRS recommends splitting it in two. Both are warranty
+       conditions in PRS's words, so like motorisation they warn and do not
+       block; red warns in the out-of-range colour. */
+    capacity_limit: {
+      label: "sistema al límite de su capacidad", cls: "warn",
+      cost: () => 0,
+      badge: "Sistema al límite de su capacidad · se recomienda dividir en dos o motorizar",
+      quote: "Una o más medidas operan al <b>límite de capacidad del sistema</b>; "
+           + "se recomienda dividirlas en dos o motorizarlas.",
+    },
+    exceeds_capacity: {
+      label: "excede la capacidad del sistema", cls: "range",
+      cost: () => 0,
+      badge: "Excede la capacidad del sistema · sin garantía · se recomienda dividir en dos",
+      quote: "Una o más medidas <b>exceden la capacidad del sistema</b> y no tienen "
+           + "garantía de fábrica; se recomienda dividirlas en dos.",
+    },
   };
   const reqInfo = key => key
     ? (REQUIREMENTS[key] || { label: key, cls: "warn", cost: () => 0 })
@@ -164,7 +216,8 @@
     });
   }
 
-  initCustomSelect("familyDrop", familySel, val => { familySel.value = val; buildFabrics(); });
+  initCustomSelect("familyDrop", familySel, val => { familySel.value = val; onFamilyChange(); });
+  initCustomSelect("ptSystemDrop", $("ptSystemSel"), () => compute());
   initCustomSelect("fabricDrop", fabricSel, val => { fabricSel.value = val; compute(); });
   initCustomSelect("mountDrop", mountSel, () => compute());
   initCustomSelect("motorDrop", $("motorSel"), val => {
@@ -200,11 +253,44 @@
   }
 
   // ---------- populate selectors ----------
+  /* Families in price-list order. The cortinas de tela tables are read after
+     the rest of the list, so catalogue order alone would put them last. */
   function buildFamilies() {
-    const fams = [...new Set(FABRICS.map(f => f.category))];
+    const first = new Map();
+    FABRICS.forEach(t => {
+      if (!first.has(t.category) || t.page < first.get(t.category))
+        first.set(t.category, t.page);
+    });
+    if (PT && !first.has(PT_FAMILY)) first.set(PT_FAMILY, PT.page);
+    const fams = [...first.keys()].sort((a, b) => first.get(a) - first.get(b));
     $("familyDrop")._rebuild(fams.map(f => ({ value: f, label: f })));
     familySel.value = fams[0] || "";
+    onFamilyChange();
+  }
+
+  /* The fields and complementos that only some families have follow the
+     family. Complementos already on the paño that belong to the other kind of
+     product (a cenefa on what is now a curtain) are dropped, with a toast. */
+  let familyApplies = null;
+  function onFamilyChange() {
+    const fam = familySel.value;
+    const applies = appliesTo(fam);
+    if (familyApplies !== null && applies !== familyApplies && panoAddons.length) {
+      panoAddons.length = 0;
+      toast("Se quitaron complementos que no aplican a esta familia");
+    }
+    familyApplies = applies;
+    $("waysField").hidden = applies !== "drapery";
+    $("ptFields").hidden = fam !== PT_FAMILY;
+    if (applies !== "drapery") setWays(1);
+    if (panoPicker) { panoPicker.setKinds(); panoPicker.render(); }
     buildFabrics();
+  }
+
+  function setWays(n) {
+    draperyWays = n;
+    [...$("waysSeg").children].forEach(b =>
+      b.classList.toggle("active", +b.dataset.ways === n));
   }
   /* One PRS table often prices several fabrics that happen to cost the same
      ("Zakros 110” / Stratos 110” / Paros 110”"). They are separate products,
@@ -213,6 +299,11 @@
   function buildFabrics() {
     const fam = familySel.value;
     const opts = [];
+    if (PT && fam === PT_FAMILY) {
+      PT.telas.forEach((t, i) => opts.push({
+        value: `pt:${i}`,
+        label: `${t.name} · ${t.bolt_width_in}" · ${money(t.price_per_yard)}/yd` }));
+    }
     CATALOG.forEach((t, ti) => {
       if (t.type !== "fabric_matrix" || t.category !== fam || !t.prices.length) return;
       (t.fabrics && t.fabrics.length ? t.fabrics : [t.name])
@@ -227,8 +318,8 @@
   /* "12:3" -> the table and the single fabric selected within it. */
   function selectedFabric() {
     const parts = String(fabricSel.value || "").split(":");
-    const table = CATALOG[+parts[0]];
-    if (!table) return { table: null, name: "" };
+    const table = parts[0] === "" ? null : CATALOG[+parts[0]];
+    if (!table || table.type !== "fabric_matrix") return { table: null, name: "" };
     const list = table.fabrics && table.fabrics.length ? table.fabrics : [table.name];
     return { table, name: list[+(parts[1] || 0)] || list[0] };
   }
@@ -237,71 +328,94 @@
   function compute() {
     current = null;
     reqBadges.innerHTML = "";
+    if (PT && familySel.value === PT_FAMILY) return computePanelTrack();
     const { table, name: fabricName } = selectedFabric();
     const w = toIn(parseFloat(widthInp.value));
     const h = toIn(parseFloat(heightInp.value));
     const qty = Math.max(1, parseInt(qtyInp.value) || 1);
+    // a two-way curtain is two one-way curtains of half the width each
+    const ways = table && table.drapery ? draperyWays : 1;
 
     // covers the early-return paths below; re-run with the requirement once the
     // cell is known, so a shading caveat appears only when it applies
     renderFabricNotes(table, null, w);
     renderMotorNotice(false);
+    $("ptInfo").textContent = "";
 
     if (!table || !w || !h) {
       lpValue.textContent = "—"; lpMeta.textContent = ""; addBtn.disabled = true;
       return;
     }
 
-    const wi = pickIndex(table.widths_in, w);
+    const wi = pickIndex(table.widths_in, w / ways);
     const hi = pickIndex(table.heights_in, h);
 
     if (wi < 0 || hi < 0) {
+      const maxW = Math.max(...table.widths_in);
       lpValue.textContent = "Fuera de rango";
-      lpMeta.textContent = `Máximo ${Math.max(...table.widths_in)}" ancho × ${Math.max(...table.heights_in)}" alto`;
+      lpMeta.textContent = ways > 1
+        ? `Máximo ${maxW * ways}" ancho total (${ways} paños de ${maxW}") × ${Math.max(...table.heights_in)}" alto`
+        : `Máximo ${maxW}" ancho × ${Math.max(...table.heights_in)}" alto`;
       reqBadges.innerHTML = `<span class="badge range">⚠ Medida fuera de tabla · cotizar manualmente</span>`;
       addBtn.disabled = true;
       return;
     }
 
-    const unitPrice = table.prices[hi][wi];
-    if (unitPrice == null) {
+    const cellPrice = table.prices[hi][wi];
+    if (cellPrice == null) {
       lpValue.textContent = "Consultar";
       lpMeta.textContent = "Celda sin precio en la lista";
       addBtn.disabled = true;
       return;
     }
+    const unitPrice = cellPrice * ways;
 
     const req = table.requirements[hi][wi];
     const needsMotor = req === "motorization";
+    // only where PRS lists a motor for this family
+    const motorOffered = needsMotor && motorsServe(table.category);
     // moving off a motorised cell must drop the motor, not carry it silently
-    if (!needsMotor) clearMotor();
-    renderMotorNotice(needsMotor, table, req, qty);
+    if (!motorOffered) clearMotor();
+    renderMotorNotice(needsMotor, table, req, qty, motorOffered);
 
     // the size may have changed since a complemento was added
     repriceAddons(panoAddons, { w, h });
     if (panoPicker) { panoPicker.render(); panoPicker.refresh(); }
 
+    const tableSize = `${table.widths_in[wi]}"×${table.heights_in[hi]}"`;
     current = {
       table, fabric: fabricName, category: table.category,
       reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
-      motor: needsMotor ? motor : null,
+      motor: motorOffered ? motor : null,
       addons: panoAddons.map(a => ({ ...a })),
       mount: mountSel.value, install: installChk.checked,
       lineMargin: num(lineMarginInp.value), lineMarginMode,
     };
+    if (ways > 1) {
+      current.ways = ways;
+      current.tableLabel = `${ways} paños · tabla ${tableSize}`;
+      current.detail = `Apertura a ${ways} vías · ${ways} paños de ${round1(w / ways)}"`;
+    }
 
     const finalUnit = lineUnit(current) + motorUnit(current);
     lpValue.textContent = money(finalUnit);
-    const bits = [`Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}"`,
-                  `${qty} ud`];
+    const bits = [`Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}"`];
+    if (ways > 1) bits.push(`${ways} paños de ${round1(w / ways)}" × ${money(cellPrice)}`);
+    bits.push(`${qty} ud`);
     if (current.motor) bits.push(`tela ${money(unitPrice)} + motor ${money(current.motor.price)}`);
     bits.push(`${money(finalUnit * qty)} subtotal`);
     lpMeta.textContent = bits.join(" · ");
 
+    /* A cell far out of sequence with the size below it is a typo in the
+       price list (see extract.py, price_checks). PRS's figure stands, but the
+       person quoting is told to confirm it before the quote goes out. */
+    if (table.price_checks && table.price_checks[hi] && table.price_checks[hi][wi])
+      addBadge("range", "Precio fuera de secuencia en la lista PRS · confírmalo con fábrica");
+
     const info = reqInfo(req);
     // the motor notice says this far more loudly; a pill as well is just noise
-    if (info && !needsMotor) addBadge(info.cls, "Requiere " + info.label);
+    if (info && !needsMotor) addBadge(info.cls, info.badge || "Requiere " + info.label);
     renderFabricNotes(table, req, w);
     // PRS's requirement is a warranty condition, not a physical one: the paño
     // can be sold manual, it just loses its warranty. So warn loudly, but let
@@ -309,9 +423,93 @@
     addBtn.disabled = false;
   }
 
+  /* A Panel Track paño: the rail from PRS's table (by width, for the chosen
+     vías and canales) plus the fabric at PRS's price per yard. The yards are
+     the quoter's figure -- the list gives the price per yard and the rule that
+     each panel takes 2" of overlap, not a cutting formula -- so the paño cannot
+     be added until they are entered. The rail column is picked the same way
+     every table is (round up to the next listed width), and a blank cell is
+     "Consultar", never the next column over. */
+  function computePanelTrack() {
+    renderFabricNotes(null, null, null);
+    renderMotorNotice(false);
+    clearMotor();
+    const w = toIn(parseFloat(widthInp.value));
+    const h = toIn(parseFloat(heightInp.value));
+    const qty = Math.max(1, parseInt(qtyInp.value) || 1);
+    const tela = PT.telas[+String(fabricSel.value).split(":")[1]];
+    const rail = PT.rails[+$("ptSystemSel").value];
+    // to the thousandth: the figure charged is the figure printed on the quote
+    const yards = Math.round(parseFloat($("ptYards").value) * 1000) / 1000;
+    const panels = parseInt($("ptPanels").value);
+    const overlap = PT.overlap_per_panel_in || 0;
+    const info = $("ptInfo");
+    info.textContent = "";
+    // PRS's rail note and sizing rule, shown on the panel like any table's notes
+    const ptNotes = [PT.rail_includes ? `El riel incluye ${PT.rail_includes}.` : null,
+                     ...(PT.notes || [])].filter(Boolean);
+    $("fabricNotes").innerHTML = ptNotes.length
+      ? `<ul>${ptNotes.map(n => `<li>${escapeHtml(n)}</li>`).join("")}</ul>` : "";
+
+    const fail = (value, meta) => {
+      lpValue.textContent = value; lpMeta.textContent = meta; addBtn.disabled = true;
+    };
+    if (!tela || !rail || !w || !h) return fail("—", "");
+
+    if (panels > 0) {
+      info.textContent = `Cada panel: ${round1(w / panels + overlap)}" de ancho `
+        + `(${round1(w)}" ÷ ${panels}${overlap ? ` + ${overlap}" de traslape` : ""})`
+        + ` · tela de ${tela.bolt_width_in}" de ancho`;
+    }
+
+    const wi = pickIndex(rail.widths_in, w);
+    if (wi < 0) {
+      reqBadges.innerHTML = `<span class="badge range">⚠ Medida fuera de tabla · cotizar manualmente</span>`;
+      return fail("Fuera de rango", `Máximo ${Math.max(...rail.widths_in)}" de ancho para este riel`);
+    }
+    const railPrice = rail.prices[wi];
+    if (railPrice == null)
+      return fail("Consultar", `Sin precio de riel ${railName(rail)} a ${rail.widths_in[wi]}"`);
+    if (!(yards > 0)) return fail("—", "Ingresa las yardas de tela");
+
+    // to the cent, so the line and the quote total add up exactly
+    const telaCost = Math.round(yards * tela.price_per_yard * 100) / 100;
+    const unitPrice = Math.round((railPrice + telaCost) * 100) / 100;
+
+    repriceAddons(panoAddons, { w, h });
+    if (panoPicker) { panoPicker.render(); panoPicker.refresh(); }
+
+    current = {
+      kind: "panel_track", fabric: tela.name, category: PT.category,
+      reqWidth: rail.widths_in[wi], reqHeight: null,
+      askW: round1(w), askH: round1(h), qty, unitPrice, req: null, motor: null,
+      addons: panoAddons.map(a => ({ ...a })),
+      mount: mountSel.value, install: installChk.checked,
+      lineMargin: num(lineMarginInp.value), lineMarginMode,
+      tableLabel: `riel ${rail.widths_in[wi]}"`,
+      // the client sees what is being built, not PRS's cost of each part
+      detail: `Riel ${railName(rail)} · tela ${yards} yd`,
+      pt: { ways: rail.ways, channels: rail.channels, railPrice,
+            yards, pricePerYard: tela.price_per_yard, telaCost },
+    };
+    const finalUnit = lineUnit(current);
+    lpValue.textContent = money(finalUnit);
+    lpMeta.textContent = [
+      `Riel ${railName(rail)} · tabla ${rail.widths_in[wi]}" ${money(railPrice)}`,
+      `tela ${yards} yd × ${money(tela.price_per_yard)} = ${money(telaCost)}`,
+      `${qty} ud`, `${money(finalUnit * qty)} subtotal`].join(" · ");
+    addBtn.disabled = false;
+  }
+
+  const railName = r => `${r.ways} vía${r.ways > 1 ? "s" : ""} · ${r.channels} canales`;
+
   /* PRS's blanket cost disclaimer. True of every table at all times, so it
      tells the person quoting nothing about the paño in front of them. */
   const BOILERPLATE = /LOS COSTOS PUEDEN VARIAR/i;
+  /* "Para garantizar la calidad ... no se recomienda fabricarlas fuera de las
+     medidas establecidas en la tabla." The calculator already refuses any
+     size outside the table, so on the panel it is boilerplate too. */
+  const WITHIN_TABLE = /^Para garantizar la calidad/i;
   /* "Si la roller mide más de 108” de ancho, el alto máximo sería de 102”" */
   const WIDTH_RULE = /m[áa]s de\s*(\d+)\s*["”'']?\s*de ancho/i;
 
@@ -327,7 +525,7 @@
     const explained = new Set(Object.values(legend));
     const active = req ? legend[req] : null;
     return (table.notes || []).filter(n => {
-      if (BOILERPLATE.test(n)) return false;
+      if (BOILERPLATE.test(n) || WITHIN_TABLE.test(n)) return false;
       if (explained.has(n)) return n === active;
       const m = n.match(WIDTH_RULE);
       if (m) return widthIn != null && widthIn > parseFloat(m[1]);
@@ -341,8 +539,8 @@
   /* One picker component, used for the paño section and the project section.
      `dims()` returns the current paño's size for width/per-foot pricing, or
      null at job level where there is no paño to measure against. */
-  function makeAddonPicker(prefix, kinds, store, dims, onChange) {
-    let kind = kinds[0], item = null;
+  function makeAddonPicker(prefix, kindsOf, store, dims, onChange) {
+    let kinds = kindsOf(), kind = kinds[0], item = null;
 
     const kindDrop = $(prefix + "KindDrop"), itemDrop = $(prefix + "ItemDrop");
     const custom = $(prefix + "Custom");
@@ -373,6 +571,14 @@
     initCustomSelect(prefix + "ItemDrop", $(prefix + "ItemSel"), val => {
       item = kind.items[+val] || null;
     });
+    // the kinds on offer depend on the family (shade or cortina de tela)
+    function setKinds() {
+      kinds = kindsOf();
+      kind = kinds[0];
+      kindDrop._rebuild(kinds.map(k => ({ value: k.kind, label: k.label })));
+      kindDrop._setValue(kinds[0].kind, kinds[0].label);
+      rebuildItems();
+    }
     kindDrop._rebuild(kinds.map(k => ({ value: k.kind, label: k.label })));
     kindDrop._setValue(kinds[0].kind, kinds[0].label);
 
@@ -423,7 +629,7 @@
     });
 
     rebuildItems();
-    return { render, refresh: rebuildItems };
+    return { render, refresh: rebuildItems, setKinds };
   }
 
   const addonsTotal = list =>
@@ -455,7 +661,7 @@
     if (drop && drop._setValue) drop._setValue("", "Elegir motor");
   }
 
-  function renderMotorNotice(required, table, req, qty) {
+  function renderMotorNotice(required, table, req, qty, offered = true) {
     const box = $("motorNotice");
     if (!box) return;
     box.hidden = !required;
@@ -466,6 +672,16 @@
 
     // PRS's own sentence, so the reason comes from the price list not from us
     $("motorWhy").textContent = (table.requirement_legend || {})[req] || "";
+
+    // a family PRS lists no motor for still gets the warning, but no picker
+    $("motorField").hidden = !offered;
+    if (!offered) {
+      $("motorTotal").hidden = true;
+      $("motorWarn").hidden = false;
+      $("motorWarn").textContent = NO_MOTOR_WARN;
+      return;
+    }
+    $("motorWarn").textContent = MOTOR_WARN;
 
     const chosen = motor;
     $("motorTotal").hidden = !chosen;
@@ -499,6 +715,11 @@
   }
 
   // ---------- quote lines ----------
+  /* What a line was priced from. Lines that predate panel track and two-way
+     curtains (and drafts saved before them) carry no label of their own and
+     read exactly as they always did. */
+  const sizeLabel = l => l.tableLabel || `tabla ${l.reqWidth}"×${l.reqHeight}"`;
+
   function addLine() {
     if (!current) return;
     /* The table the paño was priced from is not part of the paño: nothing
@@ -507,6 +728,8 @@
     const { table, ...line } = current;
     lines.push(line);
     lineMarginInp.value = "0";
+    // the next panel track measures its own fabric
+    $("ptYards").value = "";
     // the next paño must choose its own motor and complementos, not inherit
     clearMotor();
     panoAddons.length = 0;
@@ -565,11 +788,12 @@
           <td class="cell-desc">
             <div class="desc-main">${l.fabric}</div>
             <div class="desc-sub">${l.category} · ${l.mount} ${tags.join(" ")}</div>
+            ${l.detail ? `<div class="desc-sub">${escapeHtml(l.detail)}</div>` : ""}
             ${(l.addons || []).map(a => `<div class="desc-addon">${escapeHtml(a.label)}${
               a.detail ? ` <span class="desc-sub">(${escapeHtml(a.detail)})</span>` : ""}
               · ${a.qty > 1 ? a.qty + " × " : ""}<b>${money(a.price)}</b></div>`).join("")}
           </td>
-          <td data-label="Medida">${l.askW}×${l.askH}<div class="desc-sub">tabla ${l.reqWidth}"×${l.reqHeight}"</div></td>
+          <td data-label="Medida">${l.askW}×${l.askH}<div class="desc-sub">${sizeLabel(l)}</div></td>
           <td class="num" data-label="Cant.">${l.qty}</td>
           <td class="num" data-label="P. unit.">${money(lineUnit(l))}</td>
           <td class="num" data-label="Total">${money(lineUnit(l) * l.qty)}</td>
@@ -652,7 +876,8 @@
       const info = reqInfo(l.req);
       if (!info || seen.has(l.req)) return;
       seen.add(l.req);
-      notes.push(`Una o más medidas requieren <b>${escapeHtml(info.label)}</b>.`);
+      notes.push(info.quote ||
+        `Una o más medidas requieren <b>${escapeHtml(info.label)}</b>.`);
     });
     notes.push("Precios sujetos a verificación de medidas en sitio.");
     $("qdNotes").innerHTML = notes.length
@@ -684,7 +909,8 @@
     L.push("Proyecto: " + $("qdProject").textContent);
     L.push("".padEnd(56, "─"));
     lines.forEach(l => {
-      L.push(`${l.qty} × ${l.fabric}  (${l.askW}×${l.askH} → tabla ${l.reqWidth}"×${l.reqHeight}")`);
+      L.push(`${l.qty} × ${l.fabric}  (${l.askW}×${l.askH} → ${sizeLabel(l)})`);
+      if (l.detail) L.push(`    ${l.detail}`);
       const extras = [];
       const info = reqInfo(l.req);
       if (info) extras.push(info.label);
@@ -1046,6 +1272,12 @@
     setMarginMode(b.dataset.mode);
     computeTotals();
   });
+  $("waysSeg").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    setWays(+b.dataset.ways);
+    compute();
+  });
+  ["ptYards", "ptPanels"].forEach(id => $(id).addEventListener("input", compute));
   $("lineMarginSeg").addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;
     lineMarginMode = b.dataset.mode;
@@ -1099,16 +1331,22 @@
       ({ value: String(i), label: `${m.label} · ${money(m.price)}` })));
     clearMotor();
   }
+  // nor do the panel track systems: every vías × canales PRS prices
+  if (PT) {
+    $("ptSystemDrop")._rebuild(PT.rails.map((r, i) =>
+      ({ value: String(i), label: railName(r) })));
+  }
   // paño-level complementos price against the size currently entered; project
   // items have no paño to measure against, so their pickers get no dims
-  panoPicker = makeAddonPicker("pano", kindsFor("pano"), panoAddons,
+  panoPicker = makeAddonPicker("pano", () => kindsFor("pano", appliesTo(familySel.value)),
+    panoAddons,
     () => {
       const w = toIn(parseFloat(widthInp.value));
       const h = toIn(parseFloat(heightInp.value));
       return (w && h) ? { w, h } : null;
     },
     () => compute());
-  extraPicker = makeAddonPicker("extra", extraKinds(), extraAddons,
+  extraPicker = makeAddonPicker("extra", extraKinds, extraAddons,
     () => null, () => renderQuote());
 
   buildFamilies();

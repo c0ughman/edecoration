@@ -61,11 +61,17 @@ COLOR_WORDS = {
     (0.9373, 0.9373, 0.9373): "gris",
     (1.0, 0.6, 0.0): "naranja",
     (0.851, 0.851, 0.851): "gris",
+    (0.9176, 0.6, 0.6): "rojo",      # Horizontales: beyond the system's capacity
 }
 
 # Meaning keywords, searched in the note that mentions the colour. Order
-# matters: "bottomrail" must beat "clutch" on a note that happens to say both.
+# matters: "bottomrail" must beat "clutch" on a note that happens to say both,
+# and the Horizontales capacity clauses must beat "motoriz", which both of them
+# also contain ("se recomienda dividir la persiana en dos o motorizar", "el
+# sistema manual o motorizado no tiene la capacidad para levantar").
 MEANING_KEYWORDS = [
+    ("capacidad para levantar", "exceeds_capacity"),
+    ("mite de su capacidad", "capacity_limit"),
     ("bottomrail", "bottomrail_delfin"),
     ("delfin", "bottomrail_delfin"),
     ("clutch", "clutch_large"),
@@ -109,12 +115,19 @@ def meaning_for_color(note, word):
     return None
 
 
-def resolve_requirements(colors, notes, page_no, table_name):
+def resolve_requirements(colors, notes, page_no, table_name, page_notes=()):
     """Work out what each shading colour means for one table.
 
     `colors` is the 2D grid of raw fills behind the price cells. Returns
     (requirement_grid, legend) where legend maps requirement key -> the note
     sentence, in PRS's own words, that defines it.
+
+    `page_notes` are the other notes printed on the same page. Two tables
+    stacked on one page often share a single legend printed under the second
+    one (Roman Con/Sin Varilla, Horizontal Bamboo/Pure Wood), so a colour the
+    table's own notes do not explain is looked up there before giving up. The
+    caller adds whatever note was used to the table's notes, so every legend
+    still quotes a note of its own table.
     """
     flat = [c for row in colors for c in row]
     cells = [c for c in flat if c is not None]
@@ -128,10 +141,15 @@ def resolve_requirements(colors, notes, page_no, table_name):
     for color in flags:
         word = COLOR_WORDS.get(color)
         # a fabric name can contain the colour word by accident, so take the
-        # first note that mentions it *and* resolves to a meaning
-        candidates = [n for n in notes if word and word in n.lower()]
-        resolved = next(((n, meaning_for_color(n, word)) for n in candidates
-                         if meaning_for_color(n, word)), None)
+        # first note that mentions it *and* resolves to a meaning -- the
+        # table's own notes first, then the page's shared ones
+        resolved = None
+        for pool in (notes, [n for n in page_notes if n not in notes]):
+            candidates = [n for n in pool if word and word in n.lower()]
+            resolved = next(((n, meaning_for_color(n, word)) for n in candidates
+                             if meaning_for_color(n, word)), None)
+            if resolved:
+                break
         if resolved is None:
             unexplained.append((color, word))
             continue
@@ -230,6 +248,32 @@ def join_wrapped(notes):
 NUMCELL_RE = re.compile(r"^\d{1,4}([.,]\d{1,2})?$")  # int or price cell
 
 
+def prose_lines(rows, indices):
+    """The note lines among rows[indices], ready for join_wrapped().
+
+    A note line is one with more than 15 letters -- short lines are labels and
+    axis names. But the last line of a wrapped sentence can be short:
+    "... se recomienda motorizar la" + "persiana." Dropping it cut PRS's
+    sentence off mid-word, so a short line is kept when it carries on the
+    sentence on the row directly above: starts lowercase, no numbers, and that
+    sentence has not ended.
+    """
+    out, prev = [], None
+    for j in indices:
+        line = clean(" ".join(w["txt"] for w in rows[j]["words"]))
+        if line and sum(c.isalpha() for c in line) > 15:
+            out.append(line)
+            prev = j
+        elif (line and out and prev == j - 1 and line[:1].islower()
+              and not out[-1].rstrip().endswith((".", ")", ":", "!"))
+              and not any(NUMCELL_RE.match(w["txt"]) for w in rows[j]["words"])):
+            out.append(line)
+            prev = j
+        else:
+            prev = None
+    return out
+
+
 def header_ints(row):
     """Return the sorted integer tokens if `row` is a width-header, else None.
 
@@ -252,6 +296,55 @@ def header_ints(row):
     if sum(d == modal for d in diffs) < len(diffs) * 0.6:
         return None
     return ints
+
+
+# A taller size costs more than a shorter one: PRS's own tables wobble by a few
+# percent here and there, but a cell this far above the one directly below it
+# (the next height up) is a typo in the price list, not a price. Pure Wood 2"
+# at 84" high reads $565.74-577.92 where 72" is ~$300 and 96" is ~$370. The
+# cell keeps PRS's printed figure -- the list is the source of truth -- but is
+# flagged so the quote cannot go out on it unnoticed.
+PRICE_CHECK_RATIO = 1.40
+
+
+def price_checks(prices):
+    """Parallel grid: True where a cell is out of sequence with the next height."""
+    grid = [[False] * len(r) for r in prices]
+    for i in range(len(prices) - 1):
+        for j, a in enumerate(prices[i]):
+            b = prices[i + 1][j] if j < len(prices[i + 1]) else None
+            if a is not None and b is not None and a > b * PRICE_CHECK_RATIO:
+                grid[i][j] = True
+    return grid
+
+
+def table_headers(rows):
+    """Indices of the rows that really are width headers.
+
+    Rail prices are whole dollars that climb steadily with width ("Riel s/
+    Master 21 26 34 41 46 ..."), so a price row can pass header_ints() on its
+    own -- that is how the whole RIEL HD RIPPLEFOLD / ONDA table went missing:
+    each of its three price rows became a header with no data under it. A row
+    sitting directly under a header, or under a price row of that header, is a
+    price row unless it repeats the header's values exactly (a table that
+    restates its header, like CORREDERAS under WAVE).
+    """
+    headers, last_vals, in_block = [], None, False
+    for i, r in enumerate(rows):
+        ints = header_ints(r)
+        if not ints:
+            # a row of numeric cells keeps the block going; anything else
+            # (a heading, a note, a metres axis label) ends it
+            n = sum(1 for w in r["words"] if NUMCELL_RE.match(w["txt"]))
+            in_block = in_block and n >= 2 and bool(row_alpha(r)) \
+                and not row_alpha(r).lower().startswith(("metros", "pulgadas"))
+            continue
+        vals = [int(w["txt"]) for w in ints]
+        if in_block and last_vals is not None and vals != last_vals:
+            continue                         # a price row, still in the block
+        headers.append(i)
+        last_vals, in_block = vals, True
+    return headers
 
 
 def col_geometry(ints):
@@ -322,26 +415,36 @@ def wrap_separator(first_line, continuation):
 
 
 def joined_title(rows, page_title):
-    """Page titles wrap, and row 1 is often the tail of row 0.
+    """Page titles wrap, and the rows after row 0 are often its tail.
 
     "Panel Track - Sheer Zakynthos / Sheer Inspiration / Sheer" + "Creta", or
     "... / Shelter" + "Island / Nature 5%" -- keeping only the first line drops
-    whole fabrics. A continuation is a fragment: it carries letters but is not
-    itself a heading (headings contain the " - " family separator) and is not
-    the Con/Sin Varilla label, which is picked up separately.
+    whole fabrics. A title can wrap more than once, and its tail can be long:
+    "Roman Shades - Florencia 118” / Rimini 118” / Day Break 118” /" goes on
+    with "Focus 118” / Elisabeth 118” / Flash 118” / Statement 118”", and the
+    old cap of one 40-character line dropped those four fabrics. So every row
+    up to the table itself is taken. A continuation is a fragment: it carries
+    letters but is not itself a heading (headings contain the " - " family
+    separator), is not the Con/Sin Varilla label, which is picked up
+    separately, and is not an axis row.
     """
-    if len(rows) < 2:
-        return page_title
-    a = row_alpha(rows[1])
-    if not a or " - " in a or len(a) > 40:
-        return page_title
-    if a.lower().startswith(("metros", "pulgadas")):
-        return page_title
-    if BARE_VARIANT_RE.match(a):
-        return page_title
-    if sum(1 for w in rows[1]["words"] if NUMCELL_RE.match(w["txt"])) >= 3:
-        return page_title            # that is the metric axis row, not a title
-    return clean(page_title + wrap_separator(page_title, a) + a)
+    title = page_title
+    for r in rows[1:]:
+        a = row_alpha(r)
+        if not a or " - " in a or len(a) > 120:
+            break
+        if a.lower().startswith(("metros", "pulgadas")):
+            break
+        if BARE_VARIANT_RE.match(a):
+            break
+        if sum(1 for w in r["words"] if NUMCELL_RE.match(w["txt"])) >= 3:
+            break                    # that is the metric axis row, not a title
+        # "(VERTILUX)" under the Manhattan title is the supplier's brand, not
+        # part of a fabric name, and supplier names stay off the client quote
+        if re.fullmatch(r"\([A-ZÁÉÍÓÚÑ ]+\)", a):
+            break
+        title = clean(title + wrap_separator(title, a) + a)
+    return title
 
 
 def split_fabrics(name, category=""):
@@ -392,7 +495,33 @@ def split_fabrics(name, category=""):
             out[-1] += " / " + seg          # another bolt width, same fabric
         else:
             out.append(seg)
-    return [lead + s + variant for s in out] or [name], caveat
+    names = []
+    for s in out:
+        s = fix_fabric_name(s, category)
+        # a title can name a fabric twice (old p51 lists "Nature 5%" twice);
+        # it is one product, so it is offered once
+        if lead + s + variant not in names:
+            names.append(lead + s + variant)
+    return names or [name], caveat
+
+
+# Names PRS prints in a way that would mislead on a client's quote. Kept to the
+# minimum, and only where the price list itself spells it out elsewhere:
+#   "… Blackout Basic Off White 72” - 96” - 118” / Black 118”" is the Black
+#   colour of Blackout Basic, not a fabric called "Black";
+#   "Landcaster" (Roman p56) is the Lancaster PRS prints on the Roller page
+#   and in the Panel Track fabric list.
+FABRIC_NAME_FIXES = [
+    ("Roller Shades", re.compile(r"^Black (\d)"), r"Blackout Basic Black \1"),
+    (None, re.compile(r"\bLandcaster\b"), "Lancaster"),
+]
+
+
+def fix_fabric_name(name, category):
+    for cat, pat, repl in FABRIC_NAME_FIXES:
+        if cat is None or cat == category:
+            name = pat.sub(repl, name)
+    return name
 
 
 def second_table_title(rows, hi):
@@ -510,7 +639,9 @@ def parse_awning(page, rows):
             if sum(c.isalpha() for c in name) >= 3:
                 accessories.append({"name": name, "price": to_price(money[0]["txt"])})
         elif line and sum(c.isalpha() for c in line) > 15 and not is_brazos_row(r):
-            if "metros" not in line.lower() and "proyeccion" not in line.lower():
+            # axis rows, whether or not PRS writes the accent ("Proyección")
+            plain = unicodedata.normalize("NFKD", line.lower()).encode("ascii", "ignore").decode()
+            if "metros" not in plain and "proyeccion" not in plain:
                 notes.append(line)
 
     if not groups:
@@ -525,6 +656,193 @@ def parse_awning(page, rows):
         "accessories": accessories,
         "notes": join_wrapped([n for n in notes if n != "Awning System"]),
     }]
+
+
+# ---------------------------------------------------------------------------
+# Cortinas de tela (drapery)
+#
+# Each fabric group ("FLO / CIELO / BRISA / AURA", "DRAPER", ...) carries two
+# small tables, ONDA / RIPPLEFOLD and PLISADA, priced for tela + costura by the
+# finished width of a one-way curtain (36"-252") and its height. The first
+# height row is the "Apaisado / Base de 4"" row (railroaded fabric, up to the
+# height printed beside it, which differs per fabric); the rest are "Con
+# Empates" (seamed) at 132", 168" and 204". Read that way it is an ordinary
+# round-up-to-the-next-size matrix, so it is emitted as a fabric_matrix and the
+# calculator prices it with the same code as every other table.
+#
+# The layout is regular but not tidy: one table runs from the foot of a page
+# onto the next (BELLA PLISADA), and a height label can sit a few points off
+# its price row. So the pages are read as one stream of rows, and a price row
+# is any row with a height label (110" style, in the Altura column) and ten
+# whole-dollar prices in the ten width columns. Anything that does not fit the
+# expected shape raises rather than guessing.
+# ---------------------------------------------------------------------------
+DRAPERY_DIVIDER_RE = re.compile(r"riel(es)?\s+(de|y)\s+cortina", re.I)
+DRAPERY_STYLES = {"ONDA / RIPPLEFOLD": "Onda o Ripplefold", "PLISADA": "Plisada"}
+DRAPERY_GROUP_RE = re.compile(r"^[A-ZÁÉÍÓÚÑ]+( [A-ZÁÉÍÓÚÑ]+)*( / [A-ZÁÉÍÓÚÑ]+( [A-ZÁÉÍÓÚÑ]+)*)*$")
+HEIGHT_LABEL_RE = re.compile(r"^(\d{2,3})\"$")
+DRAPERY_PRICE_X = 175          # price columns start right of this
+DRAPERY_LABEL_X = (110, 175)   # the Altura column
+
+
+def is_drapery_fabric_page(text):
+    return "ONDA / RIPPLEFOLD" in text or bool(re.search(r"^PLISADA$", text, re.M))
+
+
+def drapery_notes(page):
+    """The numbered IMPORTANTE rules under CORTINAS DE TELA, rejoined."""
+    lines = [clean(l) for l in (page.extract_text() or "").splitlines()]
+    try:
+        start = next(i for i, l in enumerate(lines) if l == "IMPORTANTE") + 1
+    except StopIteration:
+        return []
+    notes = []
+    for l in lines[start:]:
+        if not l:
+            continue
+        if re.match(r"^\d+\.\s", l):
+            notes.append(l)
+        elif notes and not l.isupper():
+            notes[-1] += " " + l
+        else:
+            break                       # the next section's heading
+    return notes
+
+
+def parse_drapery(pages, notes):
+    """Fabric matrices for the cortinas de tela pages, in page order."""
+    tables, group, cur = [], None, None
+    for page in pages:
+        words = [w for w in page.extract_words() if clean(w["text"])]
+        for w in words:
+            w["txt"] = clean(w["text"])
+        for r in cluster_rows(words):
+            ws = r["words"]
+            line = clean(" ".join(w["txt"] for w in ws))
+            cells = [w for w in ws if w["x0"] >= DRAPERY_PRICE_X]
+            ints = [w for w in cells if re.fullmatch(r"\d{1,4}", w["txt"])]
+            labels = [w for w in ws if DRAPERY_LABEL_X[0] <= w["x0"] < DRAPERY_LABEL_X[1]
+                      and HEIGHT_LABEL_RE.match(w["txt"])]
+            if line in DRAPERY_STYLES:
+                if group is None:
+                    raise ValueError(f"p{page.page_number}: {line} before any fabric group")
+                cur = {"group": group, "style": DRAPERY_STYLES[line],
+                       "page": page.page_number, "widths_in": None,
+                       "widths_m": None, "heights_in": [], "prices": []}
+                tables.append(cur)
+            elif DRAPERY_GROUP_RE.match(line) \
+                    and line not in ("IMPORTANTE", "CORTINAS DE TELA"):
+                # a heading has no digits at all (the regex admits none), and
+                # a long one reaches out over the price columns
+                # ("FLO / CIELO / BRISA / AURA"), so position cannot tell it
+                group, cur = line, None
+            elif cur is None:
+                continue
+            elif labels:
+                if len(ints) != 10 or len(cells) != 10:
+                    raise ValueError(f"p{page.page_number} {group} {cur['style']}: "
+                                     f"height row '{line}' has {len(ints)} prices, want 10")
+                cur["heights_in"].append(int(HEIGHT_LABEL_RE.match(labels[-1]["txt"]).group(1)))
+                cur["prices"].append([float(w["txt"]) for w in sorted(ints, key=lambda w: w["x0"])])
+            elif len(ints) == 10 and len(cells) == 10:
+                vals = [int(w["txt"]) for w in sorted(ints, key=lambda w: w["x0"])]
+                if cur["widths_in"] is None:
+                    cur["widths_in"] = vals
+                elif vals != cur["widths_in"]:
+                    raise ValueError(f"p{page.page_number} {group}: width header changed "
+                                     f"inside one table: {vals}")
+            elif len(cells) == 10 and all(METER_RE.match(w["txt"]) for w in cells):
+                cur["widths_m"] = [to_price(w["txt"]) for w in sorted(cells, key=lambda w: w["x0"])]
+            elif cells:
+                raise ValueError(f"p{page.page_number} {group}: unrecognised row '{line}'")
+
+    blocks = []
+    for t in tables:
+        h = t["heights_in"]
+        if t["widths_in"] is None or len(h) < 2 or h != sorted(set(h)):
+            raise ValueError(f"cortinas de tela {t['group']} {t['style']}: "
+                             f"bad shape widths={t['widths_in']} heights={h}")
+        names = [n.strip().title() for n in t["group"].split("/")]
+        blocks.append({
+            "type": "fabric_matrix",
+            "name": f"Cortinas de Tela - {t['group']} ({t['style']})",
+            "page": t["page"],
+            "currency": "USD",
+            "axis": {"rows": "height_in", "cols": "width_in"},
+            "widths_in": t["widths_in"],
+            "widths_m": t["widths_m"],
+            "heights_in": h,
+            "prices": t["prices"],
+            "requirements": [[None] * len(r) for r in t["prices"]],
+            "requirement_legend": {},
+            "price_checks": price_checks(t["prices"]),
+            "notes": list(notes),
+            "fabrics": [f"{n} ({t['style']})" for n in names],
+            # PRS: "Aunque el riel se cotice a dos vías, en esta tabla se cotiza
+            # cortinas a una vía ... Si quieres cotizar una cortina de dos vías,
+            # divide el ancho total en 2 y cotiza como si fueran 2 cortinas."
+            "drapery": {"style": t["style"], "two_way": "split_width"},
+            "section": "drapery",
+        })
+    return blocks
+
+
+# ---------------------------------------------------------------------------
+# Panel Track
+#
+# The per-fabric Panel Track tables are gone. A panel track is now the rail
+# (1 or 2 vías x 2/3/4 canales, by width, "incluye basta redonda") plus the
+# fabric, sold by the yard from the "Telas" list printed under it. PRS gives
+# the yard price and one rule -- "Al calcular el ancho de los paños se debe
+# añadir 2 pulgadas de traslape por cada uno" -- but not how many yards a
+# given panel track takes, so the yardage stays a figure the person quoting
+# enters; nothing here invents a cutting formula.
+# ---------------------------------------------------------------------------
+TELA_RE = re.compile(r"([A-Za-zÁÉÍÓÚÑáéíóúñ][\wÁÉÍÓÚÑáéíóúñ %.]*?)\s+(\d{2,3})\s+\$(\d{1,4}\.\d{2})")
+
+
+def parse_panel_track(page, page_blocks):
+    """The rail matrix and the per-yard fabric list on the Panel Track page."""
+    lines = [clean(l) for l in (page.extract_text() or "").splitlines()]
+    telas = []
+    for l in lines:
+        for m in TELA_RE.finditer(l):
+            telas.append({"name": m.group(1).strip(), "bolt_width_in": int(m.group(2)),
+                          "price_per_yard": float(m.group(3))})
+    rails = []
+    for b in page_blocks:
+        if b["type"] != "width_priced":
+            continue
+        ways = re.search(r"a\s+(\d)\s+v[ií]as?", b["name"], re.I)
+        if not ways:
+            raise ValueError(f"p{page.page_number}: panel track rail table "
+                             f"'{b['name']}' does not say how many vías")
+        for r in b["rows"]:
+            ch = re.match(r"^(\d)\s+canales$", r["label"], re.I)
+            if not ch:
+                raise ValueError(f"p{page.page_number}: rail row '{r['label']}'")
+            rails.append({"ways": int(ways.group(1)), "channels": int(ch.group(1)),
+                          "label": f"{b['name']} · {r['label']}",
+                          "widths_in": b["widths_in"], "prices": r["prices"]})
+    rules = [l.lstrip("●•· ").strip() for l in lines if "traslape" in l.lower()]
+    includes = next((m.group(1) for l in lines
+                     for m in [re.search(r"\(incluye ([^)]+)\)", l)] if m), None)
+    if not telas or not rails:
+        raise ValueError(f"p{page.page_number}: panel track page without telas or rails")
+    return {
+        "type": "panel_track",
+        "name": "Panel Track",
+        "category": "Panel Track",
+        "page": page.page_number,
+        "currency": "USD",
+        "rail_includes": includes,
+        "rails": rails,
+        "telas": sorted(telas, key=lambda t: t["name"]),
+        # PRS's sizing rule, verbatim; the calculator applies it to show each
+        # panel's width
+        "overlap_per_panel_in": 2 if any("2 pulgadas" in r for r in rules) else None,
+        "notes": rules,
+    }
 
 
 # "Side Channel (Par / 2 Piezas)   7.25 / Pie de Alto" -- these are sold by the
@@ -585,9 +903,14 @@ def process_page(page, page_title):
     if any(is_brazos_row(r) for r in rows):
         return parse_awning(page, rows)
 
-    headers = [i for i, r in enumerate(rows) if header_ints(r)]
+    headers = table_headers(rows)
     consumed = set()
     blocks = []
+
+    # every prose line on the page, for tables that share one legend
+    page_notes = join_wrapped(prose_lines(rows, [
+        i for i, r in enumerate(rows)
+        if sum(1 for w in r["words"] if NUMCELL_RE.match(w["txt"])) < 3]))
 
     # A per-foot section sits under its own heading, after the size tables. Its
     # rows are claimed here so the accessory pass does not read them as flat
@@ -650,7 +973,13 @@ def process_page(page, page_title):
             sub = clean(" ".join(w["txt"] for w in rows[hi]["words"]
                                  if not is_int(w["txt"])
                                  and (w["x0"] + w["x1"]) / 2 < left_limit))
-            title = title_above(rows, hi, headers[hk - 1] if hk else -1) or page_title
+            # a table restating its header right under the previous one (the
+            # CORREDERAS table under WAVE, both "RIEL COULISSE NEGRO") has no
+            # heading of its own and belongs to the heading above them both
+            prev_w = next((b for b in reversed(blocks)
+                           if b["type"] == "width_priced"), None)
+            title = (title_above(rows, hi, headers[hk - 1] if hk else -1)
+                     or (prev_w["name"] if prev_w else None) or page_title)
             table_rows = []
             used = [hi]
             for j in data:
@@ -663,6 +992,13 @@ def process_page(page, page_title):
                 # genuine rail/channel rows span several columns; a lone price
                 # is an accessory line and belongs in the item list instead
                 if label.lower() in ("metros", "pulgadas") or len(cells) < 2:
+                    continue
+                # an item line ("Kit de Riel Curvo flexible 4.5 metros 25.00
+                # Riel curvo flexible para ...") carries words out among the
+                # price columns; a rail row has nothing but prices there
+                if any(any(c.isalpha() for c in w["txt"])
+                       for w in rows[j]["words"]
+                       if (w["x0"] + w["x1"]) / 2 >= left_limit):
                     continue
                 slots = assign_cells(cells, centers, spacing)
                 # a prose line can carry stray numbers that survive the cell
@@ -723,13 +1059,8 @@ def process_page(page, page_title):
             continue  # not a real fabric grid; leave rows for the item pass
 
         # human-readable notes that sit inside the block span
-        for j in range(hi + 1, end):
-            if j in (data):
-                continue
-            line = clean(" ".join(w["txt"] for w in rows[j]["words"]))
-            if line and sum(c.isalpha() for c in line) > 15:
-                notes.append(line)
-        notes = join_wrapped(notes)
+        notes = join_wrapped(prose_lines(
+            rows, [j for j in range(hi + 1, end) if j not in data]))
         for j in range(hi, end):
             consumed.add(j)
 
@@ -752,7 +1083,13 @@ def process_page(page, page_title):
         else:
             title = second_table_title(rows, hi) or full_title
 
-        reqs, legend = resolve_requirements(colors, notes, page.page_number, title)
+        reqs, legend = resolve_requirements(colors, notes, page.page_number,
+                                            title, page_notes)
+        # a legend borrowed from the page's shared notes becomes this table's
+        # note too: it is the sentence that governs these cells
+        for n in legend.values():
+            if n not in notes:
+                notes.append(n)
 
         blocks.append({
             "type": "fabric_matrix",
@@ -766,6 +1103,7 @@ def process_page(page, page_title):
             "prices": prices,
             "requirements": reqs,
             "requirement_legend": legend,
+            "price_checks": price_checks(prices),
             "notes": notes,
         })
 
@@ -804,8 +1142,24 @@ def process_page(page, page_title):
                 or name.lower().startswith(("metros", "pulgadas", "proyeccion")):
             continue
         trailing = clean(" ".join(w["txt"] for w in toks if w["x0"] > money[-1]["x1"]))
+        ctx = sections[-1] if sections else ""
+        # "Re-Lion 45E 20NM Eléctrico | 136.50 / 150.50 (50NM)" is two motors
+        # in one cell: 136.50 is the 20NM, 150.50 the 50NM. Read as one line it
+        # became a "20NM" item at the 50NM price.
+        dual = re.match(r"^(?P<name>.*?)\s+(?P<a>\d{1,4}\.\d{2})\s*/$", name)
+        tag = re.fullmatch(r"\((\d+\s*NM)\)", trailing, re.I)
+        if dual and tag:
+            base = dual.group("name")
+            alt = re.sub(r"\b\d+\s*NM\b", tag.group(1).upper(), base, flags=re.I)
+            if alt == base:
+                alt = f"{base} ({tag.group(1).upper()})"
+            items.append({"name": base, "description": desc,
+                          "price": to_price(dual.group("a")), "extra": "", "context": ctx})
+            items.append({"name": alt, "description": desc, "price": price,
+                          "extra": "", "context": ctx})
+            continue
         items.append({"name": name, "description": desc, "price": price,
-                      "extra": trailing, "context": sections[-1] if sections else ""})
+                      "extra": trailing, "context": ctx})
 
     if items:
         blocks.append({
@@ -832,6 +1186,7 @@ FAMILY_KEYWORDS = [
     ("awning", "Toldos"),
     ("toldo", "Toldos"),
     ("window film", "Window Film"),
+    ("horizontal", "Horizontales"),
     ("somfy", "Rieles y Motores"),
     ("re-lion", "Rieles y Motores"),
     ("motor", "Rieles y Motores"),
@@ -847,6 +1202,11 @@ FAMILY_KEYWORDS = [
 
 def category_for(block, fallback):
     """Pick a family from the block name, its section headers, and row labels."""
+    # the motor list's own heading names the families it serves ("MOTORES PARA
+    # ROLLER, SHEER, MANHATTAN Y ROMANAS"), which would otherwise file the
+    # whole motor page under Manhattan
+    if any(h.upper().startswith("MOTORES") for h in block.get("section_headers", [])):
+        return "Rieles y Motores"
     haystack = block.get("name", "")
     haystack += " " + " ".join(block.get("section_headers", []))
     haystack += " " + " ".join(r.get("label", "") for r in block.get("rows", []))
@@ -878,8 +1238,8 @@ def collect_motors(catalog):
     """
     seen, out = set(), []
     for b in catalog:
-        if b["type"] != "item_list":
-            continue
+        if b["type"] != "item_list" or b.get("section") == "drapery":
+            continue                       # track motors drive curtains, not shades
         for i in b["items"]:
             if not (i.get("context") or "").upper().startswith("MOTORES"):
                 continue
@@ -905,6 +1265,34 @@ def collect_motors(catalog):
     return out
 
 
+# The motor section's heading says which families its motors are for. A family
+# it does not name (Horizontales, whose grey cells also say "motorizar") has no
+# motor in the price list, and offering it a roller tube motor would quote the
+# wrong product -- so the calculator only offers these motors where PRS does.
+MOTOR_FAMILY_WORDS = {"ROLLER": "Roller Shades", "SHEER": "Sheer Elegance",
+                      "MANHATTAN": "Manhattan", "ROMANA": "Roman Shades",
+                      "ROMANAS": "Roman Shades", "HONEYCOMB": "Honeycomb",
+                      "TOLDOS": "Toldos", "HORIZONTALES": "Horizontales"}
+
+
+def motor_families(catalog):
+    """Families named by the "MOTORES PARA ..." heading, or None if absent."""
+    for b in catalog:
+        for h in b.get("section_headers", []):
+            m = re.match(r"^MOTORES PARA (.+)$", h.strip(), re.I)
+            if not m:
+                continue
+            words = [w for w in re.split(r"[,\s]+", m.group(1).upper())
+                     if w and w not in ("Y", "E")]
+            fams, unknown = [], []
+            for w in words:
+                (fams if w in MOTOR_FAMILY_WORDS else unknown).append(w)
+            if unknown:
+                raise ValueError(f"motor heading names unknown families {unknown}: {h}")
+            return sorted({MOTOR_FAMILY_WORDS[w] for w in fams})
+    return None
+
+
 # ---------------------------------------------------------------------------
 # Add-on catalogue
 #
@@ -917,46 +1305,83 @@ def collect_motors(catalog):
 #             (cenefas, cassettes, fascias, rails)
 #   per_foot  price x feet of the paño's height or width   (perfiles)
 #
-# Cortinas de tela are excluded entirely. The price list carries their hardware
-# (pages 31-36, the "Riel de Cortina" section: manual rails, MOVELITE / GLYDEA /
-# Motion tracks, master carriers, ripplefold and pinch-pleat parts) but never
-# prices the tela itself, so a drapery cannot be quoted here at all. Excluding
-# by page rather than by name catches the whole section -- matching names had
-# let 45 of these through into the componente and control groups.
+# Shades and cortinas de tela take different hardware, so every group says
+# which it applies to ("applies_to"), and the calculator offers a paño only the
+# groups for its kind. The shade groups are exactly what they always were.
+#
+# The cortinas de tela section ("Riel de Cortina" / "Rieles y Cortinas":
+# manual rails, MOVELITE / GLYDEA / Motion tracks, master carriers, ripplefold
+# and pinch-pleat parts) used to be excluded outright, because the list never
+# priced the tela itself. Now it does, so that hardware is offered -- but only
+# on a cortina de tela, never on a shade. The section is recognised from its
+# divider page, not by name: matching names had let 45 of these through into
+# the shade componente and control groups.
 # ---------------------------------------------------------------------------
-DRAPERY_PAGES = set(range(31, 37))
 CENEFA_RE = re.compile(r"cenefa|carcaza|cassette|fascia", re.I)
 RAIL_RE = re.compile(r"riel|sistema guiado", re.I)
 CONTROL_RE = re.compile(r"control|remoto|hub|bridge|canales|situo|telis|smoove"
-                        r"|intertec|inteo|convertidor|cargador", re.I)
+                        r"|intertec|inteo|convertidor|cargador|botonera|pull wand"
+                        r"|interfaz", re.I)
+# motorised curtain tracks, and the per-foot extensions sold with them
+TRACK_RE = re.compile(r"riel el[eé]ctrico|riel de bater|movelite|glydea"
+                      r"|adicional\s+precio por pie|precio por pie", re.I)
 
 
 def collect_addons(catalog):
     """Everything quotable as an add-on, grouped by kind."""
+    shade = {"scope": "pano", "applies_to": "shade"}
+    drape = {"scope": "pano", "applies_to": "drapery"}
     groups = {
         "motor": {"kind": "motor", "label": "Motor",
-                  "scope": "pano", "pricing": "flat", "items": []},
+                  "pricing": "flat", "items": [], **shade},
         "cenefa": {"kind": "cenefa", "label": "Cenefa / cassette / fascia",
-                   "scope": "pano", "pricing": "width", "items": []},
+                   "pricing": "width", "items": [], **shade},
         "riel": {"kind": "riel", "label": "Riel",
-                 "scope": "pano", "pricing": "width", "items": []},
+                 "pricing": "width", "items": [], **shade},
         "perfil": {"kind": "perfil", "label": "Perfil de enmarcado",
-                   "scope": "pano", "pricing": "per_foot", "items": []},
+                   "pricing": "per_foot", "items": [], **shade},
         "componente": {"kind": "componente", "label": "Componente",
-                       "scope": "pano", "pricing": "flat", "items": []},
+                       "pricing": "flat", "items": [], **shade},
         "control": {"kind": "control", "label": "Control / hub",
-                    "scope": "pano", "pricing": "flat", "items": []},
+                    "pricing": "flat", "items": [], **shade},
+        "riel_cortina": {"kind": "riel_cortina",
+                         "label": "Riel de cortina (sin bastones)",
+                         "pricing": "width", "items": [], **drape},
+        "riel_motorizado": {"kind": "riel_motorizado", "label": "Riel motorizado",
+                            "pricing": "flat", "items": [], **drape},
+        "accesorio_cortina": {"kind": "accesorio_cortina",
+                              "label": "Accesorio de cortina",
+                              "pricing": "flat", "items": [], **drape},
+        "control_cortina": {"kind": "control_cortina",
+                            "label": "Control de riel motorizado",
+                            "pricing": "flat", "items": [], **drape},
     }
 
     groups["motor"]["items"] = [
         {"label": m["label"], "price": m["price"], "page": m["page"]}
         for m in collect_motors(catalog)]
 
-    seen_width = set()
+    # A width table PRS prints twice is offered once. When the two copies
+    # disagree the later one wins: the Panel Track rail is on the Accesorios
+    # page at last list's prices and again in the Panel Track section at the
+    # new ones, "incluye basta redonda". Each replacement is reported.
+    width_at = {}
+    replaced = []
+    seen_items = set()
     for b in catalog:
-        if b.get("page") in DRAPERY_PAGES:
-            continue                       # cortinas de tela, not quoted here
+        drapery = b.get("section") == "drapery"
         if b["type"] == "width_priced":
+            if drapery:
+                for r in b["rows"]:
+                    sub = b.get("subheader") or ""
+                    parts = [b["name"]]
+                    if sub and sub.lower() not in ("balinera", "pulgadas"):
+                        parts.append(sub)
+                    parts.append(r["label"])
+                    groups["riel_cortina"]["items"].append({
+                        "label": " · ".join(parts), "widths_in": b["widths_in"],
+                        "prices": r["prices"], "page": b["page"]})
+                continue
             kind = ("cenefa" if CENEFA_RE.search(b["name"])
                     else "riel" if RAIL_RE.search(b["name"]) else None)
             if not kind:
@@ -965,13 +1390,17 @@ def collect_addons(catalog):
                 label = r["label"] if r["label"] != b["name"] else b["name"]
                 if label != b["name"]:
                     label = f"{b['name']} · {label}"
-                # PRS repeats the Panel Track rail table on every fabric page
-                if label in seen_width:
+                item = {"label": label, "widths_in": b["widths_in"],
+                        "prices": r["prices"], "page": b["page"]}
+                if label in width_at:
+                    k, i = width_at[label]
+                    old = groups[k]["items"][i]
+                    if (old["widths_in"], old["prices"]) != (item["widths_in"], item["prices"]):
+                        replaced.append((label, old["page"], item["page"]))
+                        groups[k]["items"][i] = item
                     continue
-                seen_width.add(label)
-                groups[kind]["items"].append({
-                    "label": label, "widths_in": b["widths_in"],
-                    "prices": r["prices"], "page": b["page"]})
+                width_at[label] = (kind, len(groups[kind]["items"]))
+                groups[kind]["items"].append(item)
 
         elif b["type"] == "per_unit_list":
             for i in b["items"]:
@@ -983,20 +1412,39 @@ def collect_addons(catalog):
             for i in b["items"]:
                 ctx = (i.get("context") or "").upper()
                 name = i["name"]
-                if ctx.startswith("MOTORES"):
-                    continue                       # already in the motor group
-                kind = "control" if CONTROL_RE.search(name) or "CONTROL" in ctx \
-                    else "componente"
-                key = (kind, name, i["price"])
-                if key in seen_width:
+                if drapery:
+                    # the motorised tracks come in two lengths that only the
+                    # description tells apart ("... hasta 114”" / "hasta
+                    # 228”"), so the description is part of what is picked
+                    label = drapery_item_label(i)
+                    kind = ("riel_motorizado" if TRACK_RE.search(label)
+                            else "control_cortina"
+                            if CONTROL_RE.search(name) or "CONTROL" in ctx
+                            else "accesorio_cortina")
+                else:
+                    if ctx.startswith("MOTORES"):
+                        continue                   # already in the motor group
+                    label = name
+                    kind = "control" if CONTROL_RE.search(name) or "CONTROL" in ctx \
+                        else "componente"
+                key = (kind, label, i["price"])
+                if key in seen_items:
                     continue
-                seen_width.add(key)
+                seen_items.add(key)
                 groups[kind]["items"].append(
-                    {"label": name, "price": i["price"], "page": b["page"]})
+                    {"label": label, "price": i["price"], "page": b["page"]})
 
+    for label, was, now in replaced:
+        print(f"note: '{label}' p{was} superseded by p{now}", file=sys.stderr)
     for g in groups.values():
         g["items"].sort(key=lambda x: x.get("price", 0) or 0)
     return [g for g in groups.values() if g["items"]]
+
+
+def drapery_item_label(item):
+    """What a curtain-hardware line is called in the picker."""
+    name, desc = item["name"], (item.get("description") or "").strip()
+    return f"{name} · {desc}" if desc else name
 
 
 def slugify(s):
@@ -1022,6 +1470,12 @@ def main():
     current_category = "General"
     catalog = []
     unparsed = []
+    # The cortinas de tela section runs from its divider page ("Riel de
+    # Cortina", now "Rieles y Cortinas") to the next divider. It used to be
+    # excluded by page number (31-36), which silently goes wrong the moment
+    # PRS adds a page -- the September list moved it to 31-43.
+    in_drapery = False
+    drapery_pages, drapery_rules = [], []
 
     for page in pdf.pages:
         words = [w for w in page.extract_words() if clean(w["text"])]
@@ -1034,12 +1488,21 @@ def main():
                 current_category = first_line
             else:
                 current_category = "Rieles y Motores"
+            in_drapery = bool(DRAPERY_DIVIDER_RE.search(text))
             continue
+
+        if in_drapery and is_drapery_fabric_page(text):
+            drapery_pages.append(page)          # parsed together, below
+            continue
+        if in_drapery and not drapery_rules and "CORTINAS DE TELA" in text:
+            drapery_rules = drapery_notes(page)
 
         blocks = process_page(page, first_line)
         if blocks:
             for b in blocks:
                 b["category"] = category_for(b, current_category)
+                if in_drapery:
+                    b["section"] = "drapery"
                 # one table can price several fabrics, and a quote has to name
                 # the one that was chosen -- needs the family, so it happens here
                 if b["type"] == "fabric_matrix":
@@ -1047,6 +1510,8 @@ def main():
                     if caveat and caveat not in b["notes"]:
                         b["notes"].append(caveat)
                 catalog.append(b)
+            if "precio/yarda" in text:
+                catalog.append(parse_panel_track(page, blocks))
         else:
             unparsed.append({
                 "category": current_category,
@@ -1054,6 +1519,14 @@ def main():
                 "title": first_line,
                 "text": text,
             })
+
+    if drapery_pages:
+        if not drapery_rules:
+            raise ValueError("cortinas de tela tables found without their "
+                             "IMPORTANTE rules")
+        for b in parse_drapery(drapery_pages, drapery_rules):
+            b["category"] = "Cortinas de Tela"
+            catalog.append(b)
 
     # A motorised paño has to price a real motor, so publish the choices as a
     # first-class block rather than leaving the calculator to guess a number.
@@ -1065,6 +1538,8 @@ def main():
             "category": "Rieles y Motores",
             "page": min(m["page"] for m in motors),
             "currency": "USD",
+            # null = the list does not say, so every family may use them
+            "families": motor_families(catalog),
             "items": motors,
         })
 

@@ -1,0 +1,5037 @@
+{
+  "category": "Cortinas de Tela",
+  "tables": [
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - FLO / CIELO / BRISA / AURA (Onda o Ripplefold)",
+      "page": 33,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        108,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          36.0,
+          71.0,
+          82.0,
+          110.0,
+          129.0,
+          149.0,
+          168.0,
+          187.0,
+          207.0,
+          246.0
+        ],
+        [
+          55.0,
+          110.0,
+          121.0,
+          165.0,
+          176.0,
+          186.0,
+          231.0,
+          241.0,
+          286.0,
+          341.0
+        ],
+        [
+          64.0,
+          127.0,
+          138.0,
+          191.0,
+          201.0,
+          212.0,
+          265.0,
+          275.0,
+          328.0,
+          392.0
+        ],
+        [
+          72.0,
+          144.0,
+          155.0,
+          216.0,
+          227.0,
+          237.0,
+          299.0,
+          309.0,
+          371.0,
+          443.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Flo (Onda o Ripplefold)",
+        "Cielo (Onda o Ripplefold)",
+        "Brisa (Onda o Ripplefold)",
+        "Aura (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - FLO / CIELO / BRISA / AURA (Plisada)",
+      "page": 33,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        106,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          40.0,
+          76.0,
+          97.0,
+          119.0,
+          141.0,
+          163.0,
+          185.0,
+          207.0,
+          228.0,
+          272.0
+        ],
+        [
+          62.0,
+          124.0,
+          138.0,
+          186.0,
+          200.0,
+          248.0,
+          262.0,
+          310.0,
+          324.0,
+          386.0
+        ],
+        [
+          71.0,
+          141.0,
+          155.0,
+          212.0,
+          226.0,
+          282.0,
+          296.0,
+          353.0,
+          367.0,
+          437.0
+        ],
+        [
+          79.0,
+          158.0,
+          172.0,
+          237.0,
+          251.0,
+          316.0,
+          330.0,
+          395.0,
+          409.0,
+          488.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Flo (Plisada)",
+        "Cielo (Plisada)",
+        "Brisa (Plisada)",
+        "Aura (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - BELLA (Onda o Ripplefold)",
+      "page": 33,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        108,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          49.0,
+          98.0,
+          116.0,
+          151.0,
+          178.0,
+          205.0,
+          232.0,
+          260.0,
+          287.0,
+          341.0
+        ],
+        [
+          79.0,
+          158.0,
+          169.0,
+          237.0,
+          248.0,
+          258.0,
+          327.0,
+          337.0,
+          406.0,
+          485.0
+        ],
+        [
+          94.0,
+          187.0,
+          198.0,
+          281.0,
+          291.0,
+          302.0,
+          385.0,
+          395.0,
+          478.0,
+          572.0
+        ],
+        [
+          108.0,
+          216.0,
+          227.0,
+          324.0,
+          335.0,
+          345.0,
+          443.0,
+          453.0,
+          551.0,
+          659.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Bella (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - BELLA (Plisada)",
+      "page": 33,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        106,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          55.0,
+          102.0,
+          132.0,
+          163.0,
+          193.0,
+          224.0,
+          255.0,
+          285.0,
+          316.0,
+          377.0
+        ],
+        [
+          86.0,
+          172.0,
+          186.0,
+          258.0,
+          272.0,
+          344.0,
+          358.0,
+          430.0,
+          444.0,
+          530.0
+        ],
+        [
+          101.0,
+          201.0,
+          215.0,
+          302.0,
+          316.0,
+          402.0,
+          416.0,
+          503.0,
+          517.0,
+          617.0
+        ],
+        [
+          115.0,
+          230.0,
+          244.0,
+          345.0,
+          359.0,
+          460.0,
+          474.0,
+          575.0,
+          589.0,
+          704.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Bella (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - DRAPER (Onda o Ripplefold)",
+      "page": 34,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        108,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          64.0,
+          129.0,
+          155.0,
+          199.0,
+          236.0,
+          272.0,
+          308.0,
+          344.0,
+          380.0,
+          452.0
+        ],
+        [
+          107.0,
+          214.0,
+          225.0,
+          321.0,
+          332.0,
+          342.0,
+          439.0,
+          449.0,
+          546.0,
+          653.0
+        ],
+        [
+          129.0,
+          257.0,
+          268.0,
+          386.0,
+          396.0,
+          407.0,
+          525.0,
+          535.0,
+          653.0,
+          782.0
+        ],
+        [
+          150.0,
+          300.0,
+          311.0,
+          450.0,
+          461.0,
+          471.0,
+          611.0,
+          621.0,
+          761.0,
+          911.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Draper (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - DRAPER (Plisada)",
+      "page": 34,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        106,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          73.0,
+          134.0,
+          173.0,
+          214.0,
+          255.0,
+          295.0,
+          336.0,
+          377.0,
+          418.0,
+          500.0
+        ],
+        [
+          114.0,
+          228.0,
+          242.0,
+          342.0,
+          356.0,
+          456.0,
+          470.0,
+          570.0,
+          584.0,
+          698.0
+        ],
+        [
+          136.0,
+          271.0,
+          285.0,
+          407.0,
+          421.0,
+          542.0,
+          556.0,
+          678.0,
+          692.0,
+          827.0
+        ],
+        [
+          157.0,
+          314.0,
+          328.0,
+          471.0,
+          485.0,
+          628.0,
+          642.0,
+          785.0,
+          799.0,
+          956.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Draper (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - ELISABETH / MATHILDE / FOCUS (Onda o Ripplefold)",
+      "page": 34,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        110,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          76.0,
+          153.0,
+          186.0,
+          237.0,
+          281.0,
+          324.0,
+          367.0,
+          410.0,
+          453.0,
+          540.0
+        ],
+        [
+          129.0,
+          258.0,
+          269.0,
+          387.0,
+          398.0,
+          408.0,
+          527.0,
+          537.0,
+          656.0,
+          785.0
+        ],
+        [
+          156.0,
+          312.0,
+          323.0,
+          468.0,
+          479.0,
+          489.0,
+          635.0,
+          645.0,
+          791.0,
+          947.0
+        ],
+        [
+          183.0,
+          366.0,
+          377.0,
+          549.0,
+          560.0,
+          570.0,
+          743.0,
+          753.0,
+          926.0,
+          1109.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Elisabeth (Onda o Ripplefold)",
+        "Mathilde (Onda o Ripplefold)",
+        "Focus (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - ELISABETH / MATHILDE / FOCUS (Plisada)",
+      "page": 34,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        108,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          87.0,
+          158.0,
+          205.0,
+          254.0,
+          303.0,
+          352.0,
+          401.0,
+          449.0,
+          498.0,
+          596.0
+        ],
+        [
+          136.0,
+          272.0,
+          286.0,
+          408.0,
+          422.0,
+          544.0,
+          558.0,
+          680.0,
+          694.0,
+          830.0
+        ],
+        [
+          163.0,
+          326.0,
+          340.0,
+          489.0,
+          503.0,
+          652.0,
+          666.0,
+          815.0,
+          829.0,
+          992.0
+        ],
+        [
+          190.0,
+          380.0,
+          394.0,
+          570.0,
+          584.0,
+          760.0,
+          774.0,
+          950.0,
+          964.0,
+          1154.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Elisabeth (Plisada)",
+        "Mathilde (Plisada)",
+        "Focus (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - EQUILIBRIUM / SPRING (Onda o Ripplefold)",
+      "page": 35,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        100,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          36.0,
+          71.0,
+          82.0,
+          110.0,
+          129.0,
+          149.0,
+          168.0,
+          187.0,
+          207.0,
+          246.0
+        ],
+        [
+          55.0,
+          110.0,
+          121.0,
+          165.0,
+          176.0,
+          186.0,
+          231.0,
+          241.0,
+          286.0,
+          341.0
+        ],
+        [
+          64.0,
+          127.0,
+          138.0,
+          191.0,
+          201.0,
+          212.0,
+          265.0,
+          275.0,
+          328.0,
+          392.0
+        ],
+        [
+          72.0,
+          144.0,
+          155.0,
+          216.0,
+          227.0,
+          237.0,
+          299.0,
+          309.0,
+          371.0,
+          443.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Equilibrium (Onda o Ripplefold)",
+        "Spring (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - EQUILIBRIUM / SPRING (Plisada)",
+      "page": 35,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        98,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          40.0,
+          76.0,
+          97.0,
+          119.0,
+          141.0,
+          163.0,
+          185.0,
+          207.0,
+          228.0,
+          272.0
+        ],
+        [
+          62.0,
+          124.0,
+          138.0,
+          186.0,
+          200.0,
+          248.0,
+          262.0,
+          310.0,
+          324.0,
+          386.0
+        ],
+        [
+          71.0,
+          141.0,
+          155.0,
+          212.0,
+          226.0,
+          282.0,
+          296.0,
+          353.0,
+          367.0,
+          437.0
+        ],
+        [
+          79.0,
+          158.0,
+          172.0,
+          237.0,
+          251.0,
+          316.0,
+          330.0,
+          395.0,
+          409.0,
+          488.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Equilibrium (Plisada)",
+        "Spring (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - GAU / ELISE (Onda o Ripplefold)",
+      "page": 35,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        100,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          49.0,
+          98.0,
+          116.0,
+          151.0,
+          178.0,
+          205.0,
+          232.0,
+          260.0,
+          287.0,
+          341.0
+        ],
+        [
+          79.0,
+          158.0,
+          169.0,
+          237.0,
+          248.0,
+          258.0,
+          327.0,
+          337.0,
+          406.0,
+          485.0
+        ],
+        [
+          94.0,
+          187.0,
+          198.0,
+          281.0,
+          291.0,
+          302.0,
+          385.0,
+          395.0,
+          478.0,
+          572.0
+        ],
+        [
+          108.0,
+          216.0,
+          227.0,
+          324.0,
+          335.0,
+          345.0,
+          443.0,
+          453.0,
+          551.0,
+          659.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Gau (Onda o Ripplefold)",
+        "Elise (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - GAU / ELISE (Plisada)",
+      "page": 35,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        98,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          55.0,
+          102.0,
+          132.0,
+          163.0,
+          193.0,
+          224.0,
+          255.0,
+          285.0,
+          316.0,
+          377.0
+        ],
+        [
+          86.0,
+          172.0,
+          186.0,
+          258.0,
+          272.0,
+          344.0,
+          358.0,
+          430.0,
+          444.0,
+          530.0
+        ],
+        [
+          101.0,
+          201.0,
+          215.0,
+          302.0,
+          316.0,
+          402.0,
+          416.0,
+          503.0,
+          517.0,
+          617.0
+        ],
+        [
+          115.0,
+          230.0,
+          244.0,
+          345.0,
+          359.0,
+          460.0,
+          474.0,
+          575.0,
+          589.0,
+          704.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Gau (Plisada)",
+        "Elise (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - MATTHIAS (Onda o Ripplefold)",
+      "page": 36,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        100,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          53.0,
+          107.0,
+          127.0,
+          165.0,
+          195.0,
+          224.0,
+          254.0,
+          284.0,
+          313.0,
+          373.0
+        ],
+        [
+          87.0,
+          174.0,
+          185.0,
+          261.0,
+          272.0,
+          282.0,
+          359.0,
+          369.0,
+          446.0,
+          533.0
+        ],
+        [
+          104.0,
+          207.0,
+          218.0,
+          311.0,
+          321.0,
+          332.0,
+          425.0,
+          435.0,
+          528.0,
+          632.0
+        ],
+        [
+          120.0,
+          240.0,
+          251.0,
+          360.0,
+          371.0,
+          381.0,
+          491.0,
+          501.0,
+          611.0,
+          731.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Matthias (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - MATTHIAS (Plisada)",
+      "page": 36,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        98,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          60.0,
+          111.0,
+          144.0,
+          177.0,
+          211.0,
+          244.0,
+          278.0,
+          312.0,
+          345.0,
+          412.0
+        ],
+        [
+          94.0,
+          188.0,
+          202.0,
+          282.0,
+          296.0,
+          376.0,
+          390.0,
+          470.0,
+          484.0,
+          578.0
+        ],
+        [
+          111.0,
+          221.0,
+          235.0,
+          332.0,
+          346.0,
+          442.0,
+          456.0,
+          553.0,
+          567.0,
+          677.0
+        ],
+        [
+          127.0,
+          254.0,
+          268.0,
+          381.0,
+          395.0,
+          508.0,
+          522.0,
+          635.0,
+          649.0,
+          776.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Matthias (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - RHINE (Onda o Ripplefold)",
+      "page": 36,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        100,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          68.0,
+          135.0,
+          163.0,
+          210.0,
+          248.0,
+          286.0,
+          324.0,
+          362.0,
+          400.0,
+          476.0
+        ],
+        [
+          113.0,
+          226.0,
+          237.0,
+          339.0,
+          350.0,
+          360.0,
+          463.0,
+          473.0,
+          576.0,
+          689.0
+        ],
+        [
+          136.0,
+          272.0,
+          283.0,
+          408.0,
+          419.0,
+          429.0,
+          555.0,
+          565.0,
+          691.0,
+          827.0
+        ],
+        [
+          159.0,
+          318.0,
+          329.0,
+          477.0,
+          488.0,
+          498.0,
+          647.0,
+          657.0,
+          806.0,
+          965.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Rhine (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - RHINE (Plisada)",
+      "page": 36,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        98,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          77.0,
+          140.0,
+          182.0,
+          225.0,
+          268.0,
+          311.0,
+          354.0,
+          397.0,
+          440.0,
+          526.0
+        ],
+        [
+          120.0,
+          240.0,
+          254.0,
+          360.0,
+          374.0,
+          480.0,
+          494.0,
+          600.0,
+          614.0,
+          734.0
+        ],
+        [
+          143.0,
+          286.0,
+          300.0,
+          429.0,
+          443.0,
+          572.0,
+          586.0,
+          715.0,
+          729.0,
+          872.0
+        ],
+        [
+          166.0,
+          332.0,
+          346.0,
+          498.0,
+          512.0,
+          664.0,
+          678.0,
+          830.0,
+          844.0,
+          1010.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Rhine (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - LENS (Onda o Ripplefold)",
+      "page": 37,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        116,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          54.0,
+          109.0,
+          129.0,
+          168.0,
+          198.0,
+          229.0,
+          259.0,
+          289.0,
+          319.0,
+          380.0
+        ],
+        [
+          89.0,
+          178.0,
+          188.0,
+          266.0,
+          277.0,
+          287.0,
+          366.0,
+          376.0,
+          455.0,
+          543.0
+        ],
+        [
+          106.0,
+          212.0,
+          222.0,
+          317.0,
+          328.0,
+          338.0,
+          434.0,
+          444.0,
+          539.0,
+          645.0
+        ],
+        [
+          123.0,
+          245.0,
+          256.0,
+          368.0,
+          379.0,
+          389.0,
+          501.0,
+          512.0,
+          624.0,
+          747.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Lens (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - LENS (Plisada)",
+      "page": 37,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        114,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          61.0,
+          113.0,
+          146.0,
+          181.0,
+          215.0,
+          249.0,
+          283.0,
+          317.0,
+          352.0,
+          420.0
+        ],
+        [
+          96.0,
+          192.0,
+          206.0,
+          287.0,
+          301.0,
+          383.0,
+          397.0,
+          479.0,
+          493.0,
+          589.0
+        ],
+        [
+          113.0,
+          226.0,
+          240.0,
+          338.0,
+          352.0,
+          451.0,
+          465.0,
+          564.0,
+          578.0,
+          691.0
+        ],
+        [
+          130.0,
+          259.0,
+          273.0,
+          389.0,
+          403.0,
+          519.0,
+          533.0,
+          649.0,
+          663.0,
+          792.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Lens (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - FLASH (Onda o Ripplefold)",
+      "page": 37,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        107,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          92.0,
+          184.0,
+          225.0,
+          286.0,
+          338.0,
+          390.0,
+          442.0,
+          494.0,
+          546.0,
+          651.0
+        ],
+        [
+          157.0,
+          314.0,
+          325.0,
+          471.0,
+          482.0,
+          492.0,
+          639.0,
+          649.0,
+          796.0,
+          953.0
+        ],
+        [
+          191.0,
+          382.0,
+          393.0,
+          573.0,
+          584.0,
+          594.0,
+          775.0,
+          785.0,
+          966.0,
+          1157.0
+        ],
+        [
+          225.0,
+          450.0,
+          461.0,
+          675.0,
+          686.0,
+          696.0,
+          911.0,
+          921.0,
+          1136.0,
+          1361.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Flash (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - FLASH (Plisada)",
+      "page": 37,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        105,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          104.0,
+          189.0,
+          246.0,
+          305.0,
+          364.0,
+          423.0,
+          482.0,
+          541.0,
+          600.0,
+          719.0
+        ],
+        [
+          164.0,
+          328.0,
+          342.0,
+          492.0,
+          506.0,
+          656.0,
+          670.0,
+          820.0,
+          834.0,
+          998.0
+        ],
+        [
+          198.0,
+          396.0,
+          410.0,
+          594.0,
+          608.0,
+          792.0,
+          806.0,
+          990.0,
+          1004.0,
+          1202.0
+        ],
+        [
+          232.0,
+          464.0,
+          478.0,
+          696.0,
+          710.0,
+          928.0,
+          942.0,
+          1160.0,
+          1174.0,
+          1406.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Flash (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - MOTION / STATEMENT (Onda o Ripplefold)",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        111,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          96.0,
+          192.0,
+          236.0,
+          300.0,
+          354.0,
+          409.0,
+          464.0,
+          518.0,
+          573.0,
+          683.0
+        ],
+        [
+          165.0,
+          330.0,
+          341.0,
+          495.0,
+          506.0,
+          516.0,
+          671.0,
+          681.0,
+          836.0,
+          1001.0
+        ],
+        [
+          201.0,
+          402.0,
+          413.0,
+          603.0,
+          614.0,
+          624.0,
+          815.0,
+          825.0,
+          1016.0,
+          1217.0
+        ],
+        [
+          237.0,
+          474.0,
+          485.0,
+          711.0,
+          722.0,
+          732.0,
+          959.0,
+          969.0,
+          1196.0,
+          1433.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Motion (Onda o Ripplefold)",
+        "Statement (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - MOTION / STATEMENT (Plisada)",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        109,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          109.0,
+          198.0,
+          258.0,
+          320.0,
+          382.0,
+          444.0,
+          506.0,
+          568.0,
+          630.0,
+          754.0
+        ],
+        [
+          172.0,
+          344.0,
+          358.0,
+          516.0,
+          530.0,
+          688.0,
+          702.0,
+          860.0,
+          874.0,
+          1046.0
+        ],
+        [
+          208.0,
+          416.0,
+          430.0,
+          624.0,
+          638.0,
+          832.0,
+          846.0,
+          1040.0,
+          1054.0,
+          1262.0
+        ],
+        [
+          244.0,
+          488.0,
+          502.0,
+          732.0,
+          746.0,
+          976.0,
+          990.0,
+          1220.0,
+          1234.0,
+          1478.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Motion (Plisada)",
+        "Statement (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - DAY BREAK (Onda o Ripplefold)",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        108,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          89.0,
+          177.0,
+          217.0,
+          275.0,
+          326.0,
+          376.0,
+          426.0,
+          476.0,
+          526.0,
+          627.0
+        ],
+        [
+          151.0,
+          302.0,
+          313.0,
+          453.0,
+          464.0,
+          474.0,
+          615.0,
+          625.0,
+          766.0,
+          917.0
+        ],
+        [
+          184.0,
+          367.0,
+          378.0,
+          551.0,
+          561.0,
+          572.0,
+          745.0,
+          755.0,
+          928.0,
+          1112.0
+        ],
+        [
+          216.0,
+          432.0,
+          443.0,
+          648.0,
+          659.0,
+          669.0,
+          875.0,
+          885.0,
+          1091.0,
+          1307.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Day Break (Onda o Ripplefold)"
+      ],
+      "drapery": {
+        "style": "Onda o Ripplefold",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Cortinas de Tela - DAY BREAK (Plisada)",
+      "page": 38,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        64,
+        84,
+        105,
+        126,
+        147,
+        168,
+        189,
+        210,
+        252
+      ],
+      "widths_m": [
+        0.92,
+        1.63,
+        2.14,
+        2.67,
+        3.21,
+        3.74,
+        4.27,
+        4.81,
+        5.34,
+        6.41
+      ],
+      "heights_in": [
+        106,
+        132,
+        168,
+        204
+      ],
+      "prices": [
+        [
+          100.0,
+          182.0,
+          237.0,
+          294.0,
+          351.0,
+          408.0,
+          465.0,
+          522.0,
+          578.0,
+          692.0
+        ],
+        [
+          158.0,
+          316.0,
+          330.0,
+          474.0,
+          488.0,
+          632.0,
+          646.0,
+          790.0,
+          804.0,
+          962.0
+        ],
+        [
+          191.0,
+          381.0,
+          395.0,
+          572.0,
+          586.0,
+          762.0,
+          776.0,
+          953.0,
+          967.0,
+          1157.0
+        ],
+        [
+          223.0,
+          446.0,
+          460.0,
+          669.0,
+          683.0,
+          892.0,
+          906.0,
+          1115.0,
+          1129.0,
+          1352.0
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      ],
+      "requirement_legend": {},
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "1. Solo es Tela y Costura. En el caso de Plisado incluye crinolina y ganchos, pero en Wave y Ripplefold no incluye la cinta. Esta se compra con el riel.",
+        "2. Aunque el riel se cotice a dos vías, en esta tabla se cotiza cortinas a una vía. Incluye los descuentos por la basta vertical a cada lado. Si quieres cotizar una cortina de dos vías, divide el ancho total en 2 y cotiza como si fueran 2 cortinas.",
+        "3. La basta de abajo es estándar de 4\". Si se hace a 2\" puedes agregarle 4\" a la altura de la tabla, si se hace a 6\" hay que restarle 4\" a la altura de la tabla",
+        "4. En cortinas plisadas tenemos: pliegue simple, doble, triple o invertido, puedes ver las muestras en fábrica. En el caso de Ripplefold utilizamos el 100% y en el caso de Wave puede ser de 60mm o 80mm.",
+        "5. La costura incluye el trabajo de hilo inferior para mantener la onda. El estándar es de plástico, si quieren hilos inferiores que no perforen se tienen que pedir.",
+        "6. La cortina se plancha levemente al vapor, se ata plisada y se forra en plástico, y vendrá a la altura pedida. No incluye servicio de basta en sitio.",
+        "7. Las cortinas las guardaremos por 72 horas después de ser confeccionadas. Pasadas las 72 horas no nos hacemos responsables por marcas, planchado o daños en la tela."
+      ],
+      "fabrics": [
+        "Day Break (Plisada)"
+      ],
+      "drapery": {
+        "style": "Plisada",
+        "two_way": "split_width"
+      },
+      "section": "drapery",
+      "category": "Cortinas de Tela"
+    }
+  ]
+}

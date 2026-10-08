@@ -26,8 +26,11 @@ const withReq = (req) => CATALOG.findIndex(t =>
   t.type === "fabric_matrix" &&
   (t.requirements || []).some(row => row.some(r => r === req)));
 
-const ZAKROS = withReq("thin_fabric_smiles");   // orange / thin fabric, p23
-const AXIO = withReq("bottomrail_delfin");      // yellow = special-order bottomrail
+const ZAKROS = withReq("thin_fabric_smiles");   // orange / thin fabric (Sheer Zakros)
+// PRS dropped the Delfin bottomrail rule in September; the yellow that now
+// means something other than clutch Large is the Horizontales capacity limit
+const HORIZ = withReq("capacity_limit");
+const HORIZ_RED = withReq("exceeds_capacity");
 
 /* Locate a cell carrying a given requirement, for surcharge tests. */
 function cellWith(idx, req) {
@@ -102,10 +105,12 @@ check("clutch surcharge applies to clutch cells only, not motor cells", () => {
           `clutch ${a.display}, motor ${b.display}`];
 });
 
-check("bottomrail (Delfin) flags the paño but adds no surcharge", () => {
-  const c = cellWith(AXIO, "bottomrail_delfin");
-  const r = price({ tableIndex: AXIO, w: c.w, h: c.h, clutch: 25 });
-  return [near(parseMoney(r.display), c.base) && r.badges.includes("bottomrail"),
+check("a yellow that is not clutch Large adds no clutch surcharge", () => {
+  // the same yellow is clutch Large on a Roller page and the capacity limit on
+  // the Horizontales page; only the former costs anything
+  const c = cellWith(HORIZ, "capacity_limit");
+  const r = price({ tableIndex: HORIZ, w: c.w, h: c.h, clutch: 25 });
+  return [near(parseMoney(r.display), c.base) && r.badges.includes("límite de su capacidad"),
           `base ${c.base} -> ${r.display}; badge=${/>([^<]*)</.exec(r.badges)?.[1] || "none"}`];
 });
 
@@ -275,8 +280,8 @@ check("two paños from different tables sum correctly", () => {
   const fresh = boot();
   fresh.price({ tableIndex: WELL, w: 36, h: 42, qty: 2 });
   fresh.addAndTotal();
-  const c = cellWith(AXIO, "bottomrail_delfin");
-  fresh.price({ tableIndex: AXIO, w: c.w, h: c.h, qty: 1 });
+  const c = cellWith(ZAKROS, "thin_fabric_smiles");
+  fresh.price({ tableIndex: ZAKROS, w: c.w, h: c.h, qty: 1 });
   const t = fresh.addAndTotal();
   const want = 18.39 * 2 + c.base;
   return [near(fresh.parseMoney(t.subtotal), want),
@@ -285,11 +290,12 @@ check("two paños from different tables sum correctly", () => {
 
 check("the client quote states the requirement without the supplier's wording", () => {
   const fresh = boot();
-  const c = cellWith(AXIO, "bottomrail_delfin");
-  fresh.price({ tableIndex: AXIO, w: c.w, h: c.h });
+  const c = cellWith(ZAKROS, "thin_fabric_smiles");
+  fresh.price({ tableIndex: ZAKROS, w: c.w, h: c.h });
   const t = fresh.addAndTotal();
   // the requirement is named; the price-list sentence explaining it is not
-  return [t.notes.includes("bottomrail") && !t.notes.includes("sombreadas"),
+  return [t.notes.includes("sonrisas") && !t.notes.includes("NARANJA")
+          && !t.notes.includes("sombreadas"),
           `requirement stated, supplier sentence withheld`];
 });
 
@@ -321,8 +327,9 @@ check("the quote line names the motor without an emoji", () => {
   const m = cellWith(WELL, "motorization");
   fresh.price({ tableIndex: WELL, w: m.w, h: m.h, motorIndex: 3 });
   const t = fresh.addAndTotal();
-  return [t.items.includes("Motor ") && !/[\u{1F300}-\u{1FAFF}⚡]/u.test(t.items),
-          `line reads "Motor <model> · $x c/u", no emoji`];
+  // the motor has its own row since it was split off the paño's price
+  return [t.items.includes("Motorización · ") && !/[\u{1F300}-\u{1FAFF}⚡]/u.test(t.items),
+          `line reads "Motorización · <model>", no emoji`];
 });
 
 /* ---- one table, several fabrics: the quote must name only the chosen one ---- */
@@ -506,10 +513,11 @@ check("the add-on catalogue exposes every kind with items", () => {
 });
 
 check("drapery tracks are kept out of the shade add-ons", () => {
-  const bad = ADDONS.flatMap(g => g.items)
+  const bad = ADDONS.filter(g => (g.applies_to || "shade") === "shade")
+    .flatMap(g => g.items)
     .filter(i => /riel hd|coulisse negro|rieles manuales|balineras/i.test(i.label));
   return [bad.length === 0,
-          bad.length ? `leaked: ${bad[0].label}` : "cortinas de tela excluded"];
+          bad.length ? `leaked: ${bad[0].label}` : "curtain rails only on curtains"];
 });
 
 check("a width-priced cenefa is looked up on the paño's width", () => {
@@ -643,12 +651,16 @@ check("a custom complemento without a name is refused", () => {
           "nothing added without a name"];
 });
 
-check("no cortina de tela hardware is offered anywhere", () => {
+check("no cortina de tela hardware is offered on a shade", () => {
   const pat = /movelite|glydea|ripplefold|pinch pleat|master carrier|huesitos|balinera|coulisse negro|riel hd|bracket de pared|riel el.ctrico|riel de bater/i;
-  const leaked = ADDONS.flatMap(g => g.items.map(i => [g.kind, i.label]))
+  const f = panoAt(60, 72);              // a Roller paño
+  const kinds = f.get("panoKindDrop").querySelector(".cs-menu").children
+                 .map(c => c.dataset.value);
+  const leaked = ADDONS.filter(g => kinds.includes(g.kind))
+                       .flatMap(g => g.items.map(i => [g.kind, i.label]))
                        .filter(([, l]) => pat.test(l));
   return [leaked.length === 0,
-          leaked.length ? `leaked: ${leaked[0][1]}` : "drapery fully excluded"];
+          leaked.length ? `leaked: ${leaked[0][1]}` : `shade kinds: ${kinds.join(", ")}`];
 });
 
 check("the extra-items list defaults to Personalizado", () => {
@@ -708,6 +720,322 @@ check("removing an extra item takes it off the total", () => {
   f.get("qdItems").fireWith("click", btn);
   return [near(withIt, 75) && f.parseMoney(f.get("qdSubtotal").textContent) === 0,
           `75 -> ${f.get("qdSubtotal").textContent}`];
+});
+
+/* ------------- September 2026 list: new families, rules and limits ------------- */
+const tIdx = name => CATALOG.findIndex(t => t.name === name);
+const FLO = tIdx("Cortinas de Tela - FLO / CIELO / BRISA / AURA (Onda o Ripplefold)");
+const PURE = CATALOG.findIndex(t => t.type === "fabric_matrix" && t.name.includes("Pure Wood"));
+const inFamilyWith = (cat, req) => CATALOG.findIndex(t => t.type === "fabric_matrix"
+  && t.category === cat && t.requirements.some(r => r.includes(req)));
+const ROMAN_M = inFamilyWith("Roman Shades", "motorization");
+const HORIZ_M = inFamilyWith("Horizontales", "motorization");
+const menuOf = (f, id) => f.get(id).querySelector(".cs-menu").children.map(c => c.dataset.value);
+const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+check("families are offered in price-list order, new ones included", () => {
+  const fams = menuOf(boot(), "familyDrop");
+  const want = ["Roller Shades", "Sheer Elegance", "Manhattan", "Cortinas de Tela",
+                "Roman Shades", "Honeycomb", "Toldos", "Panel Track", "Horizontales"];
+  return [same(fams, want), fams.join(" · ")];
+});
+
+check("a Roman Shades motorisation cell offers the motor list and prices it", () => {
+  const c = cellWith(ROMAN_M, "motorization");
+  const r = price({ tableIndex: ROMAN_M, w: c.w, h: c.h, motorIndex: 3 });
+  return [r.motorShown && !r.motorFieldHidden
+          && near(parseMoney(r.display), c.base + MOTORS[3].price),
+          `${c.w}"x${c.h}" base ${c.base} + ${MOTORS[3].price} -> ${r.display}`];
+});
+
+check("Horizontales motorisation warns but offers no roller tube motor", () => {
+  const f = boot();
+  const c = cellWith(HORIZ_M, "motorization");
+  const r = f.price({ tableIndex: HORIZ_M, w: c.w, h: c.h, motorIndex: 3 });
+  return [r.motorShown && r.motorFieldHidden && !r.warnHidden
+          && /no incluye un motor/.test(r.warnText)
+          && near(parseMoney(r.display), c.base) && !r.disabled,
+          `notice shown, no picker, price stays ${r.display} (base ${c.base})`];
+});
+
+check("a motor picked on a roller never rides onto a Horizontales paño", () => {
+  const f = boot();
+  const m = cellWith(WELL, "motorization");
+  f.price({ tableIndex: WELL, w: m.w, h: m.h, motorIndex: 4 });
+  const c = cellWith(HORIZ_M, "motorization");
+  const r = f.price({ tableIndex: HORIZ_M, w: c.w, h: c.h });
+  const t = f.addAndTotal();
+  return [near(parseMoney(r.display), c.base) && !t.items.includes("Motorización"),
+          `Horizontales line ${r.display}, no motor row`];
+});
+
+check("a red Horizontales cell warns as beyond capacity and adds nothing", () => {
+  const c = cellWith(HORIZ_RED, "exceeds_capacity");
+  const r = price({ tableIndex: HORIZ_RED, w: c.w, h: c.h, clutch: 25 });
+  return [near(parseMoney(r.display), c.base) && r.badges.includes("Excede la capacidad")
+          && r.badges.includes("badge range") && !r.disabled,
+          `base ${c.base} -> ${r.display}, red badge, still quotable`];
+});
+
+check("the client quote words the capacity rules without PRS's shading language", () => {
+  const f = boot();
+  const a = cellWith(HORIZ_RED, "exceeds_capacity");
+  f.price({ tableIndex: HORIZ_RED, w: a.w, h: a.h });
+  f.addAndTotal();
+  const b = cellWith(HORIZ, "capacity_limit");
+  f.price({ tableIndex: HORIZ, w: b.w, h: b.h });
+  const t = f.addAndTotal();
+  return [t.notes.includes("exceden la capacidad") && t.notes.includes("límite de capacidad")
+          && !/sombreada|amarillo|rojo/i.test(t.notes),
+          `${(t.notes.match(/<li>/g) || []).length} notes, no supplier wording`];
+});
+
+check("the out-of-sequence Pure Wood 84\" cell keeps PRS's price and is flagged", () => {
+  const r = price({ tableIndex: PURE, w: 60, h: 84 });
+  return [r.display === "$565.74" && r.badges.includes("fuera de secuencia"),
+          `${r.display}, flagged=${r.badges.includes("fuera de secuencia")}`];
+});
+
+check("an ordinary Pure Wood cell carries no flag at all", () => {
+  const r = price({ tableIndex: PURE, w: 36, h: 36 });
+  return [r.display === "$109.64" && r.badges === "", `${r.display}, badges="${r.badges}"`];
+});
+
+check("a note the calculator already enforces is not repeated on the panel", () => {
+  // "Para garantizar ... no se recomienda fabricarlas fuera de las medidas"
+  const z = CATALOG.findIndex(t => t.type === "fabric_matrix"
+    && (t.notes || []).some(n => /^Para garantizar la calidad/.test(n)));
+  const t = CATALOG[z];
+  const r = price({ tableIndex: z, w: t.widths_in[0], h: t.heights_in[0] });
+  return [!r.notes.includes("Para garantizar"), `${t.name.slice(0, 40)}: suppressed`];
+});
+
+/* cortinas de tela */
+check("cortina de tela: an exact cell returns the PDF's price", () => {
+  const r = price({ tableIndex: FLO, w: 36, h: 108 });
+  return [r.display === "$36.00", `Flo 36x108 -> ${r.display} (PDF 36)`];
+});
+
+check("cortina de tela: the base row covers heights up to its printed height", () => {
+  const a = price({ tableIndex: FLO, w: 36, h: 100 });
+  const b = price({ tableIndex: FLO, w: 36, h: 109 });   // past 108" -> con empates 132"
+  return [a.display === "$36.00" && b.display === "$55.00",
+          `100" -> ${a.display}, 109" -> ${b.display} (132" row)`];
+});
+
+check("cortina de tela: a width between columns rounds up", () => {
+  const r = price({ tableIndex: FLO, w: 37, h: 100 });
+  return [r.display === "$71.00" && r.meta.includes('64" × 108"'), `${r.display}, ${r.meta}`];
+});
+
+check("cortina de tela: two vías price two curtains of half the width", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  f.setWays(2);
+  const r = f.price({ tableIndex: FLO, w: 128, h: 100 });   // 2 × 64" -> 2 × $71
+  return [r.display === "$142.00" && r.meta.includes('2 paños de 64"'),
+          `128" two-way -> ${r.display}; ${r.meta}`];
+});
+
+check("cortina de tela: a two-way line names both paños on the quote", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  f.setWays(2);
+  f.price({ tableIndex: FLO, w: 128, h: 100, qty: 3 });
+  const t = f.addAndTotal();
+  return [t.items.includes('2 paños · tabla 64"×108"') && t.items.includes("Apertura a 2 vías")
+          && near(f.parseMoney(t.subtotal), 142 * 3),
+          `subtotal ${t.subtotal} (3 × 142)`];
+});
+
+check("cortina de tela: two vías refuse a total width past twice the table", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  f.setWays(2);
+  const r = f.price({ tableIndex: FLO, w: 505, h: 100 });
+  return [r.display === "Fuera de rango" && r.meta.includes('504"') && r.disabled,
+          r.meta];
+});
+
+check("cortina de tela: leaving the family resets the opening to one way", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  f.setWays(2);
+  f.pickOption("familyDrop", "Roller Shades");
+  const r = f.price({ tableIndex: FLO, w: 128, h: 100 });   // one way -> 147" column
+  return [r.display === "$149.00" && f.get("waysField").hidden,
+          `${r.display}, apertura hidden`];
+});
+
+check("a curtain is offered curtain hardware only", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  const k = menuOf(f, "panoKindDrop");
+  return [same(k, ["riel_cortina", "riel_motorizado", "accesorio_cortina",
+                   "control_cortina", "personalizado"]), k.join(", ")];
+});
+
+check("a shade is offered exactly the complementos it always had", () => {
+  const k = menuOf(boot(), "panoKindDrop");
+  return [same(k, ["motor", "cenefa", "riel", "perfil", "componente", "control",
+                   "personalizado"]), k.join(", ")];
+});
+
+check("a curtain rail is priced on the full width of a two-way curtain", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  f.setWays(2);
+  f.price({ tableIndex: FLO, w: 128, h: 100 });
+  const before = f.parseMoney(f.get("lpValue").textContent);
+  const g = grp("riel_cortina");
+  const idx = g.items.findIndex(i => i.label === "RIEL HD CON BALINERAS · Riel 2-Vías");
+  f.addAddon("pano", { kind: "riel_cortina", itemIndex: idx });
+  const item = g.items[idx];
+  const rail = item.prices[item.widths_in.findIndex(x => x >= 128)];   // 132" column
+  return [near(f.parseMoney(f.get("lpValue").textContent), before + rail),
+          `${before} + rail ${rail} at 132" (full width, not 64")`];
+});
+
+check("changing family drops complementos that do not apply to it", () => {
+  const f = panoAt(60, 72);
+  f.addAddon("pano", { kind: "cenefa", itemIndex: 1 });
+  const had = f.get("panoAddonList").innerHTML !== "";
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  return [had && f.get("panoAddonList").innerHTML === "", "cenefa removed on the curtain"];
+});
+
+check("every curtain fabric and style is quotable", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Cortinas de Tela");
+  const opts = menuOf(f, "fabricDrop");
+  const bad = opts.filter(v => {
+    f.pickOption("fabricDrop", v);
+    f.get("heightInp").value = "100"; f.get("widthInp").value = "100";
+    f.get("widthInp").fire("input");
+    return !/^\$[\d,]+\.\d\d$/.test(f.get("lpValue").textContent);
+  });
+  return [opts.length === 40 && bad.length === 0, `${opts.length} options, ${bad.length} failed`];
+});
+
+/* panel track */
+const PTB = CATALOG.find(t => t.type === "panel_track");
+const ptRail = (ways, ch) => PTB.rails.findIndex(r => r.ways === ways && r.channels === ch);
+const ptTela = name => PTB.telas.findIndex(t => t.name === name);
+
+check("panel track: offers every fabric on PRS's per-yard list", () => {
+  const f = boot();
+  f.pickOption("familyDrop", "Panel Track");
+  const opts = menuOf(f, "fabricDrop");
+  return [opts.length === 31 && opts.every(v => v.startsWith("pt:"))
+          && !f.get("ptFields").hidden, `${opts.length} fabrics`];
+});
+
+check("panel track: rail plus yards at the per-yard price", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2),
+                           w: 50, h: 96, yards: 6 });
+  // 1 vía 2 canales at 50" = 55.90, Zakros $6.00/yd x 6 = 36.00
+  return [r.display === "$91.90" && !r.disabled, `${r.display}; ${r.meta}`];
+});
+
+check("panel track: a width between columns rounds up to the next rail size", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2),
+                           w: 55, h: 96, yards: 6 });
+  return [r.display === "$97.29" && r.meta.includes('tabla 60"'), `${r.display} (61.29 + 36)`];
+});
+
+check("panel track: no yards, no price", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: 0, railIndex: ptRail(1, 2), w: 50, h: 96, yards: "" });
+  return [r.display === "—" && r.disabled && /yardas/.test(r.meta), r.meta];
+});
+
+check("panel track: a blank rail cell is Consultar, never the next column", () => {
+  const f = boot();
+  // 1 vía 4 canales starts at 60"; 50" is blank in the PDF
+  const r = f.panelTrack({ telaIndex: 0, railIndex: ptRail(1, 4), w: 50, h: 96, yards: 5 });
+  return [r.display === "Consultar" && r.disabled, `${r.display}; ${r.meta}`];
+});
+
+check("panel track: beyond the rail table is out of range", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: 0, railIndex: ptRail(2, 4), w: 161, h: 96, yards: 5 });
+  return [r.display === "Fuera de rango" && r.disabled && r.meta.includes('160"'), r.meta];
+});
+
+check("panel track: fractional yards price the fabric to the cent", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: ptTela("Wellington"), railIndex: ptRail(1, 2),
+                           w: 50, h: 96, yards: 6.333 });
+  // 6.333 x 16.00 = 101.328 -> 101.33; + 55.90 = 157.23
+  return [r.display === "$157.23", `${r.display}; ${r.meta}`];
+});
+
+check("panel track: each panel's width follows PRS's 2\" overlap rule", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: 0, railIndex: ptRail(1, 3), w: 90, h: 96,
+                           yards: 5, panels: 3 });
+  return [r.info.includes('Cada panel: 32"') && r.notes.includes("traslape")
+          && r.notes.includes("basta redonda"), r.info];
+});
+
+check("panel track: the quote names what is built, not PRS's cost of each part", () => {
+  const f = boot();
+  f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2), w: 50, h: 96,
+                 yards: 6, qty: 2 });
+  const t = f.addAndTotal();
+  return [t.items.includes("Zakros") && t.items.includes('riel 50"')
+          && t.items.includes("Riel 1 vía · 2 canales · tela 6 yd")
+          && !t.items.includes("yd ×") && !t.items.includes("55.90")
+          && near(f.parseMoney(t.subtotal), 91.90 * 2),
+          `subtotal ${t.subtotal} (2 × 91.90)`];
+});
+
+check("panel track: the quote prints exactly the yards it charges", () => {
+  const f = boot();
+  f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2), w: 50, h: 96, yards: 6.25 });
+  const t = f.addAndTotal();
+  // 6.25 x 6.00 = 37.50 + 55.90 -- and the line must say 6.25, not 6.3
+  return [t.items.includes("tela 6.25 yd") && near(f.parseMoney(t.subtotal), 93.40),
+          `subtotal ${t.subtotal}, line says 6.25 yd`];
+});
+
+check("panel track: the yards field clears for the next paño", () => {
+  const f = boot();
+  f.panelTrack({ telaIndex: 0, railIndex: ptRail(1, 2), w: 50, h: 96, yards: 6 });
+  f.addAndTotal();
+  return [f.get("ptYards").value === "", "next panel track starts without yards"];
+});
+
+check("panel track: ITBMS and margin apply like any paño", () => {
+  const f = boot();
+  f.get("cfgTax").value = "7";
+  f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2), w: 50, h: 96, yards: 6 });
+  f.get("lineMargin").value = "10";
+  f.get("lineMargin").fire("input");
+  const t = f.addAndTotal();
+  const sub = 91.90 * 1.10;
+  return [near(f.parseMoney(t.subtotal), sub) && near(f.parseMoney(t.tax), sub * 0.07),
+          `subtotal ${t.subtotal}, tax ${t.tax}`];
+});
+
+/* drafts saved before this update */
+check("a draft saved before this update restores with its totals unchanged", () => {
+  const draft = {
+    meta: { number: "N.º 2026-12345", date: "01 de septiembre de 2026" },
+    client: "Cliente", project: "Proyecto",
+    lines: [{ fabric: "Wellington 78” / 118”", category: "Roller Shades",
+              reqWidth: 36, reqHeight: 42, askW: 36, askH: 42, qty: 2,
+              unitPrice: 18.39, req: null, motor: null, addons: [],
+              mount: "Interior", install: false, lineMargin: 0, lineMarginMode: "pct" }],
+    extras: [], cfg: { tax: "7", clutch: "25", install: "0", margin: "0" },
+    marginMode: "pct",
+  };
+  const f = boot({ draft });
+  return [f.get("qdItems").innerHTML.includes('tabla 36"×42"')
+          && near(f.parseMoney(f.get("qdSubtotal").textContent), 36.78),
+          `restored line reads "tabla 36"×42"", subtotal ${f.get("qdSubtotal").textContent}`];
 });
 
 out.forEach(r => console.log(JSON.stringify(r)));

@@ -97,7 +97,107 @@
           ]
         }
       ],
-      "category": "Rieles y Motores"
+      "category": "Rieles y Motores",
+      "section": "drapery"
+    },
+    {
+      "type": "width_priced",
+      "name": "RIEL HD RIPPLEFOLD / ONDA",
+      "subheader": "",
+      "page": 32,
+      "currency": "USD",
+      "axis": {
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156,
+        168,
+        180,
+        192,
+        204,
+        216,
+        228
+      ],
+      "rows": [
+        {
+          "label": "Riel s/ Master",
+          "prices": [
+            21.0,
+            26.0,
+            34.0,
+            41.0,
+            46.0,
+            51.0,
+            56.0,
+            64.0,
+            69.0,
+            80.0,
+            85.0,
+            90.0,
+            95.0,
+            100.0,
+            105.0,
+            110.0,
+            115.0
+          ]
+        },
+        {
+          "label": "Riel 1-Vía",
+          "prices": [
+            26.0,
+            28.0,
+            36.0,
+            43.0,
+            48.0,
+            53.0,
+            58.0,
+            66.0,
+            71.0,
+            82.0,
+            87.0,
+            92.0,
+            97.0,
+            102.0,
+            107.0,
+            112.0,
+            117.0
+          ]
+        },
+        {
+          "label": "Riel 2-Vías",
+          "prices": [
+            30.0,
+            35.0,
+            43.0,
+            50.0,
+            55.0,
+            60.0,
+            65.0,
+            73.0,
+            78.0,
+            89.0,
+            94.0,
+            99.0,
+            104.0,
+            109.0,
+            114.0,
+            119.0,
+            124.0
+          ]
+        }
+      ],
+      "category": "Rieles y Motores",
+      "section": "drapery"
     },
     {
       "type": "width_priced",
@@ -173,11 +273,12 @@
           ]
         }
       ],
-      "category": "Rieles y Motores"
+      "category": "Rieles y Motores",
+      "section": "drapery"
     },
     {
       "type": "width_priced",
-      "name": "RIELES MANUALES (precios no incluyen bastones)",
+      "name": "RIEL COULISSE NEGRO",
       "subheader": "CORREDERAS",
       "page": 32,
       "currency": "USD",
@@ -247,46 +348,211 @@
             121.0,
             126.0
           ]
-        },
-        {
-          "label": "Alquiler de Maquina",
-          "prices": [
-            null,
-            null,
-            null,
-            null,
-            45.0,
-            null,
-            null,
-            null,
-            null,
-            null,
-            24.0,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
         }
       ],
-      "category": "Rieles y Motores"
+      "category": "Rieles y Motores",
+      "section": "drapery"
     },
     {
       "type": "item_list",
-      "name": "Correderas con huesitos (100%) 0.65 6-700-DM-00015 / 04300100344",
-      "page": 33,
+      "name": "RIELES MANUALES (precios no incluyen bastones)",
+      "page": 32,
+      "currency": "USD",
+      "section_headers": [
+        "RIEL HD CON BALINERAS",
+        "RIEL HD RIPPLEFOLD / ONDA",
+        "RIEL COULISSE NEGRO",
+        "CORTINAS DE TELA",
+        "IMPORTANTE",
+        "basta en sitio."
+      ],
+      "items": [
+        {
+          "name": "Kit de Riel Curvo flexible 4.5 metros",
+          "description": "",
+          "price": 25.0,
+          "extra": "Riel curvo flexible para cortina de pliegues",
+          "context": "RIEL COULISSE NEGRO"
+        }
+      ],
+      "category": "Rieles y Motores",
+      "section": "drapery"
+    },
+    {
+      "type": "item_list",
+      "name": "IMPORTANTE",
+      "page": 39,
+      "currency": "USD",
+      "section_headers": [
+        "IMPORTANTE",
+        "basta en sitio."
+      ],
+      "items": [
+        {
+          "name": "Bastón de 48”",
+          "description": "",
+          "price": 5.0,
+          "extra": "PIEZA - ALFG48 / 745400013535",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Bastón de 60”",
+          "description": "",
+          "price": 6.0,
+          "extra": "PIEZA - ALFG60 / 745400015130",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Bastón de 72”",
+          "description": "",
+          "price": 7.0,
+          "extra": "PIEZA - ALFG72 / 745400016747",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Bastón de 96”",
+          "description": "",
+          "price": 8.0,
+          "extra": "ALFG96 / N52144",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Unión de Riel",
+          "description": "",
+          "price": 5.5,
+          "extra": "SPL905-WH / 745400003120",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Bracket de techo",
+          "description": "",
+          "price": 1.75,
+          "extra": "N52109",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Bracket de pared sencillo",
+          "description": "",
+          "price": 1.5,
+          "extra": "N52110",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Bracket Doble de Pared",
+          "description": "",
+          "price": 3.0,
+          "extra": "N52111",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "End Stop - Esquinera Return",
+          "description": "",
+          "price": 4.0,
+          "extra": "RET309 / 745400051653",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Balinera Adicional (1x)",
+          "description": "",
+          "price": 0.5,
+          "extra": "0-163-CA-0501F / 745400051898",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Curva de Riel",
+          "description": "",
+          "price": 35.0,
+          "extra": "Por Riel",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "End Cap pinch pleat",
+          "description": "",
+          "price": 1.3,
+          "extra": "0-163-CA-0500F / 745400051835",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "End Cap ripplefold",
+          "description": "",
+          "price": 1.3,
+          "extra": "0-163-CA-0514F / 745400051812",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Cinta ripplefold (x broche)",
+          "description": "",
+          "price": 0.4,
+          "extra": "9003-25 / 745400013981",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Correderas con huesitos (100%)",
+          "description": "",
+          "price": 0.65,
+          "extra": "6-700-DM-00015 / 04300100344",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Master carrier ripplefold izquierdo",
+          "description": "",
+          "price": 2.5,
+          "extra": "N52112",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Master carrier ripplefold derecho",
+          "description": "",
+          "price": 2.5,
+          "extra": "N52113",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Bracket de pared sencillo",
+          "description": "",
+          "price": 9.0,
+          "extra": "3280-25 / 745400003123",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Master carrier pinch pleat derecho (curvo)",
+          "description": "",
+          "price": 2.5,
+          "extra": "0-163-CA-0503F / 745400051963",
+          "context": "basta en sitio."
+        },
+        {
+          "name": "Master carrier pinch pleat izquierdo (recto",
+          "description": "",
+          "price": 2.5,
+          "extra": "52504-25 / 7454000013537",
+          "context": "basta en sitio."
+        }
+      ],
+      "category": "Rieles y Motores",
+      "section": "drapery"
+    },
+    {
+      "type": "item_list",
+      "name": "Cinta Wave 60mm / 80mm PIE",
+      "page": 40,
       "currency": "USD",
       "section_headers": [
         "RIELES MOTORIZADOS",
         "VERTILUX",
+        "desconfiguraciones.",
         "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
         "CONTROLES REMOTO",
-        "Canales",
-        "6 Canales"
+        "Canales"
       ],
       "items": [
+        {
+          "name": "Kit de Riel Curvo flexible 4.5 metros",
+          "description": "",
+          "price": 25.0,
+          "extra": "Riel curvo flexible para cortina de pliegues",
+          "context": ""
+        },
         {
           "name": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 228”",
           "description": "",
@@ -318,28 +584,28 @@
         {
           "name": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
           "description": "",
-          "price": 225.0,
+          "price": 250.0,
           "extra": "",
           "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
         {
           "name": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
           "description": "",
-          "price": 175.0,
+          "price": 200.0,
           "extra": "",
           "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
         {
           "name": "Riel Eléctrico 40 KG - Onda",
           "description": "Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
-          "price": 310.0,
+          "price": 350.0,
           "extra": "",
           "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
         {
           "name": "Riel Eléctrico 40 KG - Onda",
           "description": "Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
-          "price": 220.0,
+          "price": 260.0,
           "extra": "",
           "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
@@ -394,8 +660,15 @@
         },
         {
           "name": "Servicio de curvado",
-          "description": "",
+          "description": "todas las curvas excepto 90 grados",
           "price": 150.0,
+          "extra": "",
+          "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Curva de 90 grados",
+          "description": "por pedido",
+          "price": 450.0,
           "extra": "",
           "context": "RIELES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
@@ -428,39 +701,61 @@
           "context": "CONTROLES REMOTO"
         },
         {
-          "name": "Control Remoto Deco One -",
-          "description": "VTi® RE-LION DECO ONE WALL SWITCH | BIDIRECTIONAL",
-          "price": 52.0,
+          "name": "Control Chic Bidi 2 canales",
+          "description": "CHIC Celtic Remote 2CH color blanco",
+          "price": 32.0,
           "extra": "",
           "context": "Canales"
+        },
+        {
+          "name": "Control Chic Bidi 6 canales",
+          "description": "CHIC Celtic Remote 6CH color blanco",
+          "price": 38.0,
+          "extra": "",
+          "context": "Canales"
+        }
+      ],
+      "category": "Rieles y Motores",
+      "section": "drapery"
+    },
+    {
+      "type": "item_list",
+      "name": "Control Remoto Deco One - 6 C VTi® RE-LION DECO ONE WALL SWITCH | BIDIRECTIONAL 52.00",
+      "page": 41,
+      "currency": "USD",
+      "section_headers": [
+        "POR PEDIDO",
+        "ACCESORIOS RIELES RE-LION",
+        "COULISSE",
+        "desconfiguraciones.",
+        "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+      ],
+      "items": [
+        {
+          "name": "Control Remoto Deco One - 6 C VTi® RE-LION DECO ONE WALL SWITCH | BIDIRECTIONAL",
+          "description": "",
+          "price": 52.0,
+          "extra": "",
+          "context": ""
         },
         {
           "name": "VTi Smart Hub",
           "description": "VTi Re-lion SMARTHUB",
           "price": 96.0,
           "extra": "",
-          "context": "6 Canales"
-        }
-      ],
-      "category": "Rieles y Motores"
-    },
-    {
-      "type": "item_list",
-      "name": "VTi Smart Hub Plus VTi Re-lion SMARTHUB Plus 140.00",
-      "page": 34,
-      "currency": "USD",
-      "section_headers": [
-        "POR PEDIDO",
-        "ACCESORIOS RIELES RE-LION",
-        "COULISSE",
-        "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL",
-        "CONTROLES REMOTO"
-      ],
-      "items": [
+          "context": ""
+        },
         {
           "name": "VTi Smart Hub Plus",
           "description": "VTi Re-lion SMARTHUB Plus",
           "price": 140.0,
+          "extra": "",
+          "context": ""
+        },
+        {
+          "name": "VTi Re-lion Nexus Bridge",
+          "description": "Compatibilidad con controladores de terceros",
+          "price": 400.0,
           "extra": "",
           "context": ""
         },
@@ -589,41 +884,58 @@
           "price": 385.0,
           "extra": "",
           "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
-        },
+        }
+      ],
+      "category": "Rieles y Motores",
+      "section": "drapery"
+    },
+    {
+      "type": "item_list",
+      "name": "Riel de Batería 228” - Onda Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228” 455.00",
+      "page": 42,
+      "currency": "USD",
+      "section_headers": [
+        "CONTROLES REMOTO",
+        "SOMFY",
+        "desconfiguraciones.",
+        "RIELES ELECTRICOS UNIDIRECCIONALES",
+        "CONTROLES REMOTO"
+      ],
+      "items": [
         {
           "name": "Riel de Batería 228” - Onda",
           "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
           "price": 455.0,
           "extra": "",
-          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+          "context": ""
         },
         {
           "name": "Riel de Batería 114” - Onda",
           "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
           "price": 420.0,
           "extra": "",
-          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+          "context": ""
         },
         {
           "name": "Riel de Batería 228” - Wave",
           "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
           "price": 490.0,
           "extra": "",
-          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+          "context": ""
         },
         {
           "name": "Riel de Batería 114” - Wave",
           "description": "Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
           "price": 455.0,
           "extra": "",
-          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+          "context": ""
         },
         {
           "name": "Unión de Riel Coulisse",
           "description": "",
           "price": 10.0,
           "extra": "",
-          "context": "RIELES ELECTRICOS BLUETOOTH - BIDIRECCIONAL"
+          "context": ""
         },
         {
           "name": "CM-11-BK",
@@ -645,34 +957,20 @@
           "price": 42.4,
           "extra": "",
           "context": "CONTROLES REMOTO"
-        }
-      ],
-      "category": "Rieles y Motores"
-    },
-    {
-      "type": "item_list",
-      "name": "CM-20 Wifi hub Coulisse motion 184.00",
-      "page": 35,
-      "currency": "USD",
-      "section_headers": [
-        "SOMFY",
-        "RIELES ELECTRICOS UNIDIRECCIONALES",
-        "CONTROLES REMOTO"
-      ],
-      "items": [
+        },
         {
           "name": "CM-20",
           "description": "Wifi hub Coulisse motion",
           "price": 184.0,
           "extra": "",
-          "context": ""
+          "context": "CONTROLES REMOTO"
         },
         {
           "name": "Pull Buttom up",
           "description": "Pull wand 8mm 40cm matt white",
           "price": 10.5,
           "extra": "",
-          "context": ""
+          "context": "CONTROLES REMOTO"
         },
         {
           "name": "MOVELITE RTS 60 KG - corredera",
@@ -746,22 +1044,29 @@
         },
         {
           "name": "Servicio de curvado",
-          "description": "",
+          "description": "todas las curgas excepto 90 grados",
           "price": 150.0,
+          "extra": "",
+          "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
+        },
+        {
+          "name": "Curva de 90 grados",
+          "description": "por pedido",
+          "price": 450.0,
           "extra": "",
           "context": "RIELES ELECTRICOS UNIDIRECCIONALES"
         },
         {
           "name": "SITUO 1C",
           "description": "Control remoto monocanal",
-          "price": 56.0,
+          "price": 61.0,
           "extra": "",
           "context": "CONTROLES REMOTO"
         },
         {
           "name": "SITUO 5C",
           "description": "Control remoto multicanal",
-          "price": 80.8,
+          "price": 90.0,
           "extra": "",
           "context": "CONTROLES REMOTO"
         },
@@ -771,99 +1076,118 @@
           "price": 80.0,
           "extra": "",
           "context": "CONTROLES REMOTO"
-        },
+        }
+      ],
+      "category": "Rieles y Motores",
+      "section": "drapery"
+    },
+    {
+      "type": "item_list",
+      "name": "POR PEDIDO según disponibilidad del proveedor",
+      "page": 43,
+      "currency": "USD",
+      "section_headers": [],
+      "items": [
         {
           "name": "GLYDEA RTS 60 KG",
           "description": "Riel motorizado RTS de 60kg para cortina de tela hasta 228” - corredera u onda",
           "price": 875.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "GLYDEA RTS 60 KG",
           "description": "Riel motorizado RTS de 60kg para cortina de tela hasta 114” - corredera u onda",
           "price": 770.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "GLYDEA RTS 35 KG",
           "description": "Riel motorizado RTS de 35kg para cortina de tela hasta 228” - corredera u onda",
           "price": 650.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "GLYDEA RTS 35 KG",
           "description": "Riel motorizado RTS de 35kg para cortina de tela hasta 114” - corredera u onda",
           "price": 600.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "GLYDEA Mecánico 60 KG",
           "description": "Riel motorizado 4 hilos 60kg para cortina de tela hasta 228” - corredera u onda",
           "price": 840.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "Riel GLYDEA adicional",
           "description": "precio por pie - corredera u onda",
           "price": 16.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "TELIS 6",
           "description": "Control remoto 6 canales con opción de programar horarios",
           "price": 224.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "TELIS 16",
           "description": "Control remoto 16 canales",
           "price": 300.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "SMOOVE PURE 1C",
           "description": "Botonera wireless monocanal",
           "price": 80.8,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "SMOOVE PURE 4C",
           "description": "Botonera wireless multicanal",
           "price": 128.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "INTERTEC MONOCANAL",
           "description": "Transmisor de contacto seco 127 VAC",
           "price": 168.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
         },
         {
           "name": "INTERTEC 16",
           "description": "Transmisor de contacto seco 127 VAC - 16 canales",
           "price": 544.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": ""
+        },
+        {
+          "name": "CONVERTIDOR DE DATOS",
+          "description": "RS232/ RS485",
+          "price": 160.0,
+          "extra": "",
+          "context": ""
         }
       ],
-      "category": "Rieles y Motores"
+      "category": "Rieles y Motores",
+      "section": "drapery"
     },
     {
       "type": "width_priced",
       "name": "Sistema Guiado Coulisse para rollers (interior)",
       "subheader": "pulgadas",
-      "page": 38,
+      "page": 45,
       "currency": "USD",
       "axis": {
         "cols": "width_in"
@@ -899,7 +1223,7 @@
       "type": "width_priced",
       "name": "Riel de Romana Coulisse",
       "subheader": "pulgadas",
-      "page": 38,
+      "page": 45,
       "currency": "USD",
       "axis": {
         "cols": "width_in"
@@ -947,7 +1271,7 @@
       "type": "width_priced",
       "name": "Riel de Romana Coulisse - sistema Twin Pull",
       "subheader": "pulgadas",
-      "page": 38,
+      "page": 45,
       "currency": "USD",
       "axis": {
         "cols": "width_in"
@@ -994,7 +1318,7 @@
     {
       "type": "per_unit_list",
       "name": "Perfiles de Enmarcados",
-      "page": 39,
+      "page": 46,
       "currency": "USD",
       "items": [
         {
@@ -1032,17 +1356,258 @@
     },
     {
       "type": "item_list",
-      "name": "MOTORES",
-      "page": 42,
+      "name": "Tubo de 63mm 6.00 PIE",
+      "page": 48,
+      "currency": "USD",
+      "section_headers": [],
+      "items": [
+        {
+          "name": "Tubo de 63mm",
+          "description": "",
+          "price": 6.0,
+          "extra": "PIE",
+          "context": ""
+        },
+        {
+          "name": "Tubo de 83mm (19 PIES)",
+          "description": "",
+          "price": 304.0,
+          "extra": "PIEZA",
+          "context": ""
+        },
+        {
+          "name": "Basta redonda",
+          "description": "",
+          "price": 1.75,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de basta redonda",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail Euro Slim",
+          "description": "",
+          "price": 2.25,
+          "extra": "PIE (blanco, gris)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de bottomrail Euro Slim",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca, gris)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail Clásico",
+          "description": "",
+          "price": 1.75,
+          "extra": "PIE (bronze, negro)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de bottomrail clásico",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail Coulisse",
+          "description": "",
+          "price": 1.5,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de bottomrail Coulisse",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca, negra)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail Slim Coulisse",
+          "description": "1.00 PIE (blanca) solo tiene",
+          "price": 3.0,
+          "extra": "mtr",
+          "context": ""
+        },
+        {
+          "name": "Tapa de bottomrail Slim Coulisse",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIEZA (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail de Sheer",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIE (blanca, ivory, gris, bronze, negro)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Bottom Rail de Sheer",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIEZA (transparente)",
+          "context": ""
+        },
+        {
+          "name": "Cassette 100",
+          "description": "",
+          "price": 3.0,
+          "extra": "PIE (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Cassette 100",
+          "description": "",
+          "price": 1.25,
+          "extra": "PIEZA (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Cassette 120",
+          "description": "",
+          "price": 4.5,
+          "extra": "PIE (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Cassette 120",
+          "description": "",
+          "price": 1.5,
+          "extra": "PIEZA (blanca, ivory, gris, bronze, negra)",
+          "context": ""
+        },
+        {
+          "name": "Bracket cassette 100/120 skyline",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIEZA (metal) Referencia 0-149-10-BRHMI",
+          "context": ""
+        },
+        {
+          "name": "Metal hold cassette 100/120",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIEZA (metal) 0-149-10-BR16I",
+          "context": ""
+        },
+        {
+          "name": "Bottomrail de Manhattan",
+          "description": "",
+          "price": 2.0,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Tapa de Bottomrail Manhattan",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIEZA (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Spring System 32 mm",
+          "description": "",
+          "price": 16.0,
+          "extra": "SET (no incluye bottomrail EURO SLIM) máxima 55 x 63",
+          "context": ""
+        },
+        {
+          "name": "Spring System 38 mm",
+          "description": "",
+          "price": 24.0,
+          "extra": "SET (no incluye bottomrail EURO SLIM) máxima 63 x 79",
+          "context": ""
+        },
+        {
+          "name": "Control de Romana 1:1",
+          "description": "",
+          "price": 4.5,
+          "extra": "PIEZA (blanco)",
+          "context": ""
+        },
+        {
+          "name": "Control de Romana 1:4",
+          "description": "",
+          "price": 5.5,
+          "extra": "PIEZA (blanco)",
+          "context": ""
+        },
+        {
+          "name": "Control Twin Pull Romana 1:4",
+          "description": "",
+          "price": 17.5,
+          "extra": "PIEZA (blanco)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de metal (romana)",
+          "description": "",
+          "price": 1.0,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de fibra de vidrio 3mm",
+          "description": "",
+          "price": 0.2,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de fibra de vidrio 4mm",
+          "description": "",
+          "price": 0.4,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Varilla de fibra de vidrio 5mm",
+          "description": "",
+          "price": 0.5,
+          "extra": "PIE (blanca)",
+          "context": ""
+        },
+        {
+          "name": "Argolla para varilla de metal (romana)",
+          "description": "",
+          "price": 0.3,
+          "extra": "PIEZA (transparente)",
+          "context": ""
+        },
+        {
+          "name": "Tapa para varilla de metal (romana)",
+          "description": "",
+          "price": 0.25,
+          "extra": "PIEZA (transparente)",
+          "context": ""
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "MOTORES PARA ROLLER, SHEER, MANHATTAN Y ROMANAS",
+      "page": 49,
       "currency": "USD",
       "section_headers": [
-        "MOTORES",
+        "MOTORES PARA ROLLER, SHEER, MANHATTAN Y ROMANAS",
         "VERTILUX",
         "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
-        "CONTROLES REMOTO",
+        "CONTROLES REMOTO Y",
+        "ACCESORIOS",
         "Canales",
-        "6 Canales",
-        "ACCESORIOS"
+        "Canales"
       ],
       "items": [
         {
@@ -1125,7 +1690,7 @@
         {
           "name": "Re-Lion Recargable 6 Nm",
           "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor35mm|6Nm|18rpm",
-          "price": 185.5,
+          "price": 181.5,
           "extra": "",
           "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
         },
@@ -1141,31 +1706,31 @@
           "description": "POINT Celtic Remote 2CH LED Unidirectional",
           "price": 24.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": "ACCESORIOS"
         },
         {
           "name": "Control Remoto 6 Canales",
           "description": "POINT Celtic Remote 6CH LED Unidirectional",
           "price": 28.8,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": "ACCESORIOS"
         },
         {
           "name": "Control Remoto 16 Canales",
           "description": "POINT Celtic Remote 16CH Display Unidirectional",
           "price": 38.4,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": "ACCESORIOS"
         },
         {
           "name": "Control Remoto Escalate 6",
           "description": "Escalate Celtic Remote 6CH Display Bidireccional - con Timer",
           "price": 48.0,
           "extra": "",
-          "context": "CONTROLES REMOTO"
+          "context": "ACCESORIOS"
         },
         {
-          "name": "Control Remoto Deco One -",
+          "name": "Control Remoto Deco One - 6",
           "description": "VTi® RE-LION DECO ONE WALL SWITCH | BIDIRECTIONAL",
           "price": 52.0,
           "extra": "",
@@ -1176,176 +1741,135 @@
           "description": "CHIC Celtic Remote 2CH color blanco",
           "price": 32.0,
           "extra": "",
-          "context": "6 Canales"
+          "context": "Canales"
         },
         {
           "name": "Control Chic Bidi 6 canales",
           "description": "CHIC Celtic Remote 6CH color blanco",
           "price": 38.0,
           "extra": "",
-          "context": "6 Canales"
+          "context": "Canales"
         },
         {
           "name": "VTi Smart Hub",
           "description": "VTi Re-lion SMARTHUB",
           "price": 96.0,
           "extra": "",
-          "context": "6 Canales"
+          "context": "Canales"
         },
         {
           "name": "VTi Smart Hub Plus",
           "description": "VTi Re-lion SMARTHUB Plus",
           "price": 140.0,
           "extra": "",
-          "context": "6 Canales"
+          "context": "Canales"
         },
         {
           "name": "VTi Re-lion Nexus Bridge",
           "description": "Compatibilidad con controladores de terceros",
           "price": 400.0,
           "extra": "",
-          "context": "6 Canales"
+          "context": "Canales"
         },
         {
           "name": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
           "description": "",
           "price": 280.0,
           "extra": "",
-          "context": "6 Canales"
+          "context": "Canales"
         },
         {
-          "name": "Corona y rueda motriz 38mm",
-          "description": "Para motor recargable de 1 y 2 Nm - tubo de 38mm (1.5)",
-          "price": 4.5,
+          "name": "Control Chic Bidi 2 canales",
+          "description": "CHIC Celtic Remote 2CH color negro (SEGÚN DISPONIBILIDAD)",
+          "price": 36.0,
           "extra": "",
-          "context": "ACCESORIOS"
-        },
-        {
-          "name": "Corona y rueda motriz 38mm",
-          "description": "Para motor recargable de 1 y 2 Nm - tubo de 38mm (1.75)",
-          "price": 5.0,
-          "extra": "",
-          "context": "ACCESORIOS"
+          "context": "Canales"
         }
       ],
       "category": "Rieles y Motores"
     },
     {
       "type": "item_list",
-      "name": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
-      "page": 43,
+      "name": "Control Chic Bidi 6 canales CHIC Celtic Remote 6CH color negro (SEGUN DISPONIBILIDAD) 40.00",
+      "page": 50,
       "currency": "USD",
       "section_headers": [
-        "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES",
+        "MOTORES BIDIRECCIONALES SEGUN DISPONIBILIDAD",
         "MOTIONBLINDS",
         "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL",
-        "SHADE) incluye bateria"
+        "SHADE) incluye bateria",
+        "CONTROLES REMOTO"
       ],
       "items": [
         {
-          "name": "Re-Lion 35E 1L",
-          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
-          "price": 105.0,
+          "name": "Control Chic Bidi 6 canales",
+          "description": "CHIC Celtic Remote 6CH color negro (SEGUN DISPONIBILIDAD)",
+          "price": 40.0,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": ""
         },
         {
-          "name": "Re-Lion 35E 2L",
-          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
-          "price": 122.5,
+          "name": "Corona y rueda motriz 38mm",
+          "description": "Para motor recargable de 1 y 2 Nm - tubo de 38mm (1.5)",
+          "price": 4.5,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": ""
         },
         {
-          "name": "Re-Lion 35E 3L",
-          "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
-          "price": 143.5,
+          "name": "Corona y rueda motriz 38mm",
+          "description": "Para motor recargable de 1 y 2 Nm - tubo de 38mm (1.75)",
+          "price": 5.0,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
-        },
-        {
-          "name": "Re-Lion 45E 1L",
-          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "price": 136.5,
-          "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
-        },
-        {
-          "name": "Re-Lion 45E 2L",
-          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "price": 157.5,
-          "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
-        },
-        {
-          "name": "Re-Lion 45E 3L",
-          "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "price": 178.5,
-          "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
-        },
-        {
-          "name": "Re-Lion 20Nm (solo motor)",
-          "description": "VTi®RE-LION Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "price": 122.25,
-          "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
-        },
-        {
-          "name": "Re-Lion 50 Nm (AWNING SYSTEM) VTi®RE-LION Unidi. ACMech.Lim.Mot.45mm | 50Nm | 33rpm | 110AC (S/motor)",
-          "description": "",
-          "price": 150.5,
-          "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": ""
         },
         {
           "name": "Corona y rueda motriz 50mm",
           "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 50mm (2.0)",
           "price": 5.5,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": ""
         },
         {
           "name": "Corona de 63mm",
           "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
           "price": 4.0,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": ""
         },
         {
           "name": "Rueda motriz de 63mm",
           "description": "Para motores de 3 y 6 Nm (recargables o eléctricos) tubo de 63mm (2.5)",
           "price": 4.0,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": ""
         },
         {
           "name": "Cargador RE-LION",
           "description": "cargador con cable de 13 pies de largo",
           "price": 15.0,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": ""
         },
         {
           "name": "Re-Lion 35E 1L",
           "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
+          "price": 135.0,
+          "extra": "",
+          "context": "MOTORES BIDIRECCIONALES SEGUN DISPONIBILIDAD"
+        },
+        {
+          "name": "Re-Lion 35E 2L",
+          "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
           "price": 152.0,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": "MOTORES BIDIRECCIONALES SEGUN DISPONIBILIDAD"
         },
         {
-          "name": "Control Chic Bidi 2 canales",
-          "description": "CHIC Celtic Remote 2CH color negro",
-          "price": 36.0,
+          "name": "Re-Lion 35E 3L",
+          "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
+          "price": 173.5,
           "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
-        },
-        {
-          "name": "Control Chic Bidi 6 canales",
-          "description": "CHIC Celtic Remote 6CH color negro",
-          "price": 40.0,
-          "extra": "",
-          "context": "MOTORES RE-LION ELÉCTRICOS UNIDIRECCIONALES"
+          "context": "MOTORES BIDIRECCIONALES SEGUN DISPONIBILIDAD"
         },
         {
           "name": "MOTION CM-09-C120 1L",
@@ -1381,23 +1905,7 @@
           "price": 150.5,
           "extra": "",
           "context": "MOTORES ELÉCTRICOS BLUETOOTH - BIDIRECCIONAL"
-        }
-      ],
-      "category": "Rieles y Motores"
-    },
-    {
-      "type": "item_list",
-      "name": "CONTROLES REMOTO",
-      "page": 44,
-      "currency": "USD",
-      "section_headers": [
-        "CONTROLES REMOTO",
-        "SOMFY",
-        "MOTORES ELÉCTRICOS UNIDIRECCIONALES",
-        "CONTROLES REMOTO",
-        "COMPONENTES GENERALES"
-      ],
-      "items": [
+        },
         {
           "name": "CM-11-BK",
           "description": "Control Remoto 1 canal color Black",
@@ -1439,7 +1947,22 @@
           "price": 10.5,
           "extra": "",
           "context": "CONTROLES REMOTO"
-        },
+        }
+      ],
+      "category": "Rieles y Motores"
+    },
+    {
+      "type": "item_list",
+      "name": "SOMFY",
+      "page": 51,
+      "currency": "USD",
+      "section_headers": [
+        "SOMFY",
+        "MOTORES ELÉCTRICOS UNIDIRECCIONALES",
+        "CONTROLES REMOTO",
+        "COMPONENTES GENERALES"
+      ],
+      "items": [
         {
           "name": "LT50E SONESSE",
           "description": "Motor RTS 6Nm con tecnología silenciosa para 1 lienzo",
@@ -1478,14 +2001,14 @@
         {
           "name": "SITUO 1C",
           "description": "Control remoto monocanal",
-          "price": 56.0,
+          "price": 61.0,
           "extra": "",
           "context": "CONTROLES REMOTO"
         },
         {
           "name": "SITUO 5C",
           "description": "Control remoto multicanal",
-          "price": 80.8,
+          "price": 90.0,
           "extra": "",
           "context": "CONTROLES REMOTO"
         },
@@ -1572,6 +2095,13 @@
           "price": 7.5,
           "extra": "",
           "context": "COMPONENTES GENERALES"
+        },
+        {
+          "name": "ADAPTER COULISSE",
+          "description": "Adaptador de motor para brackets Coulisse",
+          "price": 4.0,
+          "extra": "",
+          "context": "COMPONENTES GENERALES"
         }
       ],
       "category": "Rieles y Motores"
@@ -1580,176 +2110,196 @@
       "type": "motor_options",
       "name": "Motores",
       "category": "Rieles y Motores",
-      "page": 42,
+      "page": 49,
       "currency": "USD",
+      "families": [
+        "Manhattan",
+        "Roller Shades",
+        "Roman Shades",
+        "Sheer Elegance"
+      ],
       "items": [
         {
           "name": "Re-Lion 35E Standard NO RF",
           "label": "Re-Lion 35E Standard NO RF (unidireccional)",
           "price": 84.0,
           "description": "Vti®RE-LION CelticUnidi.ACMech.Lim.Mot.35mm/6Nm/33rpm/110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-Lion 35E 1L",
           "label": "Re-Lion 35E 1L (unidireccional)",
           "price": 105.0,
           "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-Lion 20Nm (solo motor)",
           "label": "Re-Lion 20Nm (solo motor) (unidireccional)",
           "price": 122.25,
           "description": "VTi®RE-LION Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-Lion 35E 2L",
           "label": "Re-Lion 35E 2L (unidireccional)",
           "price": 122.5,
           "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-Lion Recargable 1 Nm",
           "label": "Re-Lion Recargable 1 Nm (unidireccional)",
           "price": 129.5,
           "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor25mm|1Nm|30rpm (tubo de 1.5”)",
-          "page": 42
+          "page": 49
+        },
+        {
+          "name": "Re-Lion 35E 1L",
+          "label": "Re-Lion 35E 1L (bidireccional)",
+          "price": 135.0,
+          "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
+          "page": 50
         },
         {
           "name": "Re-Lion 45E 1L",
           "label": "Re-Lion 45E 1L (unidireccional)",
           "price": 136.5,
           "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-Lion Recargable 2 Nm",
           "label": "Re-Lion Recargable 2 Nm (unidireccional)",
           "price": 136.5,
           "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor25mm|2Nm|28rpm (tubo de 1.5”)",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-Lion 35E 3L",
           "label": "Re-Lion 35E 3L (unidireccional)",
           "price": 143.5,
           "description": "Vti®RE-LION CelticUnidi.ACElect.Lim.Mot.35mm/6Nm/33rpm/110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-Lion 50 Nm (AWNING SYSTEM) VTi®RE-LION Unidi. ACMech.Lim.Mot.45mm | 50Nm | 33rpm | 110AC (S/motor)",
           "label": "Re-Lion 50 Nm (AWNING SYSTEM) (unidireccional)",
           "price": 150.5,
           "description": "",
-          "page": 42
+          "page": 49
         },
         {
           "name": "MOTION CM-09-C120 1L",
           "label": "MOTION CM-09-C120 1L",
           "price": 150.5,
           "description": "Tubular motor Radio 35mm 120VAC 6Nm 33rpm - Tubo de 2” Coulisse",
-          "page": 43
+          "page": 50
         },
         {
           "name": "MOTION CM-07",
           "label": "MOTION CM-07",
           "price": 150.5,
           "description": "Mid motor Radio 24mm 12VDC 0,7Nm 28rpm (HONEYCOMB / ROMAN",
-          "page": 43
+          "page": 50
         },
         {
           "name": "Motor Promo 1L",
           "label": "Motor Promo 1L",
           "price": 150.5,
           "description": "Motor RTS 6NM con opción de tubo de 40mm ó 50mm",
-          "page": 44
+          "page": 51
         },
         {
-          "name": "Re-Lion 35E 1L",
-          "label": "Re-Lion 35E 1L (bidireccional)",
+          "name": "Re-Lion 35E 2L",
+          "label": "Re-Lion 35E 2L (bidireccional)",
           "price": 152.0,
           "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
-          "page": 43
+          "page": 50
         },
         {
           "name": "Re-Lion 45E 2L",
           "label": "Re-Lion 45E 2L (unidireccional)",
           "price": 157.5,
           "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "Re-LIon Recargable 3 Nm",
           "label": "Re-LIon Recargable 3 Nm (unidireccional)",
           "price": 171.5,
           "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor35mm|3Nm|28rpm",
-          "page": 42
+          "page": 49
+        },
+        {
+          "name": "Re-Lion 35E 3L",
+          "label": "Re-Lion 35E 3L (bidireccional)",
+          "price": 173.5,
+          "description": "VTi®RE-LION Celtic Bidi. AC Electronic Limits Motor 35mm/6Nm/33rpm/110AC",
+          "page": 50
         },
         {
           "name": "Re-Lion 45E 3L",
           "label": "Re-Lion 45E 3L (unidireccional)",
           "price": 178.5,
           "description": "VTi®RE-LION Celtic Unidi. ACElect.Lim.Mot.45mm | 20Nm | 33rpm | 110AC",
-          "page": 42
+          "page": 49
         },
         {
           "name": "MOTION CM-09-C120 2L",
           "label": "MOTION CM-09-C120 2L",
           "price": 178.5,
           "description": "Tubular motor Radio 35mm 120VAC 6Nm 33rpm - Tubo de 2” Coulisse",
-          "page": 43
+          "page": 50
         },
         {
           "name": "Motor Promo 2L",
           "label": "Motor Promo 2L",
           "price": 178.5,
           "description": "Motor RTS 6NM con opción de tubo de 40mm ó 50mm",
-          "page": 44
+          "page": 51
         },
         {
           "name": "Re-Lion Recargable 6 Nm",
           "label": "Re-Lion Recargable 6 Nm (unidireccional)",
-          "price": 185.5,
+          "price": 181.5,
           "description": "Vti®RE-LION Celtic Unidirectional BatteryMotor35mm|6Nm|18rpm",
-          "page": 42
+          "page": 49
         },
         {
           "name": "MOTION CM-06",
           "label": "MOTION CM-06",
           "price": 210.0,
           "description": "Tubular motor pull battery 35 mm 6.0Nm 24rpm - Tubo de 2” Coulisse",
-          "page": 43
+          "page": 50
         },
         {
           "name": "MOTION CM-06-E-R (PEDIDO)",
           "label": "MOTION CM-06-E-R (PEDIDO)",
           "price": 266.0,
           "description": "Tubular motor pull battery EVE 35mm 6.0Nm 24 rpm - Tubo de 2” Coulisse",
-          "page": 43
+          "page": 50
         },
         {
           "name": "LT50E SONESSE",
           "label": "LT50E SONESSE",
           "price": 349.3,
           "description": "Motor RTS 6Nm con tecnología silenciosa para 1 lienzo",
-          "page": 44
+          "page": 51
         },
         {
           "name": "LT50E2L SONESSE",
           "label": "LT50E2L SONESSE",
           "price": 419.3,
           "description": "Motor RTS 6Nm con tecnología silenciosa para 2 lienzos",
-          "page": 44
+          "page": 51
         },
         {
           "name": "LT50E3L SONESSE",
           "label": "LT50E3L SONESSE",
           "price": 489.3,
           "description": "Motor RTS 10Nm con tecnología silenciosa para 3 lienzos",
-          "page": 44
+          "page": 51
         }
       ]
     },
@@ -1757,141 +2307,151 @@
       "type": "addon_options",
       "name": "Complementos",
       "category": "Rieles y Motores",
-      "page": 38,
+      "page": 32,
       "currency": "USD",
       "groups": [
         {
           "kind": "motor",
           "label": "Motor",
-          "scope": "pano",
           "pricing": "flat",
           "items": [
             {
               "label": "Re-Lion 35E Standard NO RF (unidireccional)",
               "price": 84.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-Lion 35E 1L (unidireccional)",
               "price": 105.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-Lion 20Nm (solo motor) (unidireccional)",
               "price": 122.25,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-Lion 35E 2L (unidireccional)",
               "price": 122.5,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-Lion Recargable 1 Nm (unidireccional)",
               "price": 129.5,
-              "page": 42
+              "page": 49
+            },
+            {
+              "label": "Re-Lion 35E 1L (bidireccional)",
+              "price": 135.0,
+              "page": 50
             },
             {
               "label": "Re-Lion 45E 1L (unidireccional)",
               "price": 136.5,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-Lion Recargable 2 Nm (unidireccional)",
               "price": 136.5,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-Lion 35E 3L (unidireccional)",
               "price": 143.5,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-Lion 50 Nm (AWNING SYSTEM) (unidireccional)",
               "price": 150.5,
-              "page": 42
+              "page": 49
             },
             {
               "label": "MOTION CM-09-C120 1L",
               "price": 150.5,
-              "page": 43
+              "page": 50
             },
             {
               "label": "MOTION CM-07",
               "price": 150.5,
-              "page": 43
+              "page": 50
             },
             {
               "label": "Motor Promo 1L",
               "price": 150.5,
-              "page": 44
+              "page": 51
             },
             {
-              "label": "Re-Lion 35E 1L (bidireccional)",
+              "label": "Re-Lion 35E 2L (bidireccional)",
               "price": 152.0,
-              "page": 43
+              "page": 50
             },
             {
               "label": "Re-Lion 45E 2L (unidireccional)",
               "price": 157.5,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Re-LIon Recargable 3 Nm (unidireccional)",
               "price": 171.5,
-              "page": 42
+              "page": 49
+            },
+            {
+              "label": "Re-Lion 35E 3L (bidireccional)",
+              "price": 173.5,
+              "page": 50
             },
             {
               "label": "Re-Lion 45E 3L (unidireccional)",
               "price": 178.5,
-              "page": 42
+              "page": 49
             },
             {
               "label": "MOTION CM-09-C120 2L",
               "price": 178.5,
-              "page": 43
+              "page": 50
             },
             {
               "label": "Motor Promo 2L",
               "price": 178.5,
-              "page": 44
+              "page": 51
             },
             {
               "label": "Re-Lion Recargable 6 Nm (unidireccional)",
-              "price": 185.5,
-              "page": 42
+              "price": 181.5,
+              "page": 49
             },
             {
               "label": "MOTION CM-06",
               "price": 210.0,
-              "page": 43
+              "page": 50
             },
             {
               "label": "MOTION CM-06-E-R (PEDIDO)",
               "price": 266.0,
-              "page": 43
+              "page": 50
             },
             {
               "label": "LT50E SONESSE",
               "price": 349.3,
-              "page": 44
+              "page": 51
             },
             {
               "label": "LT50E2L SONESSE",
               "price": 419.3,
-              "page": 44
+              "page": 51
             },
             {
               "label": "LT50E3L SONESSE",
               "price": 489.3,
-              "page": 44
+              "page": 51
             }
-          ]
+          ],
+          "scope": "pano",
+          "applies_to": "shade"
         },
         {
           "kind": "cenefa",
           "label": "Cenefa / cassette / fascia",
-          "scope": "pano",
           "pricing": "width",
           "items": [
             {
@@ -1926,7 +2486,7 @@
                 30.1,
                 32.2
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Cenefas - Carcazas · Cassette 100",
@@ -1960,7 +2520,7 @@
                 89.54,
                 94.38
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Cenefas - Carcazas · Cassette 120",
@@ -1994,7 +2554,7 @@
                 122.89,
                 130.03
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Cenefas - Carcazas · Fascia L (1 R)",
@@ -2028,7 +2588,7 @@
                 130.36,
                 137.68
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Cenefas - Carcazas · Fascia L (2 R)",
@@ -2062,7 +2622,7 @@
                 132.08,
                 139.4
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Cassette 130",
@@ -2096,14 +2656,15 @@
                 353.83,
                 358.37
               ],
-              "page": 39
+              "page": 46
             }
-          ]
+          ],
+          "scope": "pano",
+          "applies_to": "shade"
         },
         {
           "kind": "riel",
           "label": "Riel",
-          "scope": "pano",
           "pricing": "width",
           "items": [
             {
@@ -2128,7 +2689,7 @@
                 60.16,
                 60.96
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Riel de Romana Coulisse",
@@ -2164,7 +2725,7 @@
                 52.39,
                 53.98
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Riel de Romana Coulisse - sistema Twin Pull",
@@ -2200,7 +2761,7 @@
                 64.9,
                 66.41
               ],
-              "page": 38
+              "page": 45
             },
             {
               "label": "Riel de Panel Track a 1 vía · 2 canales",
@@ -2219,8 +2780,8 @@
                 160
               ],
               "prices": [
-                43.64,
-                47.8,
+                55.9,
+                61.29,
                 null,
                 null,
                 null,
@@ -2232,7 +2793,7 @@
                 null,
                 null
               ],
-              "page": 39
+              "page": 79
             },
             {
               "label": "Riel de Panel Track a 1 vía · 3 canales",
@@ -2251,11 +2812,11 @@
                 160
               ],
               "prices": [
-                51.66,
-                55.97,
-                63.6,
-                68.07,
-                72.49,
+                66.91,
+                72.47,
+                81.35,
+                87.07,
+                92.74,
                 null,
                 null,
                 null,
@@ -2264,7 +2825,7 @@
                 null,
                 null
               ],
-              "page": 39
+              "page": 79
             },
             {
               "label": "Riel de Panel Track a 1 vía · 4 canales",
@@ -2284,51 +2845,19 @@
               ],
               "prices": [
                 null,
-                56.71,
-                65.3,
-                76.74,
-                82.13,
-                90.72,
-                102.16,
-                107.55,
-                116.14,
+                70.21,
+                80.05,
+                92.74,
+                99.38,
+                109.22,
+                121.91,
+                128.55,
+                138.39,
                 null,
                 null,
                 null
               ],
-              "page": 39
-            },
-            {
-              "label": "Riel de Panel Track a 1 vía · 5 canales",
-              "widths_in": [
-                50,
-                60,
-                70,
-                80,
-                90,
-                100,
-                110,
-                120,
-                130,
-                140,
-                150,
-                160
-              ],
-              "prices": [
-                null,
-                null,
-                96.72,
-                104.07,
-                111.38,
-                121.89,
-                129.24,
-                136.55,
-                147.06,
-                154.41,
-                161.72,
-                169.03
-              ],
-              "page": 39
+              "page": 79
             },
             {
               "label": "Riel de Panel Track a 2 vías · 2 canales",
@@ -2347,12 +2876,12 @@
                 160
               ],
               "prices": [
-                80.11,
-                84.37,
-                88.63,
-                92.89,
-                97.15,
-                101.4,
+                102.11,
+                107.62,
+                113.13,
+                118.64,
+                124.15,
+                129.65,
                 null,
                 null,
                 null,
@@ -2360,7 +2889,7 @@
                 null,
                 null
               ],
-              "page": 39
+              "page": 79
             },
             {
               "label": "Riel de Panel Track a 2 vías · 4 canales",
@@ -2382,56 +2911,25 @@
                 null,
                 null,
                 null,
-                110.13,
-                115.52,
-                120.91,
-                126.3,
-                131.7,
-                137.09,
-                142.48,
-                147.87,
-                153.26
+                138.13,
+                144.77,
+                151.41,
+                158.05,
+                164.7,
+                171.34,
+                177.98,
+                184.62,
+                191.26
               ],
-              "page": 39
-            },
-            {
-              "label": "Riel de Panel Track a 2 vías · 5 canales",
-              "widths_in": [
-                50,
-                60,
-                70,
-                80,
-                90,
-                100,
-                110,
-                120,
-                130,
-                140,
-                150,
-                160
-              ],
-              "prices": [
-                null,
-                null,
-                null,
-                143.61,
-                150.92,
-                158.23,
-                165.54,
-                172.85,
-                180.15,
-                187.46,
-                194.77,
-                202.08
-              ],
-              "page": 39
+              "page": 79
             }
-          ]
+          ],
+          "scope": "pano",
+          "applies_to": "shade"
         },
         {
           "kind": "perfil",
           "label": "Perfil de enmarcado",
-          "scope": "pano",
           "pricing": "per_foot",
           "items": [
             {
@@ -2439,553 +2937,1593 @@
               "price": 0.5,
               "unit": "pieza",
               "basis": "each",
-              "page": 39
+              "page": 46
             },
             {
               "label": "End cap Side Chanel (blanco)",
               "price": 1.25,
               "unit": "Par (superior-inferior)",
               "basis": "each",
-              "page": 39
+              "page": 46
             },
             {
               "label": "Bottomrail Euro Slim (blanco, gris)",
               "price": 2.25,
               "unit": "Pie",
               "basis": "width_ft",
-              "page": 39
+              "page": 46
             },
             {
               "label": "Riel Inferior",
               "price": 3.75,
               "unit": "Pie de Ancho",
               "basis": "width_ft",
-              "page": 39
+              "page": 46
             },
             {
               "label": "Side Channel (Par / 2 Piezas)",
               "price": 7.25,
               "unit": "Pie de Alto",
               "basis": "height_ft",
-              "page": 39
+              "page": 46
             }
-          ]
+          ],
+          "scope": "pano",
+          "applies_to": "shade"
         },
         {
           "kind": "componente",
           "label": "Componente",
-          "scope": "pano",
           "pricing": "flat",
           "items": [
             {
               "label": "Varilla de fibra de vidrio 3mm",
               "price": 0.2,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tapa para varilla de metal (romana)",
               "price": 0.25,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Argolla para varilla de metal (romana)",
               "price": 0.3,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Varilla de fibra de vidrio 4mm",
               "price": 0.4,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Conector - Stop",
               "price": 0.5,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Cadena",
               "price": 0.5,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Tapa de basta redonda",
               "price": 0.5,
-              "page": 40
+              "page": 48
             },
             {
               "label": "Tapa de bottomrail Euro Slim",
               "price": 0.5,
-              "page": 40
+              "page": 48
             },
             {
               "label": "Tapa de bottomrail clásico",
               "price": 0.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tapa de bottomrail Coulisse",
               "price": 0.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tapa de bottomrail Slim Coulisse",
               "price": 0.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Varilla de fibra de vidrio 5mm",
               "price": 0.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tensor Cadena",
               "price": 0.75,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Extensión de 3” y 4”",
               "price": 1.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Bracket cassette 100/120 skyline",
               "price": 1.0,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Metal hold cassette 100/120",
               "price": 1.0,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tapa de Bottomrail Manhattan",
               "price": 1.0,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Varilla de metal (romana)",
               "price": 1.0,
-              "page": 41
-            },
-            {
-              "label": "Bottomrail Euro Slim",
-              "price": 1.25,
-              "page": 40
-            },
-            {
-              "label": "Bottomrail Clásico",
-              "price": 1.25,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Bottomrail de Sheer",
               "price": 1.25,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tapa de Bottom Rail de Sheer",
               "price": 1.25,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tapa de Cassette 100",
               "price": 1.25,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Brackets Cassette Sheer",
               "price": 1.5,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Polea Colgante (Sheer/Roller)",
               "price": 1.5,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Adaptador de 2” (reducción)",
               "price": 1.5,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Bottomrail Coulisse",
               "price": 1.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Tapa de Cassette 120",
               "price": 1.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Basta redonda",
               "price": 1.75,
-              "page": 40
+              "page": 48
+            },
+            {
+              "label": "Bottomrail Clásico",
+              "price": 1.75,
+              "page": 48
+            },
+            {
+              "label": "Tubo de 38mm con estria",
+              "price": 2.0,
+              "page": 47
             },
             {
               "label": "Bottomrail de Manhattan",
               "price": 2.0,
-              "page": 41
+              "page": 48
+            },
+            {
+              "label": "Bottomrail Euro Slim",
+              "price": 2.25,
+              "page": 48
             },
             {
               "label": "Polea (child safety)",
               "price": 2.5,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Cadena Continua",
               "price": 2.5,
-              "page": 40
+              "page": 47
+            },
+            {
+              "label": "Tubo de 45mm con doble ranura",
+              "price": 2.75,
+              "page": 47
+            },
+            {
+              "label": "Tubo de 50mm sin estria",
+              "price": 2.75,
+              "page": 47
             },
             {
               "label": "Bottomrail Slim Coulisse",
               "price": 3.0,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Cassette 100",
               "price": 3.0,
-              "page": 41
+              "page": 48
+            },
+            {
+              "label": "Tubo de 50mm con estria",
+              "price": 3.25,
+              "page": 47
+            },
+            {
+              "label": "Corona de 63mm",
+              "price": 4.0,
+              "page": 50
+            },
+            {
+              "label": "Rueda motriz de 63mm",
+              "price": 4.0,
+              "page": 50
+            },
+            {
+              "label": "ADAPTER COULISSE",
+              "price": 4.0,
+              "page": 51
             },
             {
               "label": "Soporte Central Skyline (roller)",
               "price": 4.5,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Cassette 120",
               "price": 4.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Corona y rueda motriz 38mm",
               "price": 4.5,
-              "page": 42
+              "page": 50
             },
             {
               "label": "Adaptador de 2.5” (reducción)",
               "price": 5.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Corona y rueda motriz 38mm",
               "price": 5.0,
-              "page": 42
+              "page": 50
+            },
+            {
+              "label": "Corona y rueda motriz 50mm",
+              "price": 5.5,
+              "page": 50
+            },
+            {
+              "label": "Tubo de 63mm",
+              "price": 6.0,
+              "page": 48
             },
             {
               "label": "ADAPTER SKYLINE",
               "price": 7.5,
-              "page": 44
+              "page": 51
             },
             {
               "label": "HOMEY 10 (HM-10) 60 IN X 100 FT",
               "price": 8.86,
-              "page": 64
+              "page": 72
             },
             {
               "label": "HOMEY 30 (HM-30) 60 IN X 100 FT",
               "price": 8.86,
-              "page": 64
+              "page": 72
             },
             {
               "label": "Soporte Intermedio Vertilux",
               "price": 10.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "+Resortes (pieza)",
               "price": 10.5,
-              "page": 67
+              "page": 75
             },
             {
               "label": "Bracket Doble Vertical Skyline",
               "price": 12.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Soporte Central Coulisse",
               "price": 12.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "STANZA 10 (ST-10) 60 IN X 100 FT",
               "price": 12.89,
-              "page": 64
+              "page": 72
             },
             {
               "label": "STANZA 30 (ST-30) 60 IN X 100 FT",
               "price": 12.89,
-              "page": 64
+              "page": 72
             },
             {
               "label": "STANZA 50 (ST-50) 60 IN X 100 FT",
               "price": 12.89,
-              "page": 64
+              "page": 72
             },
             {
               "label": "Spring System 32 mm",
               "price": 16.0,
-              "page": 41
+              "page": 48
             },
             {
               "label": "SIGNATURE 20 (SG-20) 60 IN X 100 FT",
               "price": 18.54,
-              "page": 64
+              "page": 72
             },
             {
               "label": "SIGNATURE 35 (SG-35) 60 IN X 100 FT",
               "price": 18.54,
-              "page": 64
+              "page": 72
             },
             {
               "label": "SIGNATURE 50 (SG-50) 60 IN X 100 FT",
               "price": 18.54,
-              "page": 64
+              "page": 72
             },
             {
               "label": "SIGNATURE 70 (SG-70) 60 IN X 100 FT",
               "price": 18.54,
-              "page": 64
+              "page": 72
             },
             {
               "label": "Bracket Doble Horizontal Skyline",
               "price": 20.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Bracket Doble Coulisse",
               "price": 20.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Soporte Intermedio Coulisse",
               "price": 20.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Spring System 38 mm",
               "price": 24.0,
-              "page": 41
+              "page": 48
             },
             {
-              "label": "Re-Lion 45E 20NM Electrico 136.50 /",
+              "label": "Re-Lion 45E 20NM Eléctrico",
+              "price": 136.5,
+              "page": 75
+            },
+            {
+              "label": "Re-Lion 45E 50NM Eléctrico",
               "price": 150.5,
-              "page": 67
+              "page": 75
+            },
+            {
+              "label": "Tubo de 83mm (19 PIES)",
+              "price": 304.0,
+              "page": 48
             }
-          ]
+          ],
+          "scope": "pano",
+          "applies_to": "shade"
         },
         {
           "kind": "control",
           "label": "Control / hub",
-          "scope": "pano",
           "pricing": "flat",
           "items": [
             {
               "label": "Control de Romana 1:1",
               "price": 4.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Control de Romana 1:4",
               "price": 5.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "Control Skyline S",
               "price": 8.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Control Skyline M",
               "price": 10.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Control Coulisse Medium",
               "price": 10.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Pull Buttom up",
               "price": 10.5,
-              "page": 44
+              "page": 50
             },
             {
               "label": "Control Skyline L",
               "price": 15.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Control Coulisse M Geared",
               "price": 15.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Control Coulisse L",
               "price": 15.0,
-              "page": 40
+              "page": 47
+            },
+            {
+              "label": "Cargador RE-LION",
+              "price": 15.0,
+              "page": 50
             },
             {
               "label": "Control Twin Pull Romana 1:4",
               "price": 17.5,
-              "page": 41
+              "page": 48
             },
             {
               "label": "CM-11-BK",
               "price": 18.4,
-              "page": 44
+              "page": 50
             },
             {
               "label": "Control Coulisse Twin Pull",
               "price": 20.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Control Remoto 2 Canales",
               "price": 24.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Control Coulisse L Geared",
               "price": 25.0,
-              "page": 40
+              "page": 47
             },
             {
               "label": "Control Remoto 6 Canales",
               "price": 28.8,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Control Chic Bidi 2 canales",
               "price": 32.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "CM-12-BK",
               "price": 33.6,
-              "page": 44
+              "page": 50
+            },
+            {
+              "label": "Control Chic Bidi 2 canales",
+              "price": 36.0,
+              "page": 49
             },
             {
               "label": "Control Chic Bidi 6 canales",
               "price": 38.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "Control Remoto 16 Canales",
               "price": 38.4,
-              "page": 42
+              "page": 49
+            },
+            {
+              "label": "Control Chic Bidi 6 canales",
+              "price": 40.0,
+              "page": 50
             },
             {
               "label": "CM-13-BK",
               "price": 42.4,
-              "page": 44
+              "page": 50
             },
             {
               "label": "Control Remoto Escalate 6",
               "price": 48.0,
-              "page": 42
+              "page": 49
             },
             {
-              "label": "Control Remoto Deco One -",
+              "label": "Control Remoto Deco One - 6",
               "price": 52.0,
-              "page": 42
-            },
-            {
-              "label": "SITUO 1C",
-              "price": 56.0,
-              "page": 44
+              "page": 49
             },
             {
               "label": "CM-39 (para motor CM-07)",
               "price": 60.0,
-              "page": 44
+              "page": 50
+            },
+            {
+              "label": "SITUO 1C",
+              "price": 61.0,
+              "page": 51
             },
             {
               "label": "INTEO",
               "price": 80.0,
-              "page": 44
-            },
-            {
-              "label": "SITUO 5C",
-              "price": 80.8,
-              "page": 44
+              "page": 51
             },
             {
               "label": "SMOOVE PURE 1C",
               "price": 80.8,
-              "page": 44
+              "page": 51
+            },
+            {
+              "label": "SITUO 5C",
+              "price": 90.0,
+              "page": 51
             },
             {
               "label": "VTi Smart Hub",
               "price": 96.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "SMOOVE PURE 4C",
               "price": 128.0,
-              "page": 44
+              "page": 51
             },
             {
               "label": "VTi Smart Hub Plus",
               "price": 140.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "CONVERTIDOR DE DATOS",
               "price": 160.0,
-              "page": 44
+              "page": 51
             },
             {
               "label": "INTERTEC MONOCANAL",
               "price": 168.0,
-              "page": 44
+              "page": 51
             },
             {
               "label": "CM-20",
               "price": 184.0,
-              "page": 44
+              "page": 50
             },
             {
               "label": "TELIS 6",
               "price": 224.0,
-              "page": 44
+              "page": 51
             },
             {
               "label": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
               "price": 280.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "TELIS 16",
               "price": 300.0,
-              "page": 44
+              "page": 51
             },
             {
               "label": "LT50M",
               "price": 349.3,
-              "page": 44
+              "page": 51
             },
             {
               "label": "VTi Re-lion Nexus Bridge",
               "price": 400.0,
-              "page": 42
+              "page": 49
             },
             {
               "label": "LT50M2L",
               "price": 419.3,
-              "page": 44
+              "page": 51
             },
             {
               "label": "LT50M3L",
               "price": 489.3,
-              "page": 44
+              "page": 51
             },
             {
               "label": "INTERTEC 16",
               "price": 544.0,
-              "page": 44
+              "page": 51
             }
-          ]
+          ],
+          "scope": "pano",
+          "applies_to": "shade"
+        },
+        {
+          "kind": "riel_cortina",
+          "label": "Riel de cortina (sin bastones)",
+          "pricing": "width",
+          "items": [
+            {
+              "label": "RIEL HD CON BALINERAS · Riel S/ Master",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                11.0,
+                13.0,
+                15.0,
+                21.0,
+                22.0,
+                24.0,
+                26.0,
+                30.0,
+                32.0,
+                40.0,
+                41.0,
+                43.0,
+                45.0,
+                46.0,
+                48.0,
+                50.0,
+                51.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL HD CON BALINERAS · Riel 1-Vía",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                17.0,
+                19.0,
+                21.0,
+                27.0,
+                28.0,
+                30.0,
+                32.0,
+                36.0,
+                38.0,
+                46.0,
+                47.0,
+                49.0,
+                51.0,
+                52.0,
+                54.0,
+                56.0,
+                57.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL HD CON BALINERAS · Riel 2-Vías",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                22.0,
+                24.0,
+                26.0,
+                32.0,
+                33.0,
+                35.0,
+                37.0,
+                41.0,
+                43.0,
+                51.0,
+                52.0,
+                54.0,
+                56.0,
+                57.0,
+                59.0,
+                61.0,
+                62.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL HD RIPPLEFOLD / ONDA · Riel s/ Master",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                21.0,
+                26.0,
+                34.0,
+                41.0,
+                46.0,
+                51.0,
+                56.0,
+                64.0,
+                69.0,
+                80.0,
+                85.0,
+                90.0,
+                95.0,
+                100.0,
+                105.0,
+                110.0,
+                115.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL HD RIPPLEFOLD / ONDA · Riel 1-Vía",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                26.0,
+                28.0,
+                36.0,
+                43.0,
+                48.0,
+                53.0,
+                58.0,
+                66.0,
+                71.0,
+                82.0,
+                87.0,
+                92.0,
+                97.0,
+                102.0,
+                107.0,
+                112.0,
+                117.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL HD RIPPLEFOLD / ONDA · Riel 2-Vías",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                30.0,
+                35.0,
+                43.0,
+                50.0,
+                55.0,
+                60.0,
+                65.0,
+                73.0,
+                78.0,
+                89.0,
+                94.0,
+                99.0,
+                104.0,
+                109.0,
+                114.0,
+                119.0,
+                124.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL COULISSE NEGRO · WAVE · Riel 1-Vía",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                30.0,
+                35.0,
+                52.0,
+                58.0,
+                63.0,
+                65.0,
+                70.0,
+                83.0,
+                88.0,
+                94.0,
+                96.0,
+                120.0,
+                122.0,
+                127.0,
+                132.0,
+                134.0,
+                139.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL COULISSE NEGRO · WAVE · Riel 2-Vías",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                34.0,
+                40.0,
+                59.0,
+                65.0,
+                70.0,
+                72.0,
+                78.0,
+                93.0,
+                98.0,
+                104.0,
+                106.0,
+                133.0,
+                135.0,
+                141.0,
+                147.0,
+                149.0,
+                155.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL COULISSE NEGRO · CORREDERAS · Riel 1-Vía",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                25.0,
+                28.0,
+                44.0,
+                48.0,
+                51.0,
+                52.0,
+                56.0,
+                71.0,
+                75.0,
+                78.0,
+                79.0,
+                83.0,
+                98.0,
+                102.0,
+                106.0,
+                110.0,
+                114.0
+              ],
+              "page": 32
+            },
+            {
+              "label": "RIEL COULISSE NEGRO · CORREDERAS · Riel 2-Vías",
+              "widths_in": [
+                36,
+                48,
+                60,
+                72,
+                84,
+                96,
+                108,
+                120,
+                132,
+                144,
+                156,
+                168,
+                180,
+                192,
+                204,
+                216,
+                228
+              ],
+              "prices": [
+                28.0,
+                32.0,
+                49.0,
+                53.0,
+                57.0,
+                58.0,
+                62.0,
+                79.0,
+                83.0,
+                87.0,
+                87.0,
+                91.0,
+                109.0,
+                113.0,
+                117.0,
+                121.0,
+                126.0
+              ],
+              "page": 32
+            }
+          ],
+          "scope": "pano",
+          "applies_to": "drapery"
+        },
+        {
+          "kind": "riel_motorizado",
+          "label": "Riel motorizado",
+          "pricing": "flat",
+          "items": [
+            {
+              "label": "Riel con corredera adicional · Precio por pie",
+              "price": 7.0,
+              "page": 40
+            },
+            {
+              "label": "Riel MOVELITE adicional · precio por pie - con correderas tradicionales",
+              "price": 7.0,
+              "page": 42
+            },
+            {
+              "label": "Riel con onda adicional · Precio por pie",
+              "price": 10.0,
+              "page": 40
+            },
+            {
+              "label": "Riel MOVELITE adicional · precio por pie - con correderas de onda",
+              "price": 10.0,
+              "page": 42
+            },
+            {
+              "label": "Riel GLYDEA adicional · precio por pie - corredera u onda",
+              "price": 16.0,
+              "page": 43
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+              "price": 200.0,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 114”",
+              "price": 235.0,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+              "price": 250.0,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Onda · Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+              "price": 260.0,
+              "page": 40
+            },
+            {
+              "label": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+              "price": 260.0,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Onda · Motor RF Unidireccional de 60 kg para cortina de tela hasta 114”",
+              "price": 275.0,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Corredera Motor RF Unidireccional de 60 kg para cortina de tela hasta 228”",
+              "price": 280.0,
+              "page": 40
+            },
+            {
+              "label": "Riel de Batería 40 KG - Onda · Motor RF Unidireccional de 40 kg para cortina de tela hasta 114”",
+              "price": 300.0,
+              "page": 40
+            },
+            {
+              "label": "Riel de Batería 40 KG - Corredera Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+              "price": 311.5,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 114” - Corredera · Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 114”",
+              "price": 315.0,
+              "page": 41
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - corredera · Riel motorizado RTS de 35 kg para cortina de tela hasta 114”",
+              "price": 345.0,
+              "page": 42
+            },
+            {
+              "label": "Riel Eléctrico 40 KG - Onda · Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+              "price": 350.0,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 228” - Corredera · Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 228”",
+              "price": 350.0,
+              "page": 41
+            },
+            {
+              "label": "Riel Eléctrico 114” - Onda · Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 114”",
+              "price": 350.0,
+              "page": 41
+            },
+            {
+              "label": "Riel Eléctrico 60 KG - Onda · Motor RF Unidireccional de 60 kg para cortina de tela hasta 228”",
+              "price": 365.0,
+              "page": 40
+            },
+            {
+              "label": "Riel Eléctrico 228” - Onda · Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 228”",
+              "price": 385.0,
+              "page": 41
+            },
+            {
+              "label": "Riel de Batería 114” - Corredera · Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
+              "price": 385.0,
+              "page": 41
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - onda · Riel motorizado RTS de 35 kg para cortina de tela hasta 114”",
+              "price": 385.0,
+              "page": 42
+            },
+            {
+              "label": "Riel de Batería 40 KG - Onda · Motor RF Unidireccional de 40 kg para cortina de tela hasta 228”",
+              "price": 390.0,
+              "page": 40
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - corredera · Riel motorizado RTS de 35 kg para cortina de tela hasta 228”",
+              "price": 395.0,
+              "page": 42
+            },
+            {
+              "label": "Riel Eléctrico 114” - Wave · Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 114”",
+              "price": 420.0,
+              "page": 41
+            },
+            {
+              "label": "Riel de Batería 228” - Corredera Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
+              "price": 420.0,
+              "page": 41
+            },
+            {
+              "label": "Riel de Batería 114” - Onda · Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
+              "price": 420.0,
+              "page": 42
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - corredera · Riel motorizado RTS de 60 kg para cortina de tela hasta 114”",
+              "price": 425.0,
+              "page": 42
+            },
+            {
+              "label": "Riel Eléctrico 228” - Wave · Motion CM-35-120 -120VAC 0.80Nm - 25 Kg para cortina de tela hasta 228”",
+              "price": 455.0,
+              "page": 41
+            },
+            {
+              "label": "Riel de Batería 228” - Onda · Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
+              "price": 455.0,
+              "page": 42
+            },
+            {
+              "label": "Riel de Batería 114” - Wave · Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 114”",
+              "price": 455.0,
+              "page": 42
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - onda · Riel motorizado RTS de 60 kg para cortina de tela hasta 114”",
+              "price": 470.0,
+              "page": 42
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - corredera · Riel motorizado RTS de 60 kg para cortina de tela hasta 228”",
+              "price": 472.5,
+              "page": 42
+            },
+            {
+              "label": "MOVELITE RTS 35 KG - onda · Riel motorizado RTS de 35 kg para cortina de tela hasta 228”",
+              "price": 475.0,
+              "page": 42
+            },
+            {
+              "label": "Riel de Batería 228” - Wave · Motion CM-36 - DC 14.8V - 35 Kg para cortina de tela hasta 228”",
+              "price": 490.0,
+              "page": 42
+            },
+            {
+              "label": "MOVELITE RTS 60 KG - onda · Riel motorizado RTS de 60 kg para cortina de tela hasta 228”",
+              "price": 560.0,
+              "page": 42
+            },
+            {
+              "label": "GLYDEA RTS 35 KG · Riel motorizado RTS de 35kg para cortina de tela hasta 114” - corredera u onda",
+              "price": 600.0,
+              "page": 43
+            },
+            {
+              "label": "GLYDEA RTS 35 KG · Riel motorizado RTS de 35kg para cortina de tela hasta 228” - corredera u onda",
+              "price": 650.0,
+              "page": 43
+            },
+            {
+              "label": "GLYDEA RTS 60 KG · Riel motorizado RTS de 60kg para cortina de tela hasta 114” - corredera u onda",
+              "price": 770.0,
+              "page": 43
+            },
+            {
+              "label": "GLYDEA Mecánico 60 KG · Riel motorizado 4 hilos 60kg para cortina de tela hasta 228” - corredera u onda",
+              "price": 840.0,
+              "page": 43
+            },
+            {
+              "label": "GLYDEA RTS 60 KG · Riel motorizado RTS de 60kg para cortina de tela hasta 228” - corredera u onda",
+              "price": 875.0,
+              "page": 43
+            }
+          ],
+          "scope": "pano",
+          "applies_to": "drapery"
+        },
+        {
+          "kind": "accesorio_cortina",
+          "label": "Accesorio de cortina",
+          "pricing": "flat",
+          "items": [
+            {
+              "label": "Cinta ripplefold (x broche)",
+              "price": 0.4,
+              "page": 39
+            },
+            {
+              "label": "Balinera Adicional (1x)",
+              "price": 0.5,
+              "page": 39
+            },
+            {
+              "label": "Gancho de inicio pinch pleat · Drapery motors plastic clip 04300100358",
+              "price": 0.5,
+              "page": 41
+            },
+            {
+              "label": "Correderas con huesitos (100%)",
+              "price": 0.65,
+              "page": 39
+            },
+            {
+              "label": "End Cap pinch pleat",
+              "price": 1.3,
+              "page": 39
+            },
+            {
+              "label": "End Cap ripplefold",
+              "price": 1.3,
+              "page": 39
+            },
+            {
+              "label": "Bracket de pared sencillo",
+              "price": 1.5,
+              "page": 39
+            },
+            {
+              "label": "Bracket de techo",
+              "price": 1.75,
+              "page": 39
+            },
+            {
+              "label": "Cinta dentada · Pie Drapery motors interior belt 04300100352",
+              "price": 2.25,
+              "page": 41
+            },
+            {
+              "label": "Master carrier ripplefold izquierdo",
+              "price": 2.5,
+              "page": 39
+            },
+            {
+              "label": "Master carrier ripplefold derecho",
+              "price": 2.5,
+              "page": 39
+            },
+            {
+              "label": "Master carrier pinch pleat derecho (curvo)",
+              "price": 2.5,
+              "page": 39
+            },
+            {
+              "label": "Master carrier pinch pleat izquierdo (recto",
+              "price": 2.5,
+              "page": 39
+            },
+            {
+              "label": "Bracket Doble de Pared",
+              "price": 3.0,
+              "page": 39
+            },
+            {
+              "label": "End Stop - Esquinera Return",
+              "price": 4.0,
+              "page": 39
+            },
+            {
+              "label": "Bracket de Riel · Drapery motors ceiling clip 04300100357",
+              "price": 4.7,
+              "page": 41
+            },
+            {
+              "label": "Bastón de 48”",
+              "price": 5.0,
+              "page": 39
+            },
+            {
+              "label": "Unión de Riel",
+              "price": 5.5,
+              "page": 39
+            },
+            {
+              "label": "Master Pinch Pleat 1 vía · Master carrier one way 04300100356",
+              "price": 5.75,
+              "page": 41
+            },
+            {
+              "label": "Bastón de 60”",
+              "price": 6.0,
+              "page": 39
+            },
+            {
+              "label": "Bastón de 72”",
+              "price": 7.0,
+              "page": 39
+            },
+            {
+              "label": "Bastón de 96”",
+              "price": 8.0,
+              "page": 39
+            },
+            {
+              "label": "Bracket de pared sencillo",
+              "price": 9.0,
+              "page": 39
+            },
+            {
+              "label": "Unión de Riel",
+              "price": 10.0,
+              "page": 40
+            },
+            {
+              "label": "Unión de Riel Coulisse",
+              "price": 10.0,
+              "page": 41
+            },
+            {
+              "label": "Master Pinch Pleat 2 vias · Set master carrier center open pinch pleat 04300100355",
+              "price": 16.5,
+              "page": 41
+            },
+            {
+              "label": "Master Ripplefold 2 vías · Set master carrier center open ripplefold 04300100360",
+              "price": 24.0,
+              "page": 41
+            },
+            {
+              "label": "Kit de Riel Curvo flexible 4.5 metros",
+              "price": 25.0,
+              "page": 32
+            },
+            {
+              "label": "Curva de Riel",
+              "price": 35.0,
+              "page": 39
+            },
+            {
+              "label": "Servicio de curvado · todas las curvas excepto 90 grados",
+              "price": 150.0,
+              "page": 40
+            },
+            {
+              "label": "Servicio de curvado · todas las curgas excepto 90 grados",
+              "price": 150.0,
+              "page": 42
+            },
+            {
+              "label": "Curva de 90 grados · por pedido",
+              "price": 450.0,
+              "page": 40
+            }
+          ],
+          "scope": "pano",
+          "applies_to": "drapery"
+        },
+        {
+          "kind": "control_cortina",
+          "label": "Control de riel motorizado",
+          "pricing": "flat",
+          "items": [
+            {
+              "label": "Pull Buttom up · Pull wand 8mm 40cm matt white",
+              "price": 10.5,
+              "page": 42
+            },
+            {
+              "label": "CM-11-BK · Control Remoto 1 canal color Black",
+              "price": 18.4,
+              "page": 42
+            },
+            {
+              "label": "Control Remoto 2 Canales · POINT Celtic Remote 2CH LED Unidirectional",
+              "price": 24.0,
+              "page": 40
+            },
+            {
+              "label": "Control Remoto 6 Canales · POINT Celtic Remote 6CH LED Unidirectional",
+              "price": 28.8,
+              "page": 40
+            },
+            {
+              "label": "Control Chic Bidi 2 canales · CHIC Celtic Remote 2CH color blanco",
+              "price": 32.0,
+              "page": 40
+            },
+            {
+              "label": "CM-12-BK · Control Remoto 5 canales color Black",
+              "price": 33.6,
+              "page": 42
+            },
+            {
+              "label": "Control Chic Bidi 2 canales · CHIC Celtic Remote 2CH color negro",
+              "price": 36.0,
+              "page": 41
+            },
+            {
+              "label": "Control Chic Bidi 6 canales · CHIC Celtic Remote 6CH color blanco",
+              "price": 38.0,
+              "page": 40
+            },
+            {
+              "label": "Control Remoto 16 Canales · POINT Celtic Remote 16CH Display Unidirectional",
+              "price": 38.4,
+              "page": 40
+            },
+            {
+              "label": "Control Chic Bidi 6 canales · CHIC Celtic Remote 6CH color negro",
+              "price": 40.0,
+              "page": 41
+            },
+            {
+              "label": "CM-13-BK · Control Remoto 15 canales color Black",
+              "price": 42.4,
+              "page": 42
+            },
+            {
+              "label": "Control Remoto Escalate 6 · Escalate Celtic Remote 6CH Display Bidireccional - con Timer",
+              "price": 48.0,
+              "page": 40
+            },
+            {
+              "label": "Control Remoto Deco One - 6 C VTi® RE-LION DECO ONE WALL SWITCH | BIDIRECTIONAL",
+              "price": 52.0,
+              "page": 41
+            },
+            {
+              "label": "SITUO 1C · Control remoto monocanal",
+              "price": 61.0,
+              "page": 42
+            },
+            {
+              "label": "INTEO · Estación central para integración con Alexa, Siri y Google",
+              "price": 80.0,
+              "page": 42
+            },
+            {
+              "label": "SMOOVE PURE 1C · Botonera wireless monocanal",
+              "price": 80.8,
+              "page": 43
+            },
+            {
+              "label": "SITUO 5C · Control remoto multicanal",
+              "price": 90.0,
+              "page": 42
+            },
+            {
+              "label": "VTi Smart Hub · VTi Re-lion SMARTHUB",
+              "price": 96.0,
+              "page": 41
+            },
+            {
+              "label": "SMOOVE PURE 4C · Botonera wireless multicanal",
+              "price": 128.0,
+              "page": 43
+            },
+            {
+              "label": "VTi Smart Hub Plus · VTi Re-lion SMARTHUB Plus",
+              "price": 140.0,
+              "page": 41
+            },
+            {
+              "label": "CONVERTIDOR DE DATOS · RS232/ RS485",
+              "price": 160.0,
+              "page": 43
+            },
+            {
+              "label": "INTERTEC MONOCANAL · Transmisor de contacto seco 127 VAC",
+              "price": 168.0,
+              "page": 43
+            },
+            {
+              "label": "CM-20 · Wifi hub Coulisse motion",
+              "price": 184.0,
+              "page": 42
+            },
+            {
+              "label": "TELIS 6 · Control remoto 6 canales con opción de programar horarios",
+              "price": 224.0,
+              "page": 43
+            },
+            {
+              "label": "Interfaz serial R1485 (por pedido) VTi® Celtic Serial Interface (incluye cargador)",
+              "price": 280.0,
+              "page": 41
+            },
+            {
+              "label": "TELIS 16 · Control remoto 16 canales",
+              "price": 300.0,
+              "page": 43
+            },
+            {
+              "label": "VTi Re-lion Nexus Bridge · Compatibilidad con controladores de terceros",
+              "price": 400.0,
+              "page": 41
+            },
+            {
+              "label": "INTERTEC 16 · Transmisor de contacto seco 127 VAC - 16 canales",
+              "price": 544.0,
+              "page": 43
+            }
+          ],
+          "scope": "pano",
+          "applies_to": "drapery"
         }
       ]
     }

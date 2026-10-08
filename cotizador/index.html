@@ -16,7 +16,7 @@
     <img src="../media/logo.png" alt="Edecoration" class="brand-logo">
     <div class="brand-text">
       <h1>Edecoration</h1>
-      <span>Cotizador Interno · Lista PRS 2026</span>
+      <span>Cotizador Interno · Lista PRS 2026 (septiembre)</span>
     </div>
   </div>
   <button class="ghost-btn" id="settingsToggle" title="Configuración">⚙ Ajustes</button>
@@ -98,6 +98,39 @@
         <input type="number" id="qtyInp" min="1" step="1" value="1">
       </label>
 
+      <!-- cortinas de tela only: PRS prices a one-way curtain; a two-way one is
+           quoted as two curtains of half the width -->
+      <div class="field unit-field" id="waysField" hidden>
+        <span>Apertura</span>
+        <div class="seg" id="waysSeg">
+          <button data-ways="1" class="active" type="button">1 vía</button>
+          <button data-ways="2" type="button">2 vías (2 paños)</button>
+        </div>
+      </div>
+
+      <!-- panel track only: rail by width for its vías/canales, plus fabric
+           by the yard. The yards are entered: PRS gives no cutting formula. -->
+      <div class="pt-fields" id="ptFields" hidden>
+        <div class="field">
+          <span>Riel (vías · canales)</span>
+          <div class="custom-select" id="ptSystemDrop">
+            <button class="cs-trigger" type="button">
+              <span class="cs-value">—</span>
+              <svg class="cs-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="cs-menu" hidden></div>
+          </div>
+          <select id="ptSystemSel" hidden></select>
+        </div>
+        <label class="field">Paneles
+          <input type="number" id="ptPanels" min="1" step="1" placeholder="ej. 3">
+        </label>
+        <label class="field">Yardas de tela
+          <input type="number" id="ptYards" min="0" step="0.25" placeholder="requerido">
+        </label>
+        <p class="pt-info" id="ptInfo"></p>
+      </div>
+
       <div class="field">
         <span>Posición de montaje</span>
         <div class="custom-select" id="mountDrop">
@@ -158,7 +191,7 @@
         </div>
       </header>
 
-      <div class="ra-field">
+      <div class="ra-field" id="motorField">
         <span>Motor</span>
         <div class="custom-select" id="motorDrop">
           <button class="cs-trigger" type="button">

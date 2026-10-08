@@ -7,7 +7,7 @@ const { makeDocument } = require("./dom-stub");
 
 const ROOT = path.join(__dirname, "..");
 
-function boot() {
+function boot(opts = {}) {
   const { document, get } = makeDocument();
 
   // defaults that the HTML ships with, so the harness starts where the UI does
@@ -20,7 +20,18 @@ function boot() {
   get("installChk").checked = false;
   get("mountSel").value = "Interior";
 
-  const sandbox = { document, console, setTimeout, clearTimeout, Date, Math, JSON };
+  // the draft feature reaches for window-level APIs; each boot gets its own
+  // empty storage so one test's quote cannot leak into the next
+  const store = new Map();
+  const localStorage = {
+    getItem: k => (store.has(k) ? store.get(k) : null),
+    setItem: (k, v) => store.set(k, String(v)),
+    removeItem: k => store.delete(k),
+  };
+  // a test can open the tool on a saved draft, as reopening the tab would
+  if (opts.draft) store.set("edecoration.cotizador.draft.v1", JSON.stringify(opts.draft));
+  const sandbox = { document, console, setTimeout, clearTimeout, Date, Math, JSON,
+                    localStorage, addEventListener() {}, confirm: () => true };
   sandbox.window = sandbox;
   vm.createContext(sandbox);
 
@@ -59,7 +70,39 @@ function boot() {
       motorTotal: get("motorTotalValue").textContent,
       motorTotalHidden: get("motorTotal").hidden,
       warnHidden: get("motorWarn").hidden,
+      warnText: get("motorWarn").textContent,
+      motorFieldHidden: get("motorField").hidden,
       motorLabel: get("motorDrop").querySelector(".cs-value").textContent,
+    };
+  }
+
+  /* Flip the 1 vía / 2 vías control the way a click would. */
+  function setWays(n) {
+    const btn = new (require("./dom-stub").El)();
+    btn.dataset.ways = String(n);
+    btn.closest = () => btn;
+    get("waysSeg").fireWith("click", btn);
+  }
+
+  /* Price a Panel Track paño through the UI: family, fabric, rail, yards. */
+  function panelTrack({ telaIndex = 0, railIndex = 0, w, h, yards = "", panels = "",
+                        qty = 1 }) {
+    pickOption("familyDrop", "Panel Track");
+    pickOption("fabricDrop", `pt:${telaIndex}`);
+    pickOption("ptSystemDrop", railIndex);
+    get("ptPanels").value = String(panels);
+    get("ptYards").value = String(yards);
+    get("qtyInp").value = String(qty);
+    get("heightInp").value = String(h);
+    get("widthInp").value = String(w);
+    get("widthInp").fire("input");
+    return {
+      display: get("lpValue").textContent,
+      meta: get("lpMeta").textContent,
+      info: get("ptInfo").textContent,
+      notes: get("fabricNotes").innerHTML,
+      badges: get("reqBadges").innerHTML,
+      disabled: get("addBtn").disabled,
     };
   }
 
@@ -112,7 +155,7 @@ function boot() {
   const parseMoney = s => parseFloat(String(s).replace(/[$,]/g, ""));
 
   return { CATALOG, get, price, addAndTotal, parseMoney, setUnit,
-           pickOption, addAddon };
+           pickOption, addAddon, setWays, panelTrack, store, sandbox };
 }
 
 module.exports = { boot };

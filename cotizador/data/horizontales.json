@@ -1,0 +1,449 @@
+{
+  "category": "Horizontales",
+  "tables": [
+    {
+      "type": "fabric_matrix",
+      "name": "Horizontal Bamboo 2” (50mm)",
+      "page": 81,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96
+      ],
+      "widths_m": [
+        0.91,
+        1.2,
+        1.52,
+        1.83,
+        2.13,
+        2.44
+      ],
+      "heights_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96
+      ],
+      "prices": [
+        [
+          109.56,
+          197.32,
+          204.71,
+          207.04,
+          210.97,
+          213.93
+        ],
+        [
+          129.63,
+          237.22,
+          244.61,
+          246.9,
+          250.95,
+          254.04
+        ],
+        [
+          143.2,
+          264.1,
+          271.49,
+          273.74,
+          277.91,
+          281.13
+        ],
+        [
+          163.28,
+          304.0,
+          311.39,
+          313.59,
+          317.9,
+          321.24
+        ],
+        [
+          183.35,
+          343.9,
+          351.29,
+          353.45,
+          357.88,
+          361.35
+        ],
+        [
+          203.43,
+          383.8,
+          391.19,
+          393.31,
+          397.87,
+          401.46
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "capacity_limit"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "capacity_limit",
+          "motorization"
+        ],
+        [
+          null,
+          null,
+          null,
+          "capacity_limit",
+          "motorization",
+          "motorization"
+        ],
+        [
+          null,
+          null,
+          "capacity_limit",
+          "motorization",
+          "motorization",
+          "exceeds_capacity"
+        ],
+        [
+          null,
+          null,
+          "motorization",
+          "motorization",
+          "exceeds_capacity",
+          "exceeds_capacity"
+        ]
+      ],
+      "requirement_legend": {
+        "exceeds_capacity": "* El área sombreada en rojo indica que el sistema manual o motorizado no tiene la capacidad para levantar la persiana, no hay garantía y se recomienda dividir la persiana en dos.",
+        "capacity_limit": "* El área sombreada en amarillo indica que el sistema esta operando al límite de su capacidad por lo que el desgaste de los cordones de elevación será acelerado y subir la persiana se hará pesado, se recomienda dividir la persiana en dos o motorizar.",
+        "motorization": "* El área gris indica que por el peso de las lamas no se debe usar sistema manual y se recomienda motorizar la persiana."
+      },
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "* El área sombreada en rojo indica que el sistema manual o motorizado no tiene la capacidad para levantar la persiana, no hay garantía y se recomienda dividir la persiana en dos.",
+        "* El área sombreada en amarillo indica que el sistema esta operando al límite de su capacidad por lo que el desgaste de los cordones de elevación será acelerado y subir la persiana se hará pesado, se recomienda dividir la persiana en dos o motorizar.",
+        "* El área gris indica que por el peso de las lamas no se debe usar sistema manual y se recomienda motorizar la persiana."
+      ],
+      "category": "Horizontales",
+      "fabrics": [
+        "Horizontal Bamboo 2” (50mm)"
+      ]
+    },
+    {
+      "type": "fabric_matrix",
+      "name": "Horizontal Pure Wood 2” (50mm)",
+      "page": 81,
+      "currency": "USD",
+      "axis": {
+        "rows": "height_in",
+        "cols": "width_in"
+      },
+      "widths_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108
+      ],
+      "widths_m": [
+        0.91,
+        1.2,
+        1.52,
+        1.83,
+        2.13,
+        2.44,
+        2.74
+      ],
+      "heights_in": [
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108
+      ],
+      "prices": [
+        [
+          109.64,
+          113.23,
+          204.88,
+          207.21,
+          211.13,
+          214.1,
+          216.22
+        ],
+        [
+          126.95,
+          130.83,
+          239.23,
+          241.52,
+          245.57,
+          248.66,
+          250.78
+        ],
+        [
+          138.66,
+          142.84,
+          262.42,
+          264.66,
+          268.84,
+          272.06,
+          274.18
+        ],
+        [
+          155.97,
+          160.44,
+          296.77,
+          298.98,
+          303.28,
+          306.62,
+          308.74
+        ],
+        [
+          173.27,
+          178.04,
+          565.74,
+          567.9,
+          572.33,
+          575.8,
+          577.92
+        ],
+        [
+          190.58,
+          195.64,
+          365.48,
+          367.61,
+          372.16,
+          375.75,
+          377.87
+        ],
+        [
+          207.88,
+          213.23,
+          399.84,
+          401.92,
+          406.6,
+          410.32,
+          412.44
+        ]
+      ],
+      "requirements": [
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "capacity_limit"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "capacity_limit",
+          "motorization"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "capacity_limit",
+          "motorization",
+          "motorization"
+        ],
+        [
+          null,
+          null,
+          null,
+          "capacity_limit",
+          "motorization",
+          "motorization",
+          "motorization"
+        ],
+        [
+          null,
+          null,
+          "capacity_limit",
+          "motorization",
+          "motorization",
+          "motorization",
+          "exceeds_capacity"
+        ],
+        [
+          null,
+          null,
+          "motorization",
+          "motorization",
+          "exceeds_capacity",
+          "exceeds_capacity",
+          "exceeds_capacity"
+        ],
+        [
+          null,
+          null,
+          "motorization",
+          "motorization",
+          "exceeds_capacity",
+          "exceeds_capacity",
+          "exceeds_capacity"
+        ]
+      ],
+      "requirement_legend": {
+        "exceeds_capacity": "* El área sombreada en rojo indica que el sistema manual o motorizado no tiene la capacidad para levantar la persiana, no hay garantía y se recomienda dividir la persiana en dos.",
+        "capacity_limit": "* El área sombreada en amarillo indica que el sistema esta operando al límite de su capacidad por lo que el desgaste de los cordones de elevación será acelerado y subir la persiana se hará pesado, se recomienda dividir la persiana en dos o motorizar.",
+        "motorization": "* El área gris indica que por el peso de las lamas no se debe usar sistema manual y se recomienda motorizar la persiana."
+      },
+      "price_checks": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "notes": [
+        "* El área sombreada en amarillo indica que el sistema esta operando al límite de su capacidad por lo que el desgaste de los cordones de elevación será acelerado y subir la persiana se hará pesado, se recomienda dividir la persiana en dos o motorizar.",
+        "* El área gris indica que por el peso de las lamas no se debe usar sistema manual y se recomienda motorizar la persiana.",
+        "* El área sombreada en rojo indica que el sistema manual o motorizado no tiene la capacidad para levantar la persiana, no hay garantía y se recomienda dividir la persiana en dos."
+      ],
+      "category": "Horizontales",
+      "fabrics": [
+        "Horizontal Pure Wood 2” (50mm)"
+      ]
+    }
+  ]
+}

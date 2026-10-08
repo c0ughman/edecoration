@@ -19,7 +19,8 @@ import pdfplumber
 from extract import clean, cluster_rows, build_rect_lookup, PRICE_RE
 
 ROOT = Path(__file__).resolve().parent.parent
-PDF = sys.argv[1] if len(sys.argv) > 1 else "lista de precios nueva.pdf"
+PDF = sys.argv[1] if len(sys.argv) > 1 else \
+    "Lista de precios 2026 PRS NUEVO SEPT. actualizada septiembre - Documentos de Google.pdf"
 
 results = []
 
@@ -35,24 +36,34 @@ def check(name, fn):
 catalog = json.loads((ROOT / "data/catalog.json").read_text())
 index = json.loads((ROOT / "data/index.json").read_text())
 unparsed = json.loads((ROOT / "data/_unparsed.json").read_text())
-matrices = [t for t in catalog if t["type"] == "fabric_matrix"]
+all_matrices = [t for t in catalog if t["type"] == "fabric_matrix"]
+# Shade tables carry decimal prices on one text line per height; the cortinas
+# de tela tables are whole dollars with their own layout, and are re-read by
+# their own route further down.
+matrices = [t for t in all_matrices if not t.get("drapery")]
+drapery = [t for t in all_matrices if t.get("drapery")]
 widthp = [t for t in catalog if t["type"] == "width_priced"]
 items = [t for t in catalog if t["type"] == "item_list"]
 awnings = [t for t in catalog if t["type"] == "awning_system"]
+panel_tracks = [t for t in catalog if t["type"] == "panel_track"]
 
 pdf = pdfplumber.open(PDF)
 page_lines = {p.page_number: (p.extract_text() or "").splitlines()
               for p in pdf.pages}
 N_PAGES = len(pdf.pages)
 
-KNOWN_REQS = {"clutch_large", "motorization",
-              "bottomrail_delfin", "thin_fabric_smiles"}
+KNOWN_REQS = {"clutch_large", "motorization", "bottomrail_delfin",
+              "thin_fabric_smiles", "capacity_limit", "exceeds_capacity"}
 MEANINGFUL_FILLS = {(1.0, 0.898, 0.6),            # light yellow
                     (0.9373, 0.9373, 0.9373),     # grey
-                    (1.0, 0.6, 0.0)}              # orange
-YELLOW, GREY, ORANGE = ((1.0, 0.898, 0.6),
-                        (0.9373, 0.9373, 0.9373),
-                        (1.0, 0.6, 0.0))
+                    (0.851, 0.851, 0.851),        # grey (Horizontales)
+                    (1.0, 0.6, 0.0),              # orange
+                    (0.9176, 0.6, 0.6)}           # red (Horizontales)
+YELLOW, GREY, ORANGE, RED = ((1.0, 0.898, 0.6),
+                             (0.9373, 0.9373, 0.9373),
+                             (1.0, 0.6, 0.0),
+                             (0.9176, 0.6, 0.6))
+GREY2 = (0.851, 0.851, 0.851)
 
 all_prices = [p for t in matrices for row in t["prices"] for p in row
               if p is not None]
@@ -135,8 +146,13 @@ def fill_census():
                                   if not PRICE_RE.match(w["txt"]))).lower()
             if label.startswith(("metros", "pulgadas")):
                 continue
-            for w in r["words"]:
+            ws = sorted(r["words"], key=lambda w: w["x0"])
+            for k, w in enumerate(ws):
                 if not PRICE_RE.match(w["txt"]):
+                    continue
+                # a price right after words ("+Manivela 2.20m 35.00") is an item
+                # line in a side table, striped as styling, not a matrix cell
+                if k and any(ch.isalpha() for ch in ws[k - 1]["txt"]):
                     continue
                 c = color_at((w["x0"] + w["x1"]) / 2,
                              (w["top"] + w["bottom"]) / 2)
@@ -195,19 +211,75 @@ def guard_two_colours():
             f"yellow->{reqs[0][1]}, grey->{reqs[1][0]}")
 
 
+def guard_page_legend():
+    """Two stacked tables share one legend printed under the second; the
+    first must resolve from the page's notes, not raise or go unflagged."""
+    from extract import resolve_requirements
+    grid = [[(1.0, 1.0, 1.0), GREY], [(1.0, 1.0, 1.0), (1.0, 1.0, 1.0)]]
+    note = "Las medidas sombreadas en gris requieren motorización."
+    reqs, legend = resolve_requirements(grid, [], 99, "prueba", [note])
+    return (reqs[0][1] == "motorization" and legend.get("motorization") == note,
+            "a legend printed once per page reaches both tables")
+
+
+def guard_capacity_meanings():
+    """The Horizontales clauses also contain "motoriz"; they must not be read
+    as plain motorisation."""
+    from extract import resolve_requirements
+    grid = [[(1.0, 1.0, 1.0), YELLOW], [RED, GREY]]
+    notes = ["* El área sombreada en amarillo indica que el sistema esta operando al "
+             "límite de su capacidad por lo que el desgaste de los cordones de elevación "
+             "será acelerado y subir la persiana se hará pesado, se recomienda dividir "
+             "la persiana en dos o motorizar.",
+             "* El área gris indica que por el peso de las lamas no se debe usar sistema "
+             "manual y se recomienda motorizar la persiana.",
+             "* El área sombreada en rojo indica que el sistema manual o motorizado no "
+             "tiene la capacidad para levantar la persiana, no hay garantía y se "
+             "recomienda dividir la persiana en dos."]
+    reqs, _ = resolve_requirements(grid, notes, 99, "prueba")
+    got = (reqs[0][1], reqs[1][0], reqs[1][1])
+    return got == ("capacity_limit", "exceeds_capacity", "motorization"), str(got)
+
+
+def guard_wrapped_title():
+    """Every wrapped line of a title is kept, however long."""
+    from extract import joined_title
+    row = lambda txt: {"words": [{"txt": t} for t in txt.split()]}
+    rows = [row("x"), row("Focus 118” / Elisabeth 118” / Flash 118” / Statement 118”"),
+            row("Con Varilla")]
+    t = joined_title(rows, "Roman Shades - Florencia 118” / Day Break 118” /")
+    return "Statement 118”" in t and "Varilla" not in t, t
+
+
+def guard_caveat():
+    """A trailing rule in a title becomes a note, not part of a fabric name."""
+    from extract import split_fabrics
+    names, caveat = split_fabrics(
+        "Roller Shades - Florencia 118” / Shelter Island 110” (más de 108” se debe "
+        "calcular como dos rollers)", "Roller Shades")
+    return (names == ["Florencia 118”", "Shelter Island 110”"]
+            and caveat and "dos rollers" in caveat, f"{names} + {caveat}")
+
+
 check("guard: unexplained shading raises instead of vanishing", guard_raises)
 check("guard: an explained shading resolves cleanly", guard_resolves)
 check("guard: a fill covering every cell is treated as decoration", guard_decoration)
 check("guard: one note defining two colours resolves each separately", guard_two_colours)
+check("guard: a legend shared by stacked tables reaches both", guard_page_legend)
+check("guard: the Horizontales capacity colours keep their own meanings",
+      guard_capacity_meanings)
+check("guard: a title wrapped over a long second line keeps every fabric",
+      guard_wrapped_title)
+check("guard: a trailing rule in a title becomes a note", guard_caveat)
 
 
 # ------------------------------------------------------- file-level shape ----
 check("block counts match the PDF's table inventory",
       lambda: (Counter(t["type"] for t in catalog) ==
-               Counter({"fabric_matrix": 77, "width_priced": 37,
-                        "item_list": 10, "awning_system": 1,
+               Counter({"fabric_matrix": 93, "width_priced": 13,
+                        "item_list": 13, "awning_system": 1,
                         "motor_options": 1, "per_unit_list": 1,
-                        "addon_options": 1}),
+                        "panel_track": 1, "addon_options": 1}),
                str(dict(Counter(t["type"] for t in catalog)))))
 check("no unparsed pages",
       lambda: (not unparsed, f"{len(unparsed)} unparsed page(s)"))
@@ -235,8 +307,11 @@ check("every table declares USD",
 check("every page number is inside the PDF",
       lambda: (all(1 <= t["page"] <= N_PAGES for t in catalog),
                f"pages 1..{N_PAGES}"))
-check("no duplicate (name, page) pair",
-      lambda: (len({(t["name"], t["page"]) for t in catalog}) == len(catalog),
+# two tables under one heading (RIEL COULISSE NEGRO: WAVE, CORREDERAS) are
+# told apart by their sub-header
+check("no duplicate (name, sub-header, page)",
+      lambda: (len({(t["name"], t.get("subheader"), t["page"]) for t in catalog})
+               == len(catalog),
                f"{len(catalog)} tables, all distinct"))
 check("no table landed in the 'General' fallback category",
       lambda: (not [t for t in catalog if t.get("category") in (None, "General")],
@@ -287,19 +362,44 @@ check("dimensions sit in a plausible inch range",
 
 
 def no_wild_jumps():
-    """A column shift would show up as a huge step between adjacent cells."""
+    """A column shift would show up as a huge step between adjacent cells.
+    Cells already flagged as PRS typos (price_checks) are the one known case
+    and are checked on their own below."""
     worst, where = 0, None
-    for t in matrices:
-        for r in t["prices"]:
-            v = [x for x in r if x is not None]
-            for i in range(len(v) - 1):
-                ratio = max(v[i], v[i + 1]) / min(v[i], v[i + 1])
+    for t in all_matrices:
+        flags = t.get("price_checks") or []
+        for i, r in enumerate(t["prices"]):
+            v = [x for j, x in enumerate(r)
+                 if x is not None and not (flags and flags[i][j])]
+            for k in range(len(v) - 1):
+                ratio = max(v[k], v[k + 1]) / min(v[k], v[k + 1])
                 if ratio > worst:
-                    worst, where = ratio, (t["name"], v[i], v[i + 1])
+                    worst, where = ratio, (t["name"], v[k], v[k + 1])
     return worst < 3.0, f"worst adjacent ratio {worst:.2f} ({where[0][:38]})"
 
 
+def price_checks_scope():
+    """Only the Pure Wood 2" row at 84" is out of sequence by the 40% rule,
+    every cell of it from 60" wide on -- and it keeps PRS's printed price."""
+    hits = [(t["name"], t["heights_in"][i], t["widths_in"][j], t["prices"][i][j])
+            for t in all_matrices for i, r in enumerate(t.get("price_checks") or [])
+            for j, v in enumerate(r) if v]
+    want = {(84, 60): 565.74, (84, 72): 567.90, (84, 84): 572.33,
+            (84, 96): 575.80, (84, 108): 577.92}
+    got = {(h, w): p for n, h, w, p in hits if "Pure Wood" in n}
+    return (got == want and len(hits) == len(want),
+            f"{len(hits)} flagged cells, all Pure Wood 84\" at PRS's printed price")
+
+
+def price_checks_shape():
+    bad = [t["name"] for t in all_matrices
+           if [len(r) for r in t.get("price_checks", [])] != [len(r) for r in t["prices"]]]
+    return not bad, "price_checks grid aligns with prices" if not bad else str(bad[:3])
+
+
 check("no wild jump between adjacent cells (column-shift canary)", no_wild_jumps)
+check("price-sequence flags hit exactly the Pure Wood 84\" typo row", price_checks_scope)
+check("every matrix carries a price_checks grid of its own shape", price_checks_shape)
 
 
 # ------------------------------------------------------------ shading ----
@@ -312,14 +412,17 @@ check("no requirement flag on an empty cell",
 check("shaded-cell count re-derived from the PDF matches the catalogue",
       lambda: (sum(REQ_COUNT.values()) == sum(CENSUS.values()),
                f"catalogue {sum(REQ_COUNT.values())} vs pdf {sum(CENSUS.values())}"))
-check("yellow cells split exactly into clutch + bottomrail",
+check("yellow cells split exactly into clutch + bottomrail + capacity limit",
       lambda: (REQ_COUNT["clutch_large"] + REQ_COUNT["bottomrail_delfin"]
-               == CENSUS[YELLOW],
-               f"{REQ_COUNT['clutch_large']}+{REQ_COUNT['bottomrail_delfin']} "
-               f"= {CENSUS[YELLOW]}"))
+               + REQ_COUNT["capacity_limit"] == CENSUS[YELLOW],
+               f"{REQ_COUNT['clutch_large']}+{REQ_COUNT['bottomrail_delfin']}"
+               f"+{REQ_COUNT['capacity_limit']} = {CENSUS[YELLOW]}"))
+check("red cells map one-to-one onto exceeds-capacity",
+      lambda: (REQ_COUNT["exceeds_capacity"] == CENSUS[RED] > 0,
+               f"{REQ_COUNT['exceeds_capacity']} = {CENSUS[RED]}"))
 check("grey cells map one-to-one onto motorization",
-      lambda: (REQ_COUNT["motorization"] == CENSUS[GREY],
-               f"{REQ_COUNT['motorization']} = {CENSUS[GREY]}"))
+      lambda: (REQ_COUNT["motorization"] == CENSUS[GREY] + CENSUS[GREY2],
+               f"{REQ_COUNT['motorization']} = {CENSUS[GREY]}+{CENSUS[GREY2]}"))
 check("orange cells map one-to-one onto the thin-fabric warning",
       lambda: (REQ_COUNT["thin_fabric_smiles"] == CENSUS[ORANGE],
                f"{REQ_COUNT['thin_fabric_smiles']} = {CENSUS[ORANGE]}"))
@@ -344,15 +447,35 @@ def orange_scope():
     t = t[0]
     flags = sum(1 for row in t["requirements"] for r in row if r)
     cells = sum(1 for row in t["prices"] for p in row if p is not None)
-    return (t["page"] == 23 and 0 < flags < cells,
-            f"page {t['page']}, {flags}/{cells} cells")
+    return (t["name"] == "Sheer Elegance - Zakros 110”" and 0 < flags < cells,
+            f"page {t['page']} {t['name']}, {flags}/{cells} cells")
 
 
 def bottomrail_scope():
-    pages = sorted({t["page"] for t in matrices
-                    if any(r == "bottomrail_delfin"
-                           for row in t["requirements"] for r in row)})
-    return pages == [66, 67], f"pages {pages} (the Axio drop shades)"
+    """PRS dropped the Delfin bottomrail rule in September; if it comes back
+    it may only ever sit on the Axio pages."""
+    tables = {t["name"] for t in matrices
+              if any(r == "bottomrail_delfin" for row in t["requirements"] for r in row)}
+    return all("Axio" in n for n in tables), f"{len(tables)} table(s): {sorted(tables)}"
+
+
+def capacity_scope():
+    fams = {t["category"] for t in matrices
+            if any(r in ("capacity_limit", "exceeds_capacity")
+                   for row in t["requirements"] for r in row)}
+    return fams == {"Horizontales"}, f"capacity flags in {sorted(fams)}"
+
+
+def roman_motorization():
+    """New in September: Roman Shades have motorisation cells, in both Con
+    and Sin Varilla tables, explained by the page's shared legend."""
+    roman = [t for t in matrices if t["category"] == "Roman Shades"]
+    with_moto = [t for t in roman if any(r == "motorization"
+                                         for row in t["requirements"] for r in row)]
+    both = {("Con" in t["name"], "Sin" in t["name"]) for t in with_moto}
+    return (len(with_moto) >= 10 and both == {(True, False), (False, True)}
+            and all("motorization" in t["requirement_legend"] for t in with_moto),
+            f"{len(with_moto)}/{len(roman)} Roman tables carry motorisation")
 
 
 def flags_are_subsets():
@@ -369,6 +492,8 @@ def flags_are_subsets():
 check("rail-page shading is decorative striping, not a dropped flag", rail_shading)
 check("thin-fabric flag confined to its page and is a subset", orange_scope)
 check("bottomrail flag confined to the Axio drop-shade pages", bottomrail_scope)
+check("capacity flags confined to the Horizontales family", capacity_scope)
+check("Roman Shades motorisation reaches Con and Sin Varilla tables", roman_motorization)
 check("no table is flagged in its entirety", flags_are_subsets)
 
 
@@ -393,7 +518,8 @@ def legend_sourced():
 def legend_mentions_colour():
     """The sentence behind a flag must actually name a colour."""
     words = {"clutch_large": ("amar",), "bottomrail_delfin": ("amar",),
-             "motorization": ("gris",), "thin_fabric_smiles": ("naranja",)}
+             "motorization": ("gris",), "thin_fabric_smiles": ("naranja",),
+             "capacity_limit": ("amar",), "exceeds_capacity": ("rojo",)}
     bad = [(t["name"], k) for t in matrices
            for k, v in (t.get("requirement_legend") or {}).items()
            if not any(w in v.lower() for w in words.get(k, ()))]
@@ -409,8 +535,11 @@ check("every legend sentence names the colour it explains", legend_mentions_colo
 def fabrics_recovered():
     """Fabrics that only appear on the wrapped second line of a title."""
     names = {f for t in matrices for f in t["fabrics"]}
-    want = ["Veria 98”", "Mathilde 118” (Con Varilla)", "Nature 5%",
-            "Sheer Creta", "Syros BO 110”"]
+    want = ["Veria 98”", "Mathilde 118” (Con Varilla)", "Syros BO 110”",
+            "Ono dimout 118”", "Blackout Basic Black 118”", "Motion 118” (Sin Varilla)",
+            # the second line of p57's title, 56 characters long
+            "Focus 118” (Con Varilla)", "Elisabeth 118” (Sin Varilla)",
+            "Flash 118” (Con Varilla)", "Statement 118” (Sin Varilla)"]
     missing = [w for w in want if w not in names]
     return not missing, (f"{len(names)} distinct fabric names"
                          if not missing else f"missing {missing}")
@@ -442,11 +571,16 @@ def fabrics_nonempty():
 
 
 def caveat_moved_to_notes():
-    """The p13 rule is a note, not part of a fabric's name."""
-    t = next((x for x in matrices if x["page"] == 13), None)
-    in_note = any("dos rollers" in n for n in (t["notes"] or []))
-    in_name = any("dos rollers" in f for f in t["fabrics"])
-    return in_note and not in_name, f"note={in_note}, leaked into name={in_name}"
+    """No rule sentence ("(más de 108” se debe ...)") is left in a fabric name."""
+    bad = [f for t in all_matrices for f in t["fabrics"]
+           if re.search(r"\([^)]*\b(se debe|calcular|requiere)\b", f, re.I)]
+    return not bad, "no rule text in any fabric name" if not bad else str(bad[:3])
+
+
+def supplier_brand_kept_off_names():
+    """"(VERTILUX)" under the Manhattan title is the supplier's brand."""
+    bad = [f for t in all_matrices for f in t["fabrics"] if "VERTILUX" in f.upper()]
+    return not bad, "no supplier brand in any fabric name" if not bad else str(bad)
 
 
 check("fabrics lost to wrapped titles are recovered", fabrics_recovered)
@@ -454,6 +588,12 @@ check("bolt widths are not mistaken for separate fabrics", fabrics_split_not_wid
 check("no fabric name repeats inside a family", fabrics_unique_per_family)
 check("every matrix exposes at least one named fabric", fabrics_nonempty)
 check("a trailing rule becomes a note, not part of a name", caveat_moved_to_notes)
+check("the supplier's brand is not part of a fabric name", supplier_brand_kept_off_names)
+check("PRS's 'Landcaster' is quoted as Lancaster, as PRS spells it elsewhere",
+      lambda: (not [f for t in all_matrices for f in t["fabrics"] if "Landcaster" in f]
+               and any("Lancaster 110” (Con Varilla)" == f
+                       for t in all_matrices for f in t["fabrics"]),
+               "Roman Lancaster named as on the Roller page"))
 
 
 # -------------------------------------------------------------- motors ----
@@ -476,6 +616,21 @@ def motors_are_tube_motors():
     return not bad, "no track motors offered" if not bad else str(bad[:3])
 
 
+def motors_scoped():
+    """The motor heading reads "MOTORES PARA ROLLER, SHEER, MANHATTAN Y
+    ROMANAS"; the families published must be exactly those."""
+    fams = next((t.get("families") for t in catalog if t["type"] == "motor_options"), None)
+    heading = [ln for ln in sum(page_lines.values(), []) if ln.startswith("MOTORES PARA")]
+    return (fams == ["Manhattan", "Roller Shades", "Roman Shades", "Sheer Elegance"]
+            and heading, f"{fams} from '{heading[0] if heading else '?'}'")
+
+
+def motors_not_from_drapery():
+    pages = {t["page"] for t in catalog if t.get("section") == "drapery"}
+    bad = [m["label"] for m in MOTORS if m["page"] in pages]
+    return not bad, "no curtain-track motor in the shade motor list" if not bad else str(bad)
+
+
 def motors_disambiguated():
     """Re-Lion 35E 1L exists twice at different prices; the label must say which."""
     by_label = defaultdict(set)
@@ -493,6 +648,13 @@ check("motor options exist and are priced", lambda: (
 check("every motor price traces back to a PDF line item", motors_traceable)
 check("only tube motors are offered, not curtain-track motors", motors_are_tube_motors)
 check("motors sharing a name are disambiguated by direction", motors_disambiguated)
+check("motors are offered only to the families PRS's heading names", motors_scoped)
+check("no motor is taken from the cortinas de tela section", motors_not_from_drapery)
+check("the 20NM and 50NM Re-Lion 45E are two items at their own prices",
+      lambda: ({(i["name"], i["price"]) for t in items_ for i in t["items"]
+                if "Re-Lion 45E" in i["name"] and "NM" in i["name"]}
+               == {("Re-Lion 45E 20NM Eléctrico", 136.5), ("Re-Lion 45E 50NM Eléctrico", 150.5)},
+               "20NM $136.50, 50NM $150.50"))
 
 
 # --------------------------------------------------------------- notes ----
@@ -516,9 +678,10 @@ check("the max-width caveat survived extraction",
                "Wellington 108\"/102\" rule present"))
 check("the thin-fabric warning survived extraction",
       lambda: (any("SONRISAS" in n for n in all_notes), "SONRISAS note present"))
-check("the special-order bottomrail note survived extraction",
-      lambda: (any("bottomrail" in n.lower() for n in all_notes),
-               "bottomrail note present"))
+check("the Horizontales capacity notes survived extraction",
+      lambda: (any("capacidad para levantar" in n for n in all_notes)
+               and any("mite de su capacidad" in n for n in all_notes),
+               "yellow and red Horizontales notes present"))
 check("every matrix carries the cost-variation disclaimer",
       lambda: (sum(1 for t in matrices
                    if any("LOS COSTOS PUEDEN VARIAR" in n
@@ -654,6 +817,188 @@ SPOTS = pick_spots(20)
 for t, i, j in SPOTS:
     check(f"spot price p{t['page']} {t['heights_in'][i]}x{t['widths_in'][j]} "
           f"— {t['name'][:30]}", spot(t, i, j))
+
+
+# --------------------------------------------------- cortinas de tela ----
+def int_runs(page_no):
+    """Every run of 10 whole numbers on a page's text lines."""
+    out = []
+    for ln in page_lines.get(page_no, []):
+        toks = [int(x) for x in ln.split() if re.fullmatch(r"\d{1,4}", x)]
+        for s in range(len(toks) - 9):
+            out.append(toks[s:s + 10])
+    return out
+
+
+def drapery_rows_reread():
+    """Each price row re-read from the page text (or the next page, where a
+    table runs over), by line rather than by word position."""
+    rows = bad = 0
+    first = None
+    for t in drapery:
+        runs = int_runs(t["page"]) + int_runs(t["page"] + 1)
+        for i, r in enumerate(t["prices"]):
+            rows += 1
+            if [int(p) for p in r] not in runs:
+                bad += 1
+                first = first or (t["name"], t["heights_in"][i])
+    return bad == 0, f"{len(drapery)} tables, {rows} rows re-read, {bad} mismatched" \
+        + (f" first={first}" if first else "")
+
+
+def drapery_heights_printed():
+    """Every height row label (108", 132", ...) is printed on the table's pages."""
+    bad = []
+    for t in drapery:
+        text = " ".join(page_lines.get(t["page"], []) + page_lines.get(t["page"] + 1, []))
+        bad += [(t["name"], h) for h in t["heights_in"] if f'{h}"' not in text]
+    return not bad, "all height labels found" if not bad else str(bad[:3])
+
+
+DRAPERY_GROUPS = ["FLO / CIELO / BRISA / AURA", "BELLA", "DRAPER",
+                  "ELISABETH / MATHILDE / FOCUS", "EQUILIBRIUM / SPRING", "GAU / ELISE",
+                  "MATTHIAS", "RHINE", "LENS", "FLASH", "MOTION / STATEMENT", "DAY BREAK"]
+
+
+def drapery_inventory():
+    got = sorted(t["name"] for t in drapery)
+    want = sorted(f"Cortinas de Tela - {g} ({s})" for g in DRAPERY_GROUPS
+                  for s in ("Onda o Ripplefold", "Plisada"))
+    return got == want, f"{len(got)} tables = 12 fabric groups × 2 styles"
+
+
+check("cortinas de tela: every fabric group has both styles", drapery_inventory)
+check("cortinas de tela: every price row re-reads from the PDF", drapery_rows_reread)
+check("cortinas de tela: every height label is printed in the PDF", drapery_heights_printed)
+check("cortinas de tela: one width axis, 36\" to 252\"",
+      lambda: (all(t["widths_in"] == [36, 64, 84, 105, 126, 147, 168, 189, 210, 252]
+                   for t in drapery), "all 24 tables"))
+check("cortinas de tela: heights are the base row then 132/168/204",
+      lambda: (all(len(t["heights_in"]) == 4 and t["heights_in"][1:] == [132, 168, 204]
+                   and 90 <= t["heights_in"][0] < 132 for t in drapery),
+               str(sorted({t["heights_in"][0] for t in drapery}))))
+check("cortinas de tela: every cell priced, prices rise with width",
+      lambda: (all(p is not None for t in drapery for r in t["prices"] for p in r)
+               and all(r == sorted(r) for t in drapery for r in t["prices"]),
+               f"{sum(len(r) for t in drapery for r in t['prices'])} cells"))
+check("cortinas de tela: PRS's 7 IMPORTANTE rules ride on every table",
+      lambda: (all(len(t["notes"]) == 7 and t["notes"][1].startswith("2. Aunque el riel")
+                   for t in drapery), "7 numbered rules"))
+check("cortinas de tela: the two-way rule is declared on every table",
+      lambda: (all(t["drapery"].get("two_way") == "split_width" for t in drapery),
+               "divide el ancho total en 2"))
+check("cortinas de tela: spot prices match the PDF",
+      lambda: (all(next(t for t in drapery if t["name"] == n)["prices"][i][j] == v
+                   for n, i, j, v in [
+                       ("Cortinas de Tela - FLO / CIELO / BRISA / AURA (Onda o Ripplefold)", 0, 0, 36),
+                       ("Cortinas de Tela - BELLA (Plisada)", 3, 9, 704),        # runs onto p34
+                       ("Cortinas de Tela - ELISABETH / MATHILDE / FOCUS (Plisada)", 0, 0, 87),
+                       ("Cortinas de Tela - MOTION / STATEMENT (Plisada)", 3, 9, 1478),
+                       ("Cortinas de Tela - LENS (Onda o Ripplefold)", 0, 9, 380)]),
+               "5 cells incl. the page-crossing and split-label rows"))
+
+
+# --------------------------------------------------------- panel track ----
+PT = panel_tracks[0] if panel_tracks else None
+
+
+def pt_telas_reread():
+    """The per-yard list re-read by splitting text lines on "$"."""
+    page = page_lines[PT["page"]]
+    want = {}
+    for ln in page:
+        for m in re.finditer(r"(\S[^$]*?)\s+(\d{2,3})\s+\$(\d+\.\d\d)", ln):
+            want[m.group(1).strip()] = (int(m.group(2)), float(m.group(3)))
+    got = {t["name"]: (t["bolt_width_in"], t["price_per_yard"]) for t in PT["telas"]}
+    return got == want and len(got) == 31, f"{len(got)} fabrics with width and $/yd"
+
+
+def pt_rails_reread():
+    """Every rail price is on the Panel Track page in reading order."""
+    page = " ".join(page_lines[PT["page"]])
+    bad = []
+    for r in PT["rails"]:
+        seq = " ".join(f"{p:.2f}" for p in r["prices"] if p is not None)
+        if f"{r['channels']} canales {seq}" not in page:
+            bad.append(r["label"])
+    return not bad, f"{len(PT['rails'])} rail rows found verbatim" if not bad else str(bad)
+
+
+check("panel track: one system block, fed from the Panel Track page",
+      lambda: (len(panel_tracks) == 1 and "precio/yarda" in " ".join(page_lines[PT["page"]]),
+               f"page {PT['page']}"))
+check("panel track: the per-yard fabric list re-reads from the PDF", pt_telas_reread)
+check("panel track: every rail row re-reads from the PDF", pt_rails_reread)
+check("panel track: rails are 1 and 2 vías, 2-4 canales, and say what they include",
+      lambda: ({(r["ways"], r["channels"]) for r in PT["rails"]}
+               == {(1, 2), (1, 3), (1, 4), (2, 2), (2, 4)}
+               and PT["rail_includes"] == "basta redonda",
+               "5 systems; 2 vías × 3 canales has no prices in the PDF"))
+check("panel track: PRS's 2\" overlap rule is carried",
+      lambda: (PT["overlap_per_panel_in"] == 2 and any("traslape" in n for n in PT["notes"]),
+               PT["notes"][0] if PT["notes"] else "none"))
+check("panel track: the old per-fabric tables are gone",
+      lambda: (not [t for t in all_matrices if t["category"] == "Panel Track"],
+               "no Panel Track fabric_matrix"))
+
+
+# ------------------------------------------------------ complementos ----
+GROUPS = next(t for t in catalog if t["type"] == "addon_options")["groups"]
+DRAPERY_PAGES = {t["page"] for t in catalog if t.get("section") == "drapery"} \
+    | {t["page"] for t in drapery}
+
+
+def shade_groups_clean():
+    """No shade complemento comes from the cortinas de tela section."""
+    bad = [(g["kind"], i["label"]) for g in GROUPS if g.get("applies_to") == "shade"
+           for i in g["items"] if i["page"] in DRAPERY_PAGES]
+    return not bad, "shade hardware only" if not bad else str(bad[:3])
+
+
+def drapery_groups_clean():
+    bad = [(g["kind"], i["label"]) for g in GROUPS if g.get("applies_to") == "drapery"
+           for i in g["items"] if i["page"] not in DRAPERY_PAGES]
+    return not bad, "curtain hardware only" if not bad else str(bad[:3])
+
+
+def drapery_rails_reread():
+    """The four manual rail tables, every row found verbatim on p32."""
+    g = next(g for g in GROUPS if g["kind"] == "riel_cortina")
+    text = " ".join(sum((page_lines[p] for p in {i["page"] for i in g["items"]}), []))
+    bad = [i["label"] for i in g["items"]
+           if " ".join(str(int(p)) for p in i["prices"]) not in text]
+    return (not bad and len(g["items"]) == 10,
+            f"{len(g['items'])} rail rows incl. RIEL HD RIPPLEFOLD / ONDA" if not bad else str(bad))
+
+
+def panel_rail_superseded():
+    """The riel complemento carries the Panel Track page's rail prices, not
+    the older copy still printed on the Accesorios page."""
+    g = next(g for g in GROUPS if g["kind"] == "riel")
+    want = {r["label"]: r["prices"] for r in PT["rails"]}
+    got = {i["label"]: i["prices"] for i in g["items"] if i["label"] in want}
+    return got == want, f"{len(got)} panel track rails at page {PT['page']} prices"
+
+
+check("complementos: every group says whether it is for shades or curtains",
+      lambda: (all(g.get("applies_to") in ("shade", "drapery") for g in GROUPS),
+               " ".join(f"{g['kind']}:{g['applies_to']}" for g in GROUPS)))
+check("complementos: shade groups carry no curtain hardware", shade_groups_clean)
+check("complementos: curtain groups carry only curtain hardware", drapery_groups_clean)
+check("complementos: the curtain rail tables re-read from the PDF", drapery_rails_reread)
+check("complementos: no width-priced row is an item line in disguise",
+      lambda: (not [i["label"] for g in GROUPS if g["pricing"] == "width"
+                    for i in g["items"] if re.search(r"kit|alquiler", i["label"], re.I)],
+               "Kit de Riel Curvo stays a flat item"))
+check("complementos: the Panel Track rail uses the Panel Track page's prices",
+      panel_rail_superseded)
+check("complementos: an unpriced PDF line (Cinta Wave) is never offered",
+      lambda: (not [i for g in GROUPS for i in g["items"] if "Cinta Wave" in i["label"]],
+               "no price in the PDF, so not quotable"))
+check("complementos: the motorised curtain tracks keep their length in the label",
+      lambda: (all(re.search(r"(114|228)”|precio por pie", i["label"], re.I)
+                   for g in GROUPS if g["kind"] == "riel_motorizado" for i in g["items"]),
+               f"{len(next(g for g in GROUPS if g['kind'] == 'riel_motorizado')['items'])} tracks"))
 
 
 # ------------------------------- calculator checks, run under node ----------

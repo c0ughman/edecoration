@@ -101,6 +101,17 @@ body{
 
 .unit-field{grid-column:span 2}
 .line-margin-field{grid-column:span 2}
+/* fields some families do not have are toggled with [hidden]; .field's
+   explicit display would otherwise beat it */
+.field[hidden],.pt-fields[hidden],.ra-field[hidden]{display:none}
+/* the custom description/price inputs only belong to Personalizado; their
+   display:flex below used to keep them on screen for every kind, inviting a
+   price that a catalogue item then ignores */
+.addon-custom[hidden]{display:none}
+.pt-fields{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
+.pt-fields > *{min-width:0}
+.pt-info{grid-column:span 2;margin:0;font-size:12px;color:var(--muted);line-height:1.45}
+.pt-info:empty{display:none}
 .unit-field span{display:block;margin-bottom:7px}
 .seg{display:inline-flex;background:var(--off);border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px}
 .seg button{font:inherit;font-size:13px;font-weight:600;border:none;background:transparent;color:var(--muted);padding:8px 18px;border-radius:8px;cursor:pointer;transition:.16s}
@@ -333,6 +344,7 @@ body{
 .tag.motor{background:#ecedef;color:#4a4f57}
 .tag.order{background:#e7f0f7;color:#2c5470}
 .tag.warn{background:#fdeede;color:#8a4a14}
+.tag.range{background:#fbe4e4;color:#9a2b2b}
 .qd-empty td{text-align:center;color:var(--muted);font-style:italic;padding:30px}
 .row-del{border:none;background:transparent;color:#c08;cursor:pointer;font-size:15px;opacity:.5;transition:.15s}
 .row-del:hover{opacity:1}
@@ -422,6 +434,8 @@ img,table{max-width:100%}
   /* one column: two 50% fields at 360px leaves ~150px each, too tight to read */
   .field-grid{grid-template-columns:1fr}
   .field.check,.unit-field,.line-margin-field{grid-column:span 1}
+  .pt-fields{grid-column:span 1;grid-template-columns:1fr}
+  .pt-info{grid-column:span 1}
 
   /* 16px is the threshold below which iOS Safari zooms on focus and leaves the
      page scrolled sideways */
