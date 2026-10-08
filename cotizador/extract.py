@@ -298,13 +298,15 @@ def header_ints(row):
     return ints
 
 
-# A taller size costs more than a shorter one: PRS's own tables wobble by a few
-# percent here and there, but a cell this far above the one directly below it
-# (the next height up) is a typo in the price list, not a price. Pure Wood 2"
-# at 84" high reads $565.74-577.92 where 72" is ~$300 and 96" is ~$370. The
-# cell keeps PRS's printed figure -- the list is the source of truth -- but is
-# flagged so the quote cannot go out on it unnoticed.
-PRICE_CHECK_RATIO = 1.40
+# A taller size costs more than a shorter one. PRS's own tables wobble by a few
+# percent here and there (under 20% everywhere in the September list), but a
+# cell far above the one directly below it (the next height up) is suspect:
+# Pure Wood 2" at 84" high reads $565.74-577.92 where 72" is ~$300 and 96" is
+# ~$370, and Honeycomb BU Oxford at 78" costs ~25% more than at 84". The cell
+# keeps PRS's printed figure -- the list is the source of truth -- but is
+# flagged, and the calculator will not add it until the person quoting picks
+# which price to use. Any new list is checked the same way.
+PRICE_CHECK_RATIO = 1.20
 
 
 def price_checks(prices):
@@ -1365,8 +1367,8 @@ def collect_addons(catalog):
     # disagree the later one wins: the Panel Track rail is on the Accesorios
     # page at last list's prices and again in the Panel Track section at the
     # new ones, "incluye basta redonda". Each replacement is reported.
-    width_at = {}
-    replaced = []
+    conflicts = width_row_conflicts(catalog)
+    width_at = set()
     seen_items = set()
     for b in catalog:
         drapery = b.get("section") == "drapery"
@@ -1390,16 +1392,15 @@ def collect_addons(catalog):
                 label = r["label"] if r["label"] != b["name"] else b["name"]
                 if label != b["name"]:
                     label = f"{b['name']} · {label}"
+                # PRS repeats some width tables; one entry per row, and where
+                # the copies disagree, the higher price at each width
+                if label in width_at:
+                    continue
+                width_at.add(label)
                 item = {"label": label, "widths_in": b["widths_in"],
                         "prices": r["prices"], "page": b["page"]}
-                if label in width_at:
-                    k, i = width_at[label]
-                    old = groups[k]["items"][i]
-                    if (old["widths_in"], old["prices"]) != (item["widths_in"], item["prices"]):
-                        replaced.append((label, old["page"], item["page"]))
-                        groups[k]["items"][i] = item
-                    continue
-                width_at[label] = (kind, len(groups[kind]["items"]))
+                if label in conflicts:
+                    item.update(conflicts[label])
                 groups[kind]["items"].append(item)
 
         elif b["type"] == "per_unit_list":
@@ -1434,11 +1435,51 @@ def collect_addons(catalog):
                 groups[kind]["items"].append(
                     {"label": label, "price": i["price"], "page": b["page"]})
 
-    for label, was, now in replaced:
-        print(f"note: '{label}' p{was} superseded by p{now}", file=sys.stderr)
     for g in groups.values():
         g["items"].sort(key=lambda x: x.get("price", 0) or 0)
     return [g for g in groups.values() if g["items"]]
+
+
+def width_row_conflicts(catalog):
+    """Width-priced rows PRS prints more than once with different prices.
+
+    Returns {label: {"widths_in", "prices", "page", "price_conflict"}} for each
+    such row. The prices kept are the HIGHER of the copies at every width, so
+    a quote can never come in below a price PRS printed; the alternatives are
+    kept so the calculator can say the list disagrees with itself. The Panel
+    Track rail is the September case: the Accesorios page still prints last
+    list's prices, the Panel Track page prints new ones.
+    """
+    rows = defaultdict(list)
+    for b in catalog:
+        if b["type"] != "width_priced" or b.get("section") == "drapery":
+            continue
+        for r in b["rows"]:
+            label = b["name"] if r["label"] == b["name"] else f"{b['name']} · {r['label']}"
+            rows[label].append({"page": b["page"], "widths_in": b["widths_in"],
+                                "prices": r["prices"]})
+    out = {}
+    for label, copies in rows.items():
+        distinct = {(tuple(c["widths_in"]), tuple(c["prices"])) for c in copies}
+        if len(distinct) < 2:
+            continue
+        widths = sorted({w for c in copies for w in c["widths_in"]})
+        merged = []
+        for w in widths:
+            vals = [c["prices"][c["widths_in"].index(w)] for c in copies
+                    if w in c["widths_in"]]
+            vals = [v for v in vals if v is not None]
+            merged.append(max(vals) if vals else None)
+        out[label] = {
+            "widths_in": widths, "prices": merged,
+            "page": max(c["page"] for c in copies),
+            "price_conflict": {
+                "pages": sorted({c["page"] for c in copies}),
+                "copies": [{"page": c["page"], "widths_in": c["widths_in"],
+                            "prices": c["prices"]} for c in copies],
+            },
+        }
+    return out
 
 
 def drapery_item_label(item):
@@ -1545,6 +1586,15 @@ def main():
 
     # everything else that can hang off a paño or the job, in one normalised
     # shape so the calculator does not have to know each table's layout
+    # the Panel Track rail is printed twice; the system prices the higher copy
+    conflicts = width_row_conflicts(catalog)
+    for t in catalog:
+        if t["type"] == "panel_track":
+            for r in t["rails"]:
+                if r["label"] in conflicts:
+                    r.update({k: v for k, v in conflicts[r["label"]].items()
+                              if k in ("widths_in", "prices", "price_conflict")})
+
     addons = collect_addons(catalog)
     if addons:
         catalog.append({
@@ -1607,6 +1657,20 @@ def main():
           f"{' -> ' + str([u['page'] for u in unparsed]) if unparsed else ''}",
           file=sys.stderr)
     print(f"output          : {out_dir}", file=sys.stderr)
+    # what the person updating the list should look at; each of these also
+    # raises an alert in the calculator when a quote touches it
+    print("alerts          :", file=sys.stderr)
+    for t in catalog:
+        flagged = [(t["heights_in"][i], t["widths_in"][j], t["prices"][i][j])
+                   for i, r in enumerate(t.get("price_checks") or [])
+                   for j, v in enumerate(r) if v]
+        if flagged:
+            rows = sorted({h for h, _, _ in flagged})
+            print(f"  out of sequence : p{t['page']} {t['name']} at height(s) {rows} "
+                  f"({len(flagged)} cells)", file=sys.stderr)
+    for label, c in sorted(conflicts.items()):
+        print(f"  two prices      : {label} on pages {c['price_conflict']['pages']} "
+              f"-> the higher is used", file=sys.stderr)
 
 
 if __name__ == "__main__":

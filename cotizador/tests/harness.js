@@ -71,9 +71,20 @@ function boot(opts = {}) {
       motorTotalHidden: get("motorTotal").hidden,
       warnHidden: get("motorWarn").hidden,
       warnText: get("motorWarn").textContent,
+      priceAlertShown: !get("priceAlert").hidden,
+      priceAlertWhy: get("priceAlertWhy").textContent,
+      priceNextHidden: get("priceChoiceNext").hidden,
       motorFieldHidden: get("motorField").hidden,
       motorLabel: get("motorDrop").querySelector(".cs-value").textContent,
     };
+  }
+
+  /* Pick "list" or "next" in the price-to-confirm box the way a click would. */
+  function choosePrice(choice) {
+    const btn = new (require("./dom-stub").El)();
+    btn.dataset.choice = choice;
+    btn.closest = () => btn;
+    get("priceChoice").fireWith("click", btn);
   }
 
   /* Flip the 1 vía / 2 vías control the way a click would. */
@@ -85,7 +96,7 @@ function boot(opts = {}) {
   }
 
   /* Price a Panel Track paño through the UI: family, fabric, rail, yards. */
-  function panelTrack({ telaIndex = 0, railIndex = 0, w, h, yards = "", panels = "",
+  function panelTrack({ telaIndex = 0, railIndex = 0, w, h, yards = "", panels = 2,
                         qty = 1 }) {
     pickOption("familyDrop", "Panel Track");
     pickOption("fabricDrop", `pt:${telaIndex}`);
@@ -155,7 +166,7 @@ function boot(opts = {}) {
   const parseMoney = s => parseFloat(String(s).replace(/[$,]/g, ""));
 
   return { CATALOG, get, price, addAndTotal, parseMoney, setUnit,
-           pickOption, addAddon, setWays, panelTrack, store, sandbox };
+           pickOption, addAddon, setWays, panelTrack, choosePrice, store, sandbox };
 }
 
 module.exports = { boot };

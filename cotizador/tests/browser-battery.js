@@ -52,14 +52,31 @@
       PT.rails.forEach((r, ri) => {
         pick("ptSystemDrop", ri);
         const j = r.prices.findIndex(p => p != null);
-        set("ptYards", "3.25"); size(r.widths_in[j], 96);
+        set("ptPanels", "2"); set("ptYards", "3.25"); size(r.widths_in[j], 96);
         const want = Math.round((r.prices[j] + Math.round(3.25 * tela.price_per_yard * 100) / 100) * 100) / 100;
         if ($("lpValue").textContent !== money(want)) ptBad.push(`${tela.name} ${ri}: ${$("lpValue").textContent} want ${money(want)}`);
       });
     });
     ok("panel track: 31 fabrics × 5 rail systems all price rail + yards", ptBad.length === 0, ptBad.slice(0, 3).join("; ") || "155 combinations");
-    set("ptYards", ""); 
+    set("ptYards", "");
     ok("panel track: no yards keeps Agregar disabled", $("addBtn").disabled && $("lpValue").textContent === "—", $("lpMeta").textContent);
+    pick("fabricDrop", "pt:" + PT.telas.findIndex(t => t.name === "Zakros")); pick("ptSystemDrop", "0");
+    set("ptPanels", "2"); set("ptYards", "1.2"); size(50, 96);
+    ok("panel track: too few yards to cover the panels is refused", $("addBtn").disabled && $("lpValue").textContent === "Revisar yardas", $("lpMeta").textContent);
+    set("ptYards", "6");
+    ok("panel track: the rail printed twice warns and quotes the higher", !$("addBtn").disabled && $("lpValue").textContent === "$91.90" && $("reqBadges").textContent.includes("dos precios"), $("reqBadges").textContent);
+
+    // ---- a suspect price: the alert box, real clicks on its two choices ----
+    pick("familyDrop", "Horizontales");
+    const pw = C.findIndex(t => t.type === "fabric_matrix" && t.name.includes("Pure Wood"));
+    pick("fabricDrop", `${pw}:0`); size(60, 84);
+    ok("suspect price: alert visible and Agregar disabled", vis("priceAlert") && $("addBtn").disabled && vis("priceAlertWarn"), $("priceAlertWhy").textContent);
+    $("priceChoiceNext").click();
+    ok("suspect price: 'medida siguiente' quotes $365.48 and enables Agregar", $("lpValue").textContent === "$365.48" && !$("addBtn").disabled && !vis("priceAlertWarn") && $("priceChoiceNext").classList.contains("active"), $("lpValue").textContent);
+    $("priceChoiceList").click();
+    ok("suspect price: 'precio de la lista' quotes $565.74", $("lpValue").textContent === "$565.74" && !$("addBtn").disabled, $("lpValue").textContent);
+    size(36, 36);
+    ok("suspect price: the alert goes away on an ordinary cell", !vis("priceAlert") && !$("addBtn").disabled, $("lpValue").textContent);
 
     // ---- motor notice visibility (computed) ----
     const findCell = (pred, req) => { for (let ti = 0; ti < C.length; ti++) { const t = C[ti]; if (t.type !== "fabric_matrix" || !pred(t)) continue;

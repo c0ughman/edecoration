@@ -75,13 +75,26 @@ Two tables stacked on one page often share one legend printed under the second
 (Roman Con/Sin Varilla, Bamboo/Pure Wood). A colour a table's own notes do not
 explain is looked up in the page's other notes before the extractor raises.
 
-### Price checks
+### Safety checks on the price list itself
 
-Every matrix carries a parallel `price_checks` grid. A cell more than 40% above
-the cell for the next height up is flagged: PRS's figure is kept (the list is
-the source of truth) but the calculator shows a red "precio fuera de secuencia ·
-confírmalo con fábrica" badge. In September that is exactly the Horizontal Pure
-Wood 84" row ($565.74-577.92, where 72" is ~$300 and 96" ~$370).
+The list has mistakes of its own, and the tool guards against them without
+anyone having to ask PRS. Every extraction ends with an **alerts** report
+listing each of these, so a new list is checked the same way.
+
+- **Out-of-sequence prices.** Every matrix carries a parallel `price_checks`
+  grid: a cell more than 20% above the cell for the next height up is flagged
+  (PRS's normal wobble stays under that). The calculator will not add the paño
+  until the person quoting chooses, in a "Precio a confirmar" box, between the
+  list's figure and the next size up's price — a real PRS price for a size
+  that also covers the measurement. The choice belongs to that cell only. The
+  shading requirement still comes from the real size. September: Pure Wood 2"
+  at 84" ($565.74-577.92 vs ~$300 at 72" and ~$370 at 96") and Honeycomb BU
+  Oxford at 78" (~25% above 84").
+- **The same item at two prices.** A width-priced row printed more than once
+  with different prices (`price_conflict`) is quoted at the **higher** copy,
+  width by width, so a quote never comes in below a price PRS printed; the
+  calculator says so with a warning. September: the Panel Track rail, p46
+  (last list's prices) vs p79.
 
 ## Tests
 
@@ -229,8 +242,13 @@ The per-fabric Panel Track tables are gone. A Panel Track paño is the rail
 (PRS's table for the chosen vías × canales, by width, "incluye basta redonda")
 plus the fabric at PRS's $/yard. PRS does not say how many yards a panel track
 takes, so **Yardas de tela is entered by the person quoting** and the paño
-cannot be added without it. "Paneles" is informational: it shows each panel's
-width under PRS's rule ("añadir 2 pulgadas de traslape por cada uno"). A blank
+cannot be added without it, nor without **Paneles** (each panel's width uses
+PRS's rule, "añadir 2 pulgadas de traslape por cada uno"). Geometry gives
+guard rails without inventing a formula: fewer yards than can physically cover
+the panels (area ÷ bolt width) are refused; fewer than the shorter of the two
+standard cuts (one length per panel, or railroaded when the height fits the
+bolt), or more than twice the longer, are flagged. The reference shows on the
+panel, without hems or waste. A blank
 rail cell (e.g. 4 canales at 50") is "Consultar", never the next column. The
 client quote names the rail and the yards, not PRS's cost of each part.
 

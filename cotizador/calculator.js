@@ -49,6 +49,14 @@
      counts twice. */
   let draperyWays = 1;
 
+  /* A price PRS printed far out of sequence with the next size up (see
+     extract.py, price_checks) is probably a typo in the list. The paño is not
+     added on it until the person quoting picks a price: the list's own figure,
+     or the price of the next size up -- a real PRS price for a size that also
+     covers the measurement. The choice belongs to that one cell and is
+     forgotten the moment the size or fabric moves. */
+  let priceChoice = null, priceChoiceKey = null;
+
   /* Add-ons: everything that hangs off a paño or off the job. The extractor
      normalises three pricing modes so the UI does not need to know how each
      table was laid out in the PDF:
@@ -101,7 +109,11 @@
   function addonDetail(group, item, dims) {
     if (group.pricing === "width" && dims) {
       const i = pickIndex(item.widths_in, dims.w);
-      return i < 0 ? "" : `tabla ${item.widths_in[i]}"`;
+      if (i < 0) return "";
+      // PRS printed this row twice at different prices; the higher is used
+      return conflictAt(item, item.widths_in[i])
+        ? `tabla ${item.widths_in[i]}" · mayor de 2 precios en la lista`
+        : `tabla ${item.widths_in[i]}"`;
     }
     if (group.pricing === "per_foot" && item.basis !== "each" && dims) {
       const inches = item.basis === "height_ft" ? dims.h : dims.w;
@@ -340,6 +352,7 @@
     // cell is known, so a shading caveat appears only when it applies
     renderFabricNotes(table, null, w);
     renderMotorNotice(false);
+    $("priceAlert").hidden = true;
     $("ptInfo").textContent = "";
 
     if (!table || !w || !h) {
@@ -361,13 +374,28 @@
       return;
     }
 
-    const cellPrice = table.prices[hi][wi];
-    if (cellPrice == null) {
+    if (table.prices[hi][wi] == null) {
       lpValue.textContent = "Consultar";
       lpMeta.textContent = "Celda sin precio en la lista";
       addBtn.disabled = true;
       return;
     }
+
+    const checks = table.price_checks || [];
+    const flagged = !!(checks[hi] && checks[hi][wi]);
+    let priceRow = hi, next = -1;           // the row whose price is quoted
+    if (flagged) {
+      for (let k = hi + 1; k < table.heights_in.length; k++)
+        if (table.prices[k][wi] != null && !(checks[k] && checks[k][wi])) { next = k; break; }
+      const key = `${fabricSel.value}|${hi}|${wi}`;
+      if (key !== priceChoiceKey) { priceChoiceKey = key; priceChoice = null; }
+      if (priceChoice === "next" && next >= 0) priceRow = next;
+      if (priceChoice === "next" && next < 0) priceChoice = null;
+    } else {
+      priceChoiceKey = null; priceChoice = null;
+    }
+    renderPriceAlert(flagged, table, hi, wi, next);
+    const cellPrice = table.prices[priceRow][wi];
     const unitPrice = cellPrice * ways;
 
     const req = table.requirements[hi][wi];
@@ -382,10 +410,10 @@
     repriceAddons(panoAddons, { w, h });
     if (panoPicker) { panoPicker.render(); panoPicker.refresh(); }
 
-    const tableSize = `${table.widths_in[wi]}"×${table.heights_in[hi]}"`;
+    const tableSize = `${table.widths_in[wi]}"×${table.heights_in[priceRow]}"`;
     current = {
       table, fabric: fabricName, category: table.category,
-      reqWidth: table.widths_in[wi], reqHeight: table.heights_in[hi],
+      reqWidth: table.widths_in[wi], reqHeight: table.heights_in[priceRow],
       askW: round1(w), askH: round1(h), qty, unitPrice, req,
       motor: motorOffered ? motor : null,
       addons: panoAddons.map(a => ({ ...a })),
@@ -397,21 +425,18 @@
       current.tableLabel = `${ways} paños · tabla ${tableSize}`;
       current.detail = `Apertura a ${ways} vías · ${ways} paños de ${round1(w / ways)}"`;
     }
+    // kept on the line so a saved quote shows which price was chosen
+    if (flagged) current.priceChoice = priceChoice;
 
     const finalUnit = lineUnit(current) + motorUnit(current);
     lpValue.textContent = money(finalUnit);
-    const bits = [`Tabla ${table.widths_in[wi]}" × ${table.heights_in[hi]}"`];
+    const bits = [`Tabla ${table.widths_in[wi]}" × ${table.heights_in[priceRow]}"`];
     if (ways > 1) bits.push(`${ways} paños de ${round1(w / ways)}" × ${money(cellPrice)}`);
     bits.push(`${qty} ud`);
     if (current.motor) bits.push(`tela ${money(unitPrice)} + motor ${money(current.motor.price)}`);
     bits.push(`${money(finalUnit * qty)} subtotal`);
+    if (flagged && !priceChoice) bits.push("elige qué precio usar");
     lpMeta.textContent = bits.join(" · ");
-
-    /* A cell far out of sequence with the size below it is a typo in the
-       price list (see extract.py, price_checks). PRS's figure stands, but the
-       person quoting is told to confirm it before the quote goes out. */
-    if (table.price_checks && table.price_checks[hi] && table.price_checks[hi][wi])
-      addBadge("range", "Precio fuera de secuencia en la lista PRS · confírmalo con fábrica");
 
     const info = reqInfo(req);
     // the motor notice says this far more loudly; a pill as well is just noise
@@ -420,7 +445,30 @@
     // PRS's requirement is a warranty condition, not a physical one: the paño
     // can be sold manual, it just loses its warranty. So warn loudly, but let
     // it through -- the notice above is what stops the motor being forgotten.
-    addBtn.disabled = false;
+    // A price that may be a typo is different: nothing is added on it until a
+    // price has been chosen.
+    addBtn.disabled = flagged && !priceChoice;
+  }
+
+  function renderPriceAlert(show, table, hi, wi, next) {
+    $("priceAlert").hidden = !show;
+    if (!show) return;
+    const w = table.widths_in[wi], h = table.heights_in[hi];
+    const list = table.prices[hi][wi];
+    const nextH = next >= 0 ? table.heights_in[next] : null;
+    const nextP = next >= 0 ? table.prices[next][wi] : null;
+    $("priceAlertWhy").textContent = `La lista PRS trae ${money(list)} para ${w}" × ${h}", `
+      + (next >= 0
+        ? `más que la medida siguiente (${w}" × ${nextH}": ${money(nextP)}). `
+        : "muy por encima de las medidas vecinas. ")
+      + "Probablemente es un error de la lista.";
+    const a = $("priceChoiceList"), b = $("priceChoiceNext");
+    a.textContent = `Precio de la lista · ${money(list)}`;
+    b.textContent = next >= 0 ? `Precio de la medida siguiente (${nextH}") · ${money(nextP)}` : "";
+    b.hidden = next < 0;
+    a.classList.toggle("active", priceChoice === "list");
+    b.classList.toggle("active", priceChoice === "next");
+    $("priceAlertWarn").hidden = !!priceChoice;
   }
 
   /* A Panel Track paño: the rail from PRS's table (by width, for the chosen
@@ -451,16 +499,33 @@
     $("fabricNotes").innerHTML = ptNotes.length
       ? `<ul>${ptNotes.map(n => `<li>${escapeHtml(n)}</li>`).join("")}</ul>` : "";
 
+    $("priceAlert").hidden = true;
+
     const fail = (value, meta) => {
       lpValue.textContent = value; lpMeta.textContent = meta; addBtn.disabled = true;
     };
     if (!tela || !rail || !w || !h) return fail("—", "");
+    if (!(panels > 0)) return fail("—", "Indica el número de paneles");
 
-    if (panels > 0) {
-      info.textContent = `Cada panel: ${round1(w / panels + overlap)}" de ancho `
-        + `(${round1(w)}" ÷ ${panels}${overlap ? ` + ${overlap}" de traslape` : ""})`
-        + ` · tela de ${tela.bolt_width_in}" de ancho`;
-    }
+    /* Yardage guard rails. PRS gives no cutting formula, so the yards stay
+       the quoter's figure, but geometry gives a floor no cut can beat: the
+       fabric has to cover every panel, overlap included (area ÷ bolt width).
+       Below that the paño is refused. The two standard cuts -- one length of
+       fabric per panel, or the fabric turned (railroaded) when the height
+       fits the bolt -- give a reference: under the cheaper one, or far over
+       the dearer one, is flagged as a probable typo. No hems or waste are
+       added, so real needs sit above the reference, never below the floor. */
+    const bolt = tela.bolt_width_in;
+    const panelW = w / panels + overlap, fabricW = w + overlap * panels;
+    const minYards = Math.ceil(fabricW * h / (bolt * 36) * 100) / 100;
+    const vertical = panels * Math.ceil(panelW / bolt) * h / 36;
+    const railroad = h <= bolt ? fabricW / 36 : null;
+    const lowRef = Math.ceil(Math.min(vertical, railroad ?? Infinity) * 100) / 100;
+    const highRef = Math.ceil(Math.max(vertical, railroad ?? 0) * 100) / 100;
+    info.textContent = `Cada panel: ${round1(panelW)}" de ancho `
+      + `(${round1(w)}" ÷ ${panels}${overlap ? ` + ${overlap}" de traslape` : ""})`
+      + ` · tela de ${bolt}" de ancho · referencia sin bastas: `
+      + (lowRef === highRef ? `${lowRef} yd` : `${lowRef}–${highRef} yd`);
 
     const wi = pickIndex(rail.widths_in, w);
     if (wi < 0) {
@@ -471,6 +536,18 @@
     if (railPrice == null)
       return fail("Consultar", `Sin precio de riel ${railName(rail)} a ${rail.widths_in[wi]}"`);
     if (!(yards > 0)) return fail("—", "Ingresa las yardas de tela");
+    if (yards < minYards) {
+      reqBadges.innerHTML = `<span class="badge range">⚠ La tela no alcanza para estas medidas</span>`;
+      return fail("Revisar yardas",
+        `Con ${panels} paneles de ${round1(panelW)}" × ${round1(h)}" se necesitan al menos ${minYards} yd`);
+    }
+    if (yards < lowRef)
+      addBadge("warn", `Menos yardas que el corte más corto (${lowRef} yd sin bastas) · verifica`);
+    else if (yards > highRef * 2)
+      addBadge("warn", `Yardas muy por encima de lo normal (${highRef} yd sin bastas) · verifica`);
+    // PRS prints this rail twice at different prices; the higher is quoted
+    const alt = conflictAt(rail, rail.widths_in[wi]);
+    if (alt) addBadge("warn", `La lista PRS trae dos precios para este riel (${alt}) · se cotiza el mayor`);
 
     // to the cent, so the line and the quote total add up exactly
     const telaCost = Math.round(yards * tela.price_per_yard * 100) / 100;
@@ -502,6 +579,17 @@
   }
 
   const railName = r => `${r.ways} vía${r.ways > 1 ? "s" : ""} · ${r.channels} canales`;
+
+  /* "p. 46: $43.64 · p. 79: $55.90" when the copies of a width-priced row
+     disagree at this width, else null. */
+  function conflictAt(item, width) {
+    const c = item && item.price_conflict;
+    if (!c) return null;
+    const seen = c.copies.map(k => ({ page: k.page, p: k.prices[k.widths_in.indexOf(width)] }))
+                         .filter(k => k.p != null);
+    if (new Set(seen.map(k => k.p)).size < 2) return null;
+    return seen.map(k => `p. ${k.page}: ${money(k.p)}`).join(" · ");
+  }
 
   /* PRS's blanket cost disclaimer. True of every table at all times, so it
      tells the person quoting nothing about the paño in front of them. */
@@ -1271,6 +1359,11 @@
     const b = e.target.closest("button"); if (!b) return;
     setMarginMode(b.dataset.mode);
     computeTotals();
+  });
+  $("priceChoice").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    priceChoice = b.dataset.choice;
+    compute();
   });
   $("waysSeg").addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;

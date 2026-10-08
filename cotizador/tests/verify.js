@@ -790,15 +790,61 @@ check("the client quote words the capacity rules without PRS's shading language"
           `${(t.notes.match(/<li>/g) || []).length} notes, no supplier wording`];
 });
 
-check("the out-of-sequence Pure Wood 84\" cell keeps PRS's price and is flagged", () => {
+check("a suspect price cannot be added until a price is chosen", () => {
   const r = price({ tableIndex: PURE, w: 60, h: 84 });
-  return [r.display === "$565.74" && r.badges.includes("fuera de secuencia"),
-          `${r.display}, flagged=${r.badges.includes("fuera de secuencia")}`];
+  return [r.priceAlertShown && r.disabled && r.display === "$565.74"
+          && r.priceAlertWhy.includes("$565.74") && r.priceAlertWhy.includes("$365.48")
+          && !r.priceNextHidden,
+          `alert shown, Agregar disabled; ${r.priceAlertWhy}`];
 });
 
-check("an ordinary Pure Wood cell carries no flag at all", () => {
+check("choosing the list price adds PRS's printed figure", () => {
+  const f = boot();
+  f.price({ tableIndex: PURE, w: 60, h: 84 });
+  f.choosePrice("list");
+  const live = f.get("lpValue").textContent, enabled = !f.get("addBtn").disabled;
+  const t = f.addAndTotal();
+  return [enabled && live === "$565.74" && near(f.parseMoney(t.subtotal), 565.74)
+          && t.items.includes('tabla 60"×84"'), `${live}, subtotal ${t.subtotal}`];
+});
+
+check("choosing the next size quotes that size's real PRS price", () => {
+  const f = boot();
+  f.price({ tableIndex: PURE, w: 60, h: 84 });
+  f.choosePrice("next");
+  const live = f.get("lpValue").textContent;
+  const t = f.addAndTotal();
+  return [live === "$365.48" && near(f.parseMoney(t.subtotal), 365.48)
+          && t.items.includes('tabla 60"×96"'),
+          `${live}, line priced from the 96" row`];
+});
+
+check("a price choice never carries over to another size", () => {
+  const f = boot();
+  f.price({ tableIndex: PURE, w: 60, h: 84 });
+  f.choosePrice("next");
+  const r = f.price({ tableIndex: PURE, w: 72, h: 84 });     // another flagged cell
+  return [r.disabled && r.display === "$567.90", `new cell asks again: ${r.display}`];
+});
+
+check("the shading of the real size still applies when the next price is used", () => {
+  const f = boot();
+  f.price({ tableIndex: PURE, w: 60, h: 84 });               // 84" cell: capacity limit
+  f.choosePrice("next");
+  const t = f.addAndTotal();
+  return [t.notes.includes("límite de capacidad"), "84\" requirement kept"];
+});
+
+check("the Honeycomb BU Oxford 78\" row asks for a price too", () => {
+  const ox = CATALOG.findIndex(t => t.name === "Honeycomb BU - Oxford");
+  const r = price({ tableIndex: ox, w: 84, h: 78 });
+  return [r.priceAlertShown && r.disabled, r.priceAlertWhy];
+});
+
+check("an ordinary cell shows no price alert and adds straight away", () => {
   const r = price({ tableIndex: PURE, w: 36, h: 36 });
-  return [r.display === "$109.64" && r.badges === "", `${r.display}, badges="${r.badges}"`];
+  return [r.display === "$109.64" && r.badges === "" && !r.priceAlertShown && !r.disabled,
+          `${r.display}, no alert`];
 });
 
 check("a note the calculator already enforces is not repeated on the panel", () => {
@@ -999,6 +1045,61 @@ check("panel track: the quote prints exactly the yards it charges", () => {
   // 6.25 x 6.00 = 37.50 + 55.90 -- and the line must say 6.25, not 6.3
   return [t.items.includes("tela 6.25 yd") && near(f.parseMoney(t.subtotal), 93.40),
           `subtotal ${t.subtotal}, line says 6.25 yd`];
+});
+
+check("panel track: the rail printed twice is quoted at the higher price, with a warning", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2),
+                           w: 50, h: 96, yards: 6 });
+  return [r.display === "$91.90" && r.badges.includes("dos precios")
+          && r.badges.includes("43.64") && r.badges.includes("55.90"), r.badges.replace(/<[^>]+>/g, "")];
+});
+
+check("panel track: the number of panels is required", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: 0, railIndex: ptRail(1, 2), w: 50, h: 96,
+                           yards: 6, panels: "" });
+  return [r.disabled && /paneles/.test(r.meta), r.meta];
+});
+
+check("panel track: fewer yards than can cover the panels are refused", () => {
+  const f = boot();
+  // 2 panels of 27" (25 + 2 overlap) x 96" from 110" Zakros: area floor 1.31 yd
+  const r = f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2),
+                           w: 50, h: 96, yards: 1.2 });
+  return [r.disabled && r.display === "Revisar yardas" && r.meta.includes("1.31"), r.meta];
+});
+
+check("panel track: yards under the shortest standard cut are flagged, not refused", () => {
+  const f = boot();
+  // railroaded: 54" of fabric = 1.5 yd; 1.4 is above the 1.31 floor but under it
+  const r = f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2),
+                           w: 50, h: 96, yards: 1.4 });
+  return [!r.disabled && r.badges.includes("Menos yardas"), r.badges.replace(/<[^>]+>/g, "")];
+});
+
+check("panel track: a figure far over the standard cuts is flagged as a likely typo", () => {
+  const f = boot();
+  // one length per panel = 2 x 96" = 5.34 yd; 62.5 is almost surely 6.25
+  const r = f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2),
+                           w: 50, h: 96, yards: 62.5 });
+  return [!r.disabled && r.badges.includes("muy por encima"), r.badges.replace(/<[^>]+>/g, "")];
+});
+
+check("panel track: the info line gives the reference yardage", () => {
+  const f = boot();
+  const r = f.panelTrack({ telaIndex: ptTela("Zakros"), railIndex: ptRail(1, 2),
+                           w: 50, h: 96, yards: 6 });
+  return [r.info.includes("referencia sin bastas: 1.5–5.34 yd"), r.info];
+});
+
+check("a riel complemento printed twice says the higher price is used", () => {
+  const f = panoAt(60, 72);
+  const g = grp("riel");
+  const idx = g.items.findIndex(i => i.label === "Riel de Panel Track a 1 vía · 2 canales");
+  f.addAddon("pano", { kind: "riel", itemIndex: idx });
+  const html = f.get("panoAddonList").innerHTML;
+  return [html.includes("mayor de 2 precios") && html.includes("61.29"), "detail notes the conflict"];
 });
 
 check("panel track: the yards field clears for the next paño", () => {

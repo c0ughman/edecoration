@@ -379,16 +379,19 @@ def no_wild_jumps():
 
 
 def price_checks_scope():
-    """Only the Pure Wood 2" row at 84" is out of sequence by the 40% rule,
-    every cell of it from 60" wide on -- and it keeps PRS's printed price."""
+    """By the 20% rule exactly two rows are out of sequence: Pure Wood 2" at
+    84" (from 60" wide on) and Honeycomb BU Oxford at 78" -- and both keep
+    PRS's printed price."""
     hits = [(t["name"], t["heights_in"][i], t["widths_in"][j], t["prices"][i][j])
             for t in all_matrices for i, r in enumerate(t.get("price_checks") or [])
             for j, v in enumerate(r) if v]
     want = {(84, 60): 565.74, (84, 72): 567.90, (84, 84): 572.33,
             (84, 96): 575.80, (84, 108): 577.92}
     got = {(h, w): p for n, h, w, p in hits if "Pure Wood" in n}
-    return (got == want and len(hits) == len(want),
-            f"{len(hits)} flagged cells, all Pure Wood 84\" at PRS's printed price")
+    oxford = {(h, w) for n, h, w, p in hits if n == "Honeycomb BU - Oxford"}
+    return (got == want and len(oxford) == 7 and {h for h, _ in oxford} == {78}
+            and len(hits) == 12,
+            f"{len(hits)} flagged: Pure Wood 84\" ×5, Honeycomb BU Oxford 78\" ×7")
 
 
 def price_checks_shape():
@@ -398,7 +401,12 @@ def price_checks_shape():
 
 
 check("no wild jump between adjacent cells (column-shift canary)", no_wild_jumps)
-check("price-sequence flags hit exactly the Pure Wood 84\" typo row", price_checks_scope)
+check("price-sequence flags hit exactly the two suspect rows", price_checks_scope)
+check("no flagged cell sits in a table's last row with nothing above it",
+      lambda: (all(any(t["prices"][k][j] is not None for k in range(i + 1, len(t["prices"])))
+                   for t in all_matrices for i, r in enumerate(t.get("price_checks") or [])
+                   for j, v in enumerate(r) if v),
+               "every flagged cell has a next size to offer"))
 check("every matrix carries a price_checks grid of its own shape", price_checks_shape)
 
 
@@ -972,12 +980,24 @@ def drapery_rails_reread():
 
 
 def panel_rail_superseded():
-    """The riel complemento carries the Panel Track page's rail prices, not
-    the older copy still printed on the Accesorios page."""
+    """A rail PRS prints twice at different prices is quoted at the higher
+    copy, width by width, in both the Panel Track system and the riel
+    complemento -- and both copies are kept so the calculator can say so."""
     g = next(g for g in GROUPS if g["kind"] == "riel")
-    want = {r["label"]: r["prices"] for r in PT["rails"]}
-    got = {i["label"]: i["prices"] for i in g["items"] if i["label"] in want}
-    return got == want, f"{len(got)} panel track rails at page {PT['page']} prices"
+    bad = []
+    for r in PT["rails"]:
+        c = r.get("price_conflict")
+        if not c or c["pages"] != [46, 79]:
+            bad.append((r["label"], "no conflict recorded")); continue
+        for j, w in enumerate(r["widths_in"]):
+            vals = [k["prices"][k["widths_in"].index(w)] for k in c["copies"]]
+            vals = [v for v in vals if v is not None]
+            if (max(vals) if vals else None) != r["prices"][j]:
+                bad.append((r["label"], w))
+        item = next((i for i in g["items"] if i["label"] == r["label"]), None)
+        if not item or item["prices"] != r["prices"]:
+            bad.append((r["label"], "complemento differs"))
+    return not bad, f"{len(PT['rails'])} rails at the higher of p46/p79" if not bad else str(bad[:3])
 
 
 check("complementos: every group says whether it is for shades or curtains",
@@ -990,7 +1010,7 @@ check("complementos: no width-priced row is an item line in disguise",
       lambda: (not [i["label"] for g in GROUPS if g["pricing"] == "width"
                     for i in g["items"] if re.search(r"kit|alquiler", i["label"], re.I)],
                "Kit de Riel Curvo stays a flat item"))
-check("complementos: the Panel Track rail uses the Panel Track page's prices",
+check("complementos: a rail printed twice is quoted at the higher price",
       panel_rail_superseded)
 check("complementos: an unpriced PDF line (Cinta Wave) is never offered",
       lambda: (not [i for g in GROUPS for i in g["items"] if "Cinta Wave" in i["label"]],

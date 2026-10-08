@@ -174,6 +174,28 @@
 
     <div class="badges" id="reqBadges"></div>
 
+    <!-- A price PRS printed out of sequence with the size above it (a likely
+         typo in the list). The paño cannot be added until one is chosen. -->
+    <section class="req-alert" id="priceAlert" hidden>
+      <header class="ra-head">
+        <span class="ra-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3.5 2.8 19.5h18.4L12 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M12 10v4.5M12 17.2v.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="ra-headings">
+          <h4>Precio a confirmar</h4>
+          <p id="priceAlertWhy"></p>
+        </div>
+      </header>
+      <div class="price-choice" id="priceChoice">
+        <button type="button" data-choice="list" id="priceChoiceList"></button>
+        <button type="button" data-choice="next" id="priceChoiceNext"></button>
+      </div>
+      <p class="ra-warn" id="priceAlertWarn">Elige qué precio usar para poder agregar el paño.</p>
+    </section>
+
     <!-- A shaded-grey cell cannot be built without a motor. Rather than a
          silent surcharge, the motor is chosen here at its real PRS price. -->
     <section class="req-alert" id="motorNotice" hidden>

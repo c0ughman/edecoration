@@ -166,6 +166,17 @@ body{
 }
 .ra-headings p{font-size:11.5px;line-height:1.55;color:var(--muted);margin-top:5px}
 
+/* the "precio a confirmar" choice: two prices, one must be picked */
+.price-choice{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.price-choice button{
+  font:inherit;font-size:13px;text-align:left;color:var(--ink);cursor:pointer;
+  padding:10px 12px;border:1px solid #e0cba4;border-radius:10px;background:var(--paper);
+  transition:.16s;
+}
+.price-choice button:hover{border-color:var(--wine)}
+.price-choice button.active{border-color:var(--wine);font-weight:600;
+  box-shadow:0 0 0 3px rgba(93,15,37,.12)}
+.price-choice button[hidden],.ra-warn[hidden]{display:none}
 .ra-field{display:flex;flex-direction:column;gap:7px;margin-top:15px;
   font-size:12.5px;font-weight:600;letter-spacing:.3px;color:var(--muted)}
 /* the picker is the page's own dropdown, just tinted to sit on the cream */
